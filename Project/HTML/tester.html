@@ -19,15 +19,34 @@
 
 <body>
 
+	<div id="login">
+		<form name="getName" method="POST" action="../PHP/getInfo.php">
+			<input type="text" name="username" id="text-box"/><br>
+			<input type="Submit" name="Submit" id="Submit"/><br><br>
+		</form>
 
-	<form name="getName" method="POST" action="../PHP/getInfo.php">
-		<input type="text" name="username" id="text-box"/>
-		<input type="Submit" name="Submit" id="Submit"/>
-	</form>
-
-	<div  id="tester">
-		<?php if(isset($first)&&isset($second)&&isset($DoB)){ echo $error; } ?>
+		<div  id="tester">
+			<?php if(isset($first)&&isset($second)&&isset($DoB)){ echo $error; } ?>
+		</div>
 	</div>
+
+
+	<div id="createuser"> 
+
+		<form name="getName" method="POST" action="../PHP/createUser.php">
+			<input type="text" name="username" id="text-box"/><br>
+			<input type="text" name="pass1" id="text-box"/><br>
+			<input type="text" name="pass2" id="text-box"/><br>
+			<input type="text" name="firstname" id="text-box"/><br>
+			<input type="text" name="surname" id="text-box"/><br>
+			<input type="date" name="DoB" id="text-box"/><br>
+
+
+			<input type="Submit" name="Submit" id="Submit"/>
+		</form>
+
+	</div>
+
 
 </body>
 
