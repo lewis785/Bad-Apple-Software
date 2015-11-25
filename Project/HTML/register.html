@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="logo.ico">
+
+    <title>Register Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <!--<link href="bootstrap.min.css" rel="stylesheet">-->
+
+    <!-- Custom styles for this template -->
+    <link href="../CSS/signin.css" rel="stylesheet">
+    <link href="bootstrap-datepicker.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+ 
+
+
+<div class="container">
+    <div class="row">
+        <form role="form">
+            <div class="col-lg-6">
+                      <div class="col-sm-10"><h2>Register an Account</h2></div>
+                <div class="form-group">
+                    <label for="InputName">Enter First Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="InputFirstname" id="InputFirstname" placeholder="Enter First Name" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputName">Enter Surname</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="InputSurname" id="InputSurname" placeholder="Enter Surname" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputName">Create Username</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="InputUsername" id="InputUsername" placeholder="Create a Username" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail">Enter Email</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" id="InputEmailFirst" name="InputEmail" placeholder="Enter Email" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputEmail">Confirm Email</label>
+                    <div class="input-group">
+                        <input type="email" class="form-control" id="InputEmailSecond" name="InputEmail" placeholder="Confirm Email" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputPass">Password</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="InputPass" id="InputPass" placeholder="Enter Password" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="InputPass">Confirm Password</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="InputPassC" id="InputPass" placeholder="Enter Password" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+     <script src="jquery-1.11.3.min.js"></script>
+     <script src="bootstrap-datepicker.js"></script>
+     <script type="text/javascript">
+       $(".date-picker").datepicker();
+
+       $(".date-picker").on("change", function () {
+    var id = $(this).attr("id");
+    var val = $("label[for='" + id + "']").text();
+    $("#msg").text(val + " changed");
+});  
+     </script>
+
+       <div class="control-group">
+        <label for="date-picker-3" class="control-label">Enter your date of birth</label>
+        <div class="controls">
+            <div class="input-group">
+                <label for="date-picker-3" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+
+                </label>
+                <input id="date-picker-3" type="text" class="date-picker form-control" />
+            </div>
+        </div>
+    </div>
+         <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
