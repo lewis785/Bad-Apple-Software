@@ -23,6 +23,7 @@ if (isset($_COOKIE['confirmation']))
 	mysqli_stmt_bind_param($delete, 'ss', $temp['user'], $temp['pass']);
 	mysqli_stmt_execute($delete);
 	echo "User Deleted";
+	header("Location:http://badapple/HTML/login.html");
 
 	}
 	else

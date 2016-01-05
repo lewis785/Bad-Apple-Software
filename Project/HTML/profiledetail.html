@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Login </title>
+    <title> Profile </title>
     
     <!-- core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -43,8 +43,16 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="home.html"> Home </a></li>
-                        <li class="active"><a href="login.html"> Login </a></li>                      
+                        <li class="dropdown">
+                            <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown"> Profile <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="#"> Details </a></li>
+                                <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
+                                <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
+                                <li><a href="#"> Log out </a></li> <!-- still to be made -->
+                            </ul>
+                        </li>  
+                        <li><a href="home.html"> Home </a></li>                   
                     </ul>
                 </div>
 
@@ -55,46 +63,31 @@
     <section id="contact-page">
 
         <div class="center">        
-            <h2> Please login with your Careers Pathway username and password </h2>
+            <h2> Edit your Details</h2>
         </div>
 
         <div class="container-fluid">    
             <div class="row contact-wrap"> 
-                <form id="login-form" class="contact-form" name="contact-form" method="post" action="profile.html">
+                <div class="col-md-6 col-md-offset-3">
 
-                    <div class="col-md-6 col-md-offset-3">
+                    <ul class="list-group">
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>First Name</strong></span> 2/12/2014 </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Last Name</strong></span> Yesterday </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Username</strong></span> Mr. Man </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> 11/12/1995 </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Email Address</strong></span> email@email.com </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Password</strong></span> gimpisbest </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Supervisor</strong></span> Gimpster </li>
+                    </ul> 
 
-                        <div class="form-group">
-                            <label> Username * </label>
-                            <input type="text" name="username" class="form-control" required="required" placeholder="Enter Username">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Password * </label>
-                            <input type="Password" name="password" class="form-control" required="required" placeholder="Enter Password">
-                        </div> 
-
-                        <div class="checkbox">
-                            <label><u><i> Remember me </i></u></label>
-                            <input type="checkbox" value="remember-me">
-                        </div> 
-
-                        <div class="form-group">
-                            <button type="submit" name="signin" class="btn btn-primary" required="required"> Sign in </button>
-                        </div>
-
-                        <label><u><i><a href="#"> Can't login ? Reset Password Here </a></i></u></p>  <!-- still to be made -->
-                        <br>    
-                        <label><u><i> Don't have an account ? Click below </i></u></label>
-                        <br>
-                        <a href="register.html" class="btn btn-primary"> Register </a>  <!-- still to be made -->
+                    <br>    
+                    <label><u><i> When choosing password make sure its easy to remember ! </i></u></label>
+                    <br>
+                    <a href="#" class="btn btn-primary"> Save Changes </a>  <!-- still to be made -->
                             
-                    </div>
-
-                </form> 
-
-                <a href="profile.html" class="btn btn-primary"> Click here too get a run though </a>
+                </div>
             </div>
+            <a href="profilecareer.html" class="btn btn-primary"> Click here too get a run though *still to be done*</a>
         </div><!--/.container--> 
 
     </section><!--/#contact-page-->
