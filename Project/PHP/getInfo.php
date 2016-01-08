@@ -3,28 +3,40 @@
 include 'connection.php';
 
 
-if (isset($_POST['username'])){
+if (isset($_COOKIE['confirmation'])) {
+	$temp = unserialize($_COOKIE['confirmation']);
+	$verify = mysqli_stmt_init($link);
+	mysqli_stmt_prepare($verify, "select count(*) from users where user_name= ? and user_pass = ?");
+	mysqli_stmt_bind_param($verify, 'ss', $temp['user'], $temp['pass']);
+	mysqli_stmt_execute($verify);
 
-	$user = mysqli_real_escape_string($link, $_POST['username']);
+	$result = mysqli_stmt_get_result($verify);
+	$count = $result -> fetch_row();
 
-	$getUser = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($getUser, "select * FROM userinfo INNER JOIN users ON userinfo.Info_Id = users.user_id WHERE users.user_name = ? ");
-	mysqli_stmt_bind_param($getUser, 's', $user);   
-	mysqli_stmt_execute($getUser); 
 
-	$result = mysqli_stmt_get_result($getUser);
+	echo $count[0];
+	if ($count[0] == 1) {
+
+		$getUser = mysqli_stmt_init($link);
+		
+		mysqli_stmt_prepare($getUser, "select * FROM userinfo INNER JOIN users ON userinfo.Info_Id = users.user_id WHERE users.user_name = ? ");
+		mysqli_stmt_bind_param($getUser, 's', $temp['user']);   
+		mysqli_stmt_execute($getUser); 
+
+		$result = mysqli_stmt_get_result($getUser);
 
 //INNER JOIN 'users' ON (users.user_id = userinfo.Info_Id)
 
-	while($userinfo = mysqli_fetch_assoc($result)){
+echo "Hello my name is dean";
 
-		echo "Firstname: ".$userinfo['Firstname']."<br>";
-		echo "Surname: ".$userinfo['Surname']."<br>";
-		echo "DoB: ".$userinfo['DoB']."<br>";
+		while($row = mysqli_fetch_assoc($result)){
+			$name = $row['user_firstname'];
+			echo "Hello my name is cas";
+			echo $row['user_name'].$row['joindate'].$row['Firstname'].$row['surname'].$row['DoB'].$row['Email'];
+			echo json_encode(array("user"=>$row['user_name'],"joined"=>$row['joindate'],"firstname"=>$row['Firstname'],"surname"=>$row['surname'],"dob"=>$row['DoB'],"email"=>$row['Email']));
 
-
+		}
 	}
-
 
 }
 

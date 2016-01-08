@@ -34,9 +34,14 @@ include "../PHP/verify.php";
     <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
+    
+    <!-- Code for loading user information -->
+    <script src="../js/loadUser.js"></script>
+
+
 </head><!--/head-->
 
-<body>
+<body onload="loadInfo()">
 
     <header id="header">
         <nav class="navbar navbar-inverse" role="banner">
@@ -78,7 +83,8 @@ include "../PHP/verify.php";
                     <ul class="list-group">
                         <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2/12/2014 </li>
                         <li class="list-group-item text-right"><span class="pull-left"><strong>Last Login</strong></span> Yesterday </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> Mr. Man</li>
+                        <li class="list-group-item text-right"> <div id="name"></div>
+                            <?php include "../php/getInfo.php" ?> </li>
                         <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> 11/12/1995 </li>
                         <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> email@email.com </li>
                         <li class="list-group-item text-right"><span class="pull-left"><strong>Supervisor</strong></span> Some Dude </li>
