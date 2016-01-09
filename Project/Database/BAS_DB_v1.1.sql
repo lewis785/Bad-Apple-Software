@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 09, 2016 at 05:03 PM
+-- Generation Time: Jan 09, 2016 at 07:16 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -115,6 +115,7 @@ CREATE TABLE IF NOT EXISTS `userdetails` (
 CREATE TABLE IF NOT EXISTS `userlogin` (
   `ID` int(16) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier for users',
   `EmailAddress` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Users email address',
+  `UserName` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `Password` varchar(16) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Users password',
   `DateJoined` date NOT NULL COMMENT 'Date account was created',
   PRIMARY KEY (`ID`),
