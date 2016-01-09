@@ -37,6 +37,7 @@ include "../PHP/verify.php";
     
     <!-- Code for loading user information -->
     <script src="../js/loadUser.js"></script>
+    <script src="../js/popup.js"></script>
 
 
 </head><!--/head-->
@@ -59,7 +60,7 @@ include "../PHP/verify.php";
                                 <li><a href="profiledetail.html"> Details </a></li>
                                 <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
                                 <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
-                                <li><a href="#"> Log out </a></li> <!-- still to be made -->
+                                <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
                             </ul>
                         </li>  
                         <li><a href="home.html"> Home </a></li>                   
@@ -81,29 +82,35 @@ include "../PHP/verify.php";
                 <div class="col-md-6 col-md-offset-3">
 
                     <ul class="list-group">
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2/12/2014 </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Last Login</strong></span> Yesterday </li>
-                        <li class="list-group-item text-right"> <div id="name"></div>
-                            <?php include "../php/getInfo.php" ?> </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> 11/12/1995 </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> email@email.com </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Supervisor</strong></span> Some Dude </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Last Login</strong></span> <div id="lastlogin">Yesterday</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
                     </ul> 
 
                     <br>    
                     <label><u><i> Don't want the services anymore ? Sick of Life? Click Below to delete your account </i></u></label>
                     <br>
                     <label><u><i> Or if your just tripping you can change your details ?  Pump up some of your qualifications maybe ? click on the Profile tab </i></u></label>
-                    <a href="../PHP/delete.php" class="btn btn-primary"> Delete my Account </a>  <!-- still to be made -->
-                            
+                    <a id="popin" class="btn btn-primary"> Delete my Account </a>  <!-- still to be made -->
+
                 </div>
             </div>
 
+            <div id="popup"> 
+                Hello world whats up
+                <a href="../php/delete.php" id="popin" class="btn btn-primary"> Confirm Delete</a>
+            </div>
+
             <a href="profiledetail.html" class="btn btn-primary"> Click here too get a run though </a>
-        </div><!--/.container--> 
+        </div><!--/.container-->
+
+
+
 
     </section><!--/#contact-page-->
-  
+
 
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">

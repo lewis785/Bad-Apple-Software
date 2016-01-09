@@ -43,7 +43,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 				if ($last_id != 0){
 					$newuserinfo = mysqli_stmt_init($link);
 					mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userinfo (Info_Id, Firstname, Surname, DoB, Email) VALUES (?, ?, ?, ?, ?)');
-					mysqli_stmt_bind_param($newuserinfo, 'isssss', $last_id, $first, $surname, $dob, $email);   
+					mysqli_stmt_bind_param($newuserinfo, 'issss', $last_id, $first, $surname, $dob, $email);   
 					mysqli_stmt_execute($newuserinfo);
 				}
 

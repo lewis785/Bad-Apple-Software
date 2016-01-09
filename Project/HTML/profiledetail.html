@@ -29,11 +29,15 @@
     <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
+
+    <!-- Code for loading user information -->
+    <script src="../js/loadUser.js"></script>
+
 </head><!--/head-->
 
-<body>
+<body onload="loadInfo()">
 
-    <header id="header">
+    <header id="header" >
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container-fluid">
 
@@ -71,12 +75,10 @@
                 <div class="col-md-6 col-md-offset-3">
 
                     <ul class="list-group">
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>First Name</strong></span> 2/12/2014 </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Last Name</strong></span> Yesterday </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Username</strong></span> Mr. Man </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> 11/12/1995 </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Email Address</strong></span> email@email.com </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Password</strong></span> gimpisbest </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>First Name</strong></span> <div id="firstn">John</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Last Name</strong></span> <div id="lastn">Smith</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">11/12/1995</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Email Address</strong></span> <div id="email">email@email.com</div> </li>
                         <li class="list-group-item text-right"><span class="pull-left"><strong>Supervisor</strong></span> Gimpster </li>
                     </ul> 
 
@@ -84,14 +86,14 @@
                     <label><u><i> When choosing password make sure its easy to remember ! </i></u></label>
                     <br>
                     <a href="#" class="btn btn-primary"> Save Changes </a>  <!-- still to be made -->
-                            
+
                 </div>
             </div>
             <a href="profilecareer.html" class="btn btn-primary"> Click here too get a run though *still to be done*</a>
         </div><!--/.container--> 
 
     </section><!--/#contact-page-->
-  
+
 
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">

@@ -2527,6 +2527,27 @@ shortcodes page css
 
 
 
+/* Popup CSS */
+
+#popup {
+  display:none;
+  position:fixed;
+  margin:0 auto;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 50px 2px #000;
+   opacity: 1;
+  width: 25%;
+  height: 20%;
+}
+#popin{
+  cursor: pointer; 
+  cursor: hand; 
+}
+
+/*           */
+
 
 
 

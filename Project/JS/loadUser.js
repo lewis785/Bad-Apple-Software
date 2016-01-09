@@ -16,8 +16,13 @@ function loadInfo(){
             var DoB = (result.dob);
             var joindate = (result.joined);
 
-            $("#name").html('<span class="pull-left"><strong>Name</strong></span>');
-
+            $("#joined").text(joindate);
+            $("#lastlogin").text('Yesterday');
+            $("#firstn").text(firstname);
+            $("#lastn").text(surname);
+            $("#name").text(firstname + ' ' + surname);
+            $("#dob").text(DoB);
+            $("#email").text(email);
 
         },
 
