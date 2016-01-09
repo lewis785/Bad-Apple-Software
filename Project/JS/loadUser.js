@@ -33,3 +33,36 @@ function loadInfo(){
 
     });
 }
+
+
+
+function loadEditInfo(){
+
+
+    $.ajax({
+        type: "POST",
+        url: "../PHP/getInfo.php",
+        data: "",
+        cache: false,
+        dataType: 'json', 
+        success: function(result){
+
+            var firstname = (result.firstname);
+            var surname = (result.surname);
+            var email = (result.email);
+            var DoB = (result.dob);
+
+            document.getElementById('firstn').value= firstname;
+            document.getElementById('lastn').value= surname;
+            document.getElementById('dob').value= DoB;
+            document.getElementById('email').value= email;
+
+        },
+
+        error: function(ts) {
+            alert("Error Occured");
+            alert(ts.responseText);
+        }
+
+    });
+}
