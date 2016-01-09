@@ -2,12 +2,8 @@
 
 $verified = false;
 
-$link = mysqli_connect('localhost', 'root', 'kandersteg'); 
-if (!$link) { 
-	die('Could not connect to MySQL: ' . mysqli_connect_error()); 
-} 
+include 'connection.php';
 
-mysqli_select_db($link,"pathmaker");
 
 if (isset($_COOKIE['confirmation'])) {
 	$temp = unserialize($_COOKIE['confirmation']);
@@ -43,7 +39,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 	if ($count[0] == 1) {
 		$temp = array("user" => $user, "pass" => $encrypt_password);
-		setcookie("confirmation", serialize($temp));
+		setcookie("confirmation", serialize($temp), 0, "/");
 		$verified = true;
 		echo "user exists";
 	}
@@ -52,7 +48,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 if (!$verified) {
 	// header("Location:http://personal/Webpages/login.html");
-	//header("Location:http://badapple/HTML/login.html");
+	header("Location:http://badapple/HTML/login.html");
 	exit();
 }
 
