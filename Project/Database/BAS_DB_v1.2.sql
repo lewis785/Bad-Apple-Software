@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 09, 2016 at 07:16 PM
+-- Generation Time: Jan 10, 2016 at 09:43 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -97,6 +97,8 @@ CREATE TABLE IF NOT EXISTS `usercareerpath` (
 CREATE TABLE IF NOT EXISTS `userdetails` (
   `UserID` int(16) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier for users',
   `Name` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Users name',
+  `FirstName` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Users first name',
+  `Surname` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Users surname',
   `DateOfBirth` date NOT NULL COMMENT 'Users date of birth',
   `Age` int(4) NOT NULL COMMENT 'Users age (calculated)',
   `Occupation` int(16) NOT NULL COMMENT 'Users Occupation',
@@ -170,9 +172,9 @@ ALTER TABLE `usercareerpath`
 -- Constraints for table `userdetails`
 --
 ALTER TABLE `userdetails`
-  ADD CONSTRAINT `userdetails_ibfk_3` FOREIGN KEY (`Address`) REFERENCES `useraddress` (`AddressID`) ON UPDATE CASCADE,
   ADD CONSTRAINT `userdetails_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `userlogin` (`ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `userdetails_ibfk_2` FOREIGN KEY (`Occupation`) REFERENCES `occupations` (`OccupationID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `userdetails_ibfk_2` FOREIGN KEY (`Occupation`) REFERENCES `occupations` (`OccupationID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `userdetails_ibfk_3` FOREIGN KEY (`Address`) REFERENCES `useraddress` (`AddressID`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `userprofile`
@@ -184,9 +186,9 @@ ALTER TABLE `userprofile`
 -- Constraints for table `userqualifications`
 --
 ALTER TABLE `userqualifications`
-  ADD CONSTRAINT `userqualifications_ibfk_4` FOREIGN KEY (`UserID`) REFERENCES `userlogin` (`ID`) ON DELETE CASCADE,
   ADD CONSTRAINT `userqualifications_ibfk_2` FOREIGN KEY (`Qualification`) REFERENCES `qualifications` (`QualificationID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `userqualifications_ibfk_3` FOREIGN KEY (`Grade`) REFERENCES `qualificationgrades` (`GradeID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `userqualifications_ibfk_3` FOREIGN KEY (`Grade`) REFERENCES `qualificationgrades` (`GradeID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `userqualifications_ibfk_4` FOREIGN KEY (`UserID`) REFERENCES `userlogin` (`ID`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
