@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2016 at 09:43 PM
+-- Generation Time: Jan 11, 2016 at 12:52 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -96,16 +96,15 @@ CREATE TABLE IF NOT EXISTS `usercareerpath` (
 
 CREATE TABLE IF NOT EXISTS `userdetails` (
   `UserID` int(16) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier for users',
-  `Name` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Users name',
   `FirstName` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Users first name',
   `Surname` varchar(32) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Users surname',
   `DateOfBirth` date NOT NULL COMMENT 'Users date of birth',
   `Age` int(4) NOT NULL COMMENT 'Users age (calculated)',
-  `Occupation` int(16) NOT NULL COMMENT 'Users Occupation',
-  `Address` int(16) NOT NULL COMMENT 'Users Address',
+  `OccupationID` int(16) NOT NULL COMMENT 'Users Occupation',
+  `AddressID` int(16) NOT NULL COMMENT 'Users Address',
   PRIMARY KEY (`UserID`),
-  KEY `Occupation` (`Occupation`),
-  KEY `Address` (`Address`)
+  KEY `Occupation` (`OccupationID`),
+  KEY `Address` (`AddressID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Contains users personal details.' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -173,8 +172,8 @@ ALTER TABLE `usercareerpath`
 --
 ALTER TABLE `userdetails`
   ADD CONSTRAINT `userdetails_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `userlogin` (`ID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `userdetails_ibfk_2` FOREIGN KEY (`Occupation`) REFERENCES `occupations` (`OccupationID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `userdetails_ibfk_3` FOREIGN KEY (`Address`) REFERENCES `useraddress` (`AddressID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `userdetails_ibfk_2` FOREIGN KEY (`OccupationID`) REFERENCES `occupations` (`OccupationID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `userdetails_ibfk_3` FOREIGN KEY (`AddressID`) REFERENCES `useraddress` (`AddressID`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `userprofile`
