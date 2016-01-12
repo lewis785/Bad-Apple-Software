@@ -8,7 +8,7 @@ if (isset($_COOKIE['confirmation']))
 	$temp = unserialize($_COOKIE['confirmation']);
 
 	$check = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($check, "select count(*) from users where user_name= ? and user_pass = ?");
+	mysqli_stmt_prepare($check, "select count(*) from userlogin where UserName= ? and Password = ?");
 	mysqli_stmt_bind_param($check, 'ss', $temp['user'], $temp['pass']);
 	mysqli_stmt_execute($check);
 
@@ -19,7 +19,7 @@ if (isset($_COOKIE['confirmation']))
 	{
 
 	$delete = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($delete, "delete from users where user_name= ? and user_pass = ?");
+	mysqli_stmt_prepare($delete, "delete from userlogin where Username= ? and Password = ?");
 	mysqli_stmt_bind_param($delete, 'ss', $temp['user'], $temp['pass']);
 	mysqli_stmt_execute($delete);
 	echo "User Deleted";

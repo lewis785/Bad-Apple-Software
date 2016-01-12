@@ -15,6 +15,10 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 	$dob = mysqli_real_escape_string($link, $_POST['DoB']);
 	$email = mysqli_real_escape_string($link, $_POST['email1']);
 	$confemail = mysqli_real_escape_string($link, $_POST['email2']);
+	$number = mysqli_real_escape_string($link, $_POST['number']);
+	$street = mysqli_real_escape_string($link, $_POST['street']);
+	$postcode = mysqli_real_escape_string($link, $_POST['postcode']);
+	$city = mysqli_real_escape_string($link, $_POST['city']);
 
 
 	$checkusername = mysqli_stmt_init($link);
@@ -33,17 +37,22 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 				$date = date('Y-m-d');
 				$cryptpass = crypt($pass,"Ba24JDAkfjerio892pp309lE");
 
-				$newuser = mysqli_stmt_init($link);
-				mysqli_stmt_prepare($newuser, 'INSERT INTO users (user_name, user_pass, joindate) VALUES (?, ?, ?)');
-				mysqli_stmt_bind_param($newuser, 'sss', $user, $cryptpass, $date);   
-				mysqli_stmt_execute($newuser);
+				$newlogin = mysqli_stmt_init($link);
+				mysqli_stmt_prepare($newlogin, 'INSERT INTO userlogin (Username, Password, DateJoined, EmailAddress ) VALUES (?, ?, ?, ?)');
+				mysqli_stmt_bind_param($newlogin, 'ssss', $user, $cryptpass, $date, $email);   
+				mysqli_stmt_execute($newlogin);
 
 				$last_id = mysqli_insert_id($link);
 
 				if ($last_id != 0){
+					$newaddress = mysqli_stmt_init($link);
+					mysqli_stmt_prepare($newaddress, 'INSERT INTO useraddress (AddressID, HouseNumberName, StreetName, PostCode , City) VALUES (?, ?, ?, ?, ?)');
+					mysqli_stmt_bind_param($newaddress, 'issss', $last_id, $number, $street, $postcode, $city);   
+					mysqli_stmt_execute($newaddress);
+
 					$newuserinfo = mysqli_stmt_init($link);
-					mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userinfo (Info_Id, Firstname, Surname, DoB, Email) VALUES (?, ?, ?, ?, ?)');
-					mysqli_stmt_bind_param($newuserinfo, 'issss', $last_id, $first, $surname, $dob, $email);   
+					mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (UserID, Firstname, Surname, DateOfBirth, Occupation, Address) VALUES (?, ?, ?, ?, ?, ?)');
+					mysqli_stmt_bind_param($newuserinfo, 'isssii', $last_id, $first, $surname, $dob, $last_id, $last_id);   
 					mysqli_stmt_execute($newuserinfo);
 				}
 
