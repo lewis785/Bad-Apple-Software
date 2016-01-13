@@ -1,50 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="logo.ico">
 
-    <title>Signin Template</title>
+    <title> Login </title>
+    
+    <!-- core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
+    <link href="../css/boostrap.css" rel="stylesheet">
+    <link href="../css/boostrap-theme.css" rel="stylesheet">
+    <link href="../css/boostrap-theme.min.css" rel="stylesheet">
+    
+    <!-- core JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../js/Bootstrap/npm.js"></script>
+    <script src="../js/Bootstrap/bootstrap.js"></script>  
+    <script src="../js/Bootstrap/jquery.js"></script>
+    <script src="../js/Bootstrap/bootstrap.min.js"></script>
+    <script src="../js/Bootstrap/jquery.prettyPhoto.js"></script>
+    <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
+    <script src="../js/Bootstrap/main.js"></script>
+    <script src="../js/Bootstrap/wow.min.js"></script>
+</head><!--/head-->
 
-    <!-- Bootstrap core CSS -->
-    <link href="../CSS/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+<body>
 
-    <!-- Custom styles for this template -->
-    <link href="../CSS/signin.css" rel="stylesheet">
+    <header id="header">
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container-fluid">
 
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="home.html"><img src="../images/logo.png" alt="logo"></a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html"> Home </a></li>
+                        <li class="active"><a href="login.html"> Login </a></li>                      
+                    </ul>
+                </div>
 
-  </head>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
 
-  <body>
-  <div class="header-cont">
-  <h3 class="form-title">Bad Apple Software</h2>
-  <img src="../Images/Bad_Apple.png" alt="companylogo">
-  <br>
-  </div>
-    <div class="container">
-      <form class="form-signin" method="post" action="tester.html">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
+    <section id="contact-page">
+
+        <div class="center">        
+            <h2> Please login with your Careers Pathway username and password </h2>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <br>
-        <u><i>Don't have an account?</i></u>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-      </form>
 
-    </div> <!-- /container -->
+        <div class="container-fluid">    
+            <div class="row contact-wrap"> 
+                <form id="login-form" class="contact-form" name="loggin-form" method="post" action="profile.html">
 
-  </body>
+                    <div class="col-md-6 col-md-offset-3">
+
+                        <div class="form-group">
+                            <label> Username * </label>
+                            <input type="text" name="username" class="form-control" required="required" placeholder="Enter Username">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Password * </label>
+                            <input type="Password" name="password" class="form-control" required="required" placeholder="Enter Password">
+                        </div> 
+
+                        <div class="checkbox">
+                            <label><u><i> Remember me </i></u></label>
+                            <input type="checkbox" value="remember-me">
+                        </div> 
+
+                        <div class="form-group">
+                            <button type="submit" name="signin" class="btn btn-primary" required="required"> Sign in </button>
+                        </div>
+
+                        <label><u><i><a href="#"> Can't login ? Reset Password Here </a></i></u></p>  <!-- still to be made -->
+                        <br>    
+                        <label><u><i> Don't have an account ? Click below </i></u></label>
+                        <br>
+                        <a href="register.html" class="btn btn-primary"> Register </a>  <!-- still to be made -->
+                            
+                    </div>
+
+                </form> 
+
+                <a href="profile.html" class="btn btn-primary"> Click here too get a run though </a>
+            </div>
+        </div><!--/.container--> 
+
+    </section><!--/#contact-page-->
+  
+
+    <section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="row">
+                <div class="col-md-8 col-sm-6">
+                    <div class="widget">
+                        <h3>Career Pathways </h3>
+                        <p> Made by a group of highly talented individuals. Known as &copy; Bad Apple Software </p>
+                    </div>    
+                </div><!--/.col-md -->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2015 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right"> Technologies used :
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>PHP6</li>
+                        <li>GIMP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+</body>
 </html>
