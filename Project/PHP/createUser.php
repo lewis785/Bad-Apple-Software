@@ -22,7 +22,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 
 
 	$checkusername = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($checkusername, 'Select count(*) from users where user_name= ? ');
+	mysqli_stmt_prepare($checkusername, 'Select count(*) from userlogin where UserName= ? ');
 	mysqli_stmt_bind_param($checkusername, 's', $user);   
 	mysqli_stmt_execute($checkusername); 
 
