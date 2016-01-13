@@ -28,7 +28,7 @@ function loadInfo(){
             $("#name").text(firstname + ' ' + surname);
             $("#dob").text(DoB);
             $("#email").text(email);
-            $("#address").text(housenumber + ' ' + street + ' ' + city + ' ' + postcode);
+            $("#address").text(housenumber + ' ' + street + ', ' + city + ', ' + postcode);
         },
 
         error: function(ts) {
@@ -65,6 +65,10 @@ function loadEditInfo(){
             document.getElementById('lastn').value= surname;
             document.getElementById('dob').value= DoB;
             document.getElementById('email').value= email;
+            document.getElementById('number').value= housenumber;
+            document.getElementById('street').value= street;
+            document.getElementById('city').value= city;
+            document.getElementById('postcode').value= postcode;
 
         },
 
