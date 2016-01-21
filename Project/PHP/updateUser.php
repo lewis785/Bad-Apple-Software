@@ -6,6 +6,8 @@ if (isset($_COOKIE['confirmation'])) {
 	if ( !empty($_POST['firstname']) && !empty($_POST['surname']) && !empty($_POST['DoB'])  && !empty(['email']) && !empty(['number']) && !empty(['street']) && !empty(['city']) && !empty(['postcode'])) {
 
 		$temp = unserialize($_COOKIE['confirmation']);
+
+		//Retreives users ID from the database
 		$getId = mysqli_stmt_init($link);
 		mysqli_stmt_prepare($getId, "select ID from userlogin where UserName= ? and Password = ?");
 		mysqli_stmt_bind_param($getId, 'ss', $temp['user'], $temp['pass']);
@@ -17,7 +19,7 @@ if (isset($_COOKIE['confirmation'])) {
 			$id = $row['ID'];
 		}
 
-
+		/*Sanitizes the inputs from the form to prevent SQL Injection*/
 		$first = mysqli_real_escape_string($link, $_POST['firstname']);
 		$surname = mysqli_real_escape_string($link, $_POST['surname']);
 		$dob = mysqli_real_escape_string($link, $_POST['DoB']);
@@ -28,25 +30,26 @@ if (isset($_COOKIE['confirmation'])) {
 		$postcode = mysqli_real_escape_string($link, $_POST['postcode']);
 
 
-
+		/*Updates the users Email Address with what was in the form */
 		$updateLogin = mysqli_stmt_init($link);
 		mysqli_stmt_prepare($updateLogin, 'UPDATE userlogin SET EmailAddress = ? where ID =?');
 		mysqli_stmt_bind_param($updateLogin, 'si', $email, $id);   
 		mysqli_stmt_execute($updateLogin); 
 
-
+		/*Updates userdetails table; Firstname, Surname & DoB of User with the specific UserID */
 		$updateDetails = mysqli_stmt_init($link);
 		mysqli_stmt_prepare($updateDetails, 'UPDATE userdetails SET Firstname=?, Surname=?, DateOfBirth=? where UserID =?');
 		mysqli_stmt_bind_param($updateDetails, 'sssi', $first, $surname, $dob, $id);   
 		mysqli_stmt_execute($updateDetails); 
 
+		/*Updates useraddress table; HouseNumberName, StreetName, City & Postcode of User with the specific AddressID*/
 		$updateAddress = mysqli_stmt_init($link);
 		mysqli_stmt_prepare($updateAddress, 'UPDATE useraddress SET HouseNumberName=?, StreetName=?, City=?, PostCode=? where AddressID =?');
 		mysqli_stmt_bind_param($updateAddress, 'ssssi', $housenumber, $streetname, $city, $postcode, $id);   
 		mysqli_stmt_execute($updateAddress);
 
 
-		header('Location: http://badapple/HTML/profile.html');
+		header('Location: http://badapple/HTML/profile.html'); //Once complete redirects the browser to the profile page
 	}
 }
 

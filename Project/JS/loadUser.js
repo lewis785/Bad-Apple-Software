@@ -32,13 +32,12 @@ function loadInfo(){
         },
 
         error: function(ts) {
-            alert("Error Occured");
-            alert(ts.responseText);
+        window.location.href="../html/profile.html";
         }
+
 
     });
 }
-
 
 
 function loadEditInfo(){
@@ -73,8 +72,7 @@ function loadEditInfo(){
         },
 
         error: function(ts) {
-            alert("Error Occured");
-            alert(ts.responseText);
+        window.location.href="../html/profile.html";
         }
 
     });
