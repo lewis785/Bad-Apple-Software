@@ -49,9 +49,7 @@ for ($i = 0; $i < count($subjects); ++$i) {
 	print $subjects[$i];
 
 	$arraysubject = $subjects[$i];
-
-
-
+	
 	$checkCourse = mysqli_stmt_init($link);
 	mysqli_stmt_prepare($checkCourse, "select count(*) FROM qualifications WHERE Qualification= ?");
 	mysqli_stmt_bind_param($checkCourse, 's', $arraysubject);
@@ -59,8 +57,6 @@ for ($i = 0; $i < count($subjects); ++$i) {
 
 	$result = mysqli_stmt_get_result($checkCourse);
 	$count = $result -> fetch_row();
-
-	//$result = mysql_query("SELECT count(*) as Exists FROM qualifications WHERE Qualification '$username'");
 
 	echo $count[0];
 	if ($count[0] == 0) {
