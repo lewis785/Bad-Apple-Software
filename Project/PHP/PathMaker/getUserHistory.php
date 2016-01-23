@@ -18,7 +18,10 @@ mysqli_stmt_execute($getUser);
 $result = mysqli_stmt_get_result($getUser);
 
 while($row = mysqli_fetch_assoc($result)){
-
+	echo json_encode(array("user"=>$row['UserName'],"joined"=>$row['DateJoined'],"firstname"=>$row['Firstname'],
+		"surname"=>$row['Surname'],"dob"=>$row['DateOfBirth'],"email"=>$row['EmailAddress'],
+		"number"=>$row['HouseNumberName'], "street"=>$row['StreetName'], "postcode"=>$row['PostCode'],
+		"city"=>$row['City']));
 }
 
 ?>
