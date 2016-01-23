@@ -2527,6 +2527,9 @@ shortcodes page css
 
 
 
+/* Added CSS */
+
+
 /* Popup CSS */
 
 #popup {
@@ -2546,7 +2549,13 @@ shortcodes page css
   cursor: hand; 
 }
 
-/*           */
+/*End of Popup CSS*/
+
+label.error {
+
+  color: red !important;
+
+}
 
 
 

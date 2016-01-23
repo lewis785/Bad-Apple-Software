@@ -13,7 +13,6 @@ $(function(){
     });
 });
 
-
   $('#popin').click(function(){
     $('#popin-form')[0].reset();
 });
