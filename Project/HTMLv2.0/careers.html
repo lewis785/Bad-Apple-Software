@@ -11,7 +11,7 @@ include "../PHP/verify.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Profile </title>
+    <title> Careers </title>
     
     <!-- core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,8 @@ include "../PHP/verify.php";
     <link href="../css/boostrap.css" rel="stylesheet">
     <link href="../css/boostrap-theme.css" rel="stylesheet">
     <link href="../css/boostrap-theme.min.css" rel="stylesheet">
-    <link href="../css/home.css" rel="stylesheet">
+        <link href="../css/home.css" rel="stylesheet">
+
     
     <!-- core JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -43,7 +44,7 @@ include "../PHP/verify.php";
 
 </head><!--/head-->
 
-<body onload="loadInfo()">
+<!--<body onload="loadInfo()"> -->
 
     <header id="header">
         <nav class="navbar navbar-inverse" role="banner">
@@ -67,45 +68,43 @@ include "../PHP/verify.php";
         </nav><!--/nav-->
     </header><!--/header-->
 
-    <section id="profile-page" class=" col-md-6 col-md-offset-3">
-       <div id="center" class="main-section container-fluid">
-           <h2> Your Career Pathways Profile </h2>    
+    <section id="contact-page">
+      <div id = "column1" class="container-fluid">
+          <h2> Build Your Profile </h2>
 
-           <div class="row contact-wrap"> 
-            <div class="col-md-6 col-md-offset-3">
+            <div class="row contact-wrap"> 
+                <div class="col-md-6 col-md-offset-3">
 
-                <ul class="list-group">
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>
-                </ul> 
+                    <ul class="list-group">
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>
+                    </ul> 
 
-                <br>    
-                <a id="popin" class="btn btn-primary"> Delete my Account </a>
-                <p> <!-- still to be made -->
-
+                    <br>    
+                    <a id="popin" class="btn btn-primary"> Delete my Account </a>  <!-- still to be made -->
+                    <p>
                 </div>
             </div>
 
             <div id="popup"> 
+                Hello world whats up
                 <a href="../php/delete.php" id="popin" class="btn btn-primary"> Confirm Delete</a>
-                <img id="close" src="../images/close-button.png" class="close-btn"/>
             </div>
-
-
         </div><!--/.container-->
+
+
+
+
     </section><!--/#contact-page-->
-    
 
-
-    <!--/#bottom-->
-    <footer id="footer" class="midnight-blue">
+    <footer id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
+                    &copy; 2015 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right"> Technologies used :

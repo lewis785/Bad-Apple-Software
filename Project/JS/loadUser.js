@@ -13,7 +13,7 @@ function loadInfo(){
             var surname = (result.surname);
             var user = (result.user);
             var email = (result.email);
-            var DoB = (result.dob);
+            var DoB = (result.dobcorrected);
             var joindate = (result.joined);
             var housenumber = (result.number);
             var street = (result.street);
@@ -54,7 +54,7 @@ function loadEditInfo(){
             var firstname = (result.firstname);
             var surname = (result.surname);
             var email = (result.email);
-            var DoB = (result.dob);
+            var DoB = (result.dobnormal);
             var housenumber = (result.number);
             var street = (result.street);
             var city = (result.city);

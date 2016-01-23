@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title> Login </title>
+    <title> Homepage </title>
     
     <!-- core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -30,68 +31,61 @@
     <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
-</head><!--/head-->
+    <!-- Code for loading user information -->
+    <script src="../js/loadUser.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/background.js"></script>
+</head>
+
 
 <body>
+  <!--   <nav id="nav1" class="navbar navbar-inverse" role="banner">
+            <div class="container-fluid">
+                 <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">  
+                        <li><a href="login.html"> Login </a></li>                   
+                    </ul>
+                </div>
+            </div>
+        </nav> -->
 
-    <header id="header">
+     <header id="header">
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container-fluid">
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="home.html"> Home </a></li>
+                        <li><a href="login.html"> Home </a></li>
                         <li><a href="login.html"> Login </a></li>                      
                     </ul>
                 </div>
 
             </div><!--/.container-->
         </nav><!--/nav-->
-    </header><!--/header-->
+    </header>
 
-    <section id="contact-page">
-
-        <div id="column1" class="container-fluid">
-            <h2> Please login with your Careers Pathway Username and Password </h2>    
+   
+    <div id="column1" class="container-fluid">
+    <h1> Career Pathways </h1>
+    <a href="register.html" class="btn btn-default btn-lg"> Register</a>
+        </div>
+        </div>
+       
+        <!--<div class="container-fluid">    
             <div class="row contact-wrap"> 
-                <form id="login-form" class="contact-form" name="loggin-form" method="post" action="profile.html">
+                <div class="col-md-6 col-md-offset-3">
 
-                    <div class="col-md-6 col-md-offset-3">
-
-                        <div class="form-group">
-                          <label> Username* </label>
-                            <input type="text" name="username" class="form-control" required="required" placeholder="Enter Username">
-                        </div>
-
-                        <div class="form-group">
-                            <label> Password* </label>
-                            <input type="Password" name="password" class="form-control" required="required" placeholder="Enter Password">
-                        </div> 
-
-                        <div class="checkbox">
-                            <label><u><i>Remember me</i></u></label>
-                            <input type="checkbox" value="remember-me">
-                        </div> 
-
-                        <div class="form-group">
-                            <button type="submit" name="signin" class="btn btn-primary" required="required"> Sign in </button>
-                        </div>
-
-                        <!-- still to be made -->
-                        
-                        <a href="register.html" class="btn btn-primary"> Register </a>  <!-- still to be made -->
-                        <br>
-                        <label><i><a href="#">Forgotten Password? </a></i>
-                    </div>
-
-                </form> 
-            </div>
-        </div><!--/.container--> 
-
-    </section><!--/#contact-page-->
-  
-
-   <!--/#bottom-->
+                    <ul class="list-group">
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>
+                    </ul> 
+                </div>
+            </div> 
+        </div> --> <!--/.container--> 
+    <!--</section> #contact-page-->
 
     <footer id="footer">
         <div class="container">
@@ -110,6 +104,5 @@
             </div>
         </div>
     </footer><!--/#footer-->
-
 </body>
 </html>
