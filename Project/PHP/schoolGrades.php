@@ -38,16 +38,11 @@ foreach($dom->getElementsByTagName('option') as $link) {
 		break;
 }
 
-//echo "<br />";
-//echo "<br />";
 
 include 'connection.php';
 
 for ($i = 0; $i < count($subjects); ++$i) {
 	
-	echo "<br />".$i."= ";
-	print $subjects[$i];
-
 	$arraysubject = $subjects[$i];
 	
 	$checkCourse = mysqli_stmt_init($link);
@@ -57,8 +52,7 @@ for ($i = 0; $i < count($subjects); ++$i) {
 
 	$result = mysqli_stmt_get_result($checkCourse);
 	$count = $result -> fetch_row();
-
-	echo $count[0];
+	
 	if ($count[0] == 0) {
 		$addCourse = mysqli_stmt_init($link);
 		mysqli_stmt_prepare($addCourse, 'INSERT INTO courses (Course) VALUES (?)');

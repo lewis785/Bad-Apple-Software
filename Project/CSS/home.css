@@ -1,55 +1,144 @@
-body { 
-background: url(../Images/current.png) no-repeat center center fixed;
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
+html{
+	height: 100%;
+}
 
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-/*margin-bottom: 80px;*/
-height: 100%;
+
+body { 
+	background: url(../Images/current.png) no-repeat center center fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	/*margin-bottom: 80px;*/
+	height: 100%;
 }
 
 html,body{
-    overflow-x: hidden;
+	overflow-x: hidden;
 	color: white;
 }
 
 .navbar{
 	border: 0px solid transparent;
-	background-color: #1D2A59;  
+	background-color: #68D7FF;  
 }
 
 
 .btn-default {
-    background: #1D2A59;
-    color: #ffffff;
-    border-radius: 0;
+	background: #1D2A59;
+	color: #ffffff;
+	border-radius: 0;
 
 }
 
 a{
 
-color:white;
+	color:white;
 
 }
 
 .navbar .nav > li > a {
-    float: none;
-    line-height: 19px;
-    padding: 9px 10px 11px;
-    text-decoration: none;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    color:  #ddd;
+	float: none;
+	line-height: 19px;
+	padding: 9px 10px 11px;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	color:  #B2AC40;
+	font-size: 21px;
+}
+
+
+
+/* Added CSS */
+
+
+/* Popup CSS */
+
+#popup {
+  display:none;
+  position:fixed;
+  margin:0 auto;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 50px 2px #000;
+   opacity: 1;
+  width: 25%;
+  height: 20%;
+}
+
+#popin{
+  cursor: pointer; 
+  cursor: hand; 
+}
+
+.close-btn {
+  position: fixed;
+  right: 1.5;
+  top: 1.5;
+  width: 25px;
+  border-radius: 100%;
+}
+
+.close-btn:hover{
+  background: #A9A9A9;
+  cursor: hand; 
+}
+/*End of Popup CSS*/
+
+label.error {
+
+  color: red !important;
+
+}
+
+
+/*Main-Section CSS*/
+
+.main-section{
+
+  background-color: rgba(94,156,178,0.9);
+  min-height: 100%;
+}
+
+div #center{
+    opacity: 0.8 !important;
+}
+
+.glow {
+  border: 2px solid #dadada;
+}
+
+.glow:focus{
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+
+#main-nav ul {
+  background-color: #68D7FF;
+}
+
+#main-nav li:hover{
+  background-color: white;
+  color: black;
+}
+
+
+.wrapper{
+	min-height: 100%;
 }
 
 
 .navbar .nav > li > a:hover {
-    background-color: #1D2A59;
-    color: #5B6AFF;
+	background-color: white;
+	color: black;
 }
 
 h3,h4,h5{
@@ -62,8 +151,8 @@ h3,h4,h5{
 }
 .btn-primary{
 	background: #1D2A59;
-    color: #ffffff;
-    border-radius: 0;
+	color: #ffffff;
+	border-radius: 0;
 
 }
 
@@ -78,6 +167,7 @@ h3,h4,h5{
 	left: 30px;
 	margin-top: 0px;
 	padding-top: 20px;
+	word-wrap: break-word;
 
 }
 
@@ -106,19 +196,40 @@ h3,h4,h5{
 }
 
 .container-fluid{
-	background-color: rgba(0,0,0,0.9);
+	/*background-color: rgba(94,156,178,0.9);*/
 	color: black;
 }
 
 #about-us{
-		background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0,0,0,0.4);
 
 }
 
 #footer {
-	background-color: #1D2A59;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	height: 80px;
-	}
+	background-color: #68D7FF;
+	/*width: 100%;*/
+	/*height: 80px;*/
+}
+
+#main {
+	overflow:auto;
+	/*padding-bottom:150px;  this needs to be bigger than footer height*/
+}
+
+.footer {
+	/*position: relative;*/
+	height: auto;
+	min-height: 30px;
+	clear:both;
+
+	margin-top: 0px;
+} 
+
+#footer{
+	padding-top:10px;
+	padding-bottom: 10px;
+}
+
+.form-group{
+	/*padding: 0 5% 0 5%;*/
+}
