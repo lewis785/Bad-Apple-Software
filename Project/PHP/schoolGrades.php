@@ -51,7 +51,7 @@ for ($i = 0; $i < count($subjects); ++$i) {
 	$arraysubject = $subjects[$i];
 	
 	$checkCourse = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($checkCourse, "select count(*) FROM qualifications WHERE Qualification= ?");
+	mysqli_stmt_prepare($checkCourse, "select count(*) FROM courses WHERE Course= ?");
 	mysqli_stmt_bind_param($checkCourse, 's', $arraysubject);
 	mysqli_stmt_execute($checkCourse);
 
@@ -61,7 +61,7 @@ for ($i = 0; $i < count($subjects); ++$i) {
 	echo $count[0];
 	if ($count[0] == 0) {
 		$addCourse = mysqli_stmt_init($link);
-		mysqli_stmt_prepare($addCourse, 'INSERT INTO qualifications (Qualification) VALUES (?)');
+		mysqli_stmt_prepare($addCourse, 'INSERT INTO courses (Course) VALUES (?)');
 		mysqli_stmt_bind_param($addCourse, 's', $arraysubject);   
 		mysqli_stmt_execute($addCourse);
 	}
