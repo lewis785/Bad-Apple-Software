@@ -1,84 +1,143 @@
 <!DOCTYPE html>
+
+<?php 
+include "../PHP/verify.php";
+?>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="logo.ico">
 
-    <title>User Page</title>
+    <title> Profile </title>
+    
+    <!-- core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
+    <link href="../css/boostrap.css" rel="stylesheet">
+    <link href="../css/boostrap-theme.css" rel="stylesheet">
+    <link href="../css/boostrap-theme.min.css" rel="stylesheet">
+    <link href="../css/home.css" rel="stylesheet">
+    
+    <!-- core JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../js/Bootstrap/npm.js"></script>
+    <script src="../js/Bootstrap/bootstrap.js"></script>  
+    <script src="../js/Bootstrap/jquery.js"></script>
+    <script src="../js/Bootstrap/bootstrap.min.js"></script>
+    <script src="../js/Bootstrap/jquery.prettyPhoto.js"></script>
+    <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
+    <script src="../js/Bootstrap/main.js"></script>
+    <script src="../js/Bootstrap/wow.min.js"></script>
+    
+    <!-- Code for loading user information -->
+    <script src="../js/loadUser.js"></script>
+    <script src="../js/popup.js"></script>
 
-    <!-- Bootstrap core CSS -->
-    <!--<link href="bootstrap.min.css" rel="stylesheet">-->
 
-    <!-- Custom styles for this template -->
-    <link href="../CSS/signin.css" rel="stylesheet">
+</head><!--/head-->
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-    <script src="jquery-2.1.4.min.js"></script>
+<body onload="loadInfo()">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-<div class="header">
+    <div id="navbar">
+        <nav id="main-nav" class="navbar navbar-default">
 
-    <div class="row">
-      <div class="col-sm-10"><h1>User name</h1></div>
+          <div class="container-fluid">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="profile.html"> Home </a></li>  
+                
+                <li class="dropdown">
+                  <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="profiledetail.html"> Edit Info </a></li>
+                    <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
+                    <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
+                    <li role="separator" class="divider"></li>
+                    <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
+
+
+                </ul>
+            </li>  
+        </ul>
+    </li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+</div><!-- End of NavBar-->
+
+
+<section id="page-center" class=" col-md-6 col-md-offset-3">
+   <div id="center" class="main-section container-fluid">
+       <h2> Your Career Pathways Profile </h2>    
+
+       <div class="row contact-wrap"> 
+        <div class="col-md-8 col-md-offset-2">
+
+            <ul class="list-group">
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>
+            </ul> 
+
+            <br>    
+            <a id="popin" class="btn btn-primary"> Delete my Account </a>
+            <p> <!-- still to be made -->
+
+            </div>
+        </div>
+
+        <div id="popup"> 
+            <a href="../php/delete.php" id="popin" class="btn btn-primary"> Confirm Delete</a>
+            <img id="close" src="../images/close-button.png" class="close-btn"/>
+        </div>
+
+
+    </div><!--/.container-->
+</section><!--/#contact-page-->
+
+
+
+<!--/#bottom-->
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
+            </div>
+            <div class="col-sm-6">
+                <ul class="pull-right"> Technologies used :
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>PHP6</li>
+                    <li>GIMP</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="row">
-      <div class="col-sm-3"><!--left col-->
-              
-          <ul class="list-group">
-            <li class="list-group-item text-muted">Profile</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> 2/12/2014</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Last Login</strong></span> Yesterday</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> Mr. Man</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> 11/12/1995</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> email@email.com</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>Supervisor</strong></span>Some Dude</li>
-          </ul> 
-          
-          
-          <ul class="list-group">
-            <li class="list-group-item text-muted">Path Details <i class="fa fa-dashboard fa-1x"></i></li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>[PLACEHOLDER]</strong></span> __</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>[PLACEHOLDER]</strong></span> __</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>[PLACEHOLDER]</strong></span> __</li>
-            <li class="list-group-item text-right"><span class="pull-left"><strong>[PLACEHOLDER]</strong></span> __</li>
-          </ul> 
-          
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Create Path</button>     
-          
-        </div><!--/col-3-->
-      <div class="col-sm-9">
-          
-          <ul class="nav nav-tabs" id="myTab">
-            <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-            <li><a href="#messages" data-toggle="tab">Messages</a></li>
-            <li><a href="#path" data-toggle="tab">My Path</a></li>
-            <li><a href="#settings" data-toggle="tab">Qualifications and Skills</a></li>
-            <li><a href="#settings" data-toggle="tab">Settings</a></li>
-          </ul>
-              
-              
-              
-              
-             </div><!--/tab-pane-->
-          
-               
-              </div><!--/tab-pane-->
-          </div><!--/tab-content-->
+</footer><!--/#footer-->
 
-        </div><!--/col-9-->
-    </div><!--/row-->
-  </body>
+</body>
 </html>
