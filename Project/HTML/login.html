@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<?php include "../php/alreadyLoggedIn.php" ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,9 +51,9 @@
         </nav><!--/nav-->
     </header><!--/header-->
 
-    <section id="contact-page">
+    <section id="page-center" class="col-md-6 col-md-offset-3">
 
-        <div id="column1" class="container-fluid">
+        <div id="center" class="main-section container-fluid">
             <h2> Please login with your Careers Pathway Username and Password </h2>    
             <div class="row contact-wrap"> 
                 <form id="login-form" class="contact-form" name="loggin-form" method="post" action="profile.html">
@@ -60,12 +62,12 @@
 
                         <div class="form-group">
                           <label> Username* </label>
-                            <input type="text" name="username" class="form-control" required="required" placeholder="Enter Username">
+                            <input type="text" name="username" class="form-control glow" required="required" placeholder="Enter Username">
                         </div>
 
                         <div class="form-group">
                             <label> Password* </label>
-                            <input type="Password" name="password" class="form-control" required="required" placeholder="Enter Password">
+                            <input type="Password" name="password" class="form-control glow" required="required" placeholder="Enter Password">
                         </div> 
 
                         <div class="checkbox">
@@ -93,7 +95,7 @@
 
    <!--/#bottom-->
 
-    <footer id="footer">
+    <footer id="footer" class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">

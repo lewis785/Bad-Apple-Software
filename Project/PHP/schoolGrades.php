@@ -38,34 +38,24 @@ foreach($dom->getElementsByTagName('option') as $link) {
 		break;
 }
 
-//echo "<br />";
-//echo "<br />";
 
 include 'connection.php';
 
 for ($i = 0; $i < count($subjects); ++$i) {
 	
-	echo "<br />".$i."= ";
-	print $subjects[$i];
-
 	$arraysubject = $subjects[$i];
-
-
-
+	
 	$checkCourse = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($checkCourse, "select count(*) FROM qualifications WHERE Qualification= ?");
+	mysqli_stmt_prepare($checkCourse, "select count(*) FROM courses WHERE Course= ?");
 	mysqli_stmt_bind_param($checkCourse, 's', $arraysubject);
 	mysqli_stmt_execute($checkCourse);
 
 	$result = mysqli_stmt_get_result($checkCourse);
 	$count = $result -> fetch_row();
-
-	//$result = mysql_query("SELECT count(*) as Exists FROM qualifications WHERE Qualification '$username'");
-
-	echo $count[0];
+	
 	if ($count[0] == 0) {
 		$addCourse = mysqli_stmt_init($link);
-		mysqli_stmt_prepare($addCourse, 'INSERT INTO qualifications (Qualification) VALUES (?)');
+		mysqli_stmt_prepare($addCourse, 'INSERT INTO courses (Course) VALUES (?)');
 		mysqli_stmt_bind_param($addCourse, 's', $arraysubject);   
 		mysqli_stmt_execute($addCourse);
 	}

@@ -51,7 +51,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 					mysqli_stmt_execute($newaddress);
 
 					$newuserinfo = mysqli_stmt_init($link);
-					mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (UserID, Firstname, Surname, DateOfBirth, Occupation, Address) VALUES (?, ?, ?, ?, ?, ?)');
+					mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (UserID, FirstName, Surname, DateOfBirth, OccupationID, AddressID) VALUES (?, ?, ?, ?, ?, ?)');
 					mysqli_stmt_bind_param($newuserinfo, 'isssii', $last_id, $first, $surname, $dob, $last_id, $last_id);   
 					mysqli_stmt_execute($newuserinfo);
 				}
