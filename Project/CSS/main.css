@@ -1922,11 +1922,15 @@ ul.social_icons li  a i{
   /* font-size: 16px; */
 }
 
-#contact-page{
+#profile-page{
   padding-top: 0;
 }
 
-#contact-page .contact-form 
+#profile-page .profile-wrap {
+  margin-top: 20px;
+}
+
+#profile-page .profile-form 
 .form-group label {
   color: #4E4E4E;
   font-size: 16px;
@@ -1944,9 +1948,6 @@ textarea#message{
   padding: 10px;
 }
 
-#contact-page .contact-wrap {
-  margin-top: 20px;
-}
 
 /*********************
 ****blog page css*****
@@ -2544,17 +2545,39 @@ shortcodes page css
   width: 25%;
   height: 20%;
 }
+
 #popin{
   cursor: pointer; 
   cursor: hand; 
 }
 
+.close-btn {
+  position: fixed;
+  right: 1.5;
+  top: 1.5;
+  width: 25px;
+  border-radius: 100%;
+}
+
+.close-btn:hover{
+  background: #A9A9A9;
+  cursor: hand; 
+}
 /*End of Popup CSS*/
 
 label.error {
 
   color: red !important;
 
+}
+
+
+/*Main-Section CSS*/
+
+.main-section{
+
+  background-color: #FFD23E;
+  min-height: 100%;
 }
 
 

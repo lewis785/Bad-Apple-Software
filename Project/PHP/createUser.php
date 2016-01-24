@@ -68,7 +68,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 }
 else
 {
-	header('Location: http://badapple/HTML/register.html')
+	header('Location: http://badapple/HTML/register.html');
 }
 
 
