@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-
-<?php include "../PHP/verify.php"; ?>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -21,6 +18,7 @@
     <link href="../css/boostrap.css" rel="stylesheet">
     <link href="../css/boostrap-theme.css" rel="stylesheet">
     <link href="../css/boostrap-theme.min.css" rel="stylesheet">
+    <link href="../css/home.css" rel="stylesheet">
     
     <!-- core JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -42,12 +40,7 @@
 
     <header id="header" >
         <nav class="navbar navbar-inverse" role="banner">
-            <div class="container-fluid">
-
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="profile.html"><img src="../images/logo.png" alt="logo"></a>
-                </div>
-                
+            <div class="container-fluid">                
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
@@ -67,13 +60,11 @@
         </nav><!--/nav-->
     </header><!--/header-->
 
-    <section id="contact-page">
+    <section id="profile-page" class=" col-md-6 col-md-offset-3">
 
-        <div class="center">        
+        <div id = "center" class="container-fluid">
             <h2> Edit your Details</h2>
-        </div>
-
-        <div class="container-fluid">    
+    
             <div class="row contact-wrap"> 
                 <div class="col-md-6 col-md-offset-3">
 
@@ -130,32 +121,17 @@
                     </form> 
 
                     <br>    
-                    <label><u><i> When choosing password make sure its easy to remember ! </i></u></label>
+                    <label><u><i> When choosing a password make sure it's easy to remember! </i></u></label>
                     <br>
                     <a href="#" class="btn btn-primary"> Save Changes </a>  <!-- still to be made -->
 
                 </div>
             </div>
-            <a href="profilecareer.html" class="btn btn-primary"> Click here too get a run though *still to be done*</a>
         </div><!--/.container--> 
 
     </section><!--/#contact-page-->
 
-
-    <section id="bottom">
-        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-8 col-sm-6">
-                    <div class="widget">
-                        <h3>Career Pathways </h3>
-                        <p> Made by a group of highly talented individuals. Known as &copy; Bad Apple Software </p>
-                    </div>    
-                </div><!--/.col-md -->
-            </div>
-        </div>
-    </section><!--/#bottom-->
-
-    <footer id="footer" class="midnight-blue">
+    <footer id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">

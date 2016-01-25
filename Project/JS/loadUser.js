@@ -1,6 +1,8 @@
 function loadInfo(){
 
 
+    window.alert(5 + 6);
+
     $.ajax({
         type: "POST",
         url: "../PHP/getInfo.php",
@@ -13,7 +15,7 @@ function loadInfo(){
             var surname = (result.surname);
             var user = (result.user);
             var email = (result.email);
-            var DoB = (result.dob);
+            var DoB = (result.dobcorrected);
             var joindate = (result.joined);
             var housenumber = (result.number);
             var street = (result.street);
@@ -32,7 +34,7 @@ function loadInfo(){
         },
 
         error: function(ts) {
-        window.location.href="../html/profile.html";
+            window.location.href="../html/profile.html";
         }
 
 
@@ -54,7 +56,7 @@ function loadEditInfo(){
             var firstname = (result.firstname);
             var surname = (result.surname);
             var email = (result.email);
-            var DoB = (result.dob);
+            var DoB = (result.dobnormal);
             var housenumber = (result.number);
             var street = (result.street);
             var city = (result.city);
@@ -72,8 +74,37 @@ function loadEditInfo(){
         },
 
         error: function(ts) {
-        window.location.href="../html/profile.html";
+            window.location.href="../html/profile.html";
         }
 
     });
 }
+
+
+function gradeselected(){
+
+    var e = document.getElementById("gradeselect");
+    var strUser = e.options[e.selectedIndex].value;
+
+
+
+    $.ajax({
+        type: "POST",
+        url: "../PHP/getGrades.php",
+        data: "",
+        cache: false,
+        dataType: 'json', 
+        success: function(result){
+
+        var grade = (result.grade);
+        alert(grade);
+
+        },
+        error: function(ts){
+            alert("Error");
+
+        }
+    });
+
+}
+

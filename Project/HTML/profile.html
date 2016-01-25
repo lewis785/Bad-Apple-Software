@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
-<?php include "../PHP/verify.php"; ?>
+<?php 
+include "../PHP/verify.php";
+?>
 
 <html lang="en">
 <head>
@@ -21,6 +23,7 @@
     <link href="../css/boostrap.css" rel="stylesheet">
     <link href="../css/boostrap-theme.css" rel="stylesheet">
     <link href="../css/boostrap-theme.min.css" rel="stylesheet">
+    <link href="../css/home.css" rel="stylesheet">
     
     <!-- core JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -42,104 +45,99 @@
 
 <body onload="loadInfo()">
 
-    <header id="header">
-        <nav class="navbar navbar-inverse" role="banner">
-            <div class="container-fluid">
+    <div id="navbar">
+        <nav id="main-nav" class="navbar navbar-default">
 
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="profile.html"><img src="../images/logo.png" alt="logo"></a>
-                </div>
+          <div class="container-fluid">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="profile.html"> Home </a></li>  
                 
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown"> Profile <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="profiledetail.html"> Edit Info </a></li>
-                                <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
-                                <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
-                                <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
-                            </ul>
-                        </li>  
-                        <li><a href="profile.html"> Home </a></li>                   
-                    </ul>
-                </div>
-
-            </div><!--/.container-->
-        </nav><!--/nav-->
-    </header><!--/header-->
-
-    <section id="contact-page">
-
-        <div class="center">        
-            <h2> Your Career Pathways Profile </h2>
-        </div>
-
-        <div class="container-fluid">    
-            <div class="row contact-wrap"> 
-                <div class="col-md-6 col-md-offset-3">
-
-                    <ul class="list-group">
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
-                        <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>
-                    </ul> 
-
-                    <br>    
-                    <label><u><i> Don't want the services anymore ? Sick of Life? Click Below to delete your account </i></u></label>
-                    <br>
-                    <label><u><i> Or if your just tripping you can change your details ?  Pump up some of your qualifications maybe ? click on the Profile tab </i></u></label>
-                    <a id="popin" class="btn btn-primary"> Delete my Account </a>  <!-- still to be made -->
-
-                </div>
-            </div>
-
-            <div id="popup"> 
-                Hello world whats up
-                <a href="../php/delete.php" id="popin" class="btn btn-primary"> Confirm Delete</a>
-            </div>
-
-            <a href="profiledetail.html" class="btn btn-primary"> Click here too get a run though </a>
-        </div><!--/.container-->
+                <li class="dropdown">
+                  <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="profiledetail.html"> Edit Info </a></li>
+                    <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
+                    <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
+                    <li role="separator" class="divider"></li>
+                    <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
 
 
+                </ul>
+            </li>  
+        </ul>
+    </li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+</div><!-- End of NavBar-->
 
 
-    </section><!--/#contact-page-->
+<section id="page-center" class=" col-md-6 col-md-offset-3">
+   <div id="center" class="main-section container-fluid">
+       <h2> Your Career Pathways Profile </h2>    
 
+       <div class="row contact-wrap"> 
+        <div class="col-md-8 col-md-offset-2">
 
-    <section id="bottom">
-        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-            <div class="row">
-                <div class="col-md-8 col-sm-6">
-                    <div class="widget">
-                        <h3>Career Pathways </h3>
-                        <p> Made by a group of highly talented individuals. Known as &copy; Bad Apple Software </p>
-                    </div>    
-                </div><!--/.col-md -->
+            <ul class="list-group">
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>
+            </ul> 
+
+            <br>    
+            <a id="popin" class="btn btn-primary"> Delete my Account </a>
+            <p> <!-- still to be made -->
+
             </div>
         </div>
-    </section><!--/#bottom-->
 
-    <footer id="footer" class="midnight-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2015 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
-                </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right"> Technologies used :
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>PHP6</li>
-                        <li>GIMP</li>
-                    </ul>
-                </div>
+        <div id="popup"> 
+            <a href="../php/delete.php" id="popin" class="btn btn-primary"> Confirm Delete</a>
+            <img id="close" src="../images/close-button.png" class="close-btn"/>
+        </div>
+
+
+    </div><!--/.container-->
+</section><!--/#contact-page-->
+
+
+
+<!--/#bottom-->
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
+            </div>
+            <div class="col-sm-6">
+                <ul class="pull-right"> Technologies used :
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>PHP6</li>
+                    <li>GIMP</li>
+                </ul>
             </div>
         </div>
-    </footer><!--/#footer-->
+    </div>
+</footer><!--/#footer-->
 
 </body>
 </html>
