@@ -32,7 +32,7 @@ function loadInfo(){
         },
 
         error: function(ts) {
-        window.location.href="../html/profile.html";
+            window.location.href="../html/profile.html";
         }
 
 
@@ -72,8 +72,27 @@ function loadEditInfo(){
         },
 
         error: function(ts) {
-        window.location.href="../html/profile.html";
+            window.location.href="../html/profile.html";
         }
 
     });
 }
+
+
+function grades(){
+
+    window.location.href="../html/profile.html";
+
+}
+
+
+$(function() {
+    $("#gradeselect").on("change",function() {
+
+        var period= this.value;
+        alert('Select field value has changed to' + period;
+
+    }
+
+
+});
