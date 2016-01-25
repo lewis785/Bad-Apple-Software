@@ -1,6 +1,6 @@
 <?php
 
-$CourseLevel ="Higher";
+$CourseLevel = "Standard Grade";
 
 
 
@@ -13,17 +13,14 @@ mysqli_stmt_execute($getGrades);
 
 $result = mysqli_stmt_get_result($getGrades);
 
-while($row = mysqli_fetch_assoc($result)){
-	echo $row["Grade"];
-
+if($row = mysqli_fetch_assoc($result)){
+	echo json_encode(array("grade"=>$row['Grade']));
 }
 
 
-
-
-
-
-
-
+// while($row = mysqli_fetch_assoc($result)){
+// 	// echo $row["Grade"];
+// 	echo json_encode(array("grade"=>$row['Grade']));
+// }
 
 ?>

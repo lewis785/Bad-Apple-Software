@@ -1,6 +1,8 @@
 function loadInfo(){
 
 
+    window.alert(5 + 6);
+
     $.ajax({
         type: "POST",
         url: "../PHP/getInfo.php",
@@ -79,20 +81,30 @@ function loadEditInfo(){
 }
 
 
-function grades(){
+function gradeselected(){
 
-    window.location.href="../html/profile.html";
+    var e = document.getElementById("gradeselect");
+    var strUser = e.options[e.selectedIndex].value;
+
+
+
+    $.ajax({
+        type: "POST",
+        url: "../PHP/getGrades.php",
+        data: "",
+        cache: false,
+        dataType: 'json', 
+        success: function(result){
+
+        var grade = (result.grade);
+        alert(grade);
+
+        },
+        error: function(ts){
+            alert("Error");
+
+        }
+    });
 
 }
 
-
-$(function() {
-    $("#gradeselect").on("change",function() {
-
-        var period= this.value;
-        alert('Select field value has changed to' + period;
-
-    }
-
-
-});
