@@ -1,8 +1,5 @@
 function loadInfo(){
 
-
-    window.alert(5 + 6);
-
     $.ajax({
         type: "POST",
         url: "../PHP/getInfo.php",
@@ -83,28 +80,35 @@ function loadEditInfo(){
 
 function gradeselected(){
 
-    var e = document.getElementById("gradeselect");
-    var strUser = e.options[e.selectedIndex].value;
+    var selectedlvl = $('#levelselect :selected').text();
 
-
+    var dataString = "level="+selectedlvl;
 
     $.ajax({
-        type: "POST",
+        type: 'POST',
         url: "../PHP/getGrades.php",
-        data: "",
+        data: dataString,
         cache: false,
         dataType: 'json', 
-        success: function(result){
+        success: function(data){
 
-        var grade = (result.grade);
-        alert(grade);
+
+            $('#gradeselect').find('option').remove();
+
+
+            for (var i=0; i<data.length; i++){
+                var grade = data[i].grade;
+                $('#gradeselect').find('option').end().append('<option value="'+grade+'">'+grade+'</option>');
+            }
+
+            $('#gradeselet').prop('disabled', true);
+
+
 
         },
-        error: function(ts){
-            alert("Error");
-
+        error: function (error) {
+            alert('error; ' + eval(error));
         }
     });
 
 }
-
