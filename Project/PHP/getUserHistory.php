@@ -4,6 +4,7 @@ include 'connection.php';
 include 'validCookie.php';
 
 if(!$verified){
+	mysqli_close($link);
 	exit();
 }
 
@@ -21,4 +22,6 @@ while($row = mysqli_fetch_assoc($result)){
 
 }
 
+
+mysqli_close($link);
 ?>

@@ -18,7 +18,7 @@ $dom = new DOMDocument();
 # loadHTML might throw because of invalid HTML in the page.
 @$dom->loadHTML($html);
 
-# Iterate over all the <a> tags
+# Iterate over all the <option> tags
 $count=0;
 $subjects = array();
 
@@ -62,4 +62,6 @@ for ($i = 0; $i < count($subjects); ++$i) {
 
 }
 
+
+mysqli_close($link);
 ?>
