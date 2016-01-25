@@ -30,6 +30,12 @@
     <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
+
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="../js/registervalidate.js"></script>
+
+
 </head><!--/head-->
 
 <body>
@@ -117,12 +123,12 @@
 
                         <div class="form-group">
                             <label> Password * </label>
-                            <input type="Password" name="pass1" class="form-control glow" placeholder="Enter Password">
+                            <input type="Password" id="pass1" name="pass1" class="form-control glow" placeholder="Enter Password">
                         </div>
 
                         <div class="form-group">
                             <label> Confirm Password * </label>
-                            <input type="Password" name="pass2" class="form-control glow" placeholder="Enter Password again">
+                            <input type="Password" id="pass2" name="pass2" class="form-control glow" placeholder="Enter Password again">
                         </div>
 
                         <br> 
@@ -140,27 +146,27 @@
 
     </section><!--/#Register-page-->
     
-<!--/#bottom-->
+    <!--/#bottom-->
 
 
-<!--/#bottom-->
-<footer id="footer" class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
-            </div>
-            <div class="col-sm-6">
-                <ul class="pull-right"> Technologies used :
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>PHP6</li>
-                    <li>GIMP</li>
-                </ul>
+    <!--/#bottom-->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right"> Technologies used :
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>PHP6</li>
+                        <li>GIMP</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer><!--/#footer-->
+    </footer><!--/#footer-->
 
 </body>
 </html>
