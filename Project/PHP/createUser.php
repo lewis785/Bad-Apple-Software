@@ -2,7 +2,7 @@
 
 include "connection.php";
 
-$url = "//Project/html/tester.html";
+$url = "//Project/html/tester.php";
 
 if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['firstname']) && !empty($_POST['surname']) && !empty($_POST['DoB'])  && !empty(['email1']) && !empty(['email2']) ) {
 	
@@ -59,7 +59,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 			}
 		}
 
-		header('Location: http://badapple/HTML/login.html');
+		header('Location: http://badapple/HTML/login.php');
 	}
 	else
 	{
@@ -68,7 +68,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 }
 else
 {
-	header('Location: http://badapple/HTML/register.html');
+	header('Location: http://badapple/HTML/register.php');
 }
 
 

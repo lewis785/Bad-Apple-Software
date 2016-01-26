@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-//include "../PHP/verify.php";
+include "../PHP/verify.php";
 ?>
 
 <html lang="en">
@@ -66,9 +66,9 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <li class="dropdown">
-                  <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                  <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="profiledetail.html"> Edit Info </a></li>
+                    <li><a href="profiledetail.php"> Edit Info </a></li>
                     <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
                     <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                     <li role="separator" class="divider"></li>
@@ -77,7 +77,7 @@
 
                 </ul>
             </li> 
-            <li><a href="profile.html"> Home </a></li>  
+            <li><a href="profile.php"> Home </a></li>  
 
         </ul>
     </li>
