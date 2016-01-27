@@ -17,10 +17,12 @@ if($verified){
 
 	$gradeslist = mysqli_stmt_get_result($getUserGrades);
 
+	$gradearray = array();
 
 	while($row = mysqli_fetch_assoc($gradeslist)){
-		echo "<br>".$row["Course"]." ".$row["Level"]." ".$row["Grade"];
+		$gradearray[] = array('course' => $row["Course"], 'level'=> $row["Level"], 'Grade'=> $row["Grade"]);
 	}
+				echo json_encode($gradearray);
 
 }
 

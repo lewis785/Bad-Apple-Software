@@ -2,8 +2,6 @@
 
 include "connection.php";
 
-	$CourseLevel = "Standard Grade";
-
 if(isset($_POST['level'])){
 
 	$CourseLevel = mysqli_real_escape_string($link, $_POST['level']);
@@ -27,7 +25,7 @@ if(isset($_POST['level'])){
 else
 {
 	$gradearray = array();
-	$gradearray[] = array('grade' => "Something went wrong");
+	$gradearray[] = array('grade' => "Level is not set");
 	echo json_encode($gradearray);
 }
 
