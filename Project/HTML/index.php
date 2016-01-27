@@ -46,9 +46,14 @@ var svg = d3.select("body").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+
 
 d3.json("../JS/treeData.json", function(error, treeData) {
+    
   if (error) throw error;
+    
+
 
   root = treeData[0];
   root.x0 = height / 2;

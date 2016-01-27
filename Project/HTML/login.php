@@ -42,8 +42,8 @@
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="home.html"> Home </a></li>
-                        <li><a href="login.html"> Login </a></li>                      
+                        <li><a href="home.php"> Home </a></li>
+                        <li><a href="login.php"> Login </a></li>                      
                     </ul>
                 </div>
 
@@ -56,7 +56,7 @@
         <div id="center" class="main-section container-fluid">
             <h2> Please login with your Careers Pathway Username and Password </h2>    
             <div class="row contact-wrap"> 
-                <form id="login-form" class="contact-form" name="loggin-form" method="post" action="profile.html">
+                <form id="login-form" class="contact-form" name="loggin-form" method="post" action="profile.php">
 
                     <div class="col-md-6 col-md-offset-3">
 
@@ -81,7 +81,7 @@
 
                         <!-- still to be made -->
                         
-                        <a href="register.html" class="btn btn-primary"> Register </a>  <!-- still to be made -->
+                        <a href="register.php" class="btn btn-primary"> Register </a>  <!-- still to be made -->
                         <br>
                         <label><i><a href="#">Forgotten Password? </a></i>
                     </div>

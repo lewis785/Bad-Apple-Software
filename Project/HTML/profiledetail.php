@@ -44,15 +44,15 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown"> Profile <i class="fa fa-angle-down"></i></a>
+                            <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown"> Profile <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li class="active"><a href="profiledetail.html"> Details </a></li>
+                                <li class="active"><a href="profiledetail.php"> Details </a></li>
                                 <li><a href="#"> Qualifications </a></li>
                                 <li><a href="#"> Starred Paths </a></li>
                                 <li><a href="../php/signout.php"> Log out </a></li>
                             </ul>
                         </li>  
-                        <li><a href="profile.html"> Home </a></li>                   
+                        <li><a href="profile.php"> Home </a></li>                   
                     </ul>
                 </div>
 

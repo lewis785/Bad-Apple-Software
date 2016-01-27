@@ -36,7 +36,8 @@ function loadInfo(){
         },
 
         error: function(ts) {
-            window.location.href="../html/profile.html";
+            //window.location.href="../html/profile.php";
+          alert("Help i need somebody");
         }
 
 
@@ -76,7 +77,7 @@ function loadEditInfo(){
         },
 
         error: function(ts) {
-            window.location.href="../html/profile.html";
+            window.location.href="../html/profile.php";
         }
 
     });

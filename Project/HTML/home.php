@@ -38,13 +38,13 @@
             <div class="container-fluid">
 
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="home.html"><img src="../images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="home.php"><img src="../images/logo.png" alt="logo"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="home.html"> Home </a></li>
-                        <li><a href="login.html"> Login </a></li> 
+                        <li class="active"><a href="home.php"> Home </a></li>
+                        <li><a href="login.php"> Login </a></li> 
                     </ul>
                 </div>
 
