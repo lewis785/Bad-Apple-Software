@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2015 at 03:16 AM
+-- Generation Time: Dec 02, 2015 at 04:14 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -32,7 +32,8 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
   `Surname` text NOT NULL,
   `DoB` date NOT NULL,
   PRIMARY KEY (`Info_Id`),
-  UNIQUE KEY `Info_Id` (`Info_Id`)
+  UNIQUE KEY `Info_Id` (`Info_Id`),
+  KEY `Info_Id_2` (`Info_Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -40,7 +41,10 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
 --
 
 INSERT INTO `userinfo` (`Info_Id`, `Firstname`, `Surname`, `DoB`) VALUES
-(1, 'Lewis', 'McNeill', '1995-08-12');
+(1, 'Lewis', 'McNeill', '1995-08-12'),
+(2, 'Jack', 'Webster', '1995-07-23'),
+(4, 'lewis', 'Marsdon', '1990-04-11'),
+(6, 'Donald', 'Redpath', '1995-12-24');
 
 -- --------------------------------------------------------
 
@@ -53,14 +57,27 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_name` text NOT NULL,
   `user_pass` text NOT NULL,
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_pass`) VALUES
-(1, 'lm357', 'testing');
+(1, 'lm357', 'testing'),
+(2, 'webby', 'test1'),
+(4, 'lm356', 'BaZMws62u.a0c'),
+(6, 'Donpath', 'BaZMws62u.a0c');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `userinfo`
+--
+ALTER TABLE `userinfo`
+  ADD CONSTRAINT `userinfo_ibfk_1` FOREIGN KEY (`Info_Id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

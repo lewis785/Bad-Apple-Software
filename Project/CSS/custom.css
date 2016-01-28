@@ -1,0 +1,39 @@
+html{
+	height: 100%;
+}
+
+
+
+body { 
+background: url(../Images/current.png) no-repeat center center fixed;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+/*margin-bottom: 80px;*/
+height: 100%;
+}
+
+
+#main-nav nav{
+}
+
+.navbar{
+	background-color: #68D7FF; 
+	min-height: 50px;
+	border-bottom: solid 1px black;
+}
+
+#center {
+	background-color: orange;
+	height: 100%;
+}
+
+.center-wrapper{
+	height: 100%;
+}
