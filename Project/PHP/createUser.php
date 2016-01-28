@@ -2,7 +2,7 @@
 
 include "connection.php";
 
-$url = "//Project/html/tester.html";
+$url = "//Project/html/tester.php";
 
 if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['firstname']) && !empty($_POST['surname']) && !empty($_POST['DoB'])  && !empty(['email1']) && !empty(['email2']) ) {
 	
@@ -51,7 +51,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 					mysqli_stmt_execute($newaddress);
 
 					$newuserinfo = mysqli_stmt_init($link);
-					mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (UserID, Firstname, Surname, DateOfBirth, Occupation, Address) VALUES (?, ?, ?, ?, ?, ?)');
+					mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (UserID, FirstName, Surname, DateOfBirth, OccupationID, AddressID) VALUES (?, ?, ?, ?, ?, ?)');
 					mysqli_stmt_bind_param($newuserinfo, 'isssii', $last_id, $first, $surname, $dob, $last_id, $last_id);   
 					mysqli_stmt_execute($newuserinfo);
 				}
@@ -59,12 +59,16 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 			}
 		}
 
-		header('Location: http://badapple/HTML/login.html');
+		header('Location: http://badapple/HTML/login.php');
 	}
 	else
 	{
 		echo "User already exists";
 	}
+}
+else
+{
+	header('Location: http://badapple/HTML/register.php');
 }
 
 
