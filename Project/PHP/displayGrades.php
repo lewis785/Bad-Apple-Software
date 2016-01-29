@@ -12,7 +12,7 @@ if($verified){
 		INNER JOIN courses ON userqualifications.CourseID = courses.CourseID
 		INNER JOIN levels ON userqualifications.LevelID = levels.LevelID
 		INNER JOIN grades ON userqualifications.GradeID = grades.GradeID
-		where userlogin.UserName= ? and userlogin.Password = ?");
+		where userlogin.UserName= ? and userlogin.Password = ? ORDER BY levels.Level");
 	mysqli_stmt_bind_param($getUserGrades, 'ss', $temp['user'], $temp['pass']);   
 	mysqli_stmt_execute($getUserGrades); 
 
