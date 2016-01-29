@@ -127,8 +127,11 @@ div #center{
 }
 
 #main-nav li:hover{
-  background-color: white;
   color: black;
+}
+
+#nav-drop li:hover{
+	  background-color: white;
 }
 
 

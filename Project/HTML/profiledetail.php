@@ -38,38 +38,57 @@
 
 <body onload="loadEditInfo()">
 
-    <header id="header" >
-        <nav class="navbar navbar-inverse" role="banner">
-            <div class="container-fluid">                
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown"> Profile <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="active"><a href="profiledetail.php"> Details </a></li>
-                                <li><a href="#"> Qualifications </a></li>
-                                <li><a href="#"> Starred Paths </a></li>
-                                <li><a href="../php/signout.php"> Log out </a></li>
-                            </ul>
-                        </li>  
-                        <li><a href="profile.php"> Home </a></li>                   
-                    </ul>
-                </div>
+    <div id="navbar">
+        <nav id="main-nav" class="navbar navbar-default">
 
-            </div><!--/.container-->
-        </nav><!--/nav-->
-    </header><!--/header-->
+          <div class="container-fluid">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
+                <li class="dropdown">
+                  <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                  <ul id="nav-drop" class="dropdown-menu">
+                    <li><a href="profiledetail.php"> Edit Info </a></li>
+                    <li><a href="addgrades.php"> Add Grades </a></li> 
+                    <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
+                    <li role="separator" class="divider"></li>
+                    <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
+
+
+                </ul>
+            </li> 
+            <li><a href="profile.php"> Home </a></li>  
+
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+</div><!-- End of NavBar-->
 
     <section id="profile-page" class=" col-md-6 col-md-offset-3">
 
-        <div id = "center" class="container-fluid">
+        <div id = "center" class="main-section container-fluid">
             <h2> Edit your Details</h2>
     
             <div class="row contact-wrap"> 
                 <div class="col-md-6 col-md-offset-3">
 
                     <form id="register-form" class="contact-form" name="contact-form" method="post" action="../PHP/updateUser.php">  
-                        <div class="col-md-6 col-md-offset-3">
+                        <div>
 
                             <div class="form-group">
                                 <label> First Name * </label>
