@@ -65,7 +65,7 @@ include "../PHP/verify.php";
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
+                    <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                     <li class="dropdown">
                       <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
                       <ul id="nav-drop" class="dropdown-menu">
@@ -90,46 +90,46 @@ include "../PHP/verify.php";
 <div id="page-center" class=" col-md-6 col-md-offset-3">
     <div id="center" class="main-section container-fluid">
        <h2> Add Grades </h2>
-        <div class="container-fluid m row contact-wrap"> 
-            <div class="col-md-6 col-md-offset-3">
-                <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
+       <div class="container-fluid m row contact-wrap"> 
+        <div class="col-md-6 col-md-offset-3">
+            <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
 
-                    <div class="form-group">
-                        <label> Course Name * </label>
-                        <select id="courseselect" name="course" class="form-control">
-                            <option name="NonSelect" selected>Select course</option>
-                            <?php include "../php/getCourses.php" ?>
+                <div class="form-group">
+                    <label> Course Name * </label>
+                    <select id="courseselect" name="course" class="form-control">
+                        <option name="NonSelect" selected>Select course</option>
+                        <?php include "../php/getCourses.php" ?>
 
-                        </select>
-                    </div>
+                    </select>
+                </div>
 
-                    <div class="form-group">
-                        <label> Course Level * </label>
-                        <select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
-                            <option name="NonSelect" selected>Select Level</option>
-                            <?php include "../php/getLevels.php" ?>
-                        </select>
-                    </div>
+                <div class="form-group">
+                    <label> Course Level * </label>
+                    <select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
+                        <option name="NonSelect" selected>Select Level</option>
+                        <?php include "../php/getLevels.php" ?>
+                    </select>
+                </div>
 
-                    <div class="form-group">
-                        <label> Course Level * </label>
-                        <select id="gradeselect" name="grade" class="form-control">
-                            <option name="NonSelect">Select Level</option>
-                        </select>
-                    </div>
-
-
-                    <div class="form-group">
-                        <button type="submit" name="register" class="btn btn-primary" required="required"> Register </button>  <!-- still to be made -->
-                    </div> 
+                <div class="form-group">
+                    <label> Course Level * </label>
+                    <select id="gradeselect" name="grade" class="form-control">
+                        <option name="NonSelect">Select Level</option>
+                    </select>
+                </div>
 
 
-                </form>
+                <div class="form-group">
+                    <button type="submit" name="register" class="btn btn-primary" required="required"> Register </button>  <!-- still to be made -->
+                </div> 
 
-            </div>
+
+            </form>
+
         </div>
+    </div>
 
-    </div><!-- End of center -->
+</div><!-- End of center -->
 </div><!-- End of page-center-->
 
 

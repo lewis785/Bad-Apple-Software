@@ -58,7 +58,7 @@
 
             <ul class="nav navbar-nav navbar-right">
 
-                <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
+                <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
                   <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
                   <ul id="nav-drop" class="dropdown-menu">
