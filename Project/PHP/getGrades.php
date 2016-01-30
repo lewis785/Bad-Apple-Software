@@ -1,6 +1,6 @@
 <?php
 
-include "connection.php";
+include "Core/connection.php";
 
 if(isset($_POST['level'])){
 

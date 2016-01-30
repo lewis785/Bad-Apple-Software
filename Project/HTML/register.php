@@ -85,7 +85,7 @@
                                     <label> Occupation * </label>
                                     <select id="occupationselect" name="occupation" class="form-control">
                                         <option name="NonSelect">Select Occupation</option>
-                                        <?php include "../php/getOccupations.php" ?>
+                                        <?php include "../php/displayOccupations.php" ?>
                                     </select>
                                 </div>
 

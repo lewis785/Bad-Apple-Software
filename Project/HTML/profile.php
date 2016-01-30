@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include "../PHP/verify.php";
+include "../PHP/Core/verify.php";
 ?>
 
 <html lang="en">
@@ -73,7 +73,7 @@ include "../PHP/verify.php";
                     <li><a href="addgrades.php"> Add Grades </a></li> 
                     <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                     <li role="separator" class="divider"></li>
-                    <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
+                    <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->
 
 
                 </ul>

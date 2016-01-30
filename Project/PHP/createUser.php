@@ -1,6 +1,6 @@
 <?php
 
-include "connection.php";
+include "Core/connection.php";
 
 $url = "//Project/html/tester.php";
 
@@ -71,5 +71,5 @@ else
 	header('Location: http://badapple/HTML/register.php');
 }
 
-
+mysqli_close($link);
 ?>

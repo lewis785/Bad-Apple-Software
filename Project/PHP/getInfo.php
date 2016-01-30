@@ -1,7 +1,7 @@
 <?php
 
-include 'connection.php';
-include 'validCookie.php';
+include "Core/connection.php";
+include 'Core/validCookie.php';
 
 if($verified){
 
@@ -28,4 +28,5 @@ else
 	echo json_encode(array("error"=>1));
 }
 
+mysqli_close($link);
 ?>

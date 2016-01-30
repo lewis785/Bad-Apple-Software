@@ -1,6 +1,6 @@
 <?php
 
-include "connection.php";
+include "Core/connection.php";
 
 if (isset($_COOKIE['confirmation'])) {
 	if ( !empty($_POST['firstname']) && !empty($_POST['surname']) && !empty($_POST['DoB'])  && !empty(['email']) && !empty(['number']) && !empty(['street']) && !empty(['city']) && !empty(['postcode'])) {
@@ -53,4 +53,5 @@ if (isset($_COOKIE['confirmation'])) {
 	}
 }
 
+mysqli_close($link);
 ?>

@@ -39,7 +39,7 @@ foreach($dom->getElementsByTagName('option') as $link) {
 }
 
 
-include 'connection.php';
+include "Core/connection.php";
 
 for ($i = 0; $i < count($subjects); ++$i) {
 	

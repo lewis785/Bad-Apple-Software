@@ -1,6 +1,6 @@
 <?php
 
-include "connection.php";
+include "Core/connection.php";
 
 if (isset($_COOKIE['confirmation'])) {
 	if ( !empty($_POST['oldpassword']) && !empty($_POST['newpassword']) && !empty($_POST['confpassword']) ) {
@@ -46,5 +46,5 @@ if (isset($_COOKIE['confirmation'])) {
 }
 
 
-
+mysqli_close($link);
 ?>
