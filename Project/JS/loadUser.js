@@ -1,6 +1,5 @@
 function loadInfo(){
 
-
     $.ajax({
         type: "POST",
         url: "../PHP/getInfo.php",
@@ -32,7 +31,7 @@ function loadInfo(){
         },
 
         error: function(ts) {
-        window.location.href="../html/profile.html";
+            window.location.href="../html/profile.html";
         }
 
 
@@ -72,8 +71,44 @@ function loadEditInfo(){
         },
 
         error: function(ts) {
-        window.location.href="../html/profile.html";
+            window.location.href="../html/profile.html";
         }
 
     });
+}
+
+
+function gradeselected(){
+
+    var selectedlvl = $('#levelselect :selected').text();
+
+    var dataString = "level="+selectedlvl;
+
+    $.ajax({
+        type: 'POST',
+        url: "../PHP/getGrades.php",
+        data: dataString,
+        cache: false,
+        dataType: 'json', 
+        success: function(data){
+
+
+            $('#gradeselect').find('option').remove();
+
+
+            for (var i=0; i<data.length; i++){
+                var grade = data[i].grade;
+                $('#gradeselect').find('option').end().append('<option value="'+grade+'">'+grade+'</option>');
+            }
+
+            $('#gradeselet').prop('disabled', true);
+
+
+
+        },
+        error: function (error) {
+            alert('error; ' + eval(error));
+        }
+    });
+
 }
