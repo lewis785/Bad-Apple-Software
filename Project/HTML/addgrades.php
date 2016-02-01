@@ -38,6 +38,7 @@ include "../PHP/Core/verify.php";
 
 
     <script src="../js/loadUser.js"></script>
+    <script src="../js/storeGrade.js"></script>
 
 </head><!--/head-->
 
@@ -89,10 +90,10 @@ include "../PHP/Core/verify.php";
 
 <div id="page-center" class=" col-md-6 col-md-offset-3">
     <div id="center" class="main-section container-fluid">
-       <h2> Add Grades </h2>
-       <div class="container-fluid m row contact-wrap"> 
+     <h2> Add Grades </h2>
+     <div class="container-fluid m row contact-wrap"> 
         <div class="col-md-6 col-md-offset-3">
-            <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
+            <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/validateGrade.php">  
 
                 <div class="form-group">
                     <label> Course Name * </label>
@@ -120,11 +121,16 @@ include "../PHP/Core/verify.php";
 
 
                 <div class="form-group">
-                    <button type="submit" name="register" class="btn btn-primary" required="required"> Register </button>  <!-- still to be made -->
+                    <button type="submit" name="register" class="btn btn-primary" required="required"> Submit </button>  <!-- still to be made -->
                 </div> 
 
-
             </form>
+
+            <div class="form-group">
+                <button onclick="addGrade()" id="storeGrade" class="btn btn-primary"> Add Grade </button>  <!-- still to be made -->
+            </div> 
+
+            <div id="qualificationslist"></div>
 
         </div>
     </div>

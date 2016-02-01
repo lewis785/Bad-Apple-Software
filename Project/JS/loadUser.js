@@ -37,7 +37,7 @@ function loadInfo(){
 
         error: function(ts) {
             //window.location.href="../html/profile.php";
-          alert("Help i need somebody");
+            alert("An Error Occured");
         }
 
 
@@ -93,9 +93,9 @@ function gradeselected(){
     $.ajax({
         type: 'POST',
         url: "../PHP/getGrades.php",
-        data: dataString,
+        dataType: 'json',
+        data: {level:selectedlvl},
         cache: false,
-        dataType: 'json', 
         success: function(data){
 
 
