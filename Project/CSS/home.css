@@ -249,3 +249,9 @@ h3,h4,h5{
 #createuser form input{
   color: red;
 }
+
+#invalid{
+	color: red;
+	font-weight: bold;
+	font-size: 1.2em;
+}

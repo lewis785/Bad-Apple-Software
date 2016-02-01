@@ -20,7 +20,6 @@ if ($verified){
 
 
 		if($validcourse[0] == 1){
-			echo"valid course <br>";
 			$checkGradeLevel = mysqli_stmt_init($link);
 			mysqli_stmt_prepare($checkGradeLevel, "SELECT count(*),levels.LevelID, grades.GradeID FROM grades INNER JOIN levels ON grades.GradeSetID = levels.GradeSetID
 				WHERE levels.Level = ? and grades.Grade = ?");
@@ -32,17 +31,13 @@ if ($verified){
 
 
 			if ($validgrade[0] == 1) {
-				echo "valid level and grade <br>";
-
-				echo "User ".$user[1]." Course ".$validcourse[1]." Level ".$validgrade[1]." Grade ".$validgrade[2];
-
 
 				$insertUserGrade = mysqli_stmt_init($link);
 				mysqli_stmt_prepare($insertUserGrade, 'INSERT INTO userqualifications (UserID, CourseID, LevelID, GradeID ) VALUES (?, ?, ?, ?)');
 				mysqli_stmt_bind_param($insertUserGrade, 'iiii', $user[1], $validcourse[1], $validgrade[1], $validgrade[2]);   
 				mysqli_stmt_execute($insertUserGrade);
 
-
+				echo json_encode(array("result"=>"successful"));
 
 			}
 		}
@@ -52,28 +47,6 @@ if ($verified){
 
 	}
 }
-
-
-
-if ( !empty($_POST['qualificationlevel']) && !empty($_POST['course']) && !empty($_POST['coursegrade']) ) {
-
-
-}
-else
-{
-	if (!empty($_POST['qualificationlevel']) && !empty($_POST['course'])){
-		
-	}
-	else
-	{
-		if (!empty($_POST['qualificationlevel'])){
-
-
-		}
-	}
-}
-
-
 
 
 mysqli_close($link);

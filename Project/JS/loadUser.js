@@ -100,7 +100,7 @@ function gradeselected(){
 
 
             $('#gradeselect').find('option').remove();
-
+                $('#gradeselect').find('option').end().append('<option value="NoneSelect">Select Grade</option>');
 
             for (var i=0; i<data.length; i++){
                 var grade = data[i].grade;

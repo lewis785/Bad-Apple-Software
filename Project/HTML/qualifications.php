@@ -116,10 +116,7 @@ include "../PHP/Core/verify.php";
 
 
 
-<!--/#bottom-->
-<div id="site-footer" class="site-footer">
-    &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
-</div>
+
 
 </body>
 </html>

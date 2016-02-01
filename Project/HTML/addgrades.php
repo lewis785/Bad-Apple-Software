@@ -90,32 +90,32 @@ include "../PHP/Core/verify.php";
 
 <div id="page-center" class=" col-md-6 col-md-offset-3">
     <div id="center" class="main-section container-fluid">
-     <h2> Add Grades </h2>
-     <div class="container-fluid m row contact-wrap"> 
+       <h2> Add Grades </h2>
+       <div class="container-fluid m row contact-wrap"> 
         <div class="col-md-6 col-md-offset-3">
-            <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/validateGrade.php">  
+            <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
 
-                <div class="form-group">
+                <div id="coursediv" class="form-group">
                     <label> Course Name * </label>
                     <select id="courseselect" name="course" class="form-control">
-                        <option name="NonSelect" selected>Select course</option>
+                        <option value="NoneSelect" selected>Select Course</option>
                         <?php include "../php/getCourses.php" ?>
 
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div id="leveldiv" class="form-group">
                     <label> Course Level * </label>
                     <select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
-                        <option name="NonSelect" selected>Select Level</option>
+                        <option value="NoneSelect" selected>Select Level</option>
                         <?php include "../php/getLevels.php" ?>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div id="gradediv" class="form-group">
                     <label> Course Level * </label>
                     <select id="gradeselect" name="grade" class="form-control">
-                        <option name="NonSelect">Select Level</option>
+                        <option value="NoneSelect">Select Grade</option>
                     </select>
                 </div>
 
@@ -127,8 +127,13 @@ include "../PHP/Core/verify.php";
             </form>
 
             <div class="form-group">
-                <button onclick="addGrade()" id="storeGrade" class="btn btn-primary"> Add Grade </button>  <!-- still to be made -->
+                <button onclick="checkinput()" id="storeGrade" class="btn btn-primary"> Add Grade </button>  <!-- still to be made -->
             </div> 
+
+            <div class="form-group">
+                <button onclick="insertGrades()" id="storeGrade" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
+            </div> 
+
 
             <div id="qualificationslist"></div>
 

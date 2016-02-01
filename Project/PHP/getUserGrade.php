@@ -6,7 +6,7 @@ include "Core/validCookie.php";
 if($verified){
 
 	$getUserGrades = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($getUserGrades, "SELECT courses.Course,levels.Level,grades.Grade FROM userqualifications 
+	mysqli_stmt_prepare($getUserGrades, "SELECT userqualifications.UserQualificationID , courses.Course,levels.Level,grades.Grade FROM userqualifications 
 		INNER JOIN userlogin ON userqualifications.UserID = userlogin.ID
 		INNER JOIN courses ON userqualifications.CourseID = courses.CourseID
 		INNER JOIN levels ON userqualifications.LevelID = levels.LevelID
@@ -20,7 +20,7 @@ if($verified){
 	$gradearray = array();
 
 	while($row = mysqli_fetch_assoc($gradeslist)){
-		$gradearray[] = array('course' => $row["Course"], 'level'=> $row["Level"], 'Grade'=> $row["Grade"]);
+		$gradearray[] = array('id'=>$["UserQualificationID"], 'course' => $row["Course"], 'level'=> $row["Level"], 'Grade'=> $row["Grade"]);
 	}
 				echo json_encode($gradearray);
 
