@@ -49,7 +49,7 @@ var svg = d3.select("body").append("svg")
     
 
 
-d3.json("../JS/treeData.json", function(error, treeData) {
+d3.json("../PHP/getUserHistory.php", function(error, treeData) {
     
   if (error) throw error;
     

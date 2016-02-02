@@ -1,5 +1,5 @@
 
-function getAndConvert(){
+function getAndConvert() {
 
 
     $.ajax({
