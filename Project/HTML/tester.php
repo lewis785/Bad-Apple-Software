@@ -15,6 +15,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type='text/javascript'></script>
 
 	<script src="../JS/delete.js"></script>
+  
+      <link href="../css/home.css" rel="stylesheet">
 
 </head>
 
@@ -61,15 +63,14 @@
 	</div>
 
 
-	<?php include "../php/getInfo.php" ?>
-
-	<?php include "../php/schoolGrades.php" ?>
-
-	<?php include "../php/getCourses.php" ?>
-
-	<?php include "../php/readFile.php" ?>
-
-	<?php include "../php/getGrades.php" ?>
+	<?php 
+	include "../php/getInfo.php";
+	//include "../php/schoolGrades.php" 
+	//include "../php/getCourses.php" 
+	//include "../php/readFile.php" 
+	//include "../php/getGrades.php" 
+	include "../php/getUserGrade.php"; 
+	?>
 
 
 

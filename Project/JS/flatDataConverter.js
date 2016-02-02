@@ -17,7 +17,7 @@ function getAndConvert() {
         },
 
         error: function(ts) {
-        window.location.href="../html/profile.html";
+        window.location.href="../html/profile.php";
         }
         
         

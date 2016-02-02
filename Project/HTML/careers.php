@@ -52,15 +52,15 @@ include "../PHP/verify.php";
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown"> Profile <i class="fa fa-angle-down"></i></a>
+                            <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown"> Profile <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="profiledetail.html"> Edit Info </a></li>
+                                <li><a href="profiledetail.php"> Edit Info </a></li>
                                 <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
                                 <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                                 <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
                             </ul>
                         </li>  
-                        <li><a href="profile.html"> Home </a></li>                   
+                        <li><a href="profile.php"> Home </a></li>                   
                     </ul>
                 </div>
 

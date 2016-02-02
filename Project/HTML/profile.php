@@ -64,34 +64,34 @@ include "../PHP/verify.php";
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="profile.html"> Home </a></li>  
-                
+
+                <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
-                  <a href="profile.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="profiledetail.html"> Edit Info </a></li>
-                    <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
+                  <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                  <ul id="nav-drop" class="dropdown-menu">
+                    <li><a href="profiledetail.php"> Edit Info </a></li>
+                    <li><a href="addgrades.php"> Add Grades </a></li> 
                     <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                     <li role="separator" class="divider"></li>
                     <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
 
 
                 </ul>
-            </li>  
+            </li> 
+            <li><a href="profile.php"> Home </a></li>  
+
         </ul>
-    </li>
-</ul>
-</div><!-- /.navbar-collapse -->
+    </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
 </div><!-- End of NavBar-->
 
 
 <section id="page-center" class=" col-md-6 col-md-offset-3">
-   <div id="center" class="main-section container-fluid">
-       <h2> Your Career Pathways Profile </h2>    
+ <div id="center" class="main-section container-fluid">
+     <h2> Your Career Pathways Profile </h2>    
 
-       <div class="row contact-wrap"> 
+     <div class="row contact-wrap"> 
         <div class="col-md-8 col-md-offset-2">
 
             <ul class="list-group">

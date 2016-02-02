@@ -49,7 +49,7 @@ if (isset($_COOKIE['confirmation'])) {
 		mysqli_stmt_execute($updateAddress);
 
 
-		header('Location: http://badapple/HTML/profile.html'); //Once complete redirects the browser to the profile page
+		header('Location: http://badapple/HTML/profile.php'); //Once complete redirects the browser to the profile page
 	}
 }
 

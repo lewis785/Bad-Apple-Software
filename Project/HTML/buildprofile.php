@@ -38,7 +38,7 @@
             <div class="container-fluid">
 
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="home.html"><img src="../images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="home.php"><img src="../images/logo.png" alt="logo"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
@@ -235,7 +235,7 @@
                             <div class="form-group">
                                 <label><u><i> Added all of your qualifications ? Click next ! </i></u></label> 
                                 <br>
-                                <a href="choosecareer.html" class="btn btn-primary"> Next Step </a>  <!-- still to be made -->
+                                <a href="choosecareer.php" class="btn btn-primary"> Next Step </a>  <!-- still to be made -->
                             </div>
 
                         </div>           
