@@ -1,7 +1,7 @@
 <?php
 
-include 'connection.php';
-include 'validCookie.php';
+include "Core/connection.php";
+include 'Core/validCookie.php';
 
 if ($verified)
 {
@@ -19,4 +19,5 @@ else
 	echo "No cookie present";
 }
 
+mysqli_close($link);
 ?>

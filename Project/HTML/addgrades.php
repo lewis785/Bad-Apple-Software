@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include "../PHP/verify.php";
+include "../PHP/Core/verify.php";
 ?>
 
 <html lang="en">
@@ -38,6 +38,7 @@ include "../PHP/verify.php";
 
 
     <script src="../js/loadUser.js"></script>
+    <script src="../js/storeGrade.js"></script>
 
 </head><!--/head-->
 
@@ -73,7 +74,7 @@ include "../PHP/verify.php";
                         <li><a href="addgrades.php"> Add Grades </a></li> 
                         <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                         <li role="separator" class="divider"></li>
-                        <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
+                        <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->
 
 
                     </ul>
@@ -94,37 +95,47 @@ include "../PHP/verify.php";
         <div class="col-md-6 col-md-offset-3">
             <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
 
-                <div class="form-group">
+                <div id="coursediv" class="form-group">
                     <label> Course Name * </label>
                     <select id="courseselect" name="course" class="form-control">
-                        <option name="NonSelect" selected>Select course</option>
+                        <option value="NoneSelect" selected>Select Course</option>
                         <?php include "../php/getCourses.php" ?>
 
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div id="leveldiv" class="form-group">
                     <label> Course Level * </label>
                     <select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
-                        <option name="NonSelect" selected>Select Level</option>
+                        <option value="NoneSelect" selected>Select Level</option>
                         <?php include "../php/getLevels.php" ?>
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div id="gradediv" class="form-group">
                     <label> Course Level * </label>
                     <select id="gradeselect" name="grade" class="form-control">
-                        <option name="NonSelect">Select Level</option>
+                        <option value="NoneSelect">Select Grade</option>
                     </select>
                 </div>
 
 
                 <div class="form-group">
-                    <button type="submit" name="register" class="btn btn-primary" required="required"> Register </button>  <!-- still to be made -->
+                    <button type="submit" name="register" class="btn btn-primary" required="required"> Submit </button>  <!-- still to be made -->
                 </div> 
 
-
             </form>
+
+            <div class="form-group">
+                <button onclick="checkinput()" id="storeGrade" class="btn btn-primary"> Add Grade </button>  <!-- still to be made -->
+            </div> 
+
+            <div class="form-group">
+                <button onclick="insertGrades()" id="storeGrade" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
+            </div> 
+
+
+            <div id="qualificationslist"></div>
 
         </div>
     </div>

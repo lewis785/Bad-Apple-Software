@@ -1,6 +1,6 @@
 <?php
 
-include "connection.php";
+include "Core/connection.php";
 
 $url = "//Project/html/tester.php";
 
@@ -12,6 +12,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 	$pass2 = mysqli_real_escape_string($link, $_POST['pass2']);
 	$first = mysqli_real_escape_string($link, $_POST['firstname']);
 	$surname = mysqli_real_escape_string($link, $_POST['surname']);
+	$occupation = mysqli_real_escape_string($link, $_POST['occupation']);
 	$dob = mysqli_real_escape_string($link, $_POST['DoB']);
 	$email = mysqli_real_escape_string($link, $_POST['email1']);
 	$confemail = mysqli_real_escape_string($link, $_POST['email2']);
@@ -19,6 +20,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 	$street = mysqli_real_escape_string($link, $_POST['street']);
 	$postcode = mysqli_real_escape_string($link, $_POST['postcode']);
 	$city = mysqli_real_escape_string($link, $_POST['city']);
+	$accessname = "user";
 
 
 	$checkusername = mysqli_stmt_init($link);
@@ -34,12 +36,29 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 		if (strcmp($pass, $pass2) == 0){
 			if(strcmp($email, $confemail) == 0){
 
+				$getOccupationId = mysqli_stmt_init($link);
+				mysqli_stmt_prepare($getOccupationId, 'Select OccupationID from occupations where Occupation= ? ');
+				mysqli_stmt_bind_param($getOccupationId, 's', $occupation);   
+				mysqli_stmt_execute($getOccupationId); 
+				$result = mysqli_stmt_get_result($getOccupationId);
+				$occupationresult = $result -> fetch_row();
+
+				echo $occupationresult[0];
+
+				$getAccessID = mysqli_stmt_init($link);
+				mysqli_stmt_prepare($getAccessID, 'Select AccessID from useraccess where AccessLevel= ? ');
+				mysqli_stmt_bind_param($getAccessID, 's', $accessname);   
+				mysqli_stmt_execute($getAccessID); 
+				$result = mysqli_stmt_get_result($getAccessID);
+				$accessresult = $result -> fetch_row();
+				$access = $accessresult[0];
+
 				$date = date('Y-m-d');
 				$cryptpass = crypt($pass,"Ba24JDAkfjerio892pp309lE");
 
 				$newlogin = mysqli_stmt_init($link);
-				mysqli_stmt_prepare($newlogin, 'INSERT INTO userlogin (Username, Password, DateJoined, EmailAddress ) VALUES (?, ?, ?, ?)');
-				mysqli_stmt_bind_param($newlogin, 'ssss', $user, $cryptpass, $date, $email);   
+				mysqli_stmt_prepare($newlogin, 'INSERT INTO userlogin (Username, Password, DateJoined, EmailAddress, AccessLevel ) VALUES (?, ?, ?, ?, ?)');
+				mysqli_stmt_bind_param($newlogin, 'ssssi', $user, $cryptpass, $date, $email, $access);   
 				mysqli_stmt_execute($newlogin);
 
 				$last_id = mysqli_insert_id($link);
@@ -51,15 +70,15 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 					mysqli_stmt_execute($newaddress);
 
 					$newuserinfo = mysqli_stmt_init($link);
-					mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (UserID, FirstName, Surname, DateOfBirth, OccupationID, AddressID) VALUES (?, ?, ?, ?, ?, ?)');
-					mysqli_stmt_bind_param($newuserinfo, 'isssii', $last_id, $first, $surname, $dob, $last_id, $last_id);   
+					mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (User, FirstName, Surname, DateOfBirth, Occupation, Address) VALUES (?, ?, ?, ?, ?, ?)');
+					mysqli_stmt_bind_param($newuserinfo, 'isssii', $last_id, $first, $surname, $dob, $occupationresult[0], $last_id);   
 					mysqli_stmt_execute($newuserinfo);
 				}
 
 			}
 		}
 
-		header('Location: http://badapple/HTML/login.php');
+	header('Location: http://badapple/HTML/login.php');
 	}
 	else
 	{
@@ -71,5 +90,5 @@ else
 	header('Location: http://badapple/HTML/register.php');
 }
 
-
+mysqli_close($link);
 ?>

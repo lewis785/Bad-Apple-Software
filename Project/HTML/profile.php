@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include "../PHP/verify.php";
+include "../PHP/Core/verify.php";
 ?>
 
 <html lang="en">
@@ -73,7 +73,7 @@ include "../PHP/verify.php";
                     <li><a href="addgrades.php"> Add Grades </a></li> 
                     <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                     <li role="separator" class="divider"></li>
-                    <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
+                    <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->
 
 
                 </ul>
@@ -97,6 +97,7 @@ include "../PHP/verify.php";
             <ul class="list-group">
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Occupation</strong></span> <div id="occupation">Employed</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>

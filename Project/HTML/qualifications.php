@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<?php
+include "../PHP/Core/verify.php";
+?>
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -64,7 +69,7 @@
                 <li><a href="addgrades.php"> Add Grades </a></li> 
                 <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                 <li role="separator" class="divider"></li>
-                <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
+                <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->
 
 
             </ul>
@@ -111,10 +116,7 @@
 
 
 
-<!--/#bottom-->
-<div id="site-footer" class="site-footer">
-    &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
-</div>
+
 
 </body>
 </html>

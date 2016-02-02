@@ -65,10 +65,10 @@
 
 	<?php 
 	include "../php/getInfo.php";
-	//include "../php/schoolGrades.php" 
-	//include "../php/getCourses.php" 
-	//include "../php/readFile.php" 
-	//include "../php/getGrades.php" 
+	include "../php/schoolGrades.php" ;
+	//include "../php/getCourses.php" ;
+	include "../php/readFile.php"; 
+	include "../php/displayOccupations.php" ;
 	include "../php/getUserGrade.php"; 
 	?>
 
