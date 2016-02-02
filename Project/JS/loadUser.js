@@ -19,6 +19,7 @@ function loadInfo(){
                 var street = (result.street);
                 var city = (result.city);
                 var postcode = (result.postcode);
+                var occupation = (result.occupation);
 
                 $("#joined").text(joindate);
                 $("#lastlogin").text('Yesterday');
@@ -26,6 +27,7 @@ function loadInfo(){
                 $("#lastn").text(surname);
                 $("#name").text(firstname + ' ' + surname);
                 $("#dob").text(DoB);
+                $("#occupation").text(occupation);
                 $("#email").text(email);
                 $("#address").text(housenumber + ' ' + street + ', ' + city + ', ' + postcode);
             }

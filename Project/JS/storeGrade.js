@@ -94,12 +94,6 @@ function addGrade(){
 				if(!setgrade)
 					$("#gradediv").append("<div id='invalid' class='errormessage'> Select a Grade </div>");
 			}
-
-
-			var course = (result.completeinput+" "+result.coursevalid+" "+result.qualificationvalid+" "+result.courseSet+" "+result.levelSet+" "+result.gradeSet);
-
-
-
 		},
 		error: function(failed){
 			alert("Error");
@@ -166,53 +160,44 @@ function checkarray(course, level){
 	return qualificationpresent;
 }
 
+
+
 function insertGrades(){
 	selectedCourse = $('#courseselect').val();
 	selectedLevel = $('#levelselect').val();
 	selectedGrade = $('#gradeselect').val();
 
 	length = qualificationsarray.length;
-	alert("Trying to insert"+length);
 
 	if( !(selectedCourse === qualificationsarray[length-3] && selectedLevel === qualificationsarray[length-2]) ){
-		alert("not in list");
-		$.ajax({  
-			type: 'POST',
-			url: "../PHP/insertGrade.php",
-			dataType: 'json',
-			data: {grade: selectedGrade, level: selectedLevel, course: selectedCourse},
-			cache: false,
-			success: function(result){
-				alert("Successful");
-			},
-			error: function(){
-				alert("Error Occured While Inserting");
-			}
-		});
-
+		checkinput();
 	}
 
-	for(var i = 0; i < length; i +=3){
-		
-		selectedCourse = qualificationsarray[i];
-		selectedLevel = qualificationsarray[i+1];
-		selectedGrade = qualificationsarray[i+2];
-
-		$.ajax({  
-			type: 'POST',
-			url: "../PHP/insertGrade.php",
-			dataType: 'json',
-			data: {grade: selectedGrade, level: selectedLevel, course: selectedCourse},
-			cache: false,
-			success: function(result){
-				alert("Successful ");
-			},
-			error: function(){
-				alert("Error Occured While Inserting");
-			}
-		});
+	if ($(".errormessage").length){
 	}
+	else
+	{
+		for(var i = 0; i < length; i +=3){
 
+			selectedCourse = qualificationsarray[i];
+			selectedLevel = qualificationsarray[i+1];
+			selectedGrade = qualificationsarray[i+2];
 
+			$.ajax({  
+				type: 'POST',
+				url: "../PHP/insertGrade.php",
+				dataType: 'json',
+				data: {grade: selectedGrade, level: selectedLevel, course: selectedCourse},
+				cache: false,
+				success: function(result){
+				},
+				error: function(){
+					alert("Error Occured While Inserting");
+				}
+			});
+		}
+							window.location.href="../html/qualifications.php";
+
+	}
 
 }

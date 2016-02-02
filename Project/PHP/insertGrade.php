@@ -21,7 +21,7 @@ if ($verified){
 
 		if($validcourse[0] == 1){
 			$checkGradeLevel = mysqli_stmt_init($link);
-			mysqli_stmt_prepare($checkGradeLevel, "SELECT count(*),levels.LevelID, grades.GradeID FROM grades INNER JOIN levels ON grades.GradeSetID = levels.GradeSetID
+			mysqli_stmt_prepare($checkGradeLevel, "SELECT count(*),levels.LevelID, grades.GradeID FROM grades INNER JOIN levels ON grades.GradeSetID = levels.GradeSet
 				WHERE levels.Level = ? and grades.Grade = ?");
 			mysqli_stmt_bind_param($checkGradeLevel, 'ss', $level, $grade);   
 			mysqli_stmt_execute($checkGradeLevel); 
@@ -33,11 +33,11 @@ if ($verified){
 			if ($validgrade[0] == 1) {
 
 				$insertUserGrade = mysqli_stmt_init($link);
-				mysqli_stmt_prepare($insertUserGrade, 'INSERT INTO userqualifications (UserID, CourseID, LevelID, GradeID ) VALUES (?, ?, ?, ?)');
+				mysqli_stmt_prepare($insertUserGrade, 'INSERT INTO userqualifications (User, Course, Level, Grade ) VALUES (?, ?, ?, ?)');
 				mysqli_stmt_bind_param($insertUserGrade, 'iiii', $user[1], $validcourse[1], $validgrade[1], $validgrade[2]);   
 				mysqli_stmt_execute($insertUserGrade);
 
-				echo json_encode(array("result"=>"successful"));
+				echo json_encode(array("completed"=>true));
 
 			}
 		}

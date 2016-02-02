@@ -45,7 +45,7 @@ if ( isset($_POST['course']) && isset($_POST['level']) && isset($_POST['grade'])
 
 
 	$checkGrade = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($checkGrade, "SELECT count(*) FROM grades INNER JOIN levels ON grades.GradeSetID = levels.GradeSetID
+	mysqli_stmt_prepare($checkGrade, "SELECT count(*) FROM grades INNER JOIN levels ON grades.GradeSetID = levels.GradeSet
 		WHERE levels.Level = ? and grades.Grade = ?");
 	mysqli_stmt_bind_param($checkGrade, 'ss', $level, $grade);   
 	mysqli_stmt_execute($checkGrade);
