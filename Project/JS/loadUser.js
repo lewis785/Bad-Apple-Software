@@ -102,7 +102,7 @@ function gradeselected(){
 
 
             $('#gradeselect').find('option').remove();
-                $('#gradeselect').find('option').end().append('<option value="NoneSelect">Select Grade</option>');
+            $('#gradeselect').find('option').end().append('<option value="NoneSelect">Select Grade</option>');
 
             for (var i=0; i<data.length; i++){
                 var grade = data[i].grade;
@@ -155,4 +155,32 @@ function occupationfill(){
         }
     });
 
+}
+
+function validatePassword(){
+
+    var input = $("#pass1").val()
+    $("div").remove(".errormessage");
+
+    $.ajax({
+        type: 'POST',
+        url: "../PHP/validatePassword.php",
+        dataType: 'json', 
+        data: {password: input},
+        cache: false,
+        success: function(data){
+            if(data.valid){
+
+            }
+            else
+            {
+                $("#passdiv").append("<div id='invalid' class='errormessage'> Invalid Password <br> (Min 8 Character, Contain a Capital letter and one Number) </div>");
+            }
+        },
+        error: function(){
+            alert("Problem");
+        }
+
+
+    });
 }
