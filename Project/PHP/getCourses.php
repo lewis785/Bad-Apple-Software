@@ -1,6 +1,6 @@
 <?php
 
-include "connection.php";
+include "Core/connection.php";
 
 $getCourses = mysqli_stmt_init($link);
 

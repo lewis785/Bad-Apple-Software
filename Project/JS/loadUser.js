@@ -19,6 +19,7 @@ function loadInfo(){
                 var street = (result.street);
                 var city = (result.city);
                 var postcode = (result.postcode);
+                var occupation = (result.occupation);
 
                 $("#joined").text(joindate);
                 $("#lastlogin").text('Yesterday');
@@ -26,6 +27,7 @@ function loadInfo(){
                 $("#lastn").text(surname);
                 $("#name").text(firstname + ' ' + surname);
                 $("#dob").text(DoB);
+                $("#occupation").text(occupation);
                 $("#email").text(email);
                 $("#address").text(housenumber + ' ' + street + ', ' + city + ', ' + postcode);
             }
@@ -37,7 +39,7 @@ function loadInfo(){
 
         error: function(ts) {
             //window.location.href="../html/profile.php";
-          alert("Help i need somebody");
+            alert("An Error Occured");
         }
 
 
@@ -93,14 +95,14 @@ function gradeselected(){
     $.ajax({
         type: 'POST',
         url: "../PHP/getGrades.php",
-        data: dataString,
+        dataType: 'json',
+        data: {level:selectedlvl},
         cache: false,
-        dataType: 'json', 
         success: function(data){
 
 
             $('#gradeselect').find('option').remove();
-
+            $('#gradeselect').find('option').end().append('<option value="NoneSelect">Select Grade</option>');
 
             for (var i=0; i<data.length; i++){
                 var grade = data[i].grade;
@@ -153,4 +155,32 @@ function occupationfill(){
         }
     });
 
+}
+
+function validatePassword(){
+
+    var input = $("#pass1").val()
+    $("div").remove(".errormessage");
+
+    $.ajax({
+        type: 'POST',
+        url: "../PHP/validatePassword.php",
+        dataType: 'json', 
+        data: {password: input},
+        cache: false,
+        success: function(data){
+            if(data.valid){
+
+            }
+            else
+            {
+                $("#passdiv").append("<div id='invalid' class='errormessage'> Invalid Password <br> (Min 8 Character, Contain a Capital letter and one Number) </div>");
+            }
+        },
+        error: function(){
+            alert("Problem");
+        }
+
+
+    });
 }

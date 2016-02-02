@@ -1,15 +1,13 @@
 <?php
 
-include "connection.php";
-
-	$CourseLevel = "Standard Grade";
+include "Core/connection.php";
 
 if(isset($_POST['level'])){
 
 	$CourseLevel = mysqli_real_escape_string($link, $_POST['level']);
 
 	$getGrades = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($getGrades, "SELECT Grade FROM grades INNER JOIN levels ON grades.GradeSetID = levels.GradeSetID
+	mysqli_stmt_prepare($getGrades, "SELECT Grade FROM grades INNER JOIN levels ON grades.GradeSetID = levels.GradeSet
 		WHERE levels.Level = ?");
 	mysqli_stmt_bind_param($getGrades, 's', $CourseLevel);   
 	mysqli_stmt_execute($getGrades); 
@@ -27,7 +25,7 @@ if(isset($_POST['level'])){
 else
 {
 	$gradearray = array();
-	$gradearray[] = array('grade' => "Something went wrong");
+	$gradearray[] = array('grade' => "Level is not set");
 	echo json_encode($gradearray);
 }
 

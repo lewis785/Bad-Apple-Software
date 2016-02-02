@@ -63,17 +63,14 @@
 	</div>
 
 
-	<?php include "../php/getInfo.php" ?>
-
-	<?php include "../php/schoolGrades.php" ?>
-
-	<?php include "../php/getCourses.php" ?>
-
-	<?php include "../php/readFile.php" ?>
-
-	<?php include "../php/getGrades.php" ?>
-
-	<?php include "../php/getUserGrade.php" ?>
+	<?php 
+	include "../php/getInfo.php";
+	include "../php/schoolGrades.php" ;
+	//include "../php/getCourses.php" ;
+	include "../php/readFile.php"; 
+	include "../php/displayOccupations.php" ;
+	include "../php/getUserGrade.php"; 
+	?>
 
 
 

@@ -35,6 +35,8 @@
     <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
     <script src="../js/registervalidate.js"></script>
 
+    <script src="../js/loadUser.js"></script>
+
 
 </head><!--/head-->
 
@@ -81,13 +83,13 @@
                         </div>
 
 
-                                <div class="form-group">
-                                    <label> Occupation * </label>
-                                    <select id="occupationselect" name="occupation" class="form-control">
-                                        <option name="NonSelect">Select Occupation</option>
-                                        <?php include "../php/getOccupations.php" ?>
-                                    </select>
-                                </div>
+                        <div class="form-group">
+                            <label> Occupation * </label>
+                            <select id="occupationselect" name="occupation" class="form-control">
+                                <option name="NonSelect">Select Occupation</option>
+                                <?php include "../php/displayOccupations.php" ?>
+                            </select>
+                        </div>
 
                         <div class="form-group">
                             <label> House Number * </label>
@@ -124,12 +126,12 @@
                             <input type="Email" name="email2" class="form-control glow" placeholder="Enter Email again">
                         </div>
 
-                        <div class="form-group">
+                        <div id="passdiv" class="form-group">
                             <label> Password * </label>
-                            <input type="Password" id="pass1" name="pass1" class="form-control glow" placeholder="Enter Password">
+                            <input type="Password" id="pass1" name="pass1"  onblur="validatePassword()" class="form-control glow" placeholder="Enter Password">
                         </div>
 
-                        <div class="form-group">
+                        <div  class="form-group">
                             <label> Confirm Password * </label>
                             <input type="Password" id="pass2" name="pass2" class="form-control glow" placeholder="Enter Password again">
                         </div>
