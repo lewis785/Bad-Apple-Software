@@ -12,15 +12,7 @@ function getAndConvert() {
             
             
             
-            var obj = JSON.parse(result);
-            obj['Course'].push({"parent": "Level"});
-            obj['Grade'].push({"parent": "Course"});
-            jsonStr = JSON.stringify(obj);
-            
-            var name = (result.name);
-            var parent = (result.parent);
-            echo jsonStr;
-           
+          
         
 
         error: function(ts) {
@@ -28,7 +20,7 @@ function getAndConvert() {
         }
         
         
-var dataMap = data.reduce(function(map,node) {
+var dataMap = result.reduce(function(map,node) {
  map[node.name] = node;
  return map;
 }, {});

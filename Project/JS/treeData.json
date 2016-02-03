@@ -1,25 +1,43 @@
 [
   {
-    "name": "Top Level",
+    "name": "qualifications",
     "parent": "null",
     "children": [
       {
-        "name": "Level 2: A",
+        "name": "Higher",
         "parent": "Top Level",
         "children": [
           {
-            "name": "Son of A",
-            "parent": "Level 2: A"
+            "name": "Maths : B",
+            "parent": "Higher"
           },
           {
-            "name": "Daughter of A",
-            "parent": "Level 2: A"
+            "name": "English : A",
+            "parent": "Higher"
           }
         ]
       },
       {
-        "name": "Level 2: B",
-        "parent": "Top Level"
+        "name": "Standard Grade",
+        "parent": "qualifications",
+           "children": [
+          {
+            "name": "Maths : 1",
+            "parent": "Standard Grade"
+          },
+               {
+            "name": "Tech : 1",
+            "parent": "Standard Grade"
+          },
+               {
+            "name": "History : 1",
+            "parent": "Standard Grade"
+          },
+          {
+            "name": "English : 2",
+            "parent": "Standard Grade"
+          }
+        ]
       }
     ]
   }
