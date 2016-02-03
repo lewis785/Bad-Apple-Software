@@ -40,6 +40,11 @@ if ($verified){
 				echo json_encode(array("completed"=>true));
 
 			}
+            else
+            {
+                echo json_encode(array("completed"=>false));
+            }
+                
 		}
 
 
