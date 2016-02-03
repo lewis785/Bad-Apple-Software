@@ -32,6 +32,9 @@
     <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
+
+    <script src="../js/loadUser.js"></script>
+
 </head><!--/head-->
 
 <body>
@@ -39,7 +42,7 @@
     <header id="header">
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container-fluid">
-                
+
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="home.php"> Home </a></li>
@@ -56,34 +59,36 @@
         <div id="center" class="main-section container-fluid">
             <h2> Please login with your Careers Pathway Username and Password </h2>    
             <div class="row contact-wrap"> 
-                <form id="login-form" class="contact-form" name="loggin-form" method="post" action="profile.php">
+                <form id="login-form" class="contact-form" name="loggin-form" method="post" action="profile.php" onsubmit="return Login();">
 
                     <div class="col-md-6 col-md-offset-3">
 
-                        <div class="form-group">
-                          <label> Username* </label>
-                            <input type="text" name="username" class="form-control glow" required="required" placeholder="Enter Username">
-                        </div>
+                        <div id="logininput">
+                            <div class="form-group">
+                              <label> Username* </label>
+                              <input type="text" id="userinput" name="username" class="form-control glow" required="required" placeholder="Enter Username">
+                          </div>
 
-                        <div class="form-group">
+                          <div class="form-group">
                             <label> Password* </label>
-                            <input type="Password" name="password" class="form-control glow" required="required" placeholder="Enter Password">
+                            <input type="Password" id="passinput" name="password" class="form-control glow" required="required" placeholder="Enter Password">
                         </div> 
+                    </div>
 
-                        <div class="checkbox">
-                            <label><u><i>Remember me</i></u></label>
-                            <input type="checkbox" value="remember-me">
-                        </div> 
+                    <div class="checkbox">
+                        <label><u><i>Remember me</i></u></label>
+                        <input type="checkbox" value="remember-me">
+                    </div> 
 
-                        <div class="form-group">
-                            <button type="submit" name="signin" class="btn btn-primary btn-llg" required="required"> Sign in </button>
-                        </div>
+                    <div class="form-group">
+                        <button type="submit" name="signin" class="btn btn-primary btn-llg" required="required"> Sign in </button>
+                    </div>
 
-                        <!-- still to be made -->
-                        
-                        <a href="register.php" class="btn btn-primary"> Register </a>  <!-- still to be made -->
-                        <br>
-                        <label><i><a href="#">Forgotten Password? </a></i>
+                    <!-- still to be made -->
+
+                    <a href="register.php" class="btn btn-primary"> Register </a>  <!-- still to be made -->
+                    <br>
+                    <label><i><a href="#">Forgotten Password? </a></i>
                     </div>
 
                 </form> 
@@ -91,9 +96,9 @@
         </div><!--/.container--> 
 
     </section><!--/#contact-page-->
-  
 
-   <!--/#bottom-->
+
+    <!--/#bottom-->
 
     <footer id="footer" class="footer">
         <div class="container">

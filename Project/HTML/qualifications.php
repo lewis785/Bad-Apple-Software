@@ -36,6 +36,8 @@ include "../PHP/Core/verify.php";
     <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
+
+    <script src="../js/storeGrade.js"></script>
     
     <!-- Code for loading user information -->
 
@@ -84,13 +86,13 @@ include "../PHP/Core/verify.php";
 
 
 <section id="page-center" class=" col-md-6 col-md-offset-3">
-   <div id="center" class="main-section container-fluid">
-       <h2> Current Qualifications</h2>    
+ <div id="center" class="main-section container-fluid">
+     <h2> Current Qualifications</h2>    
 
-       <div class="row contact-wrap"> 
+     <div class="row contact-wrap"> 
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <table id="currentQualifications"class="table table-hover">
+                <table id="currentQualifications"class="table">
                     <thead>
                         <tr>
                             <th>Subject</th>
@@ -100,18 +102,33 @@ include "../PHP/Core/verify.php";
                     </thead>
                     <tbody>
 
-                        <?php include "../php/displayGrades.php" ?>
+                        <?php include "../php/Qualifications/displayGrades.php" ?>
 
                     </tbody>
                 </table>
             </div>
-            <br>
-            <a id="editQ" class="btn btn-primary"> Edit Qualifications </a>   
-            <a id="back" class="btn btn-primary"> Back </a>
-            <p> <!-- still to be made -->
-            </div>
+
+            <table>
+                <tr>
+                    <td >
+                        <div id="deletediv" class="form-group col-md-10 col-md-offset-2">
+                            <label> Delete Grade </label>
+                            <select id="gradedelete" name="grade" class="form-control col-md-6">
+                                <option value="NoneSelect">Select Grade</option>
+                                <?php include"../php/Qualifications/displayGradeLevel.php"; ?>
+                            </select>
+
+                        </div>
+                    </td>
+                    <td>
+                        <button onclick="deleteGrade()" id="storeGrade" class="btn btn-primary"> Delete Grade </button>
+                    </td>
+                </tr>
+            </table>
+
         </div>
-    </div><!--/.container-->
+    </div>
+</div><!--/.container-->
 </section><!--/#contact-page-->
 
 

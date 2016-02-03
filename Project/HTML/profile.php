@@ -88,10 +88,10 @@ include "../PHP/Core/verify.php";
 
 
 <section id="page-center" class=" col-md-6 col-md-offset-3">
- <div id="center" class="main-section container-fluid">
-     <h2> Your Career Pathways Profile </h2>    
+   <div id="center" class="main-section container-fluid">
+       <h2> Your Career Pathways Profile </h2>    
 
-     <div class="row contact-wrap"> 
+       <div class="row contact-wrap"> 
         <div class="col-md-8 col-md-offset-2">
 
             <ul class="list-group">

@@ -36,8 +36,8 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 		if (strcmp($pass, $pass2) == 0){
 			$uppercase = preg_match('@[A-Z]@', $pass);
 			$lowercase = preg_match('@[a-z]@', $pass);
-			$number    = preg_match('@[0-9]@', $pass);
-			if($uppercase || $lowercase || $number || strlen($password) >= 8) {
+			$numbercheck    = preg_match('@[0-9]@', $pass);
+			if($uppercase || $lowercase || $numbercheck || strlen($password) >= 8) {
 
 				if(strcmp($email, $confemail) == 0){
 
@@ -45,7 +45,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 
 
 					$getOccupationId = mysqli_stmt_init($link);
-					mysqli_stmt_prepare($getOccupationId, 'Select OccupationID from occupations where Occupation= ? ');
+					mysqli_stmt_prepare($getOccupationId, 'Select OccupationID from occupations where OccupationName= ? ');
 					mysqli_stmt_bind_param($getOccupationId, 's', $occupation);   
 					mysqli_stmt_execute($getOccupationId); 
 					$result = mysqli_stmt_get_result($getOccupationId);
@@ -83,10 +83,17 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 						mysqli_stmt_execute($newuserinfo);
 					}
 					header('Location: http://badapple/HTML/login.php');
+
 				}
+				else
+				{
+					header('Location: http://badapple/HTML/register.php');
+				}
+			}
+			else
+			{
 				header('Location: http://badapple/HTML/register.php');
 			}
-			header('Location: http://badapple/HTML/register.php');
 		}
 
 

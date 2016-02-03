@@ -88,59 +88,56 @@ include "../PHP/Core/verify.php";
 </div><!-- End of NavBar-->
 
 
-<div id="page-center" class=" col-md-6 col-md-offset-3">
-    <div id="center" class="main-section container-fluid">
+<div id="page-center" class="main-section col-md-6 col-md-offset-3">
+
+    <div class="center">
        <h2> Add Grades </h2>
-       <div class="container-fluid m row contact-wrap"> 
-        <div class="col-md-6 col-md-offset-3">
-            <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
+   </div>
 
-                <div id="coursediv" class="form-group">
-                    <label> Course Name * </label>
-                    <select id="courseselect" name="course" class="form-control">
-                        <option value="NoneSelect" selected>Select Course</option>
-                        <?php include "../php/getCourses.php" ?>
+   <div class="row contact-wrap"> 
+    <div class="col-md-6 col-md-offset-3">
+        <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
 
-                    </select>
-                </div>
+            <div id="coursediv" class="form-group">
+                <label> Course Name * </label>
+                <select id="courseselect" name="course" class="form-control">
+                    <option value="NoneSelect" selected>Select Course</option>
+                    <?php include "../php/Qualifications/getCourses.php" ?>
 
-                <div id="leveldiv" class="form-group">
-                    <label> Course Level * </label>
-                    <select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
-                        <option value="NoneSelect" selected>Select Level</option>
-                        <?php include "../php/getLevels.php" ?>
-                    </select>
-                </div>
+                </select>
+            </div>
 
-                <div id="gradediv" class="form-group">
-                    <label> Course Level * </label>
-                    <select id="gradeselect" name="grade" class="form-control">
-                        <option value="NoneSelect">Select Grade</option>
-                    </select>
-                </div>
+            <div id="leveldiv" class="form-group">
+                <label> Course Level * </label>
+                <select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
+                    <option value="NoneSelect" selected>Select Level</option>
+                    <?php include "../php/Qualifications/getLevels.php" ?>
+                </select>
+            </div>
 
+            <div id="gradediv" class="form-group">
+                <label> Course Level * </label>
+                <select id="gradeselect" name="grade" class="form-control">
+                    <option value="NoneSelect">Select Grade</option>
+                </select>
+            </div>
 
-                <div class="form-group">
-                    <button type="submit" name="register" class="btn btn-primary" required="required"> Submit </button>  <!-- still to be made -->
-                </div> 
+        </form>
 
-            </form>
+        <div class="form-group">
+            <button onclick="addGrade()" id="storeGrade" class="btn btn-primary"> Add Grade </button>  <!-- still to be made -->
+        </div> 
 
-            <div class="form-group">
-                <button onclick="checkinput()" id="storeGrade" class="btn btn-primary"> Add Grade </button>  <!-- still to be made -->
-            </div> 
-
-            <div class="form-group">
-                <button onclick="insertGrades()" id="storeGrade" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
-            </div> 
+        <div class="form-group">
+            <button onclick="submitForm()" id="submitGrades" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
+        </div> 
 
 
-            <div id="qualificationslist"></div>
+        <div id="qualificationslist"></div>
 
-        </div>
     </div>
+</div>
 
-</div><!-- End of center -->
 </div><!-- End of page-center-->
 
 

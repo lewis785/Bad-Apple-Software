@@ -1,3 +1,5 @@
+var valid = false;
+
 function loadInfo(){
 
     $.ajax({
@@ -94,7 +96,7 @@ function gradeselected(){
 
     $.ajax({
         type: 'POST',
-        url: "../PHP/getGrades.php",
+        url: "../PHP/Qualifications/getGrades.php",
         dataType: 'json',
         data: {level:selectedlvl},
         cache: false,
@@ -183,4 +185,46 @@ function validatePassword(){
 
 
     });
+}
+
+// function Login(){
+//     $.when($.ajax(validLogin())).then(function(){ alert("then check "+valid);
+//         return valid; });
+// }
+
+function Login(){
+
+    $("div").remove(".errormessage");
+
+    var user = $("#userinput").val();
+    var pass = $("#passinput").val();
+
+
+    $.ajax({  
+     type: 'POST',
+     url: "../PHP/validateLogin.php",
+     dataType: 'json',
+     data: {username:user, password:pass},
+     cache: false,
+     success: function(result){
+
+         if(result.valid)
+         {
+
+            return true;
+            alert("Valid "+valid);
+        }
+        else
+        {
+            alert("Invalid");
+            $("#logininput").append("<div id='invalid' class='errormessage'> Login Not Valid </div>");
+            return false;
+        }
+
+    },
+    error: function(){
+     alert("Error Occured");
+ }
+});
+
 }

@@ -11,7 +11,7 @@ $setcourse = true;
 $setlevel = true;
 $setgrade = true;
 
-include "Core/connection.php";
+include(dirname(__FILE__)."/../Core/connection.php");
 
 
 if ( isset($_POST['course']) && isset($_POST['level']) && isset($_POST['grade']) ) {

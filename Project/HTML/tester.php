@@ -16,7 +16,8 @@
 
 	<script src="../JS/delete.js"></script>
   
-      <link href="../css/home.css" rel="stylesheet">
+      <script src="../js/loadUser.js"></script>
+      <!-- <link href="../css/home.css" rel="stylesheet"> -->
 
 </head>
 
@@ -69,7 +70,9 @@
 	//include "../php/getCourses.php" ;
 	include "../php/readFile.php"; 
 	include "../php/displayOccupations.php" ;
-	include "../php/getUserGrade.php"; 
+	include "../php/Qualifications/getUserGrade.php"; 
+	include "../php/Qualifications/validateGrade.php";
+	include "../php/Qualifications/deleteQualification.php";
 	?>
 
 
