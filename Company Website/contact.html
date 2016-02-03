@@ -24,8 +24,8 @@
                 <img class="img-circle img-responsive pull-left" src="images/badapple.png" width="15%" />
                 <nav>
                     <ul class="nav nav-justified">
-                        <li class="active">
-                            <a href="#">Home</a>
+                        <li>
+                            <a href="home.html">Home</a>
                         </li>
                         <li>
                             <a href="projects.html">Projects</a>
@@ -33,28 +33,45 @@
                         <li>
                             <a href="team.html">Meet The Team</a>
                         </li>
-                        <li>
-                            <a href="contact.html">Contact</a>
+                        <li class="active">
+                            <a href="#">Contact</a>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div class="jumbotron">
                 <h1>Whats New</h1>
-                <p class="lead">We started the development of Careers Pathfinders.</p>
+                <p class="lead">Careers Pathfinder the Path to Success.</p>
                 <p><a class="btn btn-lg btn-success" href="#" role="button">Get Started Today</a></p>
             </div>
             <div class="row">
+                <a name="contact"></a>
                 <div class="col-md-12">
-                    <h2>We are Bad Apple Software</h2>
-                    <p class="lead"><br>We take great pride in our creations</p>
-                    <p>In today's digitally powered world people consume more and more content via the internet and on all kinds of devices. This technological landscape continues to evolve beyond recognition at a relentless pace; 2005 was now eleven years ago, and to think back to how integrated into your daily lifestyle the internet was back then compared to now is nothing short of wondersome.</p>
-                    <p>Just last year mobile traffic overtook fixed access traffic indicating a massive change in how people were consuming content available to them. It has never been more essential to ensure the accessibility, performance, quality and design of your digital media exceeds the expectations of your customers. Users only spend a few seconds on a webpage if it doesn't quickly grab their attention and draw them in. Can you afford to lose potential conversions just like that?. </p>
-                    <p><a class="btn btn-primary" href="team.html" role="button">Check out our Team! »</a></p>
-                    <div class="alert alert-success"> 
-                        <a href="#contact"><strong>Get a Quote</strong></a> We specialise in the creation of bespoke software solutions from small utility programs scaling all the way up
-                        to large network connected systems. Increase your operational accuracy and efficiency with a tailor made application from us.        
-                    </div>
+                    <h2 class="">Contact Us</h2>
+                    <p class="lead">Based in the Heart of Edinburgh, Scotland's capital.</p>
+                    <fieldset>
+                        <div id="message"></div>
+                        <form method="post" action="MAILTO:husnainsultan@hotmail.co.uk" name="contactform" id="contactform">
+                            <div class="form-group">
+                                <input name="name" id="name" type="text" value="" placeholder="Name" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <input name="email" id="email" type="text" value="" placeholder="Email" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <input name="phone" id="phone" type="text" value="" placeholder="Phone" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <textarea name="comments" id="comments" class="form-control" rows="3" placeholder="Message" id="textArea"></textarea>
+                                <div class="editContent">
+                                    <p class="small text-muted"><span class="guardsman">* All fields are required.</span> Once we receive your message we will respond as soon as possible.</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary" type="submit" name="submit">Send the </button>
+                            </div>
+                        </form>
+                    </fieldset>
                 </div>
             </div>
             <!-- Site footer -->
