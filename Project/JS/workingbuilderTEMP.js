@@ -46,13 +46,18 @@ var svg = d3.select("body").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    
+
 
 d3.json("../JS/treeData.json", function(error, treeData) {
+    
   if (error) throw error;
+    
+
 
   root = treeData[0];
   root.x0 = height / 2;
-  root.y0 = 0;
+  root.y0 = width;
 
   function collapse(d) {
     if (d.children) {
@@ -75,7 +80,7 @@ function update(source) {
       links = tree.links(nodes);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 180; });
+  nodes.forEach(function(d) { d.y = width - (d.depth * 180); });
 
   // Update the nodes…
   var node = svg.selectAll("g.node")
@@ -94,7 +99,7 @@ function update(source) {
   nodeEnter.append("text")
       .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
       .attr("dy", ".35em")
-      .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+      .attr("text-anchor", function(d) { return d.children || d._children ? "start" : "end"; })
       .text(function(d) { return d.name; })
       .style("fill-opacity", 1e-6);
 

@@ -37,7 +37,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 			if(strcmp($email, $confemail) == 0){
 
 				$getOccupationId = mysqli_stmt_init($link);
-				mysqli_stmt_prepare($getOccupationId, 'Select OccupationID from occupations where Occupation= ? ');
+				mysqli_stmt_prepare($getOccupationId, 'Select OccupationID from occupations where OccupationName= ? ');
 				mysqli_stmt_bind_param($getOccupationId, 's', $occupation);   
 				mysqli_stmt_execute($getOccupationId); 
 				$result = mysqli_stmt_get_result($getOccupationId);

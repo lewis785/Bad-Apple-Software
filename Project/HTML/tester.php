@@ -16,7 +16,7 @@
 
 	<script src="../JS/delete.js"></script>
   
-      <link href="../css/home.css" rel="stylesheet">
+<!--      <link href="../css/home.css" rel="stylesheet">-->
 
 </head>
 
@@ -64,12 +64,13 @@
 
 
 	<?php 
-	include "../php/getInfo.php";
-	include "../php/schoolGrades.php" ;
+	//include "../php/getInfo.php";
+	//include "../php/schoolGrades.php" ;
 	//include "../php/getCourses.php" ;
-	include "../php/readFile.php"; 
-	include "../php/displayOccupations.php" ;
-	include "../php/getUserGrade.php"; 
+	//include "../php/readFile.php"; 
+	//include "../php/displayOccupations.php" ;
+	//include "../php/getUserGrade.php"; 
+    include "../php/getUserHistory.php";
 	?>
 
 

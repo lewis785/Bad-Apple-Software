@@ -9,12 +9,19 @@ function getAndConvert() {
         cache: false,
         dataType: 'json', 
         success: function(result){
-
+            
+            
+            
+            var obj = JSON.parse(result);
+            obj['Course'].push({"parent": "Level"});
+            obj['Grade'].push({"parent": "Course"});
+            jsonStr = JSON.stringify(obj);
+            
             var name = (result.name);
             var parent = (result.parent);
-            
-            $("#address").text(housenumber + ' ' + street + ', ' + city + ', ' + postcode);
-        },
+            echo jsonStr;
+           
+        
 
         error: function(ts) {
         window.location.href="../html/profile.php";
@@ -29,7 +36,7 @@ var dataMap = data.reduce(function(map,node) {
 
 
 var treeData = [];
-data.forEach(function(node) {
+result.forEach(function(node) {
  // add to parent
     
     

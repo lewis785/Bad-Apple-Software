@@ -6,7 +6,7 @@ var selectedCourse;
 var selectedLevel;
 var selectedGrade;
 
-function addGrade(){
+function addGrade() {
 
 	$.ajax({  
 		type: 'POST',
@@ -190,6 +190,7 @@ function insertGrades(){
 				data: {grade: selectedGrade, level: selectedLevel, course: selectedCourse},
 				cache: false,
 				success: function(result){
+                    alert("Successful")
 				},
 				error: function(){
 					alert("Error Occured While Inserting");
