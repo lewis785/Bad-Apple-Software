@@ -66,6 +66,7 @@ include "../PHP/Core/verify.php";
 
                 <ul class="nav navbar-nav navbar-right">
 
+                    <li><a href="workingbuilderTemp.php"> Path </a></li>
                     <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                     <li class="dropdown">
                       <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
@@ -91,10 +92,10 @@ include "../PHP/Core/verify.php";
 <div id="page-center" class="main-section col-md-6 col-md-offset-3">
 
     <div class="center">
-       <h2> Add Grades </h2>
-   </div>
+     <h2> Add Grades </h2>
+ </div>
 
-   <div class="row contact-wrap"> 
+ <div class="row contact-wrap"> 
     <div class="col-md-6 col-md-offset-3">
         <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
 

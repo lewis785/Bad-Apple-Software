@@ -37,7 +37,7 @@
 
 </head><!--/head-->
 
-<body>
+<body onload="checkKey()">
 
     <header id="header">
         <nav class="navbar navbar-inverse" role="banner">
@@ -58,22 +58,25 @@
 
         <div id="center" class="main-section container-fluid">
             <h2> Please login with your Careers Pathway Username and Password </h2>    
-            <div class="row contact-wrap"> 
-                <form id="login-form" class="contact-form" name="loggin-form" method="post" action="profile.php" onsubmit="return Login();">
+            <div class="row contact-wrap">
+
 
                     <div class="col-md-6 col-md-offset-3">
 
+
+                <form id="login-form" class="contact-form" name="login" method="post" action="profile.php">
                         <div id="logininput">
-                            <div class="form-group">
+                            <div id="userdiv" class="form-group">
                               <label> Username* </label>
                               <input type="text" id="userinput" name="username" class="form-control glow" required="required" placeholder="Enter Username">
                           </div>
 
-                          <div class="form-group">
+                          <div id="passdiv" class="form-group">
                             <label> Password* </label>
                             <input type="Password" id="passinput" name="password" class="form-control glow" required="required" placeholder="Enter Password">
                         </div> 
                     </div>
+                </form>
 
                     <div class="checkbox">
                         <label><u><i>Remember me</i></u></label>
@@ -81,17 +84,17 @@
                     </div> 
 
                     <div class="form-group">
-                        <button type="submit" name="signin" class="btn btn-primary btn-llg" required="required"> Sign in </button>
+                        <button onclick="Login()" class="btn btn-primary btn-llg" > Sign in </button>
                     </div>
 
-                    <!-- still to be made -->
 
-                    <a href="register.php" class="btn btn-primary"> Register </a>  <!-- still to be made -->
+
+                    <a href="register.php" class="btn btn-primary"> Register </a> 
                     <br>
                     <label><i><a href="#">Forgotten Password? </a></i>
                     </div>
 
-                </form> 
+
             </div>
         </div><!--/.container--> 
 

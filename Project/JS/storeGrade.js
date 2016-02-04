@@ -177,6 +177,7 @@ function submitForm(){
 	}
 	else
 	{
+		$("div").remove(".errormessage");
 		insertGrades();
 	}
 
@@ -237,7 +238,7 @@ function deleteGrade(){
 
 			},
 			error: function(){
-				alert("Error Occured While Inserting");
+				alert("Error Occured While Deleting");
 			}
 		});
 		

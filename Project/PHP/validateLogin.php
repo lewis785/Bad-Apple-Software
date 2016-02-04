@@ -9,7 +9,7 @@ if(isset($_POST['username']) && isset($_POST['password']) ){
 
 		$encrypt_pass = crypt($pass,"Ba24JDAkfjerio892pp309lE"); //Encrypts pass and stores it as another variable 
 
-	$checkLogin = mysqli_stmt_init($link);
+		$checkLogin = mysqli_stmt_init($link);
 	mysqli_stmt_prepare($checkLogin, "select count(*) from userlogin where UserName= ? and Password = ?");	//Counts how many users exist with the password and username in the cookie
 	mysqli_stmt_bind_param($checkLogin, 'ss', $user, $encrypt_pass);
 	mysqli_stmt_execute($checkLogin);

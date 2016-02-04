@@ -187,10 +187,19 @@ function validatePassword(){
     });
 }
 
+
+
+
 // function Login(){
-//     $.when($.ajax(validLogin())).then(function(){ alert("then check "+valid);
-//         return valid; });
+             // $.when($.ajax(validLogin())).then(function(){alert("hello " + valid); return valid;
+           //  });
+// alert("Button");
+
 // }
+
+
+
+
 
 function Login(){
 
@@ -199,32 +208,46 @@ function Login(){
     var user = $("#userinput").val();
     var pass = $("#passinput").val();
 
+    if(user === ""){
+        $("#userdiv").append("<div id='invalid' class='errormessage'> Please Enter User Name </div>");
+    }
+    if(pass === ""){
+        $("#passdiv").append("<div id='invalid' class='errormessage'> Please Enter Password </div>");
+    }
 
-    $.ajax({  
-     type: 'POST',
-     url: "../PHP/validateLogin.php",
-     dataType: 'json',
-     data: {username:user, password:pass},
-     cache: false,
-     success: function(result){
 
-         if(result.valid)
-         {
+    if(!(user === "")  && !(pass === "") ){
+        $.ajax({  
+         type: 'POST',
+         url: "../PHP/validateLogin.php",
+         dataType: 'json',
+         data: {username:user, password:pass},
+         cache: false,
+         success: function(result){
 
-            return true;
-            alert("Valid "+valid);
-        }
-        else
-        {
-            alert("Invalid");
-            $("#logininput").append("<div id='invalid' class='errormessage'> Login Not Valid </div>");
-            return false;
-        }
+             if(result.valid) {
+                document.forms['login'].submit();
+             }
+             else
+             {
+                $("#logininput").append("<div id='invalid' class='errormessage'> Login Not Valid </div>");
 
-    },
-    error: function(){
-     alert("Error Occured");
- }
+            }
+
+        },
+        error: function(){
+         alert("Error Occured When Logging In");
+     }
+ });
+    }
+}
+
+function checkKey(){
+
+$("#passinput").keypress(function(e) {
+    if(e.which == 13) {
+        Login();
+    }
 });
 
 }
