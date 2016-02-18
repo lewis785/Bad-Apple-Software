@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2016 at 04:09 AM
+-- Generation Time: Feb 19, 2016 at 12:35 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -93,7 +93,8 @@ CREATE TABLE IF NOT EXISTS `occupations` (
 
 CREATE TABLE IF NOT EXISTS `useraccess` (
   `AccessID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Unique identifier for Access Level',
-  `AccessLevel` tinytext COLLATE utf8_unicode_ci NOT NULL COMMENT 'Actual level of access',
+  `AccessName` tinytext COLLATE utf8_unicode_ci NOT NULL COMMENT 'Actual level of access',
+  `AccessLevel` int(11) NOT NULL,
   PRIMARY KEY (`AccessID`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Contains access levels for users' AUTO_INCREMENT=7 ;
 
@@ -110,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `useraddress` (
   `PostCode` varchar(16) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Post code',
   `City` varchar(16) COLLATE utf8_unicode_ci NOT NULL COMMENT 'City',
   PRIMARY KEY (`AddressID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Contains user addresses' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Contains user addresses' AUTO_INCREMENT=16 ;
 
 -- --------------------------------------------------------
 
@@ -161,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `userlogin` (
   PRIMARY KEY (`UserID`),
   UNIQUE KEY `EmailAddress` (`EmailAddress`),
   KEY `AccessLevel` (`AccessLevel`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Contains basic user login details.' AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Contains basic user login details.' AUTO_INCREMENT=16 ;
 
 -- --------------------------------------------------------
 
@@ -198,7 +199,7 @@ CREATE TABLE IF NOT EXISTS `userqualifications` (
   KEY `UserID` (`User`),
   KEY `LevelID` (`Level`),
   KEY `Grade` (`Grade`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Contains users qualifications' AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Contains users qualifications' AUTO_INCREMENT=27 ;
 
 --
 -- Constraints for dumped tables
@@ -208,8 +209,14 @@ CREATE TABLE IF NOT EXISTS `userqualifications` (
 -- Constraints for table `courselevel`
 --
 ALTER TABLE `courselevel`
-  ADD CONSTRAINT `courselevel_ibfk_2` FOREIGN KEY (`Level`) REFERENCES `levels` (`LevelID`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `courselevel_ibfk_1` FOREIGN KEY (`Course`) REFERENCES `courses` (`CourseID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `courselevel_ibfk_1` FOREIGN KEY (`Course`) REFERENCES `courses` (`CourseID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `courselevel_ibfk_2` FOREIGN KEY (`Level`) REFERENCES `levels` (`LevelID`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `useraddress`
+--
+ALTER TABLE `useraddress`
+  ADD CONSTRAINT `useraddress_ibfk_1` FOREIGN KEY (`AddressID`) REFERENCES `userlogin` (`UserID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `usercareerpath`
@@ -241,10 +248,10 @@ ALTER TABLE `userprofile`
 -- Constraints for table `userqualifications`
 --
 ALTER TABLE `userqualifications`
-  ADD CONSTRAINT `userqualifications_ibfk_6` FOREIGN KEY (`Grade`) REFERENCES `grades` (`GradeID`) ON UPDATE CASCADE,
   ADD CONSTRAINT `userqualifications_ibfk_2` FOREIGN KEY (`Course`) REFERENCES `courses` (`CourseID`) ON UPDATE CASCADE,
   ADD CONSTRAINT `userqualifications_ibfk_4` FOREIGN KEY (`User`) REFERENCES `userlogin` (`UserID`) ON DELETE CASCADE,
-  ADD CONSTRAINT `userqualifications_ibfk_5` FOREIGN KEY (`Level`) REFERENCES `levels` (`LevelID`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `userqualifications_ibfk_5` FOREIGN KEY (`Level`) REFERENCES `levels` (`LevelID`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `userqualifications_ibfk_6` FOREIGN KEY (`Grade`) REFERENCES `grades` (`GradeID`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
