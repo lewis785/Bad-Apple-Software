@@ -3,7 +3,6 @@
 include(dirname(__FILE__)."/../Core/connection.php");
 include(dirname(__FILE__)."/../Core/validCookie.php");
 
-
 if($verified){
 
 	if(isset($_POST['QID'])){

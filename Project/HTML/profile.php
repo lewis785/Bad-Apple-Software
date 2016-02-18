@@ -64,7 +64,7 @@ include "../PHP/Core/verify.php";
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-
+                <?php include "../PHP/admin/adminButton.php" ?>
                 <li><a href="workingbuilderTemp.php"> Path </a></li>
                 <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
