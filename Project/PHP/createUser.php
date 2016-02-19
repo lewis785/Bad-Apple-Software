@@ -54,7 +54,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 					echo $occupationresult[0];
 
 					$getAccessID = mysqli_stmt_init($link);
-					mysqli_stmt_prepare($getAccessID, 'Select AccessID from useraccess where AccessLevel= ? ');
+					mysqli_stmt_prepare($getAccessID, 'Select AccessID from useraccess where AccessName= ? ');
 					mysqli_stmt_bind_param($getAccessID, 's', $accessname);   
 					mysqli_stmt_execute($getAccessID); 
 					$result = mysqli_stmt_get_result($getAccessID);

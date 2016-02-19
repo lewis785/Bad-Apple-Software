@@ -4,6 +4,8 @@ include(dirname(__FILE__)."/../Core/connection.php");
 include(dirname(__FILE__)."/../Core/validCookie.php");
 $valid = false;
 
+echo'alert("hello")';
+
 if ($verified) {
 
 	$validAdmin = mysqli_stmt_init($link);
@@ -17,14 +19,14 @@ if ($verified) {
 	$access = mysqli_fetch_assoc($result);
 
 	//If user exists the count will be 1
-	if ($access >= 10) {
+	if ($access["AccessLevel"] >= 10) {
 		$valid = true;
 	}
 }
-
+ echo $access["AccessLevel"];
 if (!$valid){
 	mysqli_close($link);
-	header("Location:http://badapple/HTML/login.php");
+	header("Location:http://badapple/HTML/profile.php");
 	exit();
 }
 

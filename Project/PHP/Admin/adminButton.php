@@ -1,7 +1,7 @@
 <?php
 
-include "Core/connection.php";
-include 'Core/validCookie.php';
+include(dirname(__FILE__)."/../Core/connection.php");
+include(dirname(__FILE__)."/../Core/validCookie.php");
 
 $checkAdmin = mysqli_stmt_init($link);
 
