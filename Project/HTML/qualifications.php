@@ -43,7 +43,7 @@ include "../PHP/Core/verify.php";
 
 </head><!--/head-->
 
-    <div id="navbar">
+        <div id="navbar">
         <nav id="main-nav" class="navbar navbar-default">
 
           <div class="container-fluid">
@@ -62,7 +62,7 @@ include "../PHP/Core/verify.php";
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-
+                <?php include "../PHP/admin/adminButton.php" ?>
                 <li><a href="workingbuilderTemp.php"> Path </a></li>
                 <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
@@ -70,6 +70,7 @@ include "../PHP/Core/verify.php";
                   <ul id="nav-drop" class="dropdown-menu">
                     <li><a href="profiledetail.php"> Edit Info </a></li>
                     <li><a href="addgrades.php"> Add Grades </a></li> 
+                    <li><a href="addjob.php"> Add Employment </a></li> 
                     <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                     <li role="separator" class="divider"></li>
                     <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->

@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-
-<?php 
-include "../PHP/Core/verify.php";
-?>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -11,7 +6,7 @@ include "../PHP/Core/verify.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Profile </title>
+    <title> Register </title>
     
     <!-- core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -35,15 +30,17 @@ include "../PHP/Core/verify.php";
     <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
-    
-    <!-- Code for loading user information -->
+
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="../js/registervalidate.js"></script>
+
     <script src="../js/loadUser.js"></script>
-    <script src="../js/popup.js"></script>
 
 
 </head><!--/head-->
 
-<body onload="loadInfo()">
+<body>
 
     <div id="navbar">
         <nav id="main-nav" class="navbar navbar-default">
@@ -89,38 +86,47 @@ include "../PHP/Core/verify.php";
 </div><!-- End of NavBar-->
 
 
-<section id="page-center" class=" col-md-6 col-md-offset-3">
- <div id="center" class="main-section container-fluid">
-     <h2> Your Career Pathways Profile </h2>    
 
-     <div class="row contact-wrap"> 
-        <div class="col-md-8 col-md-offset-2">
+<section id="register-page" class="main-section col-md-6 col-md-offset-3">
 
-            <ul class="list-group">
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Occupation</strong></span> <div id="occupation">Employed</div> </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>
-            </ul> 
+    <div class="center">        
+        <h2> Change Password </h2>
+    </div>
 
-            <br>    
-            <a id="popin" class="btn btn-primary"> Delete my Account </a>
-            <p> <!-- still to be made -->
+    <div class="container-fluid m">
+        <div class="row contact-wrap"> 
+            <form id="register-form" class="contact-form" name="contact-form" method="post" action="../PHP/updatePassword.php">  
+                <div class="col-md-6 col-md-offset-3">
 
-            </div>
+                    <div class="form-group">
+                        <label> Current Password * </label>
+                        <input type="text" name="oldpassword" class="form-control glow" placeholder="Current Passwrod">
+                    </div>
+
+                    <div id="passdiv" class="form-group">
+                        <label> New Password * </label>
+                        <input type="Password" id="pass1" name="newpassword"  onblur="validatePassword()" class="form-control glow" placeholder="New Password">
+                    </div>
+
+                    <div  class="form-group">
+                        <label> Confirm New Password * </label>
+                        <input type="Password" id="newpass2" name="confpassword" class="form-control glow" placeholder="new Password again">
+                    </div>
+
+                    <br> 
+
+                    <div class="form-group">
+                        <button type="submit" name="register" class="btn btn-primary" required="required"> Update Password </button>  <!-- still to be made -->
+                    </div> 
+
+                </div>
+            </form> 
         </div>
-
-        <div id="popup"> 
-            <a href="../php/delete.php" id="popin" class="btn btn-primary"> Confirm Delete</a>
-            <img id="close" src="../images/close-button.png" class="close-btn"/>
-        </div>
-
-
     </div><!--/.container-->
-</section><!--/#contact-page-->
 
+</section><!--/#Register-page-->
+
+<!--/#bottom-->
 
 
 <!--/#bottom-->

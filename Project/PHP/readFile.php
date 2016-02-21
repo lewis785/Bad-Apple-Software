@@ -84,7 +84,6 @@ while (!feof($handle)) // Loop til end of file.
 
 	 	if($section==3){
 	 		list($name,$access)=explode("|",$buffer);
-	 		$gradeset = intval($gradeset);
 
 	 		$buffer = str_replace("\r\n","",$buffer);
 	 		$checkAccess = mysqli_stmt_init($link);
@@ -100,6 +99,27 @@ while (!feof($handle)) // Loop til end of file.
 	 			mysqli_stmt_prepare($newAccess, 'INSERT INTO useraccess (AccessName, AccessLevel) VALUES (?, ?)');
 	 			mysqli_stmt_bind_param($newAccess, 'si', $name, $access);   
 	 			mysqli_stmt_execute($newAccess);
+	 		}
+
+
+	 	}
+
+	 		 	if($section==4){
+
+	 		$buffer = str_replace("\r\n","",$buffer);
+	 		$checkMonth = mysqli_stmt_init($link);
+	 		mysqli_stmt_prepare($checkMonth, "select count(*) from months where MonthName= ? ");
+	 		mysqli_stmt_bind_param($checkMonth, 's',$buffer);
+	 		mysqli_stmt_execute($checkMonth);
+
+	 		$result = mysqli_stmt_get_result($checkMonth);
+	 		$count = $result -> fetch_row();
+
+	 		if ($count[0] == 0) {
+	 			$newMonth = mysqli_stmt_init($link);
+	 			mysqli_stmt_prepare($newMonth, 'INSERT INTO months (MonthName) VALUES (?)');
+	 			mysqli_stmt_bind_param($newMonth, 's', $buffer);   
+	 			mysqli_stmt_execute($newMonth);
 	 		}
 
 
