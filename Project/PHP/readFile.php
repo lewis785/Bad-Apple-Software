@@ -4,7 +4,7 @@ $section = 0;
 $newsection = "*";
 $handle = @fopen("../Database/levelgrade.txt", "r"); //read line one by one
 
-include "connection.php";
+include "Core/connection.php";
 
 while (!feof($handle)) // Loop til end of file.
 {
@@ -14,19 +14,18 @@ while (!feof($handle)) // Loop til end of file.
 
 
 	 	if($section==0){
-
+	 		$buffer = str_replace("\r\n","",$buffer);
 	 		$checkOccupation = mysqli_stmt_init($link);
-	 		mysqli_stmt_prepare($checkOccupation, "select count(*) from occupations where Occupation= ?");
+	 		mysqli_stmt_prepare($checkOccupation, "select count(*) from occupations where OccupationName= ?");
 	 		mysqli_stmt_bind_param($checkOccupation, 's',$buffer);
 	 		mysqli_stmt_execute($checkOccupation);
 
 	 		$result = mysqli_stmt_get_result($checkOccupation);
 	 		$count = $result -> fetch_row();
 
-	//If user exists the count will be 1
 	 		if ($count[0] == 0) {
 	 			$newOccupation = mysqli_stmt_init($link);
-	 			mysqli_stmt_prepare($newOccupation, 'INSERT INTO occupations (Occupation) VALUES (?)');
+	 			mysqli_stmt_prepare($newOccupation, 'INSERT INTO occupations (OccupationName) VALUES (?)');
 	 			mysqli_stmt_bind_param($newOccupation, 's', $buffer);   
 	 			mysqli_stmt_execute($newOccupation);
 	 		}
@@ -40,7 +39,7 @@ while (!feof($handle)) // Loop til end of file.
 	 		$levelset = intval($levelset);
 
 	 		$checkLevel = mysqli_stmt_init($link);
-	 		mysqli_stmt_prepare($checkLevel, "select count(*) from levels where Level= ? and GradesetID = ?");
+	 		mysqli_stmt_prepare($checkLevel, "select count(*) from levels where Level= ? and Gradeset = ?");
 	 		mysqli_stmt_bind_param($checkLevel, 'si',$level, $levelset);
 	 		mysqli_stmt_execute($checkLevel);
 
@@ -50,7 +49,7 @@ while (!feof($handle)) // Loop til end of file.
 	 		if ($count[0] == 0){
 
 	 			$newLevel = mysqli_stmt_init($link);
-	 			mysqli_stmt_prepare($newLevel, 'INSERT INTO levels (Level, GradesetID) VALUES (?, ?)');
+	 			mysqli_stmt_prepare($newLevel, 'INSERT INTO levels (Level, Gradeset) VALUES (?, ?)');
 	 			mysqli_stmt_bind_param($newLevel, 'si', $level, $levelset);   
 	 			mysqli_stmt_execute($newLevel);
 
@@ -82,6 +81,51 @@ while (!feof($handle)) // Loop til end of file.
 	 		}
 
 	 	}
+
+	 	if($section==3){
+	 		list($name,$access)=explode("|",$buffer);
+
+	 		$buffer = str_replace("\r\n","",$buffer);
+	 		$checkAccess = mysqli_stmt_init($link);
+	 		mysqli_stmt_prepare($checkAccess, "select count(*) from useraccess where AccessName= ? and AccessLevel = ?");
+	 		mysqli_stmt_bind_param($checkAccess, 'si',$name, $access);
+	 		mysqli_stmt_execute($checkAccess);
+
+	 		$result = mysqli_stmt_get_result($checkAccess);
+	 		$count = $result -> fetch_row();
+
+	 		if ($count[0] == 0) {
+	 			$newAccess = mysqli_stmt_init($link);
+	 			mysqli_stmt_prepare($newAccess, 'INSERT INTO useraccess (AccessName, AccessLevel) VALUES (?, ?)');
+	 			mysqli_stmt_bind_param($newAccess, 'si', $name, $access);   
+	 			mysqli_stmt_execute($newAccess);
+	 		}
+
+
+	 	}
+
+	 		 	if($section==4){
+
+	 		$buffer = str_replace("\r\n","",$buffer);
+	 		$checkMonth = mysqli_stmt_init($link);
+	 		mysqli_stmt_prepare($checkMonth, "select count(*) from months where MonthName= ? ");
+	 		mysqli_stmt_bind_param($checkMonth, 's',$buffer);
+	 		mysqli_stmt_execute($checkMonth);
+
+	 		$result = mysqli_stmt_get_result($checkMonth);
+	 		$count = $result -> fetch_row();
+
+	 		if ($count[0] == 0) {
+	 			$newMonth = mysqli_stmt_init($link);
+	 			mysqli_stmt_prepare($newMonth, 'INSERT INTO months (MonthName) VALUES (?)');
+	 			mysqli_stmt_bind_param($newMonth, 's', $buffer);   
+	 			mysqli_stmt_execute($newMonth);
+	 		}
+
+
+	 	}
+
+
 	 }
 	 else
 	 {
@@ -91,4 +135,5 @@ while (!feof($handle)) // Loop til end of file.
 
 
 	}
+	mysqli_close($link);
 	?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include "../PHP/verify.php";
+include "../PHP/Core/verify.php";
 ?>
 
 <html lang="en">
@@ -64,16 +64,19 @@ include "../PHP/verify.php";
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-
-                <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
+                <?php include "../PHP/admin/adminButton.php" ?>
+                <li><a href="workingbuilderTemp.php"> Path </a></li>
+                <li><a href="employmenthistory.php"> Employment </a></li>
+                <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
                   <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
                   <ul id="nav-drop" class="dropdown-menu">
                     <li><a href="profiledetail.php"> Edit Info </a></li>
                     <li><a href="addgrades.php"> Add Grades </a></li> 
+                    <li><a href="addjob.php"> Add Employment </a></li> 
                     <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                     <li role="separator" class="divider"></li>
-                    <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
+                    <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->
 
 
                 </ul>
@@ -88,15 +91,16 @@ include "../PHP/verify.php";
 
 
 <section id="page-center" class=" col-md-6 col-md-offset-3">
-   <div id="center" class="main-section container-fluid">
-       <h2> Your Career Pathways Profile </h2>    
+ <div id="center" class="main-section container-fluid">
+     <h2> Your Career Pathways Profile </h2>    
 
-       <div class="row contact-wrap"> 
+     <div class="row contact-wrap"> 
         <div class="col-md-8 col-md-offset-2">
 
             <ul class="list-group">
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Occupation</strong></span> <div id="occupation">Employed</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>
