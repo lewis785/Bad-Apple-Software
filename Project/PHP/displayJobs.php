@@ -3,14 +3,12 @@
 include "Core/connection.php";
 include 'Core/validCookie.php';
 
-echo  $temp['user'].$temp['pass'];
-
 $getUserJob = mysqli_stmt_init($link);
 mysqli_stmt_prepare($getUserJob, "SELECT useremployment.Employer, useremployment.JobTitle, useremployment.JobDescription, S1.MonthName as SMonth,
 	S2.MonthName as EMonth, useremployment.StartYear, useremployment.EndYear FROM useremployment 
 	INNER JOIN userlogin ON useremployment.UserID = userlogin.UserID
-	INNER JOIN months as S1 ON useremployment.StartMonth = months.MonthID
-	INNER JOIN months as S2 ON useremployment.EndMonth = months.MonthID
+	INNER JOIN months S1 ON useremployment.StartMonth = S1.MonthID
+	INNER JOIN months S2 ON useremployment.EndMonth = S2.MonthID
 	where userlogin.UserName= ? and userlogin.Password = ? ");
 
 

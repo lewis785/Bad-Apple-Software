@@ -12,7 +12,7 @@ include "../../PHP/Admin/validAdmin.php";
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Admin Page</title>
+<title>Admin  Settings Page</title>
 
 <!-- Bootstrap core CSS -->
 <link href="../../admincss/bootstrap.css" rel="stylesheet">
@@ -20,16 +20,13 @@ include "../../PHP/Admin/validAdmin.php";
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <link href="../../admincss/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-
 <!-- Custom styles for this template -->
 <link href="../../admincss/dashboard.css" rel="stylesheet">
 <script src="admincss/ie-emulation-modes-warning.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../../js/admins.js"></script>
 
 </head>
 
-<body onload="checkKey()">
+<body>
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -54,48 +51,21 @@ include "../../PHP/Admin/validAdmin.php";
           <li><a href="settings.php">Manage Admin Settings</a></li>
         </ul>
       </div>
-
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Administrator Dashboard</h1>
-        
-        <div class="col-lg-12">
-          <div class="col-lg-6">
-            <div class="input-group">
-              <input id="usersearch" type="text" class="form-control" placeholder="Search users...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-              </span>
-            </div><!-- /input-group -->
-          </div><!-- /.col-lg-6 -->
-        </div>
+        <h1 class="page-header">Administrator Settings Dashboard</h1>
 
-        <div class="table-responsive col-lg-12">
-          <table id="usertable" class="table table-striped">
-            <thead>
-              <tr>
-                <th>User ID</th>
-                <th>Username</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Join On</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <?php include "../../php/admin/retrieveUsers.php"; ?>
-              </tbody>
-            </table>
-          </div>
-        </div>
+
+
+
       </div>
     </div>
+  </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="Dashboard%20Template%20for%20Bootstrap_files/jquery.js"></script>
-
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="Dashboard%20Template%20for%20Bootstrap_files/bootstrap.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="Dashboard%20Template%20for%20Bootstrap_files/holder.js"></script>
@@ -103,4 +73,5 @@ include "../../PHP/Admin/validAdmin.php";
     <script src="Dashboard%20Template%20for%20Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
 
 
-  </body></html>
+  </body>
+  </html>

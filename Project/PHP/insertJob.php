@@ -13,7 +13,7 @@ if (!empty($_POST['employer']) && !empty($_POST['title']) && isset($_POST['start
 	$endyear = mysqli_real_escape_string($link, $_POST['endyear']);
 	$description = mysqli_real_escape_string($link, $_POST['description']);
 
-	if ($startyear <= $endyear && $startyear > 1970){
+	if (($startyear <= $endyear && $startyear > 1970) || $startmonth < $endmonth){
 
 		$newjob = mysqli_stmt_init($link);
 		mysqli_stmt_prepare($newjob, 'INSERT INTO useremployment (UserID, StartMonth, StartYear, EndMonth, EndYear, Employer, JobTitle, JobDescription ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');

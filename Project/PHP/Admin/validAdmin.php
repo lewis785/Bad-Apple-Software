@@ -4,7 +4,7 @@ include(dirname(__FILE__)."/../Core/connection.php");
 include(dirname(__FILE__)."/../Core/validCookie.php");
 $valid = false;
 
-echo'alert("hello")';
+
 
 if ($verified) {
 
@@ -23,7 +23,7 @@ if ($verified) {
 		$valid = true;
 	}
 }
- echo $access["AccessLevel"];
+
 if (!$valid){
 	mysqli_close($link);
 	header("Location:http://badapple/HTML/profile.php");

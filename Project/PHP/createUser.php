@@ -72,15 +72,18 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 					$last_id = mysqli_insert_id($link);
 
 					if ($last_id != 0){
+						$newuserinfo = mysqli_stmt_init($link);
+						mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (User, FirstName, Surname, DateOfBirth, Occupation) VALUES (?, ?, ?, ?, ?)');
+						mysqli_stmt_bind_param($newuserinfo, 'isssi', $last_id, $first, $surname, $dob, $occupation);   
+						mysqli_stmt_execute($newuserinfo);
+
+						$last_id = mysqli_insert_id($link);
+
 						$newaddress = mysqli_stmt_init($link);
 						mysqli_stmt_prepare($newaddress, 'INSERT INTO useraddress (AddressID, HouseNumberName, StreetName, PostCode , City) VALUES (?, ?, ?, ?, ?)');
 						mysqli_stmt_bind_param($newaddress, 'issss', $last_id, $number, $street, $postcode, $city);   
 						mysqli_stmt_execute($newaddress);
-
-						$newuserinfo = mysqli_stmt_init($link);
-						mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (User, FirstName, Surname, DateOfBirth, Occupation, Address) VALUES (?, ?, ?, ?, ?, ?)');
-						mysqli_stmt_bind_param($newuserinfo, 'isssii', $last_id, $first, $surname, $dob, $occupationresult[0], $last_id);   
-						mysqli_stmt_execute($newuserinfo);
+						
 					}
 					header('Location: http://badapple/HTML/login.php');
 

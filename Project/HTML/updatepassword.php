@@ -63,6 +63,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <?php include "../PHP/admin/adminButton.php" ?>
                 <li><a href="workingbuilderTemp.php"> Path </a></li>
+                <li><a href="employmenthistory.php"> Employment </a></li>
                 <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
                   <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>

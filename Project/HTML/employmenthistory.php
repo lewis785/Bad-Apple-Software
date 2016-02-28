@@ -66,6 +66,7 @@ include "../PHP/Core/verify.php";
             <ul class="nav navbar-nav navbar-right">
                 <?php include "../PHP/admin/adminButton.php" ?>
                 <li><a href="workingbuilderTemp.php"> Path </a></li>
+                <li><a href="employmenthistory.php"> Employment </a></li>
                 <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
                   <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
@@ -96,19 +97,7 @@ include "../PHP/Core/verify.php";
      <div class="row contact-wrap"> 
         <div class="col-md-8 col-md-offset-2">
 
-            <?php include "../php/displayJobs.php" ?>..0
-
-            <br>    
-            <a id="popin" class="btn btn-primary"> Delete my Account </a>
-            <p> <!-- still to be made -->
-
-            </div>
-        </div>
-
-        <div id="popup"> 
-            <a href="../php/delete.php" id="popin" class="btn btn-primary"> Confirm Delete</a>
-            <img id="close" src="../images/close-button.png" class="close-btn"/>
-        </div>
+            <?php include "../php/displayJobs.php" ?>
 
 
     </div><!--/.container-->
