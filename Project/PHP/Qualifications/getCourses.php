@@ -1,6 +1,6 @@
 <?php
 
-include "Core/connection.php";
+include(dirname(__FILE__)."/../Core/connection.php");
 
 $getCourses = mysqli_stmt_init($link);
 

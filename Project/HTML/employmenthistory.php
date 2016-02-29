@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php
+<?php 
 include "../PHP/Core/verify.php";
 ?>
 
@@ -11,7 +11,7 @@ include "../PHP/Core/verify.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Display Qualifications </title>
+    <title> Profile </title>
     
     <!-- core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,6 @@ include "../PHP/Core/verify.php";
     <link href="../css/boostrap-theme.css" rel="stylesheet">
     <link href="../css/boostrap-theme.min.css" rel="stylesheet">
     <link href="../css/home.css" rel="stylesheet">
-    <link href="../css/footer.css" rel="styleshet">
     
     <!-- core JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -36,12 +35,15 @@ include "../PHP/Core/verify.php";
     <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
-
-    <script src="../js/storeGrade.js"></script>
     
     <!-- Code for loading user information -->
+    <script src="../js/loadUser.js"></script>
+    <script src="../js/popup.js"></script>
+
 
 </head><!--/head-->
+
+<body onload="loadInfo()">
 
     <div id="navbar">
         <nav id="main-nav" class="navbar navbar-default">
@@ -90,53 +92,37 @@ include "../PHP/Core/verify.php";
 
 <section id="page-center" class=" col-md-6 col-md-offset-3">
  <div id="center" class="main-section container-fluid">
-     <h2> Current Qualifications</h2>    
+     <h2> Your Career Pathways Profile </h2>    
 
      <div class="row contact-wrap"> 
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <table id="currentQualifications"class="table">
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Qualification</th>
-                            <th>Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
 
-                        <?php include "../php/Qualifications/displayGrades.php" ?>
+            <?php include "../php/displayJobs.php" ?>
 
-                    </tbody>
-                </table>
-            </div>
 
-            <table>
-                <tr>
-                    <td >
-                        <div id="deletediv" class="form-group col-md-10 col-md-offset-2">
-                            <label> Delete Grade </label>
-                            <select id="gradedelete" name="grade" class="form-control col-md-6">
-                                <option value="NoneSelect">Select Grade</option>
-                                <?php include"../php/Qualifications/displayGradeLevel.php"; ?>
-                            </select>
-
-                        </div>
-                    </td>
-                    <td>
-                        <button onclick="deleteGrade()" id="storeGrade" class="btn btn-primary"> Delete Grade </button>
-                    </td>
-                </tr>
-            </table>
-
-        </div>
-    </div>
-</div><!--/.container-->
+    </div><!--/.container-->
 </section><!--/#contact-page-->
 
 
 
-
+<!--/#bottom-->
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
+            </div>
+            <div class="col-sm-6">
+                <ul class="pull-right"> Technologies used :
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>PHP6</li>
+                    <li>GIMP</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer><!--/#footer-->
 
 </body>
 </html>
