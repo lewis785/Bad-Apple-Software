@@ -1,3 +1,5 @@
+var valid = false;
+
 function loadInfo(){
 
     $.ajax({
@@ -19,6 +21,7 @@ function loadInfo(){
                 var street = (result.street);
                 var city = (result.city);
                 var postcode = (result.postcode);
+                var occupation = (result.occupation);
 
                 $("#joined").text(joindate);
                 $("#lastlogin").text('Yesterday');
@@ -26,6 +29,7 @@ function loadInfo(){
                 $("#lastn").text(surname);
                 $("#name").text(firstname + ' ' + surname);
                 $("#dob").text(DoB);
+                $("#occupation").text(occupation);
                 $("#email").text(email);
                 $("#address").text(housenumber + ' ' + street + ', ' + city + ', ' + postcode);
             }
@@ -37,7 +41,7 @@ function loadInfo(){
 
         error: function(ts) {
             //window.location.href="../html/profile.php";
-          alert("Help i need somebody");
+            alert("An Error Occured");
         }
 
 
@@ -92,15 +96,15 @@ function gradeselected(){
 
     $.ajax({
         type: 'POST',
-        url: "../PHP/getGrades.php",
-        data: dataString,
+        url: "../PHP/Qualifications/getGrades.php",
+        dataType: 'json',
+        data: {level:selectedlvl},
         cache: false,
-        dataType: 'json', 
         success: function(data){
 
 
             $('#gradeselect').find('option').remove();
-
+            $('#gradeselect').find('option').end().append('<option value="NoneSelect">Select Grade</option>');
 
             for (var i=0; i<data.length; i++){
                 var grade = data[i].grade;
@@ -123,8 +127,6 @@ function gradeselected(){
 
 
 function occupationfill(){
-
-
 
     $.ajax({
         type: 'POST',
@@ -154,3 +156,115 @@ function occupationfill(){
     });
 
 }
+
+function validatePassword(){
+
+    var input = $("#pass1").val()
+    $("div").remove(".errormessage");
+
+    $.ajax({
+        type: 'POST',
+        url: "../PHP/validatePassword.php",
+        dataType: 'json', 
+        data: {password: input},
+        cache: false,
+        success: function(data){
+            if(data.valid){
+
+            }
+            else
+            {
+                $("#passdiv").append("<div id='invalid' class='errormessage'> Invalid Password <br> (Min 8 Character, Contain a Capital letter and one Number) </div>");
+            }
+        },
+        error: function(){
+            alert("Problem");
+        }
+
+
+    });
+}
+
+
+function Login(){
+
+    $("div").remove(".errormessage");
+
+    var user = $("#userinput").val();
+    var pass = $("#passinput").val();
+
+    if(user === ""){
+        $("#userdiv").append("<div id='invalid' class='errormessage'> Please Enter User Name </div>");
+    }
+    if(pass === ""){
+        $("#passdiv").append("<div id='invalid' class='errormessage'> Please Enter Password </div>");
+    }
+
+    if(!(user === "")  && !(pass === "") ){
+        $.ajax({  
+           type: 'POST',
+           url: "../PHP/validateLogin.php",
+           dataType: 'json',
+           data: {username:user, password:pass},
+           cache: false,
+           success: function(result){
+
+               if(result.valid) {
+                document.forms['login'].submit();
+            }
+            else
+            {
+                $("#logininput").append("<div id='invalid' class='errormessage'> Login Not Valid </div>");
+
+            }
+
+        },
+        error: function(){
+           alert("Error Occured When Logging In");
+       }
+   });
+    }
+}
+
+
+function updatePassword(){
+
+    $("div").remove(".errormessage");
+
+    var user = $("#userinput").val();
+    var pass = $("#passinput").val();
+
+    if(user === ""){
+        $("#userdiv").append("<div id='invalid' class='errormessage'> Please Enter User Name </div>");
+    }
+    if(pass === ""){
+        $("#passdiv").append("<div id='invalid' class='errormessage'> Please Enter Password </div>");
+
+    }
+}
+
+function checkKey(){
+
+    $("#passinput").keypress(function(e) {
+        if(e.which == 13) {
+            Login();
+        }
+    });
+
+}
+
+$(document).ready(function(){
+    var first = document.getElementById("yearstart");
+    var second = document.getElementById("yearend");
+    var year = new Date().getFullYear();
+    var gen = function(max){
+        do{
+            yearstart.add(new Option(year,year),null);
+            yearend.add(new Option(year,year),null);
+            year--;
+            max--;
+        }
+        while(max>0);
+    }
+    (40);
+})

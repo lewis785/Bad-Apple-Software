@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include "../PHP/verify.php";
+include "../PHP/Core/verify.php";
 ?>
 
 <html lang="en">
@@ -64,15 +64,19 @@ include "../PHP/verify.php";
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-
+                <?php include "../PHP/admin/adminButton.php" ?>
+                <li><a href="workingbuilderTemp.php"> Path </a></li>
+                <li><a href="employmenthistory.php"> Employment </a></li>
+                <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
                   <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
+                  <ul id="nav-drop" class="dropdown-menu">
                     <li><a href="profiledetail.php"> Edit Info </a></li>
-                    <li><a href="#"> Qualifications </a></li> <!-- still to be made -->
+                    <li><a href="addgrades.php"> Add Grades </a></li> 
+                    <li><a href="addjob.php"> Add Employment </a></li> 
                     <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                     <li role="separator" class="divider"></li>
-                    <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
+                    <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->
 
 
                 </ul>
@@ -80,9 +84,7 @@ include "../PHP/verify.php";
             <li><a href="profile.php"> Home </a></li>  
 
         </ul>
-    </li>
-</ul>
-</div><!-- /.navbar-collapse -->
+    </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
 </div><!-- End of NavBar-->
@@ -98,6 +100,7 @@ include "../PHP/verify.php";
             <ul class="list-group">
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> <div id="joined">01/01/01</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> <div id="name"> John Smith</div></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Occupation</strong></span> <div id="occupation">Employed</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Date of Birth</strong></span> <div id="dob">01/01/01</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Email</strong></span> <div id="email">example@examp.com</div> </li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Address</strong></span> <div id="address">123 Fake Street</div> </li>
