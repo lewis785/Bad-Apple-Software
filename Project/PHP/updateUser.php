@@ -1,6 +1,6 @@
 <?php
 
-include "connection.php";
+include "Core/connection.php";
 
 if (isset($_COOKIE['confirmation'])) {
 	if ( !empty($_POST['firstname']) && !empty($_POST['surname']) && !empty($_POST['DoB'])  && !empty(['email']) && !empty(['number']) && !empty(['street']) && !empty(['city']) && !empty(['postcode'])) {
@@ -9,14 +9,14 @@ if (isset($_COOKIE['confirmation'])) {
 
 		//Retreives users ID from the database
 		$getId = mysqli_stmt_init($link);
-		mysqli_stmt_prepare($getId, "select ID from userlogin where UserName= ? and Password = ?");
+		mysqli_stmt_prepare($getId, "select UserID from userlogin where UserName= ? and Password = ?");
 		mysqli_stmt_bind_param($getId, 'ss', $temp['user'], $temp['pass']);
 		mysqli_stmt_execute($getId);
 
 		$result = mysqli_stmt_get_result($getId);
 
 		while($row = mysqli_fetch_assoc($result)){
-			$id = $row['ID'];
+			$id = $row['UserID'];
 		}
 
 		/*Sanitizes the inputs from the form to prevent SQL Injection*/
@@ -32,13 +32,13 @@ if (isset($_COOKIE['confirmation'])) {
 
 		/*Updates the users Email Address with what was in the form */
 		$updateLogin = mysqli_stmt_init($link);
-		mysqli_stmt_prepare($updateLogin, 'UPDATE userlogin SET EmailAddress = ? where ID =?');
+		mysqli_stmt_prepare($updateLogin, 'UPDATE userlogin SET EmailAddress = ? where UserID =?');
 		mysqli_stmt_bind_param($updateLogin, 'si', $email, $id);   
 		mysqli_stmt_execute($updateLogin); 
 
 		/*Updates userdetails table; Firstname, Surname & DoB of User with the specific UserID */
 		$updateDetails = mysqli_stmt_init($link);
-		mysqli_stmt_prepare($updateDetails, 'UPDATE userdetails SET Firstname=?, Surname=?, DateOfBirth=? where UserID =?');
+		mysqli_stmt_prepare($updateDetails, 'UPDATE userdetails SET Firstname=?, Surname=?, DateOfBirth=? where User =?');
 		mysqli_stmt_bind_param($updateDetails, 'sssi', $first, $surname, $dob, $id);   
 		mysqli_stmt_execute($updateDetails); 
 
@@ -53,4 +53,5 @@ if (isset($_COOKIE['confirmation'])) {
 	}
 }
 
+mysqli_close($link);
 ?>

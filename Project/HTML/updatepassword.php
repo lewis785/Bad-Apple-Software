@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-
-<?php
-include "../PHP/Core/verify.php";
-?>
-
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -11,7 +6,7 @@ include "../PHP/Core/verify.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Display Qualifications </title>
+    <title> Register </title>
     
     <!-- core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +19,6 @@ include "../PHP/Core/verify.php";
     <link href="../css/boostrap-theme.css" rel="stylesheet">
     <link href="../css/boostrap-theme.min.css" rel="stylesheet">
     <link href="../css/home.css" rel="stylesheet">
-    <link href="../css/footer.css" rel="styleshet">
     
     <!-- core JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -37,11 +31,16 @@ include "../PHP/Core/verify.php";
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
 
-    <script src="../js/storeGrade.js"></script>
-    
-    <!-- Code for loading user information -->
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="../js/registervalidate.js"></script>
+
+    <script src="../js/loadUser.js"></script>
+
 
 </head><!--/head-->
+
+<body>
 
     <div id="navbar">
         <nav id="main-nav" class="navbar navbar-default">
@@ -88,55 +87,67 @@ include "../PHP/Core/verify.php";
 </div><!-- End of NavBar-->
 
 
-<section id="page-center" class=" col-md-6 col-md-offset-3">
- <div id="center" class="main-section container-fluid">
-     <h2> Current Qualifications</h2>    
 
-     <div class="row contact-wrap"> 
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <table id="currentQualifications"class="table">
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Qualification</th>
-                            <th>Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+<section id="register-page" class="main-section col-md-6 col-md-offset-3">
 
-                        <?php include "../php/Qualifications/displayGrades.php" ?>
+    <div class="center">        
+        <h2> Change Password </h2>
+    </div>
 
-                    </tbody>
-                </table>
+    <div class="container-fluid m">
+        <div class="row contact-wrap"> 
+            <form id="register-form" class="contact-form" name="contact-form" method="post" action="../PHP/updatePassword.php">  
+                <div class="col-md-6 col-md-offset-3">
+
+                    <div class="form-group">
+                        <label> Current Password * </label>
+                        <input type="text" name="oldpassword" class="form-control glow" placeholder="Current Passwrod">
+                    </div>
+
+                    <div id="passdiv" class="form-group">
+                        <label> New Password * </label>
+                        <input type="Password" id="pass1" name="newpassword"  onblur="validatePassword()" class="form-control glow" placeholder="New Password">
+                    </div>
+
+                    <div  class="form-group">
+                        <label> Confirm New Password * </label>
+                        <input type="Password" id="newpass2" name="confpassword" class="form-control glow" placeholder="new Password again">
+                    </div>
+
+                    <br> 
+
+                    <div class="form-group">
+                        <button type="submit" name="register" class="btn btn-primary" required="required"> Update Password </button>  <!-- still to be made -->
+                    </div> 
+
+                </div>
+            </form> 
+        </div>
+    </div><!--/.container-->
+
+</section><!--/#Register-page-->
+
+<!--/#bottom-->
+
+
+<!--/#bottom-->
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
             </div>
-
-            <table>
-                <tr>
-                    <td >
-                        <div id="deletediv" class="form-group col-md-10 col-md-offset-2">
-                            <label> Delete Grade </label>
-                            <select id="gradedelete" name="grade" class="form-control col-md-6">
-                                <option value="NoneSelect">Select Grade</option>
-                                <?php include"../php/Qualifications/displayGradeLevel.php"; ?>
-                            </select>
-
-                        </div>
-                    </td>
-                    <td>
-                        <button onclick="deleteGrade()" id="storeGrade" class="btn btn-primary"> Delete Grade </button>
-                    </td>
-                </tr>
-            </table>
-
+            <div class="col-sm-6">
+                <ul class="pull-right"> Technologies used :
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>PHP6</li>
+                    <li>GIMP</li>
+                </ul>
+            </div>
         </div>
     </div>
-</div><!--/.container-->
-</section><!--/#contact-page-->
-
-
-
-
+</footer><!--/#footer-->
 
 </body>
 </html>

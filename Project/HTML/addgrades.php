@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php 
-include "../PHP/verify.php";
+include "../PHP/Core/verify.php";
 ?>
 
 <html lang="en">
@@ -38,6 +38,7 @@ include "../PHP/verify.php";
 
 
     <script src="../js/loadUser.js"></script>
+    <script src="../js/storeGrade.js"></script>
 
 </head><!--/head-->
 
@@ -45,91 +46,100 @@ include "../PHP/verify.php";
 
     <div class="wrapper">
 
-        <div id="navbar">
-            <nav id="main-nav" class="navbar navbar-default">
+            <div id="navbar">
+        <nav id="main-nav" class="navbar navbar-default">
 
-              <div class="container-fluid">
+          <div class="container-fluid">
 
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right">
+                <?php include "../PHP/admin/adminButton.php" ?>
+                <li><a href="workingbuilderTemp.php"> Path </a></li>
+                <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
+                <li class="dropdown">
+                  <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                  <ul id="nav-drop" class="dropdown-menu">
+                    <li><a href="profiledetail.php"> Edit Info </a></li>
+                    <li><a href="addgrades.php"> Add Grades </a></li> 
+                    <li><a href="addjob.php"> Add Employment </a></li> 
+                    <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
+                    <li role="separator" class="divider"></li>
+                    <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->
 
-                    <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
-                    <li class="dropdown">
-                      <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
-                      <ul id="nav-drop" class="dropdown-menu">
-                        <li><a href="profiledetail.php"> Edit Info </a></li>
-                        <li><a href="addgrades.php"> Add Grades </a></li> 
-                        <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
-                        <li role="separator" class="divider"></li>
-                        <li><a href="../php/signout.php"> Log out </a></li> <!-- still to be made -->
 
+                </ul>
+            </li> 
+            <li><a href="profile.php"> Home </a></li>  
 
-                    </ul>
-                </li> 
-                <li><a href="profile.php"> Home </a></li>  
-
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
 </nav>
 </div><!-- End of NavBar-->
 
 
-<div id="page-center" class=" col-md-6 col-md-offset-3">
-    <div id="center" class="main-section container-fluid">
-       <h2> Add Grades </h2>
-       <div class="container-fluid m row contact-wrap"> 
-        <div class="col-md-6 col-md-offset-3">
-            <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
+<div id="page-center" class="main-section col-md-6 col-md-offset-3">
 
-                <div class="form-group">
-                    <label> Course Name * </label>
-                    <select id="courseselect" name="course" class="form-control">
-                        <option name="NonSelect" selected>Select course</option>
-                        <?php include "../php/getCourses.php" ?>
+    <div class="center">
+     <h2> Add Grades </h2>
+ </div>
 
-                    </select>
-                </div>
+ <div class="row contact-wrap"> 
+    <div class="col-md-6 col-md-offset-3">
+        <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
 
-                <div class="form-group">
-                    <label> Course Level * </label>
-                    <select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
-                        <option name="NonSelect" selected>Select Level</option>
-                        <?php include "../php/getLevels.php" ?>
-                    </select>
-                </div>
+            <div id="coursediv" class="form-group">
+                <label> Course Name * </label>
+                <select id="courseselect" name="course" class="form-control">
+                    <option value="NoneSelect" selected>Select Course</option>
+                    <?php include "../php/Qualifications/getCourses.php" ?>
 
-                <div class="form-group">
-                    <label> Course Level * </label>
-                    <select id="gradeselect" name="grade" class="form-control">
-                        <option name="NonSelect">Select Level</option>
-                    </select>
-                </div>
+                </select>
+            </div>
+
+            <div id="leveldiv" class="form-group">
+                <label> Course Level * </label>
+                <select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
+                    <option value="NoneSelect" selected>Select Level</option>
+                    <?php include "../php/Qualifications/getLevels.php" ?>
+                </select>
+            </div>
+
+            <div id="gradediv" class="form-group">
+                <label> Course Level * </label>
+                <select id="gradeselect" name="grade" class="form-control">
+                    <option value="NoneSelect">Select Grade</option>
+                </select>
+            </div>
+
+        </form>
+
+        <div class="form-group">
+            <button onclick="addGrade()" id="storeGrade" class="btn btn-primary"> Add Grade </button>  <!-- still to be made -->
+        </div> 
+
+        <div class="form-group">
+            <button onclick="submitForm()" id="submitGrades" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
+        </div> 
 
 
-                <div class="form-group">
-                    <button type="submit" name="register" class="btn btn-primary" required="required"> Register </button>  <!-- still to be made -->
-                </div> 
+        <div id="qualificationslist"></div>
 
-
-            </form>
-
-        </div>
     </div>
+</div>
 
-</div><!-- End of center -->
 </div><!-- End of page-center-->
 
 
