@@ -69,6 +69,9 @@ include "../../PHP/Admin/validAdmin.php";
           </div><!-- /.col-lg-6 -->
         </div>
 
+
+          <?php include "../../php/admin/userControls.php"; ?>
+
         </div>
       </div>
     </div>

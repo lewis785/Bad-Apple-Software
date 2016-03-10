@@ -54,7 +54,9 @@ function checkKey(){
 
 function userselected(id){
 
-alert(id);
+    if (name != undefined && name != null) {
+        window.location = '/HTML/admin/userinfo.php?userid=' + id;
+    }
 
 
 }
