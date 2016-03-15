@@ -64,13 +64,16 @@ include "../PHP/Core/verify.php";
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
             <ul class="nav navbar-nav navbar-right">
-
+                <?php include "../PHP/admin/adminButton.php" ?>
+                <li><a href="workingbuilderTemp.php"> Path </a></li>
+                <li><a href="employmenthistory.php"> Employment </a></li>
                 <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
                   <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
                   <ul id="nav-drop" class="dropdown-menu">
                     <li><a href="profiledetail.php"> Edit Info </a></li>
                     <li><a href="addgrades.php"> Add Grades </a></li> 
+                    <li><a href="addjob.php"> Add Employment </a></li> 
                     <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                     <li role="separator" class="divider"></li>
                     <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->

@@ -1,3 +1,5 @@
+var valid = false;
+
 function loadInfo(){
 
     $.ajax({
@@ -94,7 +96,7 @@ function gradeselected(){
 
     $.ajax({
         type: 'POST',
-        url: "../PHP/getGrades.php",
+        url: "../PHP/Qualifications/getGrades.php",
         dataType: 'json',
         data: {level:selectedlvl},
         cache: false,
@@ -125,8 +127,6 @@ function gradeselected(){
 
 
 function occupationfill(){
-
-
 
     $.ajax({
         type: 'POST',
@@ -184,3 +184,87 @@ function validatePassword(){
 
     });
 }
+
+
+function Login(){
+
+    $("div").remove(".errormessage");
+
+    var user = $("#userinput").val();
+    var pass = $("#passinput").val();
+
+    if(user === ""){
+        $("#userdiv").append("<div id='invalid' class='errormessage'> Please Enter User Name </div>");
+    }
+    if(pass === ""){
+        $("#passdiv").append("<div id='invalid' class='errormessage'> Please Enter Password </div>");
+    }
+
+    if(!(user === "")  && !(pass === "") ){
+        $.ajax({  
+           type: 'POST',
+           url: "../PHP/validateLogin.php",
+           dataType: 'json',
+           data: {username:user, password:pass},
+           cache: false,
+           success: function(result){
+
+               if(result.valid) {
+                document.forms['login'].submit();
+            }
+            else
+            {
+                $("#logininput").append("<div id='invalid' class='errormessage'> Login Not Valid </div>");
+
+            }
+
+        },
+        error: function(){
+           alert("Error Occured When Logging In");
+       }
+   });
+    }
+}
+
+
+function updatePassword(){
+
+    $("div").remove(".errormessage");
+
+    var user = $("#userinput").val();
+    var pass = $("#passinput").val();
+
+    if(user === ""){
+        $("#userdiv").append("<div id='invalid' class='errormessage'> Please Enter User Name </div>");
+    }
+    if(pass === ""){
+        $("#passdiv").append("<div id='invalid' class='errormessage'> Please Enter Password </div>");
+
+    }
+}
+
+function checkKey(){
+
+    $("#passinput").keypress(function(e) {
+        if(e.which == 13) {
+            Login();
+        }
+    });
+
+}
+
+$(document).ready(function(){
+    var first = document.getElementById("yearstart");
+    var second = document.getElementById("yearend");
+    var year = new Date().getFullYear();
+    var gen = function(max){
+        do{
+            yearstart.add(new Option(year,year),null);
+            yearend.add(new Option(year,year),null);
+            year--;
+            max--;
+        }
+        while(max>0);
+    }
+    (40);
+})

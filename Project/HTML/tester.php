@@ -15,8 +15,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type='text/javascript'></script>
 
 	<script src="../JS/delete.js"></script>
-  
-      <link href="../css/home.css" rel="stylesheet">
+	
+	<script src="../js/loadUser.js"></script>
+	<!-- <link href="../css/home.css" rel="stylesheet"> -->
 
 </head>
 
@@ -64,13 +65,23 @@
 
 
 	<?php 
-	include "../php/getInfo.php";
-	include "../php/schoolGrades.php" ;
-	//include "../php/getCourses.php" ;
-	include "../php/readFile.php"; 
-	include "../php/displayOccupations.php" ;
-	include "../php/getUserGrade.php"; 
+	// include "../php/getInfo.php";
+	// include "../php/schoolGrades.php" ;
+	// // include "../php/Qualifications/getCourses.php" ;
+	// include "../php/readFile.php"; 
+	// include "../php/displayOccupations.php" ;
+	// include "../php/Qualifications/getUserGrade.php"; 
+	// include "../php/Qualifications/validateGrade.php";
+	// include "../php/Qualifications/deleteQualification.php";
+	include "../database/usergenerator.php";
+	// include "../database/deleteallusers.php";
 	?>
+
+
+	<form method="post" action="../PHP/admin/searchUsers.php">
+		<input type="text" name="namesearch">
+		<button type="submit"> Search </button>
+	</form>
 
 
 
