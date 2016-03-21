@@ -266,5 +266,5 @@ $(document).ready(function(){
         }
         while(max>0);
     }
-    (40);
+    (60);
 })

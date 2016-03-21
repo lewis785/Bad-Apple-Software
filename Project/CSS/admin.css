@@ -1,0 +1,9 @@
+#usertable tbody tr:hover{
+	background-color: #44aadd;
+	color: black;
+}
+
+#usertable {
+	cursor: pointer; 
+	cursor: hand; 
+}

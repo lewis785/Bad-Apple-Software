@@ -12,6 +12,7 @@ if (!empty($_POST['employer']) && !empty($_POST['title']) && isset($_POST['start
 	$endmonth = mysqli_real_escape_string($link, $_POST['endmonth']);
 	$endyear = mysqli_real_escape_string($link, $_POST['endyear']);
 	$description = mysqli_real_escape_string($link, $_POST['description']);
+	$curyear = date("Y");
 
 	if (($startyear <= $endyear && $startyear > 1970) || $startmonth < $endmonth){
 

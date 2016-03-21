@@ -60,3 +60,31 @@ function userselected(id){
 
 
 }
+
+
+
+
+
+function deleteUser(){
+
+    var userid = $("#userid").text();
+    var name = $("#username").text();
+
+    alert(userid+name);
+    $.ajax({
+       type: 'POST',
+       url: "../../PHP/Admin/admindeleteuser.php",
+       data: {userid:userid, username:name},
+       cache: false,
+       success: function(data){
+
+            alert(name + " " + userid + "has been deleted");
+
+    },
+    error: function (error) {
+        alert('Delete Error ' + eval(error));
+    }
+});
+
+}
+
