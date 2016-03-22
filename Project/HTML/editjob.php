@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php
+<?php 
 include "../PHP/Core/verify.php";
 ?>
 
@@ -11,7 +11,7 @@ include "../PHP/Core/verify.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Display Qualifications </title>
+    <title> Build Profile </title>
     
     <!-- core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,6 @@ include "../PHP/Core/verify.php";
     <link href="../css/boostrap-theme.css" rel="stylesheet">
     <link href="../css/boostrap-theme.min.css" rel="stylesheet">
     <link href="../css/home.css" rel="stylesheet">
-    <link href="../css/footer.css" rel="styleshet">
     
     <!-- core JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -37,11 +36,12 @@ include "../PHP/Core/verify.php";
     <script src="../js/Bootstrap/main.js"></script>
     <script src="../js/Bootstrap/wow.min.js"></script>
 
-    <script src="../js/storeGrade.js"></script>
-    
-    <!-- Code for loading user information -->
+
+    <script src="../js/loadUser.js"></script>
 
 </head><!--/head-->
+
+<body>
 
     <div id="navbar">
         <nav id="main-nav" class="navbar navbar-default">
@@ -88,51 +88,116 @@ include "../PHP/Core/verify.php";
 </div><!-- End of NavBar-->
 
 
-<section id="page-center" class=" col-md-6 col-md-offset-3">
- <div id="center" class="main-section container-fluid">
-     <h2> Current Qualifications</h2>    
+<div id="page-center" class="main-section col-md-6 col-md-offset-3">
 
-     <div class="row contact-wrap"> 
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <table id="currentQualifications"class="table">
-                    <thead>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Qualification</th>
-                            <th>Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+    <div class="center">
+       <h2> Add Grades </h2>
+   </div>
 
-                        <?php include "../php/Qualifications/displayGrades.php" ?>
+   <div class="row contact-wrap"> 
+    <div class="col-md-6 col-md-offset-3">
 
-                    </tbody>
-                </table>
+
+
+
+        <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertjob.php">  
+
+            <div class="form-group">
+                <label> Employer </label>
+                <input type="text" name="employer" class="form-control glow" placeholder="Employer">
             </div>
 
-            <table>
-                <tr>
-                    <td >
-                        <div id="deletediv" class="form-group col-md-10 col-md-offset-2">
-                            <label> Delete Grade </label>
-                            <select id="gradedelete" name="grade" class="form-control col-md-6">
-                                <option value="NoneSelect">Select Grade</option>
-                                <?php include"../php/Qualifications/displayGradeLevel.php"; ?>
-                            </select>
+            <div class="form-group">
+                <label> Job Title </label>
+                <input type="text" name="title" class="form-control glow" placeholder="Job Title">
+            </div> 
+            
 
-                        </div>
-                    </td>
-                    <td>
-                        <button onclick="deleteGrade()" id="storeGrade" class="btn btn-primary"> Delete Grade </button>
-                    </td>
-                </tr>
-            </table>
+            <div class="form-group">
+                <label> Start Date </label>
 
+                <select id="monthstart" name="startmonth" class="form-control">
+                    <option name="NonSelect">Select Month</option>
+                    <?php include "../php/core/monthOptions.php" ?>
+                </select>
+
+
+                <select id="yearstart" name="startyear" class="form-control">
+                    <option name="NonSelect">Select Year</option>
+                </select>
+            </div> 
+
+            <div class="form-group">
+                <label> Start Date </label>
+
+                <select id="monthstart" name="endmonth" class="form-control">
+                    <option name="NonSelect">Select Month</option>
+                    <?php include "../php/core/monthOptions.php" ?>
+                </select>
+
+                <select id="yearend" name="endyear" class="form-control">
+                    <option name="NonSelect">Select Year</option>
+                </select>
+
+            </div> 
+
+
+            <div class="form-group">
+                <label> Description </label>
+                <textarea class="form-control" rows="3" name="description" placeholder="Job Description"></textarea>
+            </div> 
+
+
+            <div class="form-group">
+                <button type="submit" name="register" class="btn btn-primary" required="required"> New Job </button>  <!-- still to be made -->
+            </div> 
+
+        </form>
+
+
+
+
+        <div class="form-group">
+            <button onclick="#" id="storeGrade" class="btn btn-primary"> Add Another Job </button>  <!-- still to be made -->
+        </div> 
+
+        <div class="form-group">
+            <button onclick="#" id="submitGrades" class="btn btn-primary"> Submit Employment </button>  <!-- still to be made -->
+        </div> 
+
+
+        <div id="qualificationslist"></div>
+
+    </div>
+</div>
+
+</div><!-- End of page-center-->
+
+
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
+            </div>
+            <div class="col-sm-6">
+                <ul class="pull-right"> Technologies used :
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>PHP6</li>
+                    <li>GIMP</li>
+                </ul>
+            </div>
         </div>
     </div>
-</div><!--/.container-->
-</section><!--/#contact-page-->
+</footer>
+
+
+
+<!--/#bottom-->
+<!--/#footer-->
+</div>
 
 
 

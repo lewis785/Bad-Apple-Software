@@ -62,11 +62,28 @@ include "../../PHP/Admin/validAdmin.php";
         
         <div class="col-lg-12">
 
-          <button>  dfsdfsf </button>
-          <button> jslfsjfslfk </button>
-          <button> slfsljlksdf </button>
-          <button> Hello </button>
-
+          <div id="gridblock" class="col-lg-5 ">
+            Click button to update the database from the core informations file
+            <div id="blockbutton">
+              <button class='btn-primary btn-lg'>  Update DB </button>
+            </div>
+          </div>
+          <div id="gridblock" class="col-lg-5 col-md-offset-1">
+            Click button to update courses table
+            <div id="blockbutton">
+              <button class='btn-primary btn-lg'> Course Table Update </button>
+            </div>
+          </div>
+          <div id="gridblock" class="col-lg-5 ">
+            <div id="blockbutton">
+              <button class='btn-primary btn-lg'> slfsljlksdf </button>
+            </div>
+          </div>
+          <div id="gridblock" class="col-lg-5 col-md-offset-1">
+            <div id="blockbutton">
+              <button class='btn-primary btn-lg'> Hello </button>
+            </div>
+          </div>
 
 
 

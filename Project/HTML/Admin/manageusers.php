@@ -83,15 +83,18 @@ include "../../PHP/Admin/validAdmin.php";
                 <th>Join On</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
-                <?php include "../../php/admin/retrieveUsers.php"; ?>
-              </tbody>
-            </table>
-          </div>
+                  <?php include "../../php/admin/retrieveUsers.php"; ?>
+              </tr>
+            </tbody>
+
+          </table>
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

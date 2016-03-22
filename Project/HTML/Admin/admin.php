@@ -61,9 +61,14 @@ include "../../PHP/Admin/validAdmin.php";
         <h1 class="page-header">Administrator Dashboard</h1>
         
         <div class="col-lg-12">
+          <?php include"../../php/admin/adminstats.php"; ?>
 
         </div>
+
+
       </div>
+    </div>
+  </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

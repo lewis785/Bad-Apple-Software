@@ -202,14 +202,14 @@ function Login(){
 
     if(!(user === "")  && !(pass === "") ){
         $.ajax({  
-           type: 'POST',
-           url: "../PHP/validateLogin.php",
-           dataType: 'json',
-           data: {username:user, password:pass},
-           cache: false,
-           success: function(result){
+         type: 'POST',
+         url: "../PHP/validateLogin.php",
+         dataType: 'json',
+         data: {username:user, password:pass},
+         cache: false,
+         success: function(result){
 
-               if(result.valid) {
+             if(result.valid) {
                 document.forms['login'].submit();
             }
             else
@@ -220,9 +220,9 @@ function Login(){
 
         },
         error: function(){
-           alert("Error Occured When Logging In");
-       }
-   });
+         alert("Error Occured When Logging In");
+     }
+ });
     }
 }
 
@@ -268,3 +268,56 @@ $(document).ready(function(){
     }
     (60);
 })
+
+
+function employmentclicked(numclicked){
+
+    // alert("Employment Table "+numclicked+" was clicked");
+    var employer = $("#"+numclicked+" #employer").text();
+    var job = $("#"+numclicked+" #title").text();
+
+    $(".overlay").show();
+    $('div.joboptions').remove();
+    $("body").append("<div class='joboptions'>"+
+        "<div id='info'>"+employer+" - "+job+"</div>"+
+        "<div id='jobedit' class='jobchoice'>"+
+        "<button id='"+numclicked+"' class='btn-warning btn-lg'>Edit</button>"+
+        "</div>"+
+        "<div class='jobchoice'>"+
+        "<button id='"+numclicked+"'' onclick=employmentdelete('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
+        "</div>"+
+        "</div>");
+
+
+}
+
+function employmentdelete(employmentnumber)
+{
+
+    $.ajax({  
+     type: 'POST',
+     url: "../PHP/jobdelete.php",
+     dataType: 'json',
+     data: {jobid:employmentnumber},
+     cache: false,
+     success: function(result){
+        $("ul#"+employmentnumber).remove()
+        $(".joboptions").hide();
+    },
+    error: function(){
+     alert("Error Occured When Logging In");
+ }
+
+});
+}
+
+$(document).mouseup(function (e)
+{
+    var container = $(".joboptions");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+    }
+});
