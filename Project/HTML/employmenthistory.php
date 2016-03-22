@@ -91,38 +91,39 @@ include "../PHP/Core/verify.php";
 
 
 <section id="page-center" class=" col-md-6 col-md-offset-3">
- <div id="center" class="main-section container-fluid">
-     <h2> Your Career Pathways Profile </h2>    
+   <div id="center" class="main-section container-fluid">
+       <h2> Your Career Pathways Profile </h2>    
 
-     <div class="row contact-wrap"> 
+       <div class="row contact-wrap"> 
         <div class="col-md-8 col-md-offset-2">
-
             <?php include "../php/displayJobs.php" ?>
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
 
 
-    </div><!--/.container-->
-</section><!--/#contact-page-->
 
 
 
-<!--/#bottom-->
-<footer id="footer" class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
-            </div>
-            <div class="col-sm-6">
-                <ul class="pull-right"> Technologies used :
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>PHP6</li>
-                    <li>GIMP</li>
-                </ul>
+
+
+    <!--/#bottom-->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right"> Technologies used :
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                        <li>PHP6</li>
+                        <li>GIMP</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer><!--/#footer-->
+    </footer><!--/#footer-->
 
 </body>
 </html>

@@ -7,19 +7,19 @@ $url = "//Project/html/tester.php";
 if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2']) && isset($_POST['firstname']) && !empty($_POST['surname']) && !empty($_POST['DoB'])  && !empty(['email1']) && !empty(['email2']) ) {
 	
 
-	$user = mysqli_real_escape_string($link, $_POST['username']);
-	$pass = mysqli_real_escape_string($link, $_POST['pass1']);
-	$pass2 = mysqli_real_escape_string($link, $_POST['pass2']);
-	$first = mysqli_real_escape_string($link, $_POST['firstname']);
-	$surname = mysqli_real_escape_string($link, $_POST['surname']);
-	$occupation = mysqli_real_escape_string($link, $_POST['occupation']);
-	$dob = mysqli_real_escape_string($link, $_POST['DoB']);
-	$email = mysqli_real_escape_string($link, $_POST['email1']);
-	$confemail = mysqli_real_escape_string($link, $_POST['email2']);
-	$number = mysqli_real_escape_string($link, $_POST['number']);
-	$street = mysqli_real_escape_string($link, $_POST['street']);
-	$postcode = mysqli_real_escape_string($link, $_POST['postcode']);
-	$city = mysqli_real_escape_string($link, $_POST['city']);
+	$user = $_POST['username'];
+	$pass =  $_POST['pass1'];
+	$pass2 =  $_POST['pass2'];
+	$first =  $_POST['firstname'];
+	$surname = $_POST['surname'];
+	$occupation =  $_POST['occupation'];
+	$dob =  $_POST['DoB'];
+	$email =  $_POST['email1'];
+	$confemail =  $_POST['email2'];
+	$number =  $_POST['number'];
+	$street =  $_POST['street'];
+	$postcode =  $_POST['postcode'];
+	$city =  $_POST['city'];
 	$accessname = "user";
 
 
@@ -51,7 +51,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 					$result = mysqli_stmt_get_result($getOccupationId);
 					$occupationresult = $result -> fetch_row();
 
-					echo $occupationresult[0];
+				// echo $occupationresult[0];
 
 					$getAccessID = mysqli_stmt_init($link);
 					mysqli_stmt_prepare($getAccessID, 'Select AccessID from useraccess where AccessName= ? ');
@@ -67,26 +67,40 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 					$newlogin = mysqli_stmt_init($link);
 					mysqli_stmt_prepare($newlogin, 'INSERT INTO userlogin (Username, Password, DateJoined, EmailAddress, AccessLevel ) VALUES (?, ?, ?, ?, ?)');
 					mysqli_stmt_bind_param($newlogin, 'ssssi', $user, $cryptpass, $date, $email, $access);   
-					mysqli_stmt_execute($newlogin);
+					$successful = mysqli_stmt_execute($newlogin);
 
-					$last_id = mysqli_insert_id($link);
 
-					if ($last_id != 0){
+					$user_id = mysqli_insert_id($link);
+
+					if ($successful && $user_id != 0)
+					{
 						$newuserinfo = mysqli_stmt_init($link);
 						mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (User, FirstName, Surname, DateOfBirth, Occupation) VALUES (?, ?, ?, ?, ?)');
 						mysqli_stmt_bind_param($newuserinfo, 'isssi', $last_id, $first, $surname, $dob, $occupation);   
-						mysqli_stmt_execute($newuserinfo);
+						$successful = mysqli_stmt_execute($newuserinfo);
 
-						$last_id = mysqli_insert_id($link);
+						$address_id = mysqli_insert_id($link);
+						if($successful & $address_id != 0)
+						{
+							$newaddress = mysqli_stmt_init($link);
+							mysqli_stmt_prepare($newaddress, 'INSERT INTO useraddress (AddressID, HouseNumberName, StreetName, PostCode , City) VALUES (?, ?, ?, ?, ?)');
+							mysqli_stmt_bind_param($newaddress, 'issss', $last_id, $number, $street, $postcode, $city);   
+							$successful = mysqli_stmt_execute($newaddress);
 
-						$newaddress = mysqli_stmt_init($link);
-						mysqli_stmt_prepare($newaddress, 'INSERT INTO useraddress (AddressID, HouseNumberName, StreetName, PostCode , City) VALUES (?, ?, ?, ?, ?)');
-						mysqli_stmt_bind_param($newaddress, 'issss', $last_id, $number, $street, $postcode, $city);   
-						mysqli_stmt_execute($newaddress);
-						
+							if($successful)
+								header('Location: http://badapple/HTML/login.php');
+							else
+								echo "Failed to insert address";
+						}
+						else
+						{
+							deleteuser($link, $user_id);
+						}
 					}
-					header('Location: http://badapple/HTML/login.php');
-
+					else
+					{
+						deleteuser($link, $user_id);
+					}
 				}
 				else
 				{
@@ -98,8 +112,6 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 				header('Location: http://badapple/HTML/register.php');
 			}
 		}
-
-
 	}
 	else
 	{
@@ -108,6 +120,18 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 }
 else
 {
+	header('Location: http://badapple/HTML/register.php');
+}
+
+
+function deleteuser($link, $deleteid){
+
+	$delete = mysqli_stmt_init($link);
+	mysqli_stmt_prepare($delete, "delete userlogin from userlogin where UserId = ?");
+	mysqli_stmt_bind_param($delete, 'i', $deleteid);
+	mysqli_stmt_execute($delete);
+	mysqli_close($link);
+
 	header('Location: http://badapple/HTML/register.php');
 }
 

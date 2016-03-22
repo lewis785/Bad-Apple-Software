@@ -136,7 +136,5 @@ include "../PHP/Core/verify.php";
 
 
 
-
-
 </body>
 </html>
