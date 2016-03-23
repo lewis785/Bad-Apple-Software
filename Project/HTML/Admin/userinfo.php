@@ -12,7 +12,7 @@ include "../../PHP/Admin/validAdmin.php";
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Admin  Settings Page</title>
+<title>Admin Page</title>
 
 <!-- Bootstrap core CSS -->
 <link href="../../admincss/bootstrap.css" rel="stylesheet">
@@ -20,13 +20,16 @@ include "../../PHP/Admin/validAdmin.php";
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <link href="../../admincss/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
+
 <!-- Custom styles for this template -->
 <link href="../../admincss/dashboard.css" rel="stylesheet">
 <script src="admincss/ie-emulation-modes-warning.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="../../js/admins.js"></script>
 
 </head>
 
-<body>
+<body onload="checkKey()">
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -46,16 +49,18 @@ include "../../PHP/Admin/validAdmin.php";
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
           <li><a href="admin.php">Overview </a></li>
-          <li><a href="manageusers.php">Manage Users</a></li>
+          <li class="active"><a href="manageusers.php">Manage Users<span class="sr-only">(current)</span></a></li>
           <li><a href="managewebpage.php">Manage Webpages</a></li>
-          <li class="active"><a href="settings.php">Manage Admin Settings<span class="sr-only">(current)</span></a></li>
+          <li><a href="settings.php">Manage Admin Settings</a></li>
         </ul>
       </div>
+
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Administrator Settings Dashboard</h1>
+        <h1 class="page-header">User Control Panel</h1>
 
-
-
+        <div class="col-md-8">
+          <?php include "../../php/admin/userControls.php"; ?>
+        </div>
 
       </div>
     </div>
@@ -65,7 +70,7 @@ include "../../PHP/Admin/validAdmin.php";
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="Dashboard%20Template%20for%20Bootstrap_files/jquery.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+
     <script src="Dashboard%20Template%20for%20Bootstrap_files/bootstrap.js"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="Dashboard%20Template%20for%20Bootstrap_files/holder.js"></script>
@@ -73,5 +78,4 @@ include "../../PHP/Admin/validAdmin.php";
     <script src="Dashboard%20Template%20for%20Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
 
 
-  </body>
-  </html>
+  </body></html>

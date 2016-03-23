@@ -235,14 +235,12 @@ function deleteGrade(){
 			data: {QID: deleteGrade},
 			cache: false,
 			success: function(result){
-
+				$("table#currentQualifications tr#"+deleteGrade).remove();
 			},
 			error: function(){
 				alert("Error Occured While Deleting");
 			}
 		});
-		
-		window.location.href="../html/qualifications.php";
 	}
 	
 
