@@ -18,9 +18,6 @@ mysqli_stmt_execute($getQualifications);
 $result = mysqli_stmt_get_result($getQualifications);
 
 	$gradearray = array();
-	$gradearray[] = array('grade' => "Level is not set");
-	
-
 
 while($row = mysqli_fetch_assoc($result)){
 	$gradearray[] = array("level"=> $row["Level"], "course"=> $row["Course"], "grade"=> $row["Grade"]);
