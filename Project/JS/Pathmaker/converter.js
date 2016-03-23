@@ -8,6 +8,8 @@ function getqualifications(){
 		cache: false,
 		success: function(result){
 			var lastlevel = "not a grade";
+			var parentid = 100;
+			var data = [];
 			$("body").append("<br>")
 
 			for (var i=0; i<result.length; i++){
@@ -20,11 +22,14 @@ function getqualifications(){
 				
 				if(curlevel === lastlevel){
 					$("body").append("-------"+course+": "+grade+"<br>");
+					data.push('{"name": "'+course+': '+grade+'", "parent": "'+curlevel+'"}');
 				}
 				else
 				{
 					$("body").append(curlevel+"<br>");
+					data.push('{"name": "'+curlevel+'", "parent": "qualifications"}');
 					$("body").append("-------"+course+": "+grade+"<br>");
+					data.push('{"name": "'+course+": "+grade+'", "parent": "'+curlevel+'"}');
 					var lastlevel = curlevel;
 				}
 
@@ -32,6 +37,7 @@ function getqualifications(){
 
 			}
 
+			alert(data);
 
 
 		},
