@@ -1,5 +1,6 @@
 <?php
 
+include "validAdmin.php";
 # Use the Curl extension to query Google and get back a page of results
 $url = "http://www.sqa.org.uk/pastpapers/findpastpaper.htm";
 $ch = curl_init();
@@ -39,7 +40,7 @@ foreach($dom->getElementsByTagName('option') as $link) {
 }
 
 
-include "Core/connection.php";
+include(dirname(__FILE__)."/../Core/connection.php");
 
 for ($i = 0; $i < count($subjects); ++$i) {
 	

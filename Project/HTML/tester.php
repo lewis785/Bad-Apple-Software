@@ -42,14 +42,14 @@
 
 	<div id="createuser"> 
 
-		<form name="getName" method="POST" action="../PHP/createUser.php">
-			<input type="text" name="username" placeholder="Username" id="text-box"/><br>
-			<input type="text" name="pass1" placeholder="password" id="text-box"/><br>
+		<form name="getName" method="POST" action="../PHP/jobdelete.php">
+			<input type="text" name="jobid" placeholder="Job id" id="text-box"/><br>
+<!-- 			<input type="text" name="pass1" placeholder="password" id="text-box"/><br>
 			<input type="text" name="pass2" placeholder="confirm password" id="text-box"/><br>
 			<input type="text" name="firstname" placeholder="Firstname" id="text-box"/><br>
 			<input type="text" name="surname" placeholder="Surname" id="text-box"/><br>
 			<input type="date" name="DoB" placeholder="DoB" id="text-box"/><br>
-
+ -->
 
 			<input type="Submit" name="Submit" id="Submit"/>
 		</form>
@@ -73,8 +73,9 @@
 	// include "../php/Qualifications/getUserGrade.php"; 
 	// include "../php/Qualifications/validateGrade.php";
 	// include "../php/Qualifications/deleteQualification.php";
-	include "../database/usergenerator.php";
+	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
+	include "../PHP/admin/admindeleteuser.php";
 	?>
 
 

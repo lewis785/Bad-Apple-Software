@@ -17,7 +17,7 @@ mysqli_stmt_execute($getQualifications);
 $result = mysqli_stmt_get_result($getQualifications);
 
 while($row = mysqli_fetch_assoc($result)){
-	echo "<option value='".$row["UserQID"]."'>".$row["Level"].": ".$row["Course"]."</option>";
+	echo "<option value='".$row["UserQID"]."'><b>".$row["Course"]."</b>: ".$row["Level"]."</option>";
 }
 
 mysqli_close($link);

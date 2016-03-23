@@ -15,7 +15,7 @@ $result = mysqli_stmt_get_result($getAllUsers);
 
 while($row = mysqli_fetch_assoc($result)){
 
-	echo "<tr><td>".$row["UserID"]."</td>
+	echo "<tr  onclick='userselected(".$row["UserID"].")'><td>".$row["UserID"]."</td>
 	<td>".$row["UserName"]."</td>
 	<td>".$row["FirstName"]."</td>
 	<td>".$row["Surname"]."</td>
