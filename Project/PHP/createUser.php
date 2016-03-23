@@ -50,6 +50,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 					mysqli_stmt_execute($getOccupationId); 
 					$result = mysqli_stmt_get_result($getOccupationId);
 					$occupationresult = $result -> fetch_row();
+					$occupation = $occupationresult[0];
 
 				// echo $occupationresult[0];
 
@@ -71,20 +72,25 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 
 
 					$user_id = mysqli_insert_id($link);
-
+					echo $user_id;
+					echo $successful;
 					if ($successful && $user_id != 0)
 					{
 						$newuserinfo = mysqli_stmt_init($link);
 						mysqli_stmt_prepare($newuserinfo, 'INSERT INTO userdetails (User, FirstName, Surname, DateOfBirth, Occupation) VALUES (?, ?, ?, ?, ?)');
-						mysqli_stmt_bind_param($newuserinfo, 'isssi', $last_id, $first, $surname, $dob, $occupation);   
-						$successful = mysqli_stmt_execute($newuserinfo);
+						mysqli_stmt_bind_param($newuserinfo, 'isssi', $user_id, $first, $surname, $dob, $occupation);   
+						$addresssuccessful = mysqli_stmt_execute($newuserinfo);
 
 						$address_id = mysqli_insert_id($link);
-						if($successful & $address_id != 0)
+						echo " ".$address_id;
+						echo $addresssuccessful;
+						echo "Occupation number".$occupation;
+
+						if($addresssuccessful & $address_id != 0)
 						{
 							$newaddress = mysqli_stmt_init($link);
 							mysqli_stmt_prepare($newaddress, 'INSERT INTO useraddress (AddressID, HouseNumberName, StreetName, PostCode , City) VALUES (?, ?, ?, ?, ?)');
-							mysqli_stmt_bind_param($newaddress, 'issss', $last_id, $number, $street, $postcode, $city);   
+							mysqli_stmt_bind_param($newaddress, 'issss', $address_id, $number, $street, $postcode, $city);   
 							$successful = mysqli_stmt_execute($newaddress);
 
 							if($successful)
@@ -94,11 +100,13 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 						}
 						else
 						{
+							echo "address unsuccessful";
 							deleteuser($link, $user_id);
 						}
 					}
 					else
 					{
+						echo "details unsuccessful";
 						deleteuser($link, $user_id);
 					}
 				}
@@ -132,7 +140,7 @@ function deleteuser($link, $deleteid){
 	mysqli_stmt_execute($delete);
 	mysqli_close($link);
 
-	header('Location: http://badapple/HTML/register.php');
+	// header('Location: http://badapple/HTML/register.php');
 }
 
 mysqli_close($link);

@@ -73,8 +73,9 @@
 	// include "../php/Qualifications/getUserGrade.php"; 
 	// include "../php/Qualifications/validateGrade.php";
 	// include "../php/Qualifications/deleteQualification.php";
-	include "../php/jobdelete.php";
+	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
+	include "../PHP/admin/admindeleteuser.php";
 	?>
 
 

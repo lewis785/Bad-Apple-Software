@@ -67,6 +67,7 @@ include "../../PHP/Admin/validAdmin.php";
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Go!</button>
               </span>
+              <div id="numuser"><span>Number of users <div id="num"></div></span></div>
             </div><!-- /input-group -->
           </div><!-- /.col-lg-6 -->
         </div>
