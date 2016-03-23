@@ -277,13 +277,13 @@ function employmentclicked(numclicked){
     var job = $("#"+numclicked+" #title").text();
 
     $(".overlay").show();
-    $('div.joboptions').remove();
-    $("body").append("<div class='joboptions'>"+
+    $('div.options').remove();
+    $("body").append("<div class='options'>"+
         "<div id='info'>"+employer+" - "+job+"</div>"+
-        "<div id='jobedit' class='jobchoice'>"+
+        "<div id='editbutton' class='choice'>"+
         "<button id='"+numclicked+"' class='btn-warning btn-lg'>Edit</button>"+
         "</div>"+
-        "<div class='jobchoice'>"+
+        "<div id='deletebutton'class='choice'>"+
         "<button id='"+numclicked+"'' onclick=employmentdelete('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
         "</div>"+
         "</div>");
@@ -313,7 +313,7 @@ function employmentdelete(employmentnumber)
 
 $(document).mouseup(function (e)
 {
-    var container = $(".joboptions");
+    var container = $(".options");
 
     if (!container.is(e.target) // if the target of the click isn't the container...
         && container.has(e.target).length === 0) // ... nor a descendant of the container
@@ -321,3 +321,4 @@ $(document).mouseup(function (e)
         container.hide();
     }
 });
+
