@@ -219,32 +219,59 @@ function insertGrades(){
 
 }
 
-function deleteGrade(){
+function deleteGrade(inputnum){
 	$("div").remove(".errormessage");
-	var deleteGrade = $('#gradedelete').val();
+	var deleteGrade = inputnum;
 
-	if (deleteGrade === "NoneSelect"){
-		$("#deletediv").append("<div id='invalid' class='errormessage'> Select Grade to Delete </div>");
-	}
-	else
-	{
-		$.ajax({  
-			type: 'POST',
-			url: "../PHP/Qualifications/deleteQualification.php",
-			dataType: 'json',
-			data: {QID: deleteGrade},
-			cache: false,
-			success: function(result){
-				$("table#currentQualifications tr#"+deleteGrade).remove();
-			},
-			error: function(){
-				alert("Error Occured While Deleting");
-			}
-		});
-	}
+	$.ajax({  
+		type: 'POST',
+		url: "../PHP/Qualifications/deleteQualification.php",
+		dataType: 'json',
+		data: {QID: deleteGrade},
+		cache: false,
+		success: function(result){
+			$("table#currentQualifications tr#"+deleteGrade).remove();
+			$(".options").remove();
+		},
+		error: function(){
+			alert("Error Occured While Deleting");
+		}
+	});
 	
 
 }
+
+
+function qualificationclicked(numclicked){
+
+	var qualification = $("tr#"+numclicked).text()
+
+	$(".overlay").show();
+	$('div.options').remove();
+	$("body").append("<div class='options'>"+
+		"<div id='info'>"+qualification+"</div>"+
+		"<div id='editbutton' class='choice'>"+
+		"<button id='"+numclicked+"' class='btn-warning btn-lg'>Edit</button>"+
+		"</div>"+
+		"<div id='deletbutton' class='choice'>"+
+		"<button id='"+numclicked+"'' onclick=deleteGrade('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
+		"</div>"+
+		"</div>");
+
+
+}
+
+
+$(document).mouseup(function (e)
+{
+	var container = $(".options");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+    	container.remove();
+    }
+});
 
 
 

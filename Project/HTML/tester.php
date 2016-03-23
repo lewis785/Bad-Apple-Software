@@ -17,6 +17,8 @@
 	<script src="../JS/delete.js"></script>
 	
 	<script src="../js/loadUser.js"></script>
+
+		<script src="../js/pathmaker/converter.js"></script>
 	<!-- <link href="../css/home.css" rel="stylesheet"> -->
 
 </head>
@@ -75,7 +77,7 @@
 	// include "../php/Qualifications/deleteQualification.php";
 	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
-	include "../PHP/admin/admindeleteuser.php";
+	include "../PHP/pathmaker/pathqualifications.php";
 	?>
 
 
@@ -83,6 +85,11 @@
 		<input type="text" name="namesearch">
 		<button type="submit"> Search </button>
 	</form>
+
+
+
+
+	<button onclick="getqualifications()">Get Grades Tree</button>
 
 
 
