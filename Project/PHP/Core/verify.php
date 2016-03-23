@@ -9,7 +9,7 @@ include 'connection.php';  //Runs all the code in the connection.php file before
 if (isset($_COOKIE['confirmation'])) {
 	$temp = unserialize($_COOKIE['confirmation']); 	//Breaks the cookie down into its parts and stores it in temp
 	$verify = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($verify, "select count(*) from userlogin where UserName= ? and Password = ?");	//Counts how many users exist with the password and username in the cookie
+	mysqli_stmt_prepare($verify, "SELECT count(*) from userlogin where UserName= ? and Password = ?");	//Counts how many users exist with the password and username in the cookie
 	mysqli_stmt_bind_param($verify, 'ss', $temp['user'], $temp['pass']);
 	mysqli_stmt_execute($verify);
 

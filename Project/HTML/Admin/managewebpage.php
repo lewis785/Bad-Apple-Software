@@ -65,18 +65,19 @@ include "../../PHP/Admin/validAdmin.php";
           <div id="gridblock" class="col-lg-5 ">
             Click button to update the database from the core informations file
             <div id="blockbutton">
-              <button class='btn-primary btn-lg'>  Update DB </button>
+              <button id="fileupdate" class='btn-primary btn-lg' onclick="updatefromfile()">  Update DB </button>
             </div>
           </div>
           <div id="gridblock" class="col-lg-5 col-md-offset-1">
             Click button to update courses table
             <div id="blockbutton">
-              <button class='btn-primary btn-lg'> Course Table Update </button>
+              <button id="courseupdate"class='btn-primary btn-lg' onclick="updatecourses()"> Course Table Update </button>
             </div>
           </div>
           <div id="gridblock" class="col-lg-5 ">
+            Generates a 1000 users every time button is clicked.
             <div id="blockbutton">
-              <button class='btn-primary btn-lg'> slfsljlksdf </button>
+              <button id="usergen" class='btn-primary btn-lg icon-spinner icon-spin icon-large' onclick="genusers()"> Generate Users </button>
             </div>
           </div>
           <div id="gridblock" class="col-lg-5 col-md-offset-1">
