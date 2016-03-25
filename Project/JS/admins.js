@@ -39,11 +39,6 @@ function searchUsers(){
 
         $('div#num').html(count);
 
-
-
-
-
-
     },
     error: function (error) {
         // alert('Search Error ' + eval(error));
@@ -139,8 +134,6 @@ function updatecourses(){
         alert("Problem has occured Update Failed");
     }
 });
-
-
 
 }
 
