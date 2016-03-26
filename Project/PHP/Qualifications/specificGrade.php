@@ -15,13 +15,31 @@ if(isset($_POST["QID"])){
 			where userlogin.UserName= ? and userlogin.Password = ? and userqualifications.UserQID = ?");
 		mysqli_stmt_bind_param($getQualifications, 'ssi', $temp['user'], $temp['pass'], $QID);   
 		mysqli_stmt_execute($getQualifications); 
+		$result = mysqli_stmt_get_result($getCourses);
+		$currentgrade = mysqli_fetch_assoc($result);
 
-		$gradearray = array();
 
-		while($row = mysqli_fetch_assoc($gradeslist)){
-			$gradearray[] = 
+		mysqli_stmt_prepare($getCourses, "SELECT Course FROM courses");  
+		mysqli_stmt_execute($getCourses); 
+		$result = mysqli_stmt_get_result($getCourses);
+		
+		$courseselections = "";
+
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			$selection = "<select value='".$row["Course"]."'>".$row["Course"]."</select>";
+			$courseselections = $courseselections.$selection;
 		}
-		echo json_encode(array('html'=>));
+
+
+
+
+
+
+
+
+		echo json_encode(array('html'=>$gradeedit));
 
 	}
 }
