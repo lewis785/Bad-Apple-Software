@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+
 <?php
 include "../../PHP/Admin/validAdmin.php";
 ?>
+
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -11,20 +14,28 @@ include "../../PHP/Admin/validAdmin.php";
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Admin Page</title>
+
 <!-- Bootstrap core CSS -->
 <link href="../../admincss/bootstrap.css" rel="stylesheet">
+
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <link href="../../admincss/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
 <link href="../../css/admin.css" rel="stylesheet">
+
+
 <!-- Custom styles for this template -->
 <link href="../../admincss/dashboard.css" rel="stylesheet">
 <script src="admincss/ie-emulation-modes-warning.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="../../js/admins.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </head>
+
 <body onload="checkKey()">
+
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div id="navbar" class="navbar-collapse collapse">
@@ -37,6 +48,7 @@ include "../../PHP/Admin/validAdmin.php";
       </div>
     </div>
   </nav>
+
   <div class="container-fluid">
     <div class="row">
       <nav class="navbar navbar-default sidebar" role="navigation">
@@ -51,24 +63,57 @@ include "../../PHP/Admin/validAdmin.php";
     </div>
     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="admin.php">Overview<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li><a href="admin.php">Overview<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
         <li ><a href="manageusers.php">Manage Users<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-        <li ><a href="managewebpage.php">Manage Webpages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-globe"></span></a></li>
+        <li class="active"><a href="managewebpage.php">Manage Webpages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-globe"></span></a></li>
         <li ><a href="#">Manage Admin Settings<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-wrench"></span></a></li>
       </ul>
   </div>
   </div>
 </nav>
+
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <h1 class="page-header">Webpage Dashboard</h1>
 
         <div class="col-lg-12">
-          <?php include"../../php/admin/adminstats.php"; ?>
+          <script type="text/javascript">
 
+          $(document).ready(function(){
+
+              $('[data-toggle="popover"]').popover({
+
+                  placement : 'top',
+                  delay:{
+                    show: "1000",
+                  },
+                  trigger : 'hover'
+
+              });
+
+          });
+
+          </script>
+
+          <div id="gridblock" class="col-lg-5 ">
+            <div id="blockbutton">
+              <button id="fileupdate" data-toggle="popover" data-content="Update Database from the Core Informations File"  class="btn-primary btn-flat" onclick="updatefromfile()">  Update DB
+              <span class="glyphicon glyphicon-save"></span> </button>
+            </div>
+          </div>
+          <div id="gridblock" class="col-lg-5 col-md-offset-1">
+            <div id="blockbutton">
+              <button id="courseupdate" data-toggle="popover" data-content="Click button to Update Courses Table"class="btn-primary btn-flat" onclick="updatecourses()"> Course Table Update <span class="glyphicon glyphicon-refresh"></span> </button>
+            </div>
+          </div>
+          <div id="gridblock" class="col-lg-5 col-md-offset-3">
+            <div id="blockbutton">
+              <button id="usergen" data-toggle="popover" data-content="Generates 1000 users everytime the button is clicked" class="btn-primary btn-flat icon-spinner icon-spin icon-large" onclick="genusers()"> Generate Users<span class="glyphicon glyphicon-user"></span> </button>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
