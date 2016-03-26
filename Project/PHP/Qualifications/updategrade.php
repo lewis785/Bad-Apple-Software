@@ -4,15 +4,16 @@ include(dirname(__FILE__)."/../Core/connection.php");
 include(dirname(__FILE__)."/../Core/validCookie.php");
 
 if ($verified){
-	if (isset($_POST['course']) && isset($_POST['level']) && isset($_POST['grade'])){
+	if (isset($_POST['level']) && isset($_POST['grade'])){
 
-		$course = mysqli_real_escape_string($link, $_POST['course']);
-		$level = mysqli_real_escape_string($link, $_POST['level']);
-		$grade = mysqli_real_escape_string($link, $_POST['grade']);
+		$level =  $_POST['level'];
+		$grade = $_POST['grade'];
 
-		$checkCourse = mysqli_stmt_init($link);
-		mysqli_stmt_prepare($checkCourse, "SELECT count(*), CourseID FROM courses WHERE Course = ?");
-		mysqli_stmt_bind_param($checkCourse, 's', $course);   
+		$checkQID = mysqli_stmt_init($link);
+		mysqli_stmt_prepare($checkCourse, "SELECT count(*) FROM userqualifications 
+			INNER JOIN userlogin ON userqualifications.User = userlogin.UserID
+			WHERE Course = ? AND userlogin.UserName = ? AND userlogin.Password = ?");
+		mysqli_stmt_bind_param($checkCourse, 'ssi',$temp['user'],$temp['pass'], $course);   
 		mysqli_stmt_execute($checkCourse); 
 
 		$result = mysqli_stmt_get_result($checkCourse);

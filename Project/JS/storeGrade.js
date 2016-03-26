@@ -336,3 +336,9 @@ function editqualification(QID)
 
 
 
+function updatequalification(QID)
+{
+
+
+	
+}
