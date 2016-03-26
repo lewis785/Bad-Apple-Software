@@ -29,7 +29,7 @@ if(isset($_POST["QID"])){
 		$curlevel = $currentgrade["Level"];
 		$curgrade = $currentgrade["Grade"];
 
-		$htmledit = "<div><div> ".$course."</div>";
+		$htmledit = "<div><div id='info'> ".$course."</div><br>";
 
 		$getCourses = mysqli_stmt_init($link);
 		mysqli_stmt_prepare($getCourses, "SELECT Level FROM levels");  
@@ -75,10 +75,10 @@ if(isset($_POST["QID"])){
 		}
 		$gradeSelections = $gradeSelections."</select><br>";
 
+		$button = "<button onclick=updatequalification($QID) class='btn-primary btn-lg choice'> Save </button></div>";
 
 
-
-		$htmledit = $htmledit.$levelSelections.$gradeSelections."<div>";
+		$htmledit = $htmledit.$levelSelections.$gradeSelections.$button;
 
 
 		// echo  $htmledit;

@@ -104,6 +104,7 @@ function genusers(){
         $('#usergen').toggleClass("btn-warning").toggleClass("btn-success");
         $('#usergen').prop('disabled', true)
         $('#usergen').html("Insert Successful");
+        
         var total = data.total;
         alert(total+" Users have been Inserted");
 

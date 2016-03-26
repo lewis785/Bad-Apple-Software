@@ -78,7 +78,7 @@
 	// include "../php/Qualifications/deleteQualification.php";
 	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
-		include "../database/usergenerator.php";
+		// include "../database/usergenerator.php";
 	// include "../PHP/pathmaker/pathqualifications.php";
 	?>
 

@@ -88,43 +88,6 @@ function loadEditInfo(){
 }
 
 
-function gradeselected(){
-
-    var selectedlvl = $('#levelselect :selected').text();
-
-    var dataString = "level="+selectedlvl;
-
-    $.ajax({
-        type: 'POST',
-        url: "../PHP/Qualifications/getGrades.php",
-        dataType: 'json',
-        data: {level:selectedlvl},
-        cache: false,
-        success: function(data){
-
-
-            $('#gradeselect').find('option').remove();
-            $('#gradeselect').find('option').end().append('<option value="NoneSelect">Select Grade</option>');
-
-            for (var i=0; i<data.length; i++){
-                var grade = data[i].grade;
-                $('#gradeselect').find('option').end().append('<option value="'+grade+'">'+grade+'</option>');
-            }
-
-            $('#gradeselet').prop('disabled', true);
-
-
-
-        },
-        error: function (error) {
-            alert('error; ' + eval(error));
-        }
-    });
-
-}
-
-
-
 
 function occupationfill(){
 
@@ -281,10 +244,10 @@ function employmentclicked(numclicked){
     $("body").append("<div class='options'>"+
         "<div id='info'>"+employer+" - "+job+"</div>"+
         "<div id='editbutton' class='choice'>"+
-        "<button id='"+numclicked+"' class='btn-warning btn-lg'>Edit</button>"+
+        "<button id='"+numclicked+"' class='btn-warning btn-lg' >Edit</button>"+
         "</div>"+
         "<div id='deletebutton'class='choice'>"+
-        "<button id='"+numclicked+"'' onclick=employmentdelete('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
+        "<button id='"+numclicked+"' onclick=employmentdelete('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
         "</div>"+
         "</div>");
 
