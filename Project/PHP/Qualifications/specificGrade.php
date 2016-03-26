@@ -6,40 +6,83 @@ include(dirname(__FILE__)."/../Core/validCookie.php");
 if(isset($_POST["QID"])){
 	if($verified){
 
-		$QID = $_POST["QID"];
 
-		mysqli_stmt_prepare($getQualifications, "SELECT userqualifications.UserQID, courses.Course,levels.Level FROM userqualifications 
+
+		$QID = $_POST["QID"];
+		$levelSelections = "";
+		$gradeSelections = "";
+
+
+		$getQualification = mysqli_stmt_init($link);
+		mysqli_stmt_prepare($getQualification, "SELECT grades.Grade, courses.Course,levels.Level FROM userqualifications 
 			INNER JOIN userlogin ON userqualifications.User = userlogin.UserID
 			INNER JOIN courses ON userqualifications.Course = courses.CourseID
 			INNER JOIN levels ON userqualifications.Level = levels.LevelID
-			where userlogin.UserName= ? and userlogin.Password = ? and userqualifications.UserQID = ?");
-		mysqli_stmt_bind_param($getQualifications, 'ssi', $temp['user'], $temp['pass'], $QID);   
-		mysqli_stmt_execute($getQualifications); 
-		$result = mysqli_stmt_get_result($getCourses);
+			INNER JOIN grades ON userqualifications.Grade = grades.GradeID
+			WHERE userlogin.UserName= ? AND userlogin.Password = ? and userqualifications.UserQID = ?");
+		mysqli_stmt_bind_param($getQualification, 'ssi', $temp['user'], $temp['pass'], $QID);   
+		mysqli_stmt_execute($getQualification); 
+		$result = mysqli_stmt_get_result($getQualification);
 		$currentgrade = mysqli_fetch_assoc($result);
 
+		$course = $currentgrade["Course"];
+		$curlevel = $currentgrade["Level"];
+		$curgrade = $currentgrade["Grade"];
 
-		mysqli_stmt_prepare($getCourses, "SELECT Course FROM courses");  
+		$htmledit = "<div><div> ".$course."</div>";
+
+		$getCourses = mysqli_stmt_init($link);
+		mysqli_stmt_prepare($getCourses, "SELECT Level FROM levels");  
 		mysqli_stmt_execute($getCourses); 
 		$result = mysqli_stmt_get_result($getCourses);
-		
-		$courseselections = "";
 
-
+		$levelSelections = "<select id='levelselect' name='level' class='form-control' onchange='javascript: gradeselected();'>";
 		while($row = mysqli_fetch_assoc($result))
 		{
-			$selection = "<select value='".$row["Course"]."'>".$row["Course"]."</select>";
-			$courseselections = $courseselections.$selection;
+			if ($curlevel === $row["Level"])
+			{
+				$selection = "<option value='".$row["Level"]."' selected>".$row["Level"]."</option>";
+			}
+			else
+			{
+				$selection = "<option value='".$row["Level"]."'>".$row["Level"]."</option>";
+			}
+			$levelSelections = $levelSelections.$selection;
 		}
+		$levelSelections = $levelSelections."</select><br>";
+
+
+
+		$getGrades = mysqli_stmt_init($link);
+		mysqli_stmt_prepare($getGrades, "SELECT Grade FROM grades INNER JOIN levels ON grades.GradeSetID = levels.GradeSet
+			WHERE levels.Level = ?");
+		mysqli_stmt_bind_param($getGrades, 's', $currentgrade["Level"]);   
+		mysqli_stmt_execute($getGrades); 
+		$result = mysqli_stmt_get_result($getGrades);
+
+		$gradeSelections = "<select id='gradeselect' name='grade' class='form-control'>";
+		while($row = mysqli_fetch_assoc($result))
+		{
+			if( $curgrade === $row["Grade"])
+			{
+				$selection = "<option value='".$row["Grade"]."' selected>".$row["Grade"]."</option>";
+			}
+			else
+			{
+				$selection = "<option value='".$row["Grade"]."'>".$row["Grade"]."</option>";
+			}
+			$gradeSelections = $gradeSelections.$selection;
+		}
+		$gradeSelections = $gradeSelections."</select><br>";
 
 
 
 
+		$htmledit = $htmledit.$levelSelections.$gradeSelections."<div>";
 
 
-
-
-		echo json_encode(array('html'=>$gradeedit));
+		// echo  $htmledit;
+		echo json_encode(array('html'=>$htmledit));
 
 	}
 }

@@ -273,5 +273,28 @@ $(document).mouseup(function (e)
     }
 });
 
+function editqualification(QID)
+{
+	var QID = $("#inputarea").val();
+	alert(QID);
+		$.ajax({  
+		type: 'POST',
+		url: "../PHP/Qualifications/specificGrade.php",
+		dataType: 'json',
+		data: {QID: QID},
+		cache: false,
+		success: function(result){
+			
+			var html = result.html;
+			html.replace(/\//g,"/");
+			$("body").append(html);
+
+		},
+		error: function(){
+			alert("Error Occured While Deleting");
+		}
+	});
+}
+
 
 
