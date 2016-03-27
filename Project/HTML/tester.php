@@ -83,11 +83,9 @@
 	?>
 
 
-	<form method="post" action="../PHP/Qualifications/updategrade.php">
+	<form method="post" action="../PHP/specificJob.php">
 
-		<input type="text" name="QID" id="inputarea">
-				<input type="text" name="level" id="inputarea">
-						<input type="text" name="grade" id="inputarea">
+						<input type="text" name="EID" id="inputarea">
 		<button type="submit" > Search </button>
 	</form>
 

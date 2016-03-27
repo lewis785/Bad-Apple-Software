@@ -244,7 +244,7 @@ function employmentclicked(numclicked){
     $("body").append("<div class='options'>"+
         "<div id='info'>"+employer+" - "+job+"</div>"+
         "<div id='editbutton' class='choice'>"+
-        "<button id='"+numclicked+"' class='btn-warning btn-lg' >Edit</button>"+
+        "<button id='"+numclicked+"' class='btn-warning btn-lg' onclick = editjob('"+numclicked+"') >Edit</button>"+
         "</div>"+
         "<div id='deletebutton'class='choice'>"+
         "<button id='"+numclicked+"' onclick=employmentdelete('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
@@ -285,3 +285,57 @@ $(document).mouseup(function (e)
     }
 });
 
+
+
+function editjob(EID)
+{
+    alert(EID);
+    $.ajax({  
+        type: 'POST',
+        url: "../PHP/specificJob.php",
+        data: {EID: EID},
+        cache: false,
+        success: function(result){
+            
+            var html = result.html;
+            html.replace(/\//g,"/");
+            $("div.options").empty();
+            $("div.options").append(html);
+
+        },
+        error: function(){
+            alert("Error Occured While Deleting");
+        }
+    });
+}
+
+
+
+function updatejob(EID)
+{
+    var inlevel = $("select#levelselect").val();
+    var ingrade = $("select#gradeselect").val();
+    var inEID = EID;
+
+    // alert(inQID+" "+inlevel+" "+ingrade);
+
+    $.ajax({  
+        type: 'POST',
+        url: "../PHP/updategrade.php",
+        data: {QID: inQID, level: inlevel, grade: ingrade},
+        cache: false,
+        success: function(result){
+            // alert("update complete");
+            $("tr#"+inQID).find("td#level").html(inlevel);
+            $("tr#"+inQID).find("td#grade").html(ingrade);
+            $(".options").remove();
+
+        },
+        error: function(error){
+            alert("Error Occured While Deleting");
+            alert(error);
+            console.log(error);
+        }
+    });
+    
+}
