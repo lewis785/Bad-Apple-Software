@@ -338,7 +338,29 @@ function editqualification(QID)
 
 function updatequalification(QID)
 {
+	var inlevel = $("select#levelselect").val();
+	var ingrade = $("select#gradeselect").val();
+	var inQID = QID;
 
+	// alert(inQID+" "+inlevel+" "+ingrade);
 
+	$.ajax({  
+		type: 'POST',
+		url: "../PHP/Qualifications/updategrade.php",
+		data: {QID: inQID, level: inlevel, grade: ingrade},
+		cache: false,
+		success: function(result){
+			// alert("update complete");
+			$("tr#"+inQID).find("td#level").html(inlevel);
+			$("tr#"+inQID).find("td#grade").html(ingrade);
+			$(".options").remove();
+
+		},
+		error: function(error){
+			alert("Error Occured While Deleting");
+			alert(error);
+			console.log(error);
+		}
+	});
 	
 }

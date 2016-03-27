@@ -83,10 +83,13 @@
 	?>
 
 
-	<!-- <form method="post" action="../PHP/Qualifications/specificGrade.php"> -->
+	<form method="post" action="../PHP/Qualifications/updategrade.php">
+
 		<input type="text" name="QID" id="inputarea">
-		<button type="submit" onclick="editqualification(4)"> Search </button>
-<!-- 	</form> -->
+				<input type="text" name="level" id="inputarea">
+						<input type="text" name="grade" id="inputarea">
+		<button type="submit" > Search </button>
+	</form>
 
 
 
