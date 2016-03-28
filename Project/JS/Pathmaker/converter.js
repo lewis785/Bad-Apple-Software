@@ -1,6 +1,5 @@
 src="http://d3js.org/d3.v3.min.js";
 
-
 function drawpath(){
 
 	$.ajax({  
@@ -9,15 +8,12 @@ function drawpath(){
 		dataType: 'json',
 		data: {},
 		cache: false,
-		success: 
-            
-            function(result){
+		success: function(result){
 			var lastlevel = "not a grade";
 			var parentid = 100;
 			var data = [];
 			$("body").append("<br>")
-            
-            data.push('{"name": "Qualifications", "parent":"null"}');
+            data.push('{"name":"qualifications","parent":"null"}');
 
 			for (var i=0; i<result.length; i++){
 				
@@ -26,18 +22,17 @@ function drawpath(){
 				var grade= result[i].grade;
 
 				// alert(curlevel + lastlevel);
-				
+				$("body").append("<br>")
 				if(curlevel === lastlevel){
 					$("body").append("-------"+course+": "+grade+"<br>");
-					data.push('{"name": "'+course+': '+grade+'", "parent":"'+curlevel+'"}');
+					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
 				}
 				else
 				{
 					$("body").append(curlevel+"<br>");
-					data.push('{"name":"'+curlevel+'", "parent":"Qualifications"}');
-                    
+					data.push('{"name":"'+curlevel+'","parent":"qualifications"}');
 					$("body").append("-------"+course+": "+grade+"<br>");
-					data.push('{"name":"'+course+': '+grade+'", "parent":"'+curlevel+'"}');
+					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
 					var lastlevel = curlevel;
 				}
 			}
@@ -45,49 +40,35 @@ function drawpath(){
             
             
             
-                alert(data);
-                
-          
-
-                       d3.select('body').append('pre')
-                            .text(JSON.stringify(data, null, '  '));
-
-     data = '[' +data+ ']'; // add square braces to flat json string.
-          data = JOSN.parse(data);    //parse into JSON object. string will not parse == problem.
-        
-
-var dataMap = datas.reduce(function(map, node) {
-    map[node.name] = node;
-    return map;
-    
-}, {});
+          alert(data);
+          data = '[' +data+ ']';
+          data = JSON.parse(data);
             
+    
+var dataMap = data.reduce(function(map, node) {
+	map[node.name] = node;
+	return map;
+}, {});
 
 // create the tree array
-var treearr = [];
-datas.forEach(function(node) {
-    // add to parent
-    var parent = dataMap[node.parent];
-    if (parent) {
-        // create child array if it doesn't exist
-        (parent.children || (parent.children = []))
-            // add node to child array
-            .push(node);
-    } else {
-        // parent is null or missing
-        treearr.push(node);
-    }
+var treeData = [];
+data.forEach(function(node) {
+	// add to parent
+	var parent = dataMap[node.parent];
+	if (parent) {
+		// create child array if it doesn't exist
+		(parent.children || (parent.children = []))
+			// add node to child array
+              .push(node);
+	} else {
+		// parent is null or missing
+		treeData.push(node);
+	}
 });
-
-// show what we've got
-d3.select('body').append('pre')
-    .text(JSON.stringify(treearr, null, '  '));
+                  
+          d3.select('body').append('pre')
+    .text(JSON.stringify(treeData, null, '  '));
             
-            
-            
-            
-            
-          
     
 
     var margin = {top: 20, right: 120, bottom: 20, left: 120},
@@ -110,13 +91,12 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+//d3.json(treeData, function(error, treeData) {
+//  if (error) throw error;
 
-
-  root = treearr[0];
+  root = treeData[0];
   root.x0 = height / 2;
   root.y0 = width;
-    
-  update(root);
 
   function collapse(d) {
     if (d.children) {
@@ -127,8 +107,8 @@ var svg = d3.select("body").append("svg")
   }
 
   root.children.forEach(collapse);
-  
-
+  update(root);
+//});
 
 d3.select(self.frameElement).style("height", "800px");
 
