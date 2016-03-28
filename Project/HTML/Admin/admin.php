@@ -20,6 +20,8 @@ include "../../PHP/Admin/validAdmin.php";
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <link href="../../admincss/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
+<link href="../../css/admin.css" rel="stylesheet">
+
 
 <!-- Custom styles for this template -->
 <link href="../../admincss/dashboard.css" rel="stylesheet">
@@ -49,8 +51,8 @@ include "../../PHP/Admin/validAdmin.php";
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
           <li class="active"><a href="admin.php">Overview <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Manage Users</a></li>
-          <li><a href="#">Manage Webpages</a></li>
+          <li><a href="manageusers.php">Manage Users</a></li>
+          <li><a href="managewebpage.php">Manage Webpages</a></li>
           <li><a href="settings.php">Manage Admin Settings</a></li>
         </ul>
       </div>
@@ -59,37 +61,14 @@ include "../../PHP/Admin/validAdmin.php";
         <h1 class="page-header">Administrator Dashboard</h1>
         
         <div class="col-lg-12">
-          <div class="col-lg-6">
-            <div class="input-group">
-              <input id="usersearch" type="text" class="form-control" placeholder="Search users...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-              </span>
-            </div><!-- /input-group -->
-          </div><!-- /.col-lg-6 -->
+          <?php include"../../php/admin/adminstats.php"; ?>
+
         </div>
 
-        <div class="table-responsive col-lg-12">
-          <table id="usertable" class="table table-striped">
-            <thead>
-              <tr>
-                <th>User ID</th>
-                <th>Username</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Join On</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <?php include "../../php/admin/retrieveUsers.php"; ?>
-              </tbody>
-            </table>
-          </div>
-        </div>
+
       </div>
     </div>
+  </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -103,4 +82,5 @@ include "../../PHP/Admin/validAdmin.php";
     <script src="Dashboard%20Template%20for%20Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
 
 
-  </body></html>
+  </body>
+  </html>

@@ -111,30 +111,10 @@ include "../PHP/Core/verify.php";
                 </table>
             </div>
 
-            <table>
-                <tr>
-                    <td >
-                        <div id="deletediv" class="form-group col-md-10 col-md-offset-2">
-                            <label> Delete Grade </label>
-                            <select id="gradedelete" name="grade" class="form-control col-md-6">
-                                <option value="NoneSelect">Select Grade</option>
-                                <?php include"../php/Qualifications/displayGradeLevel.php"; ?>
-                            </select>
-
-                        </div>
-                    </td>
-                    <td>
-                        <button onclick="deleteGrade()" id="storeGrade" class="btn btn-primary"> Delete Grade </button>
-                    </td>
-                </tr>
-            </table>
-
         </div>
     </div>
 </div><!--/.container-->
 </section><!--/#contact-page-->
-
-
 
 
 

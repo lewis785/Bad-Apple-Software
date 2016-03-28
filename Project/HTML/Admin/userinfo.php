@@ -48,33 +48,23 @@ include "../../PHP/Admin/validAdmin.php";
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar">
         <ul class="nav nav-sidebar">
-          <li class="active"><a href="admin.php">Overview <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Manage Users</a></li>
-          <li><a href="#">Manage Webpages</a></li>
+          <li><a href="admin.php">Overview </a></li>
+          <li class="active"><a href="manageusers.php">Manage Users<span class="sr-only">(current)</span></a></li>
+          <li><a href="managewebpage.php">Manage Webpages</a></li>
           <li><a href="settings.php">Manage Admin Settings</a></li>
         </ul>
       </div>
 
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <h1 class="page-header">Administrator Dashboard</h1>
-        
-        <div class="col-lg-12">
-          <div class="col-lg-6">
-            <div class="input-group">
-              <input id="usersearch" type="text" class="form-control" placeholder="Search users...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
-              </span>
-            </div><!-- /input-group -->
-          </div><!-- /.col-lg-6 -->
-        </div>
+        <h1 class="page-header">User Control Panel</h1>
 
-
+        <div class="col-md-8">
           <?php include "../../php/admin/userControls.php"; ?>
-
         </div>
+
       </div>
     </div>
+  </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

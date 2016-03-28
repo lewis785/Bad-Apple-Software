@@ -38,13 +38,12 @@ include "../PHP/Core/verify.php";
 
 
     <script src="../js/loadUser.js"></script>
-    <script src="../js/storeGrade.js"></script>
 
 </head><!--/head-->
 
 <body>
 
-     <div id="navbar">
+    <div id="navbar">
         <nav id="main-nav" class="navbar navbar-default">
 
           <div class="container-fluid">
@@ -89,49 +88,81 @@ include "../PHP/Core/verify.php";
 </div><!-- End of NavBar-->
 
 
-
 <div id="page-center" class="main-section col-md-6 col-md-offset-3">
 
     <div class="center">
-     <h2> Add Grades </h2>
- </div>
+       <h2> Add Grades </h2>
+   </div>
 
- <div class="row contact-wrap"> 
+   <div class="row contact-wrap"> 
     <div class="col-md-6 col-md-offset-3">
-        <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
 
-            <div id="coursediv" class="form-group">
-                <label> Course Name * </label>
-                <select id="courseselect" name="course" class="form-control">
-                    <option value="NoneSelect" selected>Select Course</option>
-                    <?php include "../php/Qualifications/getCourses.php" ?>
 
-                </select>
+
+
+        <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertjob.php">  
+
+            <div class="form-group">
+                <label> Employer </label>
+                <input type="text" name="employer" class="form-control glow" placeholder="Employer">
             </div>
 
-            <div id="leveldiv" class="form-group">
-                <label> Course Level * </label>
-                <select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
-                    <option value="NoneSelect" selected>Select Level</option>
-                    <?php include "../php/Qualifications/getLevels.php" ?>
-                </select>
-            </div>
+            <div class="form-group">
+                <label> Job Title </label>
+                <input type="text" name="title" class="form-control glow" placeholder="Job Title">
+            </div> 
+            
 
-            <div id="gradediv" class="form-group">
-                <label> Course Level * </label>
-                <select id="gradeselect" name="grade" class="form-control">
-                    <option value="NoneSelect">Select Grade</option>
+            <div class="form-group">
+                <label> Start Date </label>
+
+                <select id="monthstart" name="startmonth" class="form-control">
+                    <option name="NonSelect">Select Month</option>
+                    <?php include "../php/core/monthOptions.php" ?>
                 </select>
-            </div>
+
+
+                <select id="yearstart" name="startyear" class="form-control">
+                    <option name="NonSelect">Select Year</option>
+                </select>
+            </div> 
+
+            <div class="form-group">
+                <label> Start Date </label>
+
+                <select id="monthstart" name="endmonth" class="form-control">
+                    <option name="NonSelect">Select Month</option>
+                    <?php include "../php/core/monthOptions.php" ?>
+                </select>
+
+                <select id="yearend" name="endyear" class="form-control">
+                    <option name="NonSelect">Select Year</option>
+                </select>
+
+            </div> 
+
+
+            <div class="form-group">
+                <label> Description </label>
+                <textarea class="form-control" rows="3" name="description" placeholder="Job Description"></textarea>
+            </div> 
+
+
+            <div class="form-group">
+                <button type="submit" name="register" class="btn btn-primary" required="required"> New Job </button>  <!-- still to be made -->
+            </div> 
 
         </form>
 
+
+
+
         <div class="form-group">
-            <button onclick="addGrade()" id="storeGrade" class="btn btn-primary"> Add Grade </button>  <!-- still to be made -->
+            <button onclick="#" id="storeGrade" class="btn btn-primary"> Add Another Job </button>  <!-- still to be made -->
         </div> 
 
         <div class="form-group">
-            <button onclick="submitForm()" id="submitGrades" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
+            <button onclick="#" id="submitGrades" class="btn btn-primary"> Submit Employment </button>  <!-- still to be made -->
         </div> 
 
 
