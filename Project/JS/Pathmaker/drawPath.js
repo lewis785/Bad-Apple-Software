@@ -24,6 +24,98 @@
 
 </style>
 <body>
+    
+    
+    
+<script>
+function getqualifications(){
+
+	$.ajax({  
+		type: 'POST',
+		url: "../PHP/pathmaker/pathqualifications.php",
+		dataType: 'json',
+		data: {},
+		cache: false,
+		success: function(result){
+			var lastlevel = "not a grade";
+			var parentid = 100;
+			var data = [];
+			$("body").append("<br>")
+
+			for (var i=0; i<result.length; i++){
+				
+				var curlevel= result[i].level;
+				var course= result[i].course;
+				var grade= result[i].grade;
+
+				// alert(curlevel + lastlevel);
+				
+				if(curlevel === lastlevel){
+					$("body").append("-------"+course+": "+grade+"<br>");
+					data.push('{"name": "'+course+': '+grade+'", "parent": "'+curlevel+'"}');
+				}
+				else
+				{
+					$("body").append(curlevel+"<br>");
+					data.push('{"name": "'+curlevel+'", "parent": "qualifications"}');
+					$("body").append("-------"+course+": "+grade+"<br>");
+					data.push('{"name": "'+course+": "+grade+'", "parent": "'+curlevel+'"}');
+					var lastlevel = curlevel;
+				}
+
+
+
+			}
+
+			return data
+            
+            
+
+
+		},
+		error: function(){
+			alert("Error Occured While Deleting");
+		}
+	});
+
+
+
+
+
+}
+
+
+function buildMap(data){
+var dataMap = getqualifications().reduce(function(map, node) {
+	map[node.name] = node;
+	return map;
+}, {});
+
+// create the tree array
+var treeData = [];
+data.forEach(function(node) {
+	// add to parent
+	var parent = dataMap[node.parent];
+	if (parent) {
+		// create child array if it doesn't exist
+		(parent.children || (parent.children = []))
+			// add node to child array
+			.push(node);
+	} else {
+		// parent is null or missing
+		treeData.push(node);
+	}
+});
+    
+}    
+    
+    
+    
+    
+    
+    
+    
+</script
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -47,7 +139,7 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("../JS/treeData.json", function(error, treeData) {
+d3.json(buildMap(), function(error, treeData) {
   if (error) throw error;
 
   root = treeData[0];
