@@ -70,14 +70,14 @@
 	// include "../php/getInfo.php";
 	// include "../php/schoolGrades.php" ;
 	// // include "../php/Qualifications/getCourses.php" ;
-	// include "../php/readFile.php"; 
+	 include "../php/readFile.php"; 
 	// include "../php/displayOccupations.php" ;
 	// include "../php/Qualifications/getUserGrade.php"; 
 	// include "../php/Qualifications/validateGrade.php";
 	// include "../php/Qualifications/deleteQualification.php";
 	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
-	include "../PHP/pathmaker/pathqualifications.php";
+//	include "../PHP/pathmaker/pathqualifications.php";
 	?>
 
 
