@@ -289,7 +289,8 @@ textarea {
 .options {
 	width: 25%;
 	min-width: 300px;
-	height: 200px;
+	height: 250px;
+	min-height: auto;
 	position: absolute;
 	top: 35%;
 	left: 37.5%;
@@ -321,4 +322,21 @@ textarea {
 	background-color: white;
 	cursor: pointer; 
 	cursor: hand;;
+}
+
+
+.numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    min-width: 36px;
+    height: 36px;
+    width : auto;
+    height: auto;
+    padding: 8px;
+    background: #fff;
+    border: 2px solid black;
+    color: black;
+    text-align: center;
+    font: 32px Arial, sans-serif;
+    display: inline-block;
 }
