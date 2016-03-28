@@ -289,22 +289,22 @@ $(document).mouseup(function (e)
 
 function editjob(EID)
 {
-    alert(EID);
     $.ajax({  
         type: 'POST',
         url: "../PHP/specificJob.php",
+        dataType: 'json',
         data: {EID: EID},
         cache: false,
         success: function(result){
-            
             var html = result.html;
+
             html.replace(/\//g,"/");
             $("div.options").empty();
             $("div.options").append(html);
 
         },
         error: function(){
-            alert("Error Occured While Deleting");
+            alert("Error Occured While Loading Edit Information");
         }
     });
 }
