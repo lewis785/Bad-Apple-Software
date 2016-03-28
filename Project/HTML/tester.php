@@ -78,12 +78,11 @@
 	// include "../php/Qualifications/deleteQualification.php";
 	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
-<<<<<<< HEAD
-//	include "../PHP/pathmaker/pathqualifications.php";
-=======
-		// include "../database/usergenerator.php";
-	// include "../PHP/pathmaker/pathqualifications.php";
->>>>>>> refs/remotes/origin/Lewis
+
+	//include "../PHP/pathmaker/pathqualifications.php";
+    include "../database/usergenerator.php";
+	include "../PHP/pathmaker/pathqualifications.php";
+
 	?>
 
 
