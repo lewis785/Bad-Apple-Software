@@ -104,6 +104,42 @@ function addGrade(){
 }
 
 
+function gradeselected(){
+
+	var selectedlvl = $('#levelselect :selected').text();
+
+	var dataString = "level="+selectedlvl;
+
+	$.ajax({
+		type: 'POST',
+		url: "../PHP/Qualifications/getGrades.php",
+		dataType: 'json',
+		data: {level:selectedlvl},
+		cache: false,
+		success: function(data){
+
+
+			$('#gradeselect').find('option').remove();
+			$('#gradeselect').find('option').end().append('<option value="NoneSelect">Select Grade</option>');
+
+			for (var i=0; i<data.length; i++){
+				var grade = data[i].grade;
+				$('#gradeselect').find('option').end().append('<option value="'+grade+'">'+grade+'</option>');
+			}
+
+			$('#gradeselet').prop('disabled', true);
+
+
+
+		},
+		error: function (error) {
+			alert('error; ' + eval(error));
+		}
+	});
+
+}
+
+
 
 
 function checkinput(){
@@ -251,10 +287,10 @@ function qualificationclicked(numclicked){
 	$("body").append("<div class='options'>"+
 		"<div id='info'>"+qualification+"</div>"+
 		"<div id='editbutton' class='choice'>"+
-		"<button id='"+numclicked+"' class='btn-warning btn-lg'>Edit</button>"+
+		"<button id='"+numclicked+"' onclick=editqualification('"+numclicked+"') class='btn-warning btn-lg'>Edit</button>"+
 		"</div>"+
 		"<div id='deletbutton' class='choice'>"+
-		"<button id='"+numclicked+"'' onclick=deleteGrade('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
+		"<button id='"+numclicked+"' onclick=deleteGrade('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
 		"</div>"+
 		"</div>");
 
@@ -275,3 +311,56 @@ $(document).mouseup(function (e)
 
 
 
+function editqualification(QID)
+{
+
+	$.ajax({  
+		type: 'POST',
+		url: "../PHP/Qualifications/specificGrade.php",
+		dataType: 'json',
+		data: {QID: QID},
+		cache: false,
+		success: function(result){
+			
+			var html = result.html;
+			html.replace(/\//g,"/");
+			$("div.options").empty();
+			$("div.options").append(html);
+
+		},
+		error: function(){
+			alert("Error Occured While Deleting");
+		}
+	});
+}
+
+
+
+function updatequalification(QID)
+{
+	var inlevel = $("select#levelselect").val();
+	var ingrade = $("select#gradeselect").val();
+	var inQID = QID;
+
+	// alert(inQID+" "+inlevel+" "+ingrade);
+
+	$.ajax({  
+		type: 'POST',
+		url: "../PHP/Qualifications/updategrade.php",
+		data: {QID: inQID, level: inlevel, grade: ingrade},
+		cache: false,
+		success: function(result){
+			// alert("update complete");
+			$("tr#"+inQID).find("td#level").html(inlevel);
+			$("tr#"+inQID).find("td#grade").html(ingrade);
+			$(".options").remove();
+
+		},
+		error: function(error){
+			alert("Error Occured While Deleting");
+			alert(error);
+			console.log(error);
+		}
+	});
+	
+}

@@ -17,6 +17,7 @@
 	<script src="../JS/delete.js"></script>
 	
 	<script src="../js/loadUser.js"></script>
+		<script src="../js/storeGrade.js"></script>
 
 		<script src="../js/pathmaker/converter.js"></script>
 	<!-- <link href="../css/home.css" rel="stylesheet"> -->
@@ -77,13 +78,19 @@
 	// include "../php/Qualifications/deleteQualification.php";
 	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
+<<<<<<< HEAD
 //	include "../PHP/pathmaker/pathqualifications.php";
+=======
+		// include "../database/usergenerator.php";
+	// include "../PHP/pathmaker/pathqualifications.php";
+>>>>>>> refs/remotes/origin/Lewis
 	?>
 
 
-	<form method="post" action="../PHP/admin/searchUsers.php">
-		<input type="text" name="namesearch">
-		<button type="submit"> Search </button>
+	<form method="post" action="../PHP/specificJob.php">
+
+						<input type="text" name="EID" id="inputarea">
+		<button type="submit" > Search </button>
 	</form>
 
 
