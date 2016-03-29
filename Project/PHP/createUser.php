@@ -94,7 +94,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 							$successful = mysqli_stmt_execute($newaddress);
 
 							if($successful)
-								header('Location: http://badapple/HTML/login.php');
+								header('Location: ../../HTML/login.php');
 							else
 								echo "Failed to insert address";
 						}
@@ -112,12 +112,12 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 				}
 				else
 				{
-					header('Location: http://badapple/HTML/register.php');
+					header('Location: ../../HTML/register.php');
 				}
 			}
 			else
 			{
-				header('Location: http://badapple/HTML/register.php');
+				header('Location: ../../HTML/register.php');
 			}
 		}
 	}
@@ -128,7 +128,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 }
 else
 {
-	header('Location: http://badapple/HTML/register.php');
+	header('Location: ../../HTML/register.php');
 }
 
 
@@ -140,7 +140,8 @@ function deleteuser($link, $deleteid){
 	mysqli_stmt_execute($delete);
 	mysqli_close($link);
 
-	// header('Location: http://badapple/HTML/register.php');
+	header('Location: ../../HTML/register.php');
+
 }
 
 mysqli_close($link);

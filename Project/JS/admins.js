@@ -39,11 +39,6 @@ function searchUsers(){
 
         $('div#num').html(count);
 
-
-
-
-
-
     },
     error: function (error) {
         // alert('Search Error ' + eval(error));
@@ -109,7 +104,9 @@ function genusers(){
         $('#usergen').toggleClass("btn-warning").toggleClass("btn-success");
         $('#usergen').prop('disabled', true)
         $('#usergen').html("Insert Successful");
-        alert("Users have been Inserted");
+        
+        var total = data.total;
+        alert(total+" Users have been Inserted");
 
     },
     error: function (error) {
@@ -139,8 +136,6 @@ function updatecourses(){
         alert("Problem has occured Update Failed");
     }
 });
-
-
 
 }
 

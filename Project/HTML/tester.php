@@ -17,6 +17,9 @@
 	<script src="../JS/delete.js"></script>
 	
 	<script src="../js/loadUser.js"></script>
+		<script src="../js/storeGrade.js"></script>
+
+		<script src="../js/pathmaker/converter.js"></script>
 	<!-- <link href="../css/home.css" rel="stylesheet"> -->
 
 </head>
@@ -68,21 +71,31 @@
 	// include "../php/getInfo.php";
 	// include "../php/schoolGrades.php" ;
 	// // include "../php/Qualifications/getCourses.php" ;
-	// include "../php/readFile.php"; 
+	 include "../php/readFile.php"; 
 	// include "../php/displayOccupations.php" ;
 	// include "../php/Qualifications/getUserGrade.php"; 
 	// include "../php/Qualifications/validateGrade.php";
 	// include "../php/Qualifications/deleteQualification.php";
 	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
-	include "../PHP/admin/admindeleteuser.php";
+
+	//include "../PHP/pathmaker/pathqualifications.php";
+    // include "../database/usergenerator.php";
+	// include "../PHP/pathmaker/pathqualifications.php";
+
 	?>
 
 
-	<form method="post" action="../PHP/admin/searchUsers.php">
-		<input type="text" name="namesearch">
-		<button type="submit"> Search </button>
+	<form method="post" action="../PHP/specificJob.php">
+
+						<input type="text" name="EID" id="inputarea">
+		<button type="submit" > Search </button>
 	</form>
+
+
+
+
+	<button onclick="getqualifications()">Get Grades Tree</button>
 
 
 
