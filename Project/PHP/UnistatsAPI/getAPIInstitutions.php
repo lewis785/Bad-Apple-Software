@@ -3,7 +3,9 @@
   function getInstInfo() {
 
   include "connection.php";
+  include "UnistatsAPI/getAPICourses.php";
   header('Authorization: Basic MTIzNDU2Nzg5MDEyMzQ1Njc4OTA6');
+
 
   $url = 'https://2LCKVTVFETBD1WVRW407@data.unistats.ac.uk/api/v3/KIS/Institutions.JSON?pageIndex=0&pageSize=1000';
 
@@ -15,7 +17,6 @@
   curl_close($ch);
 
   $data = json_decode($result, true);
-  #var_dump($data);
 
   foreach ( $data as $key ) {
 
@@ -23,11 +24,12 @@
     $sortName = $key['SortableName'];
     $ukprn  = $key['UKPRN'];
 
-    #Temporary table info
-    $sql = "INSERT INTO heriotwattcourses 
-    (ApiUrl, KisCourseId, KisMode, Title) 
+    $sql = "INSERT INTO unistatsinstitutes 
+    (ukprn, name, sortablename) 
     VALUES
-    ('$name','$sortName','$ukprn','lol')";
+    ('$ukprn','$name','$sortName')";
+    
+    getCourseInfo($ukprn);
 
     $res = mysqli_query($link, $sql);
     echo $res;

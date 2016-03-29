@@ -1,11 +1,12 @@
 <?php
 
-  function getCourseInfo() {
+  function getCourseInfo($input) {
 
   include "connection.php";
   header('Authorization: Basic MTIzNDU2Nzg5MDEyMzQ1Njc4OTA6');
 
-  $url = 'https://2LCKVTVFETBD1WVRW407@data.unistats.ac.uk/api/v3/KIS/Institution/10007764/Courses.JSON?pageIndex=0&pageSize=500';
+  $ukprn = $input;
+  $url = 'https://2LCKVTVFETBD1WVRW407@data.unistats.ac.uk/api/v3/KIS/Institution/'+$ukprn+'/Courses.JSON?pageIndex=0&pageSize=500';
 
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -15,7 +16,6 @@
   curl_close($ch);
 
   $data = json_decode($result, true);
-  #var_dump($data);
 
   foreach ( $data as $key ) {
 
@@ -24,11 +24,10 @@
     $kisMode  = $key['KisMode'];
     $title    = $key['Title'];
 
-    #Temporary table info
-    $sql = "INSERT INTO heriotwattcourses 
-    (ApiUrl, KisCourseId, KisMode, Title) 
+    $sql = "INSERT INTO unistatscourses 
+    (KisCourseId, ukprn, Title, ApiUrl, KisMode) 
     VALUES
-    ('$apiUrl','$courseId','$kisMode','$title')";
+    ('$courseId','$ukprn','$title','$apiUrl','$kisMode')";
 
     $res = mysqli_query($link, $sql);
     echo $res;
@@ -42,6 +41,5 @@
     }
   mysqli_close($link);
   }
-getCourseInfo();
 
 ?>
