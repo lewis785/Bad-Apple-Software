@@ -60,7 +60,7 @@ if(isset($_POST["QID"])){
 		mysqli_stmt_execute($getGrades); 
 		$result = mysqli_stmt_get_result($getGrades);
 
-		$gradeSelections = "<select id='gradeselect' name='grade' class='form-control'>";
+		$gradeSelections = "<div id='gradediv'><select id='gradeselect' name='grade' class='form-control'>";
 		while($row = mysqli_fetch_assoc($result))
 		{
 			if( $curgrade === $row["Grade"])
@@ -73,7 +73,7 @@ if(isset($_POST["QID"])){
 			}
 			$gradeSelections = $gradeSelections.$selection;
 		}
-		$gradeSelections = $gradeSelections."</select><br>";
+		$gradeSelections = $gradeSelections."</select></div><br>";
 
 		$button = "<button onclick=updatequalification($QID) class='btn-info btn-lg'> Save </button></div>";
 
