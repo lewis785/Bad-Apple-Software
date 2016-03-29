@@ -80,8 +80,8 @@
 	// include "../database/deleteallusers.php";
 
 	//include "../PHP/pathmaker/pathqualifications.php";
-    include "../database/usergenerator.php";
-	include "../PHP/pathmaker/pathqualifications.php";
+    // include "../database/usergenerator.php";
+	// include "../PHP/pathmaker/pathqualifications.php";
 
 	?>
 
