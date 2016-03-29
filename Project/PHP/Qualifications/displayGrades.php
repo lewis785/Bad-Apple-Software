@@ -7,7 +7,7 @@ if($verified){
 
 
 	$getUserGrades = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($getUserGrades, "SELECT courses.Course,levels.Level,grades.Grade FROM userqualifications 
+	mysqli_stmt_prepare($getUserGrades, "SELECT userqualifications.UserQID, courses.Course,levels.Level,grades.Grade FROM userqualifications 
 		INNER JOIN userlogin ON userqualifications.User = userlogin.UserID
 		INNER JOIN courses ON userqualifications.Course = courses.CourseID
 		INNER JOIN levels ON userqualifications.Level = levels.LevelID
@@ -19,7 +19,8 @@ if($verified){
 	$gradeslist = mysqli_stmt_get_result($getUserGrades);
 
 	while($row = mysqli_fetch_assoc($gradeslist)){
-		echo "<tr><td>".$row["Course"]."</td><td>".$row["Level"]."</td><td>".$row["Grade"]."</td></tr>";
+		
+		echo "<tr id='".$row["UserQID"]."' onclick='qualificationclicked(".$row["UserQID"].")'><td id='course'>".$row["Course"]."</td><td id='level'>".$row["Level"]."</td><td id='grade'>".$row["Grade"]."</td></tr>";
 	} 
 
 

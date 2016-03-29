@@ -4,7 +4,7 @@ include "Core/connection.php";
 include 'Core/validCookie.php';
 
 $getUserJob = mysqli_stmt_init($link);
-mysqli_stmt_prepare($getUserJob, "SELECT useremployment.Employer, useremployment.JobTitle, useremployment.JobDescription, S1.MonthName as SMonth,
+mysqli_stmt_prepare($getUserJob, "SELECT useremployment.EmploymentID, useremployment.Employer, useremployment.JobTitle, useremployment.JobDescription, S1.MonthName as SMonth,
 	S2.MonthName as EMonth, useremployment.StartYear, useremployment.EndYear FROM useremployment 
 	INNER JOIN userlogin ON useremployment.UserID = userlogin.UserID
 	INNER JOIN months S1 ON useremployment.StartMonth = S1.MonthID
@@ -21,7 +21,7 @@ while($row = mysqli_fetch_assoc($joblist)){
 
 
 
-	echo'<ul class="list-group">
+	echo'<ul class="list-group jobblock" id="'.$row['EmploymentID'].'"" onclick = "employmentclicked('.$row['EmploymentID'].')">
 	<li class="list-group-item text-right"><span class="pull-left"><strong>'.'Employer'.'</strong></span> <div id="employer">'.$row['Employer'].'</div> </li>
 	<li class="list-group-item text-right"><span class="pull-left"><strong>'.'Time'.'</strong></span> <div id="start">'.$row['SMonth']." ".$row['StartYear']. " - ".$row['EMonth'].' '.$row['EndYear'].'</div></li>
 	<li class="list-group-item text-right"><span class="pull-left"><strong>'.'Title'.'</strong></span> <div id="title">'.$row['JobTitle'].'</div> </li>
