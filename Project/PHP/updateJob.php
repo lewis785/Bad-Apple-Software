@@ -1,10 +1,10 @@
 <?php 
 
-include(dirname(__FILE__)."/../Core/connection.php");
-include(dirname(__FILE__)."/../Core/validCookie.php");
+include"Core/connection.php";
+include"Core/validCookie.php";
 
 if ($verified){
-	if (isset($_POST['EID']) && isset($_POST['level']) && isset($_POST['grade'])){
+	if (isset($_POST['EID']) && isset($_POST['title']) && isset($_POST['startmonth']) && isset($_POST['startyear']) && isset($_POST['endyear']) && isset($_POST['endyear']) && isset($_POST['description'])){
 
 		$EID = $_POST['EID'];
 		$title = mysqli_real_escape_string($link, $_POST['title']);
@@ -30,8 +30,9 @@ if ($verified){
 		if($validcourse[0] == 1){
 			if ((($startyear <= $endyear && $startyear > 1970) && $startyear <= $curyear) && !($startmonth > $curmonth && $startyear === $curyear)){
 				$updateGrade = mysqli_stmt_init($link);
-				mysqli_stmt_prepare($updateGrade, 'UPDATE userqualifications SET Level = ?, Grade = ? where UserQID =?');
-				mysqli_stmt_bind_param($updateGrade, 'iii', $validgrade[1],$validgrade[2], $QID);   
+				mysqli_stmt_prepare($updateGrade, 'UPDATE useremployment SET StartMonth = ?, StartYear = ?, EndMonth = ?, EndYear = ?, JobTitle = ?, JobDescription = ? 
+					where EmploymentID =?');
+				mysqli_stmt_bind_param($updateGrade, 'iiiissi', $startmonth, $startyear, $endmonth, $endyear, $title, $description, $EID);   
 				mysqli_stmt_execute($updateGrade); 
 			}
 			// else
