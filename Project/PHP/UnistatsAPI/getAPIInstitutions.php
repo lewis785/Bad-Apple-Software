@@ -2,8 +2,8 @@
 
   function getInstInfo() {
 
-  include "connection.php";
-  include "UnistatsAPI/getAPICourses.php";
+  include "../Core/connection.php";
+  include "getAPICourses.php";
   header('Authorization: Basic MTIzNDU2Nzg5MDEyMzQ1Njc4OTA6');
 
 
@@ -15,6 +15,8 @@
   curl_setopt($ch, CURLOPT_URL,$url);
   $result=curl_exec($ch);
   curl_close($ch);
+    
+  $InstituteArray = [];
 
   $data = json_decode($result, true);
 
@@ -22,17 +24,28 @@
 
     $name   = $key['Name'];
     $sortName = $key['SortableName'];
-    $ukprn  = $key['UKPRN'];
-
-    $sql = "INSERT INTO unistatsinstitutes 
-    (ukprn, name, sortablename) 
-    VALUES
-    ('$ukprn','$name','$sortName')";
+    $ukprn  = $key['PUBUKPRN'];
+      $country  = $key['Country'];
     
-    getCourseInfo($ukprn);
+    if ($country === "XH")
+    {
+    array_push($InstituteArray, $ukprn);
+    
+    $exists = mysqli_stmt_init($link);
+	mysqli_stmt_prepare($exists, "SELECT count(*) from unistatsinstitutes where UKPRN= ?");	//Counts how many users exist with the password and username in the cookie
+	mysqli_stmt_bind_param($exists, 'i', $ukprn);
+	mysqli_stmt_execute($exists);
 
-    $res = mysqli_query($link, $sql);
-    echo $res;
+	$result = mysqli_stmt_get_result($exists);
+	$count = $result -> fetch_row();
+    
+    if($count[0] === 0)
+    {
+    $insertInstitute = mysqli_stmt_init($link);
+    mysqli_stmt_prepare($insertInstitute, 'INSERT INTO unistatsinstitutes (UKPRN, Name, SortableName, Country) VALUES (?, ?, ?, ?)');
+    mysqli_stmt_bind_param($insertInstitute, 'ssss', $ukprn, $name, $sortName, $country);   
+    $res = mysqli_stmt_execute($insertInstitute);
+    
     if(!$res){
       $result = new stdClass();
       $result->status = false;
@@ -41,8 +54,13 @@
       exit;
       }
     }
+    
+    }
+  }
   mysqli_close($link);
+  getCourseInfo($InstituteArray);
   }
 getInstInfo();
+echo 'done!';
 
 ?>

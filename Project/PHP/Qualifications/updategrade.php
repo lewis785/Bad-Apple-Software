@@ -4,7 +4,6 @@ include(dirname(__FILE__)."/../Core/connection.php");
 include(dirname(__FILE__)."/../Core/validCookie.php");
 
 if ($verified){
-
 	if (isset($_POST['QID']) && isset($_POST['level']) && isset($_POST['grade'])){
 
 		$QID = $_POST['QID'];
@@ -19,8 +18,8 @@ if ($verified){
 		mysqli_stmt_execute($checkQID); 
 
 		$result = mysqli_stmt_get_result($checkQID);
-
 		$validcourse = $result -> fetch_row();
+
 
 		if($validcourse[0] == 1){
 			$checkGradeLevel = mysqli_stmt_init($link);
@@ -33,6 +32,7 @@ if ($verified){
 			$validgrade = $result -> fetch_row();
 
 			echo $validgrade[1].$validgrade[2];
+
 
 			if ($validgrade[0] == 1) {
 
