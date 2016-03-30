@@ -25,7 +25,7 @@ html,body{
 
 .navbar{
 	border: 0px solid transparent;
-	background-color: #68D7FF;  
+	background-color: #1D2A59;  
 }
 
 
@@ -48,7 +48,7 @@ a{
 	padding: 9px 10px 11px;
 	text-decoration: none;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	color:  #B2AC40;
+	color:  #ffffff;
 	font-size: 21px;
 }
 
@@ -121,12 +121,15 @@ div #center{
 
 
 #main-nav ul {
-	background-color: #68D7FF;
+	background-color: #1D2A59;
+
 }
 
 #main-nav li:hover{
 	color: black;
 }
+
+
 
 #nav-drop li:hover{
 	background-color: white;
@@ -137,10 +140,13 @@ div #center{
 	min-height: 100%;
 }
 
+.navbar .nav li a {
+	color: white;
+}
 
-.navbar .nav > li > a:hover {
+.navbar .nav li a:hover {
 	background-color: white;
-	color: black;
+	color: black !important;
 }
 
 h3,h4,h5{
@@ -208,7 +214,7 @@ h3,h4,h5{
 }
 
 #footer {
-	background-color: #68D7FF;
+	background-color: #1D2A59;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
