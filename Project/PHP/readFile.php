@@ -145,7 +145,7 @@ while (!feof($handle)) // Loop til end of file.
 	 			echo "valid {".$levelid.", ".$gradeid."}";
 
 	 			$checkUCAS = mysqli_stmt_init($link);
-	 			mysqli_stmt_prepare($checkUCAS, "SELECT count(*) FROM ucaspoints where Level= ? & Grade = ? ");
+	 			mysqli_stmt_prepare($checkUCAS, "SELECT count(*) FROM ucaspoints where Level= ? AND Grade = ? ");
 	 			mysqli_stmt_bind_param($checkUCAS, 'ii',$levelid,$gradeid);
 	 			mysqli_stmt_execute($checkUCAS);
 	 			$result = mysqli_stmt_get_result($checkUCAS);

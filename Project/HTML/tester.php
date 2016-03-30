@@ -83,9 +83,12 @@ include "../php/readFile.php";
 ?>
 
 
-<form method="post" action="../PHP/specificJob.php">
+<form method="post" action="../PHP/qualifications/deletequalification.php">
 
-	<input type="text" name="EID" id="inputarea">
+	<input type="text" name="QID" id="inputarea">
+	<!-- <input type="text" name="level" id="inputarea"> -->
+	<!-- <input type="text" name="grade" id="inputarea"> -->
+
 	<button type="submit" > Search </button>
 </form>
 

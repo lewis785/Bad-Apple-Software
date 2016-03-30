@@ -56,20 +56,61 @@ include "../PHP/Core/verify.php";
        <div id="center" class="main-section container-fluid">
            <h2> Account Creation Wizard </h2>    
 
-           <div class="numberCircle">1</div>
-           <div class="numberCircle">2</div>
-           <div class="numberCircle">30</div>
-           <div class="numberCircle">4</div>
-           <div> &#9312; </div>
+
+           <ul id="progress-bar" class="col-md-12">
+            <li class="col-md-3 "><div class="current">Detail</div></li>
+            <li class="col-md-3"><div class="completed">Address</div></li>
+            <li class="col-md-3"><div class="incomplete">Employment</div></li>
+            <li class="col-md-3"><div>Qualifications</div></li>
+        </ul>
+
+        <div id="formarea">
+
+            <div class="form-group">
+                <label> First Name * </label>
+                <input type="text" name="firstname" class="form-control glow" placeholder="Enter Firstname">
+            </div>
+            <div class="form-group">
+                <label> Last Name * </label>
+                <input type="text" name="surname" class="form-control glow" placeholder="Enter Lastname">
+            </div>    
+
+            <div class="form-group">
+                <label> Occupation * </label>
+                <select id="occupationselect" name="occupation" class="form-control">
+                    <option name="NonSelect">Select Occupation</option>
+                    <?php include "../php/displayOccupations.php" ?>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label> Date Of Birth * </label>
+                <input type="Date" name="DoB" class="form-control glow" placeholder="Enter Date of Birth">
+            </div>
+
+        </div>
 
 
-       </div><!--/.container-->
-   </section><!--/#contact-page-->
+        <button class="btn btn-primary" id="nextbtn"> Next </button>
 
 
 
-   <!--/#bottom-->
-   <footer id="footer" class="footer">
+
+
+        fslfkjsdflkdsfkjl
+
+    </div><!--/.container-->
+</section><!--/#contact-page-->
+
+
+
+
+
+
+
+
+<!--/#bottom-->
+<footer id="footer" class="footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
