@@ -28,8 +28,8 @@ if(isset($_POST["EID"])){
 		$startyear = $currentjob["StartYear"];
 		$endyear = $currentjob["EndYear"];
 
-		$htmledit = "<div col-sm-12><div id='info'> ".$employer."</div><br>";
-
+		$htmledit = "<div class='col-sm-12' id='editdiv' style='clear:both' > <div id='info'>".$employer."</div>";
+ 
 		$getMonths = mysqli_stmt_init($link);
 		mysqli_stmt_prepare($getMonths, "SELECT MonthName FROM months");  
 		mysqli_stmt_execute($getMonths); 
@@ -46,28 +46,25 @@ if(isset($_POST["EID"])){
 
 		$endtime = monthyear("end",$monthslist,$endmonth,$endyear);
 
-		$text = "<div> <input type='text' name='title' value='".$title."'></input><br><input type='text' name='description' value='".$descrip."'></input></div>";
-
+		$titletext = "<div id='titlediv'><input type='text' id='title' name='title' value='".$title."'></div>";
+		$descripttext = "<textarea class='form-control' rows='3' id='description' name='description' placeholder='Job Description'>".$descrip."</textarea>";
 		$button = "<button onclick=updatejob(".$EID.") class='btn-info btn-lg'> Save </button></div>";
 
 
-		$htmledit = $htmledit.$starttime.$endtime.$text.$button;
+		$htmledit = $htmledit.$titletext.$starttime.$endtime.$descripttext.$button;
 
 
-		echo  $htmledit;
+		// echo  $htmledit;
 
-		echo json_encode(array('html'=>$htmledit));
+		echo json_encode(array("html"=>$htmledit));
 
 	}
 }
 
 
-
-
-
 function monthyear($id,$monthlist,$curmonth,$curyear)
 {
-	$monthSelections = "<select id='".$id."month' name='".$id."month' class='form-control'>";
+	$monthSelections = "<div id='".$id."div' class='onerow'><select id='".$id."month' name='".$id."month' class='leftdrop form-control'>";
 	for ($i=0; $i < sizeof($monthlist); $i++)
 	{
 		if ($curmonth === $monthlist[$i])
@@ -80,14 +77,14 @@ function monthyear($id,$monthlist,$curmonth,$curyear)
 		}
 		$monthSelections = $monthSelections.$selection;
 	}
-	$monthSelections = $monthSelections."</select><br>";
+	$monthSelections = $monthSelections."</select>";
 
 	$startdate = date("Y")-60;
 	$enddate = date("Y");
 
 	$years = range ($startdate,$enddate);
 
-	$yearSelections = "<select id='".$id."year' name='".$id."year' class='form-control' >";
+	$yearSelections = "<select id='".$id."year' name='".$id."year' class='rightdrop form-control' >";
 	foreach($years as $year)
 	{
 		if($year === $curyear)
@@ -96,7 +93,7 @@ function monthyear($id,$monthlist,$curmonth,$curyear)
 
 			$yearSelections = $yearSelections."<option value'".$year."'>".$year."</option>";
 	}
-	$yearSelections = $yearSelections."</select><br>";
+	$yearSelections = $yearSelections."</select></div>";
 
 	return $monthSelections.$yearSelections;
 }
