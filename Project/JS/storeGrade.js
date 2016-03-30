@@ -341,15 +341,16 @@ function updatequalification(QID)
 	var inlevel = $("select#levelselect").val();
 	var ingrade = $("select#gradeselect").val();
 	var inQID = QID;
-
+	$(".errormessage").remove();
 	// alert(inQID+" "+inlevel+" "+ingrade);
-
-	$.ajax({  
-		type: 'POST',
-		url: "../PHP/Qualifications/updategrade.php",
-		data: {QID: inQID, level: inlevel, grade: ingrade},
-		cache: false,
-		success: function(result){
+	if(ingrade != 'NoneSelect')
+	{
+		$.ajax({  
+			type: 'POST',
+			url: "../PHP/Qualifications/updategrade.php",
+			data: {QID: inQID, level: inlevel, grade: ingrade},
+			cache: false,
+			success: function(result){
 			// alert("update complete");
 			$("tr#"+inQID).find("td#level").html(inlevel);
 			$("tr#"+inQID).find("td#grade").html(ingrade);
@@ -361,6 +362,11 @@ function updatequalification(QID)
 			alert(error);
 			console.log(error);
 		}
-	});
+		});
+	}
+	else
+	{
+				$("#gradediv").append("<div id='invalid' class='errormessage'> Select Grade </div>");
+	}
 	
 }

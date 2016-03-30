@@ -313,23 +313,64 @@ function editjob(EID)
 
 function updatejob(EID)
 {
-    var inlevel = $("select#levelselect").val();
-    var ingrade = $("select#gradeselect").val();
+    var validupdate = true;
+    var title = $("input#title").val();
+    var description = $("textarea#description").val();
+    var startmonth = $("select#startmonth").val();
+    var endmonth= $("select#endmonth").val();
+    var startyear= $("select#startyear").val();
+    var endyear = $("select#endyear").val();
     var inEID = EID;
+    var startmonthnum = convertmonth(startmonth);
+    var endmonthnum= convertmonth(endmonth);
+
+    $(".errormessage").remove();
+
+    if(title === "")
+    {
+        $("div#titlediv").append("<div id='invalid' class='errormessage'> Insert Title </div>");
+        validupdate = false;
+    }
+    if(startmonth === "" | startyear === "")
+    {
+        $("div#startdiv").append("<div id='invalid' class='errormessage'> Select Valid Date </div>");
+        validupdate = false;
+    }
+    if(endmonth === "" | endyear === "")
+    {
+        $("div#enddiv").append("<div id='invalid' class='errormessage'> Select Valid Date </div>");
+        validupdate = false;
+    }
+
+    if(startyear > endyear)
+    {
+        $("div#enddiv").append("<div id='invalid' class='errormessage'> Can Not Finish A Job Before You Start It</div>");
+        validupdate = false;
+    }
+
+    if(startyear === endyear && startmonthnum > endmonthnum )
+    {
+        $("div#enddiv").append("<div id='invalid' class='errormessage'> Can Not Finish A Job Before You Start It</div>");
+        validupdate = false;
+    }
+
+
 
     // alert(inQID+" "+inlevel+" "+ingrade);
 
-    $.ajax({  
-        type: 'POST',
-        url: "../PHP/updategrade.php",
-        data: {QID: inQID, level: inlevel, grade: ingrade},
-        cache: false,
-        success: function(result){
+    if(validupdate)
+    {
+        $.ajax({  
+            type: 'POST',
+            url: "../PHP/updatejob.php",
+            data: {EID: EID, title: title, description: description, startmonth:startmonthnum, startyear:startyear, endmonth:endmonthnum, endyear:endyear},
+            cache: false,
+            success: function(result){
             // alert("update complete");
-            $("tr#"+inQID).find("td#level").html(inlevel);
-            $("tr#"+inQID).find("td#grade").html(ingrade);
+            $("ul#"+EID).find("div#start").html(startmonth+" "+startyear+" - "+endmonth+" "+endyear);
+            $("ul#"+EID).find("div#title").html(title);
+            $("ul#"+EID).find("div#desc").html(description);
             $(".options").remove();
-
         },
         error: function(error){
             alert("Error Occured While Deleting");
@@ -337,5 +378,42 @@ function updatejob(EID)
             console.log(error);
         }
     });
-    
+    }
 }
+
+
+function convertmonth(Month)
+{
+    switch(Month) {
+        case "January":
+        return 1;
+        case "Febuary":
+        return 2;
+        case "March":
+        return 3;
+        case "April":
+        return 4;
+        case "May":
+        return 5;
+        case "June":
+        return 6;
+        case "July":
+        return 7;
+        case "August":
+        return 8;
+        case "September":
+        return 9;
+        case "October":
+        return 10;
+        case "November":
+        return 11;
+        case "December":
+        return 12;
+        default:
+        return null;
+    }
+
+
+}
+
+

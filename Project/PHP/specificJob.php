@@ -46,8 +46,8 @@ if(isset($_POST["EID"])){
 
 		$endtime = monthyear("end",$monthslist,$endmonth,$endyear);
 
-		$titletext = "<div><input type='text' name='title' value='".$title."'></div>";
-		$descripttext = "<textarea class='form-control' rows='3' name='description' placeholder='Job Description'>".$descrip."</textarea>";
+		$titletext = "<div id='titlediv'><input type='text' id='title' name='title' value='".$title."'></div>";
+		$descripttext = "<textarea class='form-control' rows='3' id='description' name='description' placeholder='Job Description'>".$descrip."</textarea>";
 		$button = "<button onclick=updatejob(".$EID.") class='btn-info btn-lg'> Save </button></div>";
 
 
@@ -62,12 +62,9 @@ if(isset($_POST["EID"])){
 }
 
 
-
-
-
 function monthyear($id,$monthlist,$curmonth,$curyear)
 {
-	$monthSelections = "<div class='onerow'><select id='".$id."month' name='".$id."month' class='leftdrop form-control'>";
+	$monthSelections = "<div id='".$id."div' class='onerow'><select id='".$id."month' name='".$id."month' class='leftdrop form-control'>";
 	for ($i=0; $i < sizeof($monthlist); $i++)
 	{
 		if ($curmonth === $monthlist[$i])
