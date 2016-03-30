@@ -43,3 +43,16 @@ September
 October
 November
 December
+*
+Advanced Higher|A|56
+Advanced Higher|B|48
+Advanced Higher|C|40
+Advanced Higher|D|32
+New Higher|A|33
+New Higher|B|27
+New Higher|C|21
+New Higher|D|15
+Higher|A|33
+Higher|B|27
+Higher|C|21
+Higher|D|15

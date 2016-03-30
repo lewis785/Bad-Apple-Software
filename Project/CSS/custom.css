@@ -1,39 +1,42 @@
-html{
-	height: 100%;
-}
-
-
-
+/* Put your custom styles here */
 body { 
-background: url(../Images/current.png) no-repeat center center fixed;
-background-position: center center;
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: cover;
-
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-/*margin-bottom: 80px;*/
-height: 100%;
-}
-
-
-#main-nav nav{
-}
-
-.navbar{
-	background-color: #68D7FF; 
-	min-height: 50px;
-	border-bottom: solid 1px black;
-}
-
-#center {
-	background-color: orange;
+	margin-bottom: 80px
 	height: 100%;
 }
 
-.center-wrapper{
-	height: 100%;
+.header-1{
+    padding-bottom: 50px;
+}
+
+div.mask.img{
+	position: absolute;
+    left: 100px;
+    top: 100px;
+    height: 300px;
+    width: auto;
+}
+
+.mask{
+	background-image: url("../Images/current.png");
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.5;
+
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='7' /></filter></svg>#svgMask");
+}
+
+input.form-control{
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%
+    
 }

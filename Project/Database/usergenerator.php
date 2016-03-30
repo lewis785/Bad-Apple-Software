@@ -133,7 +133,7 @@ for($x=0; $x < $numtogenerate; $x++){
 				if($successful)
 				{
 					fwrite($file,"\n(".$first." ".$surname.") {".$user.": ".$password."}");
-
+					$TotalUCASPoints = 0;
 					$loop = rand(1,15);
 					for($i=0; $i<=$loop; $i++)
 					{
@@ -168,16 +168,48 @@ for($x=0; $x < $numtogenerate; $x++){
 
 							if ($validgrade[0] == 1) {
 
+								$getUCASValue = mysqli_stmt_init($link);
+								mysqli_stmt_prepare($getUCASValue, "SELECT count(*), ucaspoints.UCASValue FROM ucaspoints
+									WHERE ucaspoints.Level = ? AND ucaspoints.Grade = ?");
+								mysqli_stmt_bind_param($getUCASValue, 'ii', $level, $grade);   
+								mysqli_stmt_execute($getUCASValue); 
+								$result = mysqli_stmt_get_result($getUCASValue);
+								$UCAS = $result -> fetch_row();
+
+								if($UCAS[0] == 1)
+									$UCASPoints = $UCAS[1];
+								else
+									$UCASPoints = 0;
+
+
+
 								$insertUserGrade = mysqli_stmt_init($link);
 								mysqli_stmt_prepare($insertUserGrade, 'INSERT INTO userqualifications (User, Course, Level, Grade ) VALUES (?, ?, ?, ?)');
 								mysqli_stmt_bind_param($insertUserGrade, 'iiii', $user_id, $course, $level, $grade);   
 								mysqli_stmt_execute($insertUserGrade);
 
-
+								$TotalUCASPoints += $UCASPoints;
 							}
 
 						}
 					}
+
+					$getPoints = mysqli_stmt_init($link);
+					mysqli_stmt_prepare($getPoints, "SELECT UCASPoints FROM userdetails 
+						INNER JOIN userlogin ON userdetails.User = userlogin.UserID
+						where userlogin.UserID = ?");
+					mysqli_stmt_bind_param($getPoints, 'i', $user_id);   
+					mysqli_stmt_execute($getPoints); 
+					$result = mysqli_stmt_get_result($getPoints);
+					$points = $result -> fetch_row();
+
+					$TotalUCASPoints = $TotalUCASPoints + $points[0];
+
+					$updateUCAS = mysqli_stmt_init($link);
+					mysqli_stmt_prepare($updateUCAS, 'UPDATE userdetails, userlogin SET UCASPoints = ?
+						where userdetails.User = userlogin.UserID AND userlogin.UserID = ?');
+					mysqli_stmt_bind_param($updateUCAS, 'ii', $TotalUCASPoints, $user_id);   
+					mysqli_stmt_execute($updateUCAS); 
 
 
 				}
@@ -193,8 +225,6 @@ for($x=0; $x < $numtogenerate; $x++){
 	}
 	else
 		deleteuser($file, $link,0,$first,$surname,"Username ".$user." Already Exists");
-
-
 }
 
 
