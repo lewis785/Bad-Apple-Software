@@ -2,7 +2,7 @@
 
   function getInstInfo() {
 
-    include "../Core/connection.php";
+    include "../PHP/Core/connection.php";
     include "getAPICourses.php";
     header('Authorization: Basic MTIzNDU2Nzg5MDEyMzQ1Njc4OTA6');
 
@@ -22,15 +22,15 @@
     foreach ( $data as $key ) {
       $name     = $key['Name'];
       $sortName = $key['SortableName'];
-      $ukprn    = $key['PUBUKPRN'];
+      $pubukprn    = $key['PUBUKPRN'];
       $country  = $key['Country'];
 
       if ($country === "XH") {
-        array_push($InstituteArray, $ukprn);
+        array_push($InstituteArray, $pubukprn);
 
         $exists = mysqli_stmt_init($link);
-        mysqli_stmt_prepare($exists, "SELECT count(*) from unistatsinstitutes where UKPRN= ?");	//Counts how many users exist with the password and username in the cookie
-        mysqli_stmt_bind_param($exists, 'i', $ukprn);
+        mysqli_stmt_prepare($exists, "SELECT count(*) from unistatsinstitutes where PUBUKPRN= ?");	//Counts how many users exist with the password and username in the cookie
+        mysqli_stmt_bind_param($exists, 'i', $pubukprn);
         mysqli_stmt_execute($exists);
 
         $result = mysqli_stmt_get_result($exists);
@@ -38,8 +38,8 @@
 
         if($count[0] === 0) {
           $insertInstitute = mysqli_stmt_init($link);
-          mysqli_stmt_prepare($insertInstitute, 'INSERT INTO unistatsinstitutes (UKPRN, Name, SortableName, Country) VALUES (?, ?, ?, ?)');
-          mysqli_stmt_bind_param($insertInstitute, 'ssss', $ukprn, $name, $sortName, $country);   
+          mysqli_stmt_prepare($insertInstitute, 'INSERT INTO unistatsinstitutes (PUBUKPRN, Name, SortableName, Country) VALUES (?, ?, ?, ?)');
+          mysqli_stmt_bind_param($insertInstitute, 'ssss', $pubukprn, $name, $sortName, $country);   
           $res = mysqli_stmt_execute($insertInstitute);
 
           if(!$res) {
@@ -55,7 +55,7 @@
     mysqli_close($link);
     getCourseInfo($InstituteArray);
   }
-  getInstInfo();
-  echo 'done!';
+  //getInstInfo();
+  //echo 'done!';
 
 ?>
