@@ -113,29 +113,29 @@ include "../PHP/Core/verify.php";
             </div> 
             
 
-            <div class="form-group">
-                <label> Start Date </label>
+            <div class="form-group onerow">
+                <label class="col-md-12"> Start Date </label>
 
-                <select id="monthstart" name="startmonth" class="form-control">
+                <select id="monthstart" name="startmonth" class="form-control leftdrop">
                     <option name="NonSelect">Select Month</option>
                     <?php include "../php/core/monthOptions.php" ?>
                 </select>
 
 
-                <select id="yearstart" name="startyear" class="form-control">
+                <select id="yearstart" name="startyear" class="form-control rightdrop">
                     <option name="NonSelect">Select Year</option>
                 </select>
             </div> 
 
-            <div class="form-group">
-                <label> Start Date </label>
+            <div class="form-group onerow">
+                <label class="col-md-12"> End Date </label>
 
-                <select id="monthstart" name="endmonth" class="form-control">
+                <select id="monthstart" name="endmonth" class="form-control leftdrop">
                     <option name="NonSelect">Select Month</option>
                     <?php include "../php/core/monthOptions.php" ?>
                 </select>
 
-                <select id="yearend" name="endyear" class="form-control">
+                <select id="yearend" name="endyear" class="form-control rightdrop">
                     <option name="NonSelect">Select Year</option>
                 </select>
 

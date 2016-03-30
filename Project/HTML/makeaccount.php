@@ -64,7 +64,7 @@ include "../PHP/Core/verify.php";
             <li class="col-md-3"><div id="employmentcircle" class="incomplete">Employment</div></li>
         </ul>
 
-        <div id="formarea">
+        <div id="formarea" class="col-md-12">
 
             <div class="form-group">
                 <label> First Name * </label>

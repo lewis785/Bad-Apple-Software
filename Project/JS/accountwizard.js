@@ -68,7 +68,12 @@ if(page === 2)
 
 if(page === 3)
 {
- validform = false;
+	submitForm(false);
+	$("div#formarea").html(employmentHTML);
+	swapclass("qualificationcircle","current","completed");
+	swapclass("employmentcircle","incomplete","current");
+	$("select#monthstart").load("../../php/core/monthOptions.php");
+	$("select#monthend").load("../../php/core/monthOptions.php");
 }
 
 if(page === 4)
@@ -119,7 +124,6 @@ var addressHTML = '<div class="form-group" id="housenumber"><label> House Number
 '<div class="form-group" id="postcode"><label> Postcode * </label><input type="text" name="postcode" class="form-control glow" placeholder="Enter PostCode"></div>'+
 '<div class="form-group" id="city"><label> City * </label><input type="text" name="city" class="form-control glow" placeholder="Enter City"></div>';
 
-
 var qualificationHTML = '<div id="coursediv" class="form-group"><label> Course Name * </label><select id="courseselect" name="course" class="form-control"><option value="NoneSelect" selected>Select Course</option>'+
 '</select></div>'+
 '<div id="leveldiv" class="form-group"><label> Course Level * </label><select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">'+
@@ -128,3 +132,15 @@ var qualificationHTML = '<div id="coursediv" class="form-group"><label> Course N
 '</select></div>'+
 '<div class="form-group"><button onclick="addGrade()" id="storeGrade" class="btn btn-primary"> Add Grade </button>'+
 '<div id="qualificationslist"></div>';
+
+var employmentHTML = '<div class="form-group"><label> Employer </label><input type="text" name="employer" class="form-control glow" placeholder="Employer"></div>'+
+'<div class="form-group"><label> Job Title </label><input type="text" name="title" class="form-control glow" placeholder="Job Title"></div>'+
+'<div class="form-group onerow"><label class="col-md-12"> Start Date </label><select id="monthstart" name="startmonth" class="form-control leftdrop"><option name="NonSelect">Select Month</option></select>'+
+'<select id="yearstart" name="startyear" class="form-control rightdrop"><option name="NonSelect">Select Year</option></select></div>'+ 
+'<div class="onerow form-group"><label class="col-md-12"> End Date </label><select id="monthend" name="endmonth" class="form-control leftdrop"><option name="NonSelect">Select Month</option></select>'+
+'<select id="yearend" name="endyear" class="form-control rightdrop"><option name="NonSelect">Select Year</option></select></div>'+ 
+'<div class="form-group"><label> Description </label><textarea class="form-control" rows="3" name="description" placeholder="Job Description"></textarea></div>'+
+'<div class="form-group"><button type="submit" name="register" class="btn btn-primary" required="required"> New Job </button></div>'; 
+
+
+
