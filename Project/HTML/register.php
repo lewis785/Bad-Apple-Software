@@ -69,18 +69,16 @@
             </nav>
             <!--// End Navbar -->
         </header>
-        <section id="register-page" class="main-section col-md-6 col-md-offset-3">
-            <div class="center"> 
-                <h2> Please Register an Account below </h2>
-            </div>
+        <div class="mask">
+        	<img href="../Images/current.png" />
+		</div>
+		<div class="center"> 
+			<h2> Please Register an Account below </h2>
+		</div>
             <div class="container-fluid m">
                 <div class="row contact-wrap"> 
                     <form id="register-form" class="contact-form" name="contact-form" method="post" action="../PHP/createUser.php"> 
                         <div class="col-md-6 col-md-offset-3">
-                            <div class="form-group">
-                                <label> First Name * </label>
-                                <input type="text" name="firstname" class="form-control glow" placeholder="Enter Firstname">
-                            </div>
                             <div class="form-group">
                                 <label> Last Name * </label>
                                 <input type="text" name="surname" class="form-control glow" placeholder="Enter Lastname">
@@ -90,39 +88,8 @@
                                 <input type="text" name="username" class="form-control glow" placeholder="Enter Username">
                             </div>
                             <div class="form-group">
-                                <label> Occupation * </label>
-                                <select id="occupationselect" name="occupation" class="form-control">
-                                    <option name="NonSelect">Select Occupation</option>
-                                    <?php include "../php/displayOccupations.php" ?>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label> House Number * </label>
-                                <input type="text" name="number" class="form-control glow" placeholder="Enter House Number">
-                            </div>
-                            <div class="form-group">
-                                <label> Street Name * </label>
-                                <input type="text" name="street" class="form-control glow" placeholder="Enter Street Name">
-                            </div>
-                            <div class="form-group">
-                                <label> Postcode * </label>
-                                <input type="text" name="postcode" class="form-control glow" placeholder="Enter PostCode">
-                            </div>
-                            <div class="form-group">
-                                <label> City * </label>
-                                <input type="text" name="city" class="form-control glow" placeholder="Enter City">
-                            </div>
-                            <div class="form-group">
-                                <label> Date Of Birth * </label>
-                                <input type="Date" name="DoB" class="form-control glow" placeholder="Enter Date of Birth">
-                            </div>
-                            <div class="form-group">
                                 <label> Email * </label>
                                 <input type="Email" name="email1" class="form-control glow" placeholder="Enter Email">
-                            </div>
-                            <div class="form-group">
-                                <label> Confirm Email * </label>
-                                <input type="Email" name="email2" class="form-control glow" placeholder="Enter Email again">
                             </div>
                             <div id="passdiv" class="form-group">
                                 <label> Password * </label>
