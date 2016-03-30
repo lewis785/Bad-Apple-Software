@@ -11,7 +11,7 @@ include "../PHP/Core/verify.php";
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> Profile </title>
+    <title> Account Creation </title>
     
     <!-- core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -37,13 +37,13 @@ include "../PHP/Core/verify.php";
     <script src="../js/Bootstrap/wow.min.js"></script>
     
     <!-- Code for loading user information -->
-    <script src="../js/loadUser.js"></script>
-    <script src="../js/popup.js"></script>
+    <script src="../js/accountwizard.js"></script>
+    <script src="../storeGrade.js"></script>
 
 
 </head><!--/head-->
 
-<body onload="loadInfo()">
+<body>
 
     <div id="navbar">
         <nav id="main-nav" class="navbar navbar-default">
@@ -58,46 +58,48 @@ include "../PHP/Core/verify.php";
 
 
            <ul id="progress-bar" class="col-md-12">
-            <li class="col-md-3 "><div class="current">Detail</div></li>
-            <li class="col-md-3"><div class="completed">Address</div></li>
-            <li class="col-md-3"><div class="incomplete">Employment</div></li>
-            <li class="col-md-3"><div>Qualifications</div></li>
+            <li class="col-md-3 "><div id="detailcircle"class="current">Detail</div></li>
+            <li class="col-md-3"><div id="addresscircle" class="incomplete">Address</div></li>
+            <li class="col-md-3"><div id="qualificationcircle" class="incomplete">Qualifications</div></li>
+            <li class="col-md-3"><div id="employmentcircle" class="incomplete">Employment</div></li>
         </ul>
 
         <div id="formarea">
 
             <div class="form-group">
                 <label> First Name * </label>
-                <input type="text" name="firstname" class="form-control glow" placeholder="Enter Firstname">
+                <div id="firstname">
+                    <input type="text" name="firstname" class="form-control glow" id="firstname" placeholder="Enter Firstname">
+                </div>
             </div>
             <div class="form-group">
                 <label> Last Name * </label>
-                <input type="text" name="surname" class="form-control glow" placeholder="Enter Lastname">
+                <div id="surname">
+                    <input type="text" name="surname" class="form-control glow" id="surname" placeholder="Enter Lastname">
+                </div>
             </div>    
 
             <div class="form-group">
                 <label> Occupation * </label>
-                <select id="occupationselect" name="occupation" class="form-control">
-                    <option name="NonSelect">Select Occupation</option>
-                    <?php include "../php/displayOccupations.php" ?>
-                </select>
+                <div id="occupation">
+                    <select id="occupationselect" name="occupation" class="form-control">
+                        <option value="NonSelect">Select Occupation</option>
+                        <?php include "../php/displayOccupations.php" ?>
+                    </select>
+                </div>
             </div>
 
             <div class="form-group">
                 <label> Date Of Birth * </label>
-                <input type="Date" name="DoB" class="form-control glow" placeholder="Enter Date of Birth">
+                <div id="DOB">
+                    <input type="Date" name="DoB" class="form-control glow" id="DOB" placeholder="Enter Date of Birth">
+                </div>
             </div>
-
         </div>
 
 
-        <button class="btn btn-primary" id="nextbtn"> Next </button>
+        <button class="btn btn-primary" id="nextbtn" onclick="nextform()"> Next </button>
 
-
-
-
-
-        fslfkjsdflkdsfkjl
 
     </div><!--/.container-->
 </section><!--/#contact-page-->
