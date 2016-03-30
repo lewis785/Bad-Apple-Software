@@ -83,9 +83,9 @@ include "../php/readFile.php";
 ?>
 
 
-<form method="post" action="../PHP/qualifications/deletequalification.php">
+<form method="post" action="../PHP/admin/makeadmin.php">
 
-	<input type="text" name="QID" id="inputarea">
+	<input type="text" name="userID" id="inputarea">
 	<!-- <input type="text" name="level" id="inputarea"> -->
 	<!-- <input type="text" name="grade" id="inputarea"> -->
 

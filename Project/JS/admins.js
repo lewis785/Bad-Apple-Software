@@ -165,6 +165,31 @@ function updatefromfile(){
 
 }
 
+
+function makeAdmin(){
+
+ var id = $("div#userid").text();
+ alert(id);
+ $.ajax({
+   type: 'POST',
+   url: "../../php/Admin/makeAdmin.php",
+   data: {userID: id},
+   cache: false,
+   success: function(data){
+
+    alert("admin created");
+  },
+  error: function (error) {
+    alert("Problem has occured changing access rights");
+  }
+});
+
+}
+
+
+
+
+
 $(document).ready(function(){
 
   $('[data-toggle="popover"]').popover({
