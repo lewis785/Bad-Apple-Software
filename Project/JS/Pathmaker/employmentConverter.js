@@ -1,57 +1,52 @@
 src="http://d3js.org/d3.v3.min.js";
 
-function drawpath(){
+function drawemploymentpath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Pathmaker/pathqualifications.php",
+		url: "../PHP/Pathmaker/pathemployment.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
 		success: function(result){
           
-			var lastlevel = "not a grade";
-			var parentid = 100;
+			var employer = "";
+			var jobtitle = "";
+			var startmonth = "";
+			var startyear = "";
+			var endmonth = "";
+			var endyear = "";
 			var data = [];
             var id = 0;
 			$("body").append("<br>");
-            data.push('{"id":"'+id+'","name":"qualifications","parent":"null"}');
+            data.push('{"id":"'+id+'","name":"employment","parent":"null"}');
             id += 1;
 
 			for (var i=0; i<result.length; i++){
 				
-				var curlevel= result[i].level;
-				var course= result[i].course;
-				var grade= result[i].grade;
+				var employer   = result[i].employer;
+                var jobtitle   = result[i].jobtitle;
+                var startmonth = result[i].startmonth;
+                var startyear  = result[i].startyear;
+                var endmonth   = result[i].endmonth;
+                var endyear    = result[i].endyear;
 
 				// alert(curlevel + lastlevel);
 				
-              $("body").append("<br>")
-				if(curlevel === lastlevel){
-					//$("body").append("-------"+course+": "+grade+"<br>");
-					data.push('{"id":"'+id+'","name":"'+course+':'+curlevel+'","parent":"'+curlevel+'"}');
-                  id += 1;
-					data.push('{"id":"'+id+'","name":"'+grade+'","parent":"'+course+':'+curlevel+'"}');
-                  id += 1;
-                }
-
-				else
-				{
 					//$("body").append(curlevel+"<br>");
-					data.push('{"id":"'+id+'","name":"'+curlevel+'","parent":"qualifications"}');
+					data.push('{"id":"'+id+'","name":"'+employer+'","parent":"employment"}');
                   id += 1;
 					//$("body").append("-------"+course+": "+grade+"<br>");
-					data.push('{"id":"'+id+'","name":"'+course+':'+curlevel+'","parent":"'+curlevel+'"}');
+					data.push('{"id":"'+id+'","name":"'+jobtitle+'","parent":"'+employer+'"}');
                   id += 1;
-                    data.push('{"id":"'+id+'","name":"'+grade+'","parent":"'+course+':'+curlevel+'"}');
+                    data.push('{"id":"'+id+'","name":"'+startmonth+':'+startyear+'","parent":"'+jobtitle+'"}');
+                  id += 1;
+              data.push('{"id":"'+id+'","name":"'+endmonth+':'+endyear+'","parent":"'+jobtitle+'"}');
                   id += 1;
                   
-        
-					var lastlevel = curlevel;
-				}
 			}
             
-            
+          
           alert(data);
           data = '[' +data+ ']';
           data = JSON.parse(data);
