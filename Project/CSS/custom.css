@@ -17,7 +17,7 @@ div.mask.img{
 }
 
 .mask{
-	background-image: url("../Images/current.png");
+	background-image: url("../images/current.png");
     position: absolute;
     left: 0;
     top: 0;
