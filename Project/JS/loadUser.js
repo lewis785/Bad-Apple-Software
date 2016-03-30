@@ -88,43 +88,6 @@ function loadEditInfo(){
 }
 
 
-function gradeselected(){
-
-    var selectedlvl = $('#levelselect :selected').text();
-
-    var dataString = "level="+selectedlvl;
-
-    $.ajax({
-        type: 'POST',
-        url: "../PHP/Qualifications/getGrades.php",
-        dataType: 'json',
-        data: {level:selectedlvl},
-        cache: false,
-        success: function(data){
-
-
-            $('#gradeselect').find('option').remove();
-            $('#gradeselect').find('option').end().append('<option value="NoneSelect">Select Grade</option>');
-
-            for (var i=0; i<data.length; i++){
-                var grade = data[i].grade;
-                $('#gradeselect').find('option').end().append('<option value="'+grade+'">'+grade+'</option>');
-            }
-
-            $('#gradeselet').prop('disabled', true);
-
-
-
-        },
-        error: function (error) {
-            alert('error; ' + eval(error));
-        }
-    });
-
-}
-
-
-
 
 function occupationfill(){
 
@@ -277,14 +240,14 @@ function employmentclicked(numclicked){
     var job = $("#"+numclicked+" #title").text();
 
     $(".overlay").show();
-    $('div.joboptions').remove();
-    $("body").append("<div class='joboptions'>"+
+    $('div.options').remove();
+    $("body").append("<div class='options'>"+
         "<div id='info'>"+employer+" - "+job+"</div>"+
-        "<div id='jobedit' class='jobchoice'>"+
-        "<button id='"+numclicked+"' class='btn-warning btn-lg'>Edit</button>"+
+        "<div id='editbutton' class='choice'>"+
+        "<button id='"+numclicked+"' class='btn-warning btn-lg' onclick = editjob('"+numclicked+"') >Edit</button>"+
         "</div>"+
-        "<div class='jobchoice'>"+
-        "<button id='"+numclicked+"'' onclick=employmentdelete('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
+        "<div id='deletebutton'class='choice'>"+
+        "<button id='"+numclicked+"' onclick=employmentdelete('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
         "</div>"+
         "</div>");
 
@@ -313,7 +276,7 @@ function employmentdelete(employmentnumber)
 
 $(document).mouseup(function (e)
 {
-    var container = $(".joboptions");
+    var container = $(".options");
 
     if (!container.is(e.target) // if the target of the click isn't the container...
         && container.has(e.target).length === 0) // ... nor a descendant of the container
@@ -321,3 +284,136 @@ $(document).mouseup(function (e)
         container.hide();
     }
 });
+
+
+
+function editjob(EID)
+{
+    $.ajax({  
+        type: 'POST',
+        url: "../PHP/specificJob.php",
+        dataType: 'json',
+        data: {EID: EID},
+        cache: false,
+        success: function(result){
+            var html = result.html;
+
+            html.replace(/\//g,"/");
+            $("div.options").empty();
+            $("div.options").append(html);
+
+        },
+        error: function(){
+            alert("Error Occured While Loading Edit Information");
+        }
+    });
+}
+
+
+
+function updatejob(EID)
+{
+    var validupdate = true;
+    var title = $("input#title").val();
+    var description = $("textarea#description").val();
+    var startmonth = $("select#startmonth").val();
+    var endmonth= $("select#endmonth").val();
+    var startyear= $("select#startyear").val();
+    var endyear = $("select#endyear").val();
+    var inEID = EID;
+    var startmonthnum = convertmonth(startmonth);
+    var endmonthnum= convertmonth(endmonth);
+
+    $(".errormessage").remove();
+
+    if(title === "")
+    {
+        $("div#titlediv").append("<div id='invalid' class='errormessage'> Insert Title </div>");
+        validupdate = false;
+    }
+    if(startmonth === "" | startyear === "")
+    {
+        $("div#startdiv").append("<div id='invalid' class='errormessage'> Select Valid Date </div>");
+        validupdate = false;
+    }
+    if(endmonth === "" | endyear === "")
+    {
+        $("div#enddiv").append("<div id='invalid' class='errormessage'> Select Valid Date </div>");
+        validupdate = false;
+    }
+
+    if(startyear > endyear)
+    {
+        $("div#enddiv").append("<div id='invalid' class='errormessage'> Can Not Finish A Job Before You Start It</div>");
+        validupdate = false;
+    }
+
+    if(startyear === endyear && startmonthnum > endmonthnum )
+    {
+        $("div#enddiv").append("<div id='invalid' class='errormessage'> Can Not Finish A Job Before You Start It</div>");
+        validupdate = false;
+    }
+
+
+
+    // alert(inQID+" "+inlevel+" "+ingrade);
+
+    if(validupdate)
+    {
+        $.ajax({  
+            type: 'POST',
+            url: "../PHP/updatejob.php",
+            data: {EID: EID, title: title, description: description, startmonth:startmonthnum, startyear:startyear, endmonth:endmonthnum, endyear:endyear},
+            cache: false,
+            success: function(result){
+            // alert("update complete");
+            $("ul#"+EID).find("div#start").html(startmonth+" "+startyear+" - "+endmonth+" "+endyear);
+            $("ul#"+EID).find("div#title").html(title);
+            $("ul#"+EID).find("div#desc").html(description);
+            $(".options").remove();
+        },
+        error: function(error){
+            alert("Error Occured While Deleting");
+            alert(error);
+            console.log(error);
+        }
+    });
+    }
+}
+
+
+function convertmonth(Month)
+{
+    switch(Month) {
+        case "January":
+        return 1;
+        case "Febuary":
+        return 2;
+        case "March":
+        return 3;
+        case "April":
+        return 4;
+        case "May":
+        return 5;
+        case "June":
+        return 6;
+        case "July":
+        return 7;
+        case "August":
+        return 8;
+        case "September":
+        return 9;
+        case "October":
+        return 10;
+        case "November":
+        return 11;
+        case "December":
+        return 12;
+        default:
+        return null;
+    }
+
+
+}
+
+

@@ -20,7 +20,7 @@ if($verified){
 
 	while($row = mysqli_fetch_assoc($gradeslist)){
 		
-		echo "<tr id='".$row["UserQID"]."'><td>".$row["Course"]."</td><td>".$row["Level"]."</td><td>".$row["Grade"]."</td></tr>";
+		echo "<tr id='".$row["UserQID"]."' onclick='qualificationclicked(".$row["UserQID"].")'><td id='course'>".$row["Course"]."</td><td id='level'>".$row["Level"]."</td><td id='grade'>".$row["Grade"]."</td></tr>";
 	} 
 
 

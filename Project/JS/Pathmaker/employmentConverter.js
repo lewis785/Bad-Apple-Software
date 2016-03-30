@@ -1,92 +1,59 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
+src="http://d3js.org/d3.v3.min.js";
 
-.node {
-  cursor: pointer;
-}
-
-.node circle {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 1.5px;
-}
-
-.node text {
-  font: 10px sans-serif;
-}
-
-.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 1.5px;
-}
-
-</style>
-<body>
-    
-    
-    
-<script>
-function getqualifications(){
+function drawemploymentpath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/pathmaker/pathqualifications.php",
+		url: "../PHP/Pathmaker/pathemployment.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
 		success: function(result){
-			var lastlevel = "not a grade";
-			var parentid = 100;
+          
+			var employer = "";
+			var jobtitle = "";
+			var startmonth = "";
+			var startyear = "";
+			var endmonth = "";
+			var endyear = "";
 			var data = [];
-			$("body").append("<br>")
+            var id = 0;
+			$("body").append("<br>");
+            data.push('{"id":"'+id+'","name":"employment","parent":"null"}');
+            id += 1;
 
 			for (var i=0; i<result.length; i++){
 				
-				var curlevel= result[i].level;
-				var course= result[i].course;
-				var grade= result[i].grade;
+				var employer   = result[i].employer;
+                var jobtitle   = result[i].jobtitle;
+                var startmonth = result[i].startmonth;
+                var startyear  = result[i].startyear;
+                var endmonth   = result[i].endmonth;
+                var endyear    = result[i].endyear;
 
 				// alert(curlevel + lastlevel);
 				
-				if(curlevel === lastlevel){
-					$("body").append("-------"+course+": "+grade+"<br>");
-					data.push('{"name": "'+course+': '+grade+'", "parent": "'+curlevel+'"}');
-				}
-				else
-				{
-					$("body").append(curlevel+"<br>");
-					data.push('{"name": "'+curlevel+'", "parent": "qualifications"}');
-					$("body").append("-------"+course+": "+grade+"<br>");
-					data.push('{"name": "'+course+": "+grade+'", "parent": "'+curlevel+'"}');
-					var lastlevel = curlevel;
-				}
-
-
-
+					//$("body").append(curlevel+"<br>");
+					data.push('{"id":"'+id+'","name":"'+employer+'","parent":"employment"}');
+                  id += 1;
+					//$("body").append("-------"+course+": "+grade+"<br>");
+					data.push('{"id":"'+id+'","name":"'+jobtitle+'","parent":"'+employer+'"}');
+                  id += 1;
+                    data.push('{"id":"'+id+'","name":"'+startmonth+':'+startyear+'","parent":"'+jobtitle+'"}');
+                  id += 1;
+              data.push('{"id":"'+id+'","name":"'+endmonth+':'+endyear+'","parent":"'+jobtitle+'"}');
+                  id += 1;
+                  
 			}
-
-			return data
             
-            
-
-
-		},
-		error: function(){
-			alert("Error Occured While Deleting");
-		}
-	});
-
-
-
-
-
-}
-
-
-function buildMap(data){
-var dataMap = getqualifications().reduce(function(map, node) {
+          
+          alert(data);
+          data = '[' +data+ ']';
+          data = JSON.parse(data);
+          d3.select('body').append('pre')
+    .text(JSON.stringify(data, null, '  '));
+    
+var dataMap = data.reduce(function(map, node) {
 	map[node.name] = node;
 	return map;
 }, {});
@@ -100,26 +67,20 @@ data.forEach(function(node) {
 		// create child array if it doesn't exist
 		(parent.children || (parent.children = []))
 			// add node to child array
-			.push(node);
+
+              .push(node);
 	} else {
 		// parent is null or missing
 		treeData.push(node);
 	}
 });
+                  
+          d3.select('body').append('pre')
+    .text(JSON.stringify(treeData, null, '  '));
+            
     
-}    
-    
-    
-    
-    
-    
-    
-    
-</script
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script>
 
-var margin = {top: 20, right: 120, bottom: 20, left: 120},
+    var margin = {top: 20, right: 120, bottom: 20, left: 120},
     width = 960 - margin.right - margin.left,
     height = 800 - margin.top - margin.bottom;
 
@@ -139,8 +100,8 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json(buildMap(), function(error, treeData) {
-  if (error) throw error;
+//d3.json(treeData, function(error, treeData) {
+//  if (error) throw error;
 
   root = treeData[0];
   root.x0 = height / 2;
@@ -156,7 +117,7 @@ d3.json(buildMap(), function(error, treeData) {
 
   root.children.forEach(collapse);
   update(root);
-});
+//});
 
 d3.select(self.frameElement).style("height", "800px");
 
@@ -259,4 +220,13 @@ function click(d) {
   update(d);
 }
 
-</script>
+
+
+
+		},
+		error: function(){
+			alert("Error Occured While Deleting");
+		}
+	});
+
+}

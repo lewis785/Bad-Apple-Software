@@ -104,9 +104,10 @@ while (!feof($handle)) // Loop til end of file.
 
 	 	}
 
-	 		 	if($section==4){
+	 	if($section==4){
 
 	 		$buffer = str_replace("\r\n","",$buffer);
+
 	 		$checkMonth = mysqli_stmt_init($link);
 	 		mysqli_stmt_prepare($checkMonth, "select count(*) from months where MonthName= ? ");
 	 		mysqli_stmt_bind_param($checkMonth, 's',$buffer);
@@ -121,8 +122,45 @@ while (!feof($handle)) // Loop til end of file.
 	 			mysqli_stmt_bind_param($newMonth, 's', $buffer);   
 	 			mysqli_stmt_execute($newMonth);
 	 		}
+	 	}
 
 
+	 	if($section===5){
+	 		list($level,$grade,$ucas)=explode("|",$buffer);
+
+	 		$getID = mysqli_stmt_init($link);
+	 		mysqli_stmt_prepare($getID, "SELECT count(*), grades.GradeID, levels.LevelID FROM levels
+	 			INNER JOIN grades ON levels.Gradeset = grades.GradeSetID
+	 			where levels.Level= ? AND grades.Grade = ? ");
+	 		mysqli_stmt_bind_param($getID, 'ss',$level,$grade);
+	 		mysqli_stmt_execute($getID);
+
+	 		$result = mysqli_stmt_get_result($getID);
+	 		$count = $result -> fetch_row();
+	 		echo "check";
+	 		if($count[0] == 1)
+	 		{
+	 			$levelid = $count[2];
+	 			$gradeid = $count[1];
+	 			echo "valid {".$levelid.", ".$gradeid."}";
+
+	 			$checkUCAS = mysqli_stmt_init($link);
+	 			mysqli_stmt_prepare($checkUCAS, "SELECT count(*) FROM ucaspoints where Level= ? AND Grade = ? ");
+	 			mysqli_stmt_bind_param($checkUCAS, 'ii',$levelid,$gradeid);
+	 			mysqli_stmt_execute($checkUCAS);
+	 			$result = mysqli_stmt_get_result($checkUCAS);
+	 			$count = $result -> fetch_row();
+	 			
+	 			if($count[0] == 0)
+	 			{
+	 				echo "insert ";
+	 				$newUCAS = mysqli_stmt_init($link);
+	 				mysqli_stmt_prepare($newUCAS, 'INSERT INTO ucaspoints (Level, Grade, UCASValue) VALUES (?, ?, ?)');
+	 				mysqli_stmt_bind_param($newUCAS, 'iii', $levelid, $gradeid, $ucas);   
+	 				mysqli_stmt_execute($newUCAS);
+	 			}
+
+	 		}
 	 	}
 
 

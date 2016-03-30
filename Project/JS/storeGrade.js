@@ -5,6 +5,7 @@ var qualificationpresent = false;
 var selectedCourse;
 var selectedLevel;
 var selectedGrade;
+var UCASScore = 0;
 
 function addGrade(){
 
@@ -104,6 +105,42 @@ function addGrade(){
 }
 
 
+function gradeselected(){
+
+	var selectedlvl = $('#levelselect :selected').text();
+
+	var dataString = "level="+selectedlvl;
+
+	$.ajax({
+		type: 'POST',
+		url: "../PHP/Qualifications/getGrades.php",
+		dataType: 'json',
+		data: {level:selectedlvl},
+		cache: false,
+		success: function(data){
+
+
+			$('#gradeselect').find('option').remove();
+			$('#gradeselect').find('option').end().append('<option value="NoneSelect">Select Grade</option>');
+
+			for (var i=0; i<data.length; i++){
+				var grade = data[i].grade;
+				$('#gradeselect').find('option').end().append('<option value="'+grade+'">'+grade+'</option>');
+			}
+
+			$('#gradeselet').prop('disabled', true);
+
+
+
+		},
+		error: function (error) {
+			alert('error; ' + eval(error));
+		}
+	});
+
+}
+
+
 
 
 function checkinput(){
@@ -192,8 +229,9 @@ function insertGrades(){
 	else
 	{
 		length = qualificationsarray.length;
-
-		for(var i = 0; i < length; i +=3){
+		var posCheck = 3;
+		for(var i = 0; i < length; i +=3)
+		{
 
 			selectedCourse = qualificationsarray[i];
 			selectedLevel = qualificationsarray[i+1];
@@ -206,45 +244,152 @@ function insertGrades(){
 				data: {grade: selectedGrade, level: selectedLevel, course: selectedCourse},
 				cache: false,
 				success: function(result){
-
+					UCASScore += result.UCASPoints;
 				},
 				error: function(){
 					alert("Error Occured While Inserting");
+				},
+				complete: function(){
+					posCheck += 3;
+					if( posCheck > length)
+					{
+						$.ajax({  
+							type: 'POST',
+							url: "../PHP/Qualifications/updatePoints.php",
+							data: {points: UCASScore},
+							cache: false,
+							success: function(result){
+							},
+							error: function(error){
+								alert("Error Occured While Updating UCAS Points");
+							}
+						});
+						// window.location.href="../html/qualifications.php";
+					}
 				}
 			});
+
 		}
-		window.location.href="../html/qualifications.php";
-
 	}
-
 }
 
-function deleteGrade(){
-	$("div").remove(".errormessage");
-	var deleteGrade = $('#gradedelete').val();
 
-	if (deleteGrade === "NoneSelect"){
-		$("#deletediv").append("<div id='invalid' class='errormessage'> Select Grade to Delete </div>");
-	}
-	else
-	{
-		$.ajax({  
-			type: 'POST',
-			url: "../PHP/Qualifications/deleteQualification.php",
-			dataType: 'json',
-			data: {QID: deleteGrade},
-			cache: false,
-			success: function(result){
-				$("table#currentQualifications tr#"+deleteGrade).remove();
-			},
-			error: function(){
-				alert("Error Occured While Deleting");
-			}
-		});
-	}
+function deleteGrade(inputnum){
+	$("div").remove(".errormessage");
+	var deleteGrade = inputnum;
+
+	$.ajax({  
+		type: 'POST',
+		url: "../PHP/Qualifications/deleteQualification.php",
+		dataType: 'json',
+		data: {QID: deleteGrade},
+		cache: false,
+		success: function(result){
+			$("table#currentQualifications tr#"+deleteGrade).remove();
+			$(".options").remove();
+			$("div#points").html(result.total);
+		},
+		error: function(){
+			alert("Error Occured While Deleting");
+		}
+	});
 	
 
 }
 
 
+function qualificationclicked(numclicked){
 
+	var qualification = $("tr#"+numclicked).text()
+
+	$(".overlay").show();
+	$('div.options').remove();
+	$("body").append("<div class='options'>"+
+		"<div id='info'>"+qualification+"</div>"+
+		"<div id='editbutton' class='choice'>"+
+		"<button id='"+numclicked+"' onclick=editqualification('"+numclicked+"') class='btn-warning btn-lg'>Edit</button>"+
+		"</div>"+
+		"<div id='deletbutton' class='choice'>"+
+		"<button id='"+numclicked+"' onclick=deleteGrade('"+numclicked+"') class='btn-danger btn-lg'>Delete</button>"+
+		"</div>"+
+		"</div>");
+
+
+}
+
+
+$(document).mouseup(function (e)
+{
+	var container = $(".options");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+    	container.remove();
+    }
+});
+
+
+
+function editqualification(QID)
+{
+
+	$.ajax({  
+		type: 'POST',
+		url: "../PHP/Qualifications/specificGrade.php",
+		dataType: 'json',
+		data: {QID: QID},
+		cache: false,
+		success: function(result){
+			
+			var html = result.html;
+			html.replace(/\//g,"/");
+			$("div.options").empty();
+			$("div.options").append(html);
+
+		},
+		error: function(){
+			alert("Error Occured While Deleting");
+		}
+	});
+}
+
+
+
+function updatequalification(QID)
+{
+	var inlevel = $("select#levelselect").val();
+	var ingrade = $("select#gradeselect").val();
+	var inQID = QID;
+	$(".errormessage").remove();
+	// alert(inQID+" "+inlevel+" "+ingrade);
+	if(ingrade != 'NoneSelect')
+	{
+		$.ajax({  
+			type: 'POST',
+			url: "../PHP/Qualifications/updategrade.php",
+			data: {QID: inQID, level: inlevel, grade: ingrade},
+			cache: false,
+			success: function(result){
+			// alert("update complete");
+			$("tr#"+inQID).find("td#level").html(inlevel);
+			$("tr#"+inQID).find("td#grade").html(ingrade);
+			var Points = parseInt($("div#points").text());
+			Points = Points + parseInt(result);
+			$("div#points").html(Points);
+			$(".options").remove();
+
+		},
+		error: function(error){
+			alert("Error Occured While Deleting");
+			alert(error);
+			console.log(error);
+		}
+	});
+	}
+	else
+	{
+		$("#gradediv").append("<div id='invalid' class='errormessage'> Select Grade </div>");
+	}
+	
+}

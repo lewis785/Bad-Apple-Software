@@ -17,6 +17,9 @@
 	<script src="../JS/delete.js"></script>
 	
 	<script src="../js/loadUser.js"></script>
+	<script src="../js/storeGrade.js"></script>
+
+	<script src="../js/pathmaker/converter.js"></script>
 	<!-- <link href="../css/home.css" rel="stylesheet"> -->
 
 </head>
@@ -49,40 +52,50 @@
 			<input type="text" name="firstname" placeholder="Firstname" id="text-box"/><br>
 			<input type="text" name="surname" placeholder="Surname" id="text-box"/><br>
 			<input type="date" name="DoB" placeholder="DoB" id="text-box"/><br>
- -->
+		-->
 
-			<input type="Submit" name="Submit" id="Submit"/>
-		</form>
+		<input type="Submit" name="Submit" id="Submit"/>
+	</form>
 
-	</div>
-
-
-	<div id="Deleteuser"> 
-
-		<button type="button" id="deletenow" onclick="javascript: deleteUser();">Delete User</button>
-		
-	</div>
+</div>
 
 
-	<?php 
+<div id="Deleteuser"> 
+
+	<button type="button" id="deletenow" onclick="javascript: deleteUser();">Delete User</button>
+	
+</div>
+
+
+<?php 
 	// include "../php/getInfo.php";
 	// include "../php/schoolGrades.php" ;
 	// // include "../php/Qualifications/getCourses.php" ;
-	// include "../php/readFile.php"; 
+include "../php/readFile.php"; 
 	// include "../php/displayOccupations.php" ;
 	// include "../php/Qualifications/getUserGrade.php"; 
 	// include "../php/Qualifications/validateGrade.php";
 	// include "../php/Qualifications/deleteQualification.php";
 	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
-	include "../PHP/admin/admindeleteuser.php";
-	?>
+		// include "../database/usergenerator.php";
+	// include "../PHP/pathmaker/pathqualifications.php";
+?>
 
 
-	<form method="post" action="../PHP/admin/searchUsers.php">
-		<input type="text" name="namesearch">
-		<button type="submit"> Search </button>
-	</form>
+<form method="post" action="../PHP/qualifications/deletequalification.php">
+
+	<input type="text" name="QID" id="inputarea">
+	<!-- <input type="text" name="level" id="inputarea"> -->
+	<!-- <input type="text" name="grade" id="inputarea"> -->
+
+	<button type="submit" > Search </button>
+</form>
+
+
+
+
+<button onclick="getqualifications()">Get Grades Tree</button>
 
 
 
