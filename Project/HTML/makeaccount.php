@@ -38,7 +38,7 @@ include "../PHP/Core/verify.php";
     
     <!-- Code for loading user information -->
     <script src="../js/accountwizard.js"></script>
-    <script src="../storeGrade.js"></script>
+    <script src="../js/storeGrade.js"></script>
 
 
 </head><!--/head-->

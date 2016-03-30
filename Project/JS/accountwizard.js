@@ -45,22 +45,22 @@ if(page === 2)
 	var city = $("input[name=city]").val();
 	var postcode = $("input[name=postcode]").val();
 
-	alert(number);
-
-	if (!empty(number,'housenumber') && !empty(street,'street') && !empty(city,'city') && !empty(postcode,'postcode'))
-	{
+	// if (!empty(number,'housenumber') && !empty(street,'street') && !empty(city,'city') && !empty(postcode,'postcode'))
+	// {
 
 		$("div#formarea").html(qualificationHTML);
 		swapclass("addresscircle","current","completed");
 		swapclass("qualificationcircle","incomplete","current");
-		$("#levelselct").load("../php/Qualifications/getLevels.php");
+		
+		$("select#levelselect").load("../../php/Qualifications/getLevels.php");
+		$("select#courseselect").load("../../php/Qualifications/getCourses.php");
 
 
-	}
-	else
-	{
-		validform =false;
-	}
+	// }
+	// else
+	// {
+		// validform =false;
+	// }
 
 }
 
@@ -68,7 +68,7 @@ if(page === 2)
 
 if(page === 3)
 {
-
+ validform = false;
 }
 
 if(page === 4)
@@ -77,7 +77,6 @@ if(page === 4)
 if(validform)
 	page+=1;
 
-alert(page);
 }
 
 
@@ -122,7 +121,7 @@ var addressHTML = '<div class="form-group" id="housenumber"><label> House Number
 
 
 var qualificationHTML = '<div id="coursediv" class="form-group"><label> Course Name * </label><select id="courseselect" name="course" class="form-control"><option value="NoneSelect" selected>Select Course</option>'+
-'<?php include "../php/Qualifications/getCourses.php" ?> </select></div>'+
+'</select></div>'+
 '<div id="leveldiv" class="form-group"><label> Course Level * </label><select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">'+
 '<option value="NoneSelect" selected>Select Level</option></select></div>'+
 '<div id="gradediv" class="form-group"><label> Course Grade * </label><select id="gradeselect" name="grade" class="form-control"><option value="NoneSelect">Select Grade</option>'+
