@@ -53,23 +53,32 @@ include "../PHP/Core/verify.php";
 
 
     <section id="page-center" class=" col-md-6 col-md-offset-3">
-       <div id="center" class="main-section container-fluid">
-           <h2> Account Creation Wizard </h2>    
-
-           <div class="numberCircle">1</div>
-           <div class="numberCircle">2</div>
-           <div class="numberCircle">30</div>
-           <div class="numberCircle">4</div>
-           <div> &#9312; </div>
+     <div id="center" class="main-section container-fluid">
+         <h2> Account Creation Wizard </h2>    
 
 
-       </div><!--/.container-->
-   </section><!--/#contact-page-->
+         <ul id="progress-bar" class="col-md-12">
+            <li class="col-md-3 "><div class="current">Detail</div></li>
+            <li class="col-md-3"><div>Address</div></li>
+            <li class="col-md-3"><div>Employment</div></li>
+            <li class="col-md-3"><div>Qualifications</div></li>
+        </ul>
+
+
+fslfkjsdflkdsfkjl
+
+    </div><!--/.container-->
+</section><!--/#contact-page-->
 
 
 
-   <!--/#bottom-->
-   <footer id="footer" class="footer">
+
+
+
+
+
+<!--/#bottom-->
+<footer id="footer" class="footer">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">

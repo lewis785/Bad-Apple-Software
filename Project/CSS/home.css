@@ -107,6 +107,7 @@ label.error {
 
 div #center{
 	opacity: 0.8 !important;
+
 }
 
 .glow {
@@ -176,7 +177,6 @@ h3,h4,h5{
 	margin-top: 0px;
 	padding-top: 20px;
 	word-wrap: break-word;
-
 }
 
 
@@ -387,4 +387,30 @@ textarea {
 	display: inline-block;
 	text-decoration: underline;
 	font-weight: bolder;
+}
+
+#progress-bar{
+	list-style-type: none;
+	width: 100%;
+	float: left;
+	margin: 20px 0px;
+
+}
+
+#progrss-bar li{
+		display: inline-block;
+		width: auto;
+		float: left;
+}
+
+.current{
+	background-color: blue;
+}
+
+#progress-bar li div{
+	width: auto;
+	border: 2px solid white;
+	text-align: center;
+	padding: 10px 0px;
+	border-radius: 25px;
 }
