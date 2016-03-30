@@ -1,6 +1,6 @@
 src="http://d3js.org/d3.v3.min.js";
 
-function drawpath(){
+function pathway(){
 
 	$.ajax({  
 		type: 'POST',
@@ -68,8 +68,8 @@ data.forEach(function(node) {
 var margin = {top: 20, right: 100, bottom: 20, left: 100},
     w = 960 - margin.right - margin.left,
     h = 800 - margin.top - margin.bottom,
-      i = 0,
-      duration = 750,
+      i = 2,
+      duration = 600,
       root;
 
     var tree = d3.layout.tree()
@@ -84,7 +84,7 @@ var margin = {top: 20, right: 100, bottom: 20, left: 100},
       .attr("width", w + margin.right + margin.left)
       .attr("height", h + margin.top + margin.bottom)
       .append("g")
-      .attr("transform", "translate(" + margin.left - 10 + "," + margin.top + ")");
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
       
 
     root = treeData[0];
@@ -119,19 +119,18 @@ function collapse(d) {
       var nodeEnter = node.enter().append("svg:g")
         .attr("class", "node")
         .attr("transform", function(d) {
-          return "translate(" + source.y0 + "," + source.x0  + ")";
+          return "translate(" + source.y0 + "," + source.x0 + ")";
         });
 
-    nodes.forEach(function(d) { d.y = w - (d.depth) * 190 });
-    
+   nodes.forEach(function(d) { d.y = d.depth * 180; });
       // Enter any new nodes at the parent's previous position.
 
       nodeEnter.append("svg:rect")
-        .attr("width", 160)
+        .attr("width", 150)
         .attr("height", function(d) {
           return 19;
         })
-      .attr("x", -80)
+        .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
         .attr("y", -12)
         .attr("rx", 5)
         .attr("ry", 2)
@@ -147,7 +146,6 @@ function collapse(d) {
         })
         .attr("y", 3)
         .attr("dy", "0em")
-        .attr("text-anchor", "middle")
         .text(function(d) {
           return d.name;
         })
@@ -165,8 +163,6 @@ function collapse(d) {
         .style("opacity", 1)
         .select("rect")
         .style("fill", "lightsteelblue");
-        
-    
 
       node.transition()
         .duration(duration)

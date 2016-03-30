@@ -85,7 +85,6 @@ var margin = {top: 20, right: 100, bottom: 20, left: 100},
       .attr("height", h + margin.top + margin.bottom)
       .append("g")
       .attr("transform", "translate(" + margin.left - 10 + "," + margin.top + ")");
-      
 
     root = treeData[0];
     root.x0 = h / 2;
@@ -119,19 +118,17 @@ function collapse(d) {
       var nodeEnter = node.enter().append("svg:g")
         .attr("class", "node")
         .attr("transform", function(d) {
-          return "translate(" + source.y0 + "," + source.x0  + ")";
+          return "translate(" + source.y0 + "," + source.x0 + ")";
         });
 
-    nodes.forEach(function(d) { d.y = w - (d.depth) * 190 });
-    
+    nodes.forEach(function(d) { d.y = w - (d.depth) * 180 });
       // Enter any new nodes at the parent's previous position.
 
       nodeEnter.append("svg:rect")
-        .attr("width", 160)
+        .attr("width", 150)
         .attr("height", function(d) {
           return 19;
         })
-      .attr("x", -80)
         .attr("y", -12)
         .attr("rx", 5)
         .attr("ry", 2)
@@ -147,11 +144,10 @@ function collapse(d) {
         })
         .attr("y", 3)
         .attr("dy", "0em")
-        .attr("text-anchor", "middle")
         .text(function(d) {
           return d.name;
         })
-        
+        .call(wrap, 150);
         
         
       wrap(d3.selectAll('text'),150);
@@ -165,8 +161,6 @@ function collapse(d) {
         .style("opacity", 1)
         .select("rect")
         .style("fill", "lightsteelblue");
-        
-    
 
       node.transition()
         .duration(duration)
@@ -236,14 +230,13 @@ function collapse(d) {
     
      // Toggle children on click.
     function click(d) {
-      
+        
       if (d.children) {
         d._children = d.children;
         d.children = null;
-        
       } else {
         d.children = d._children;
-        
+        d._children = null;
       }
       update(d);
     }
@@ -269,7 +262,7 @@ function collapse(d) {
             tspan = text.append("tspan").attr("x", 5).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
           }
         }
-        d3.select(this.parentNode.children[0]).attr("height", 19 * (lineNumber+1));
+        d3.select(this.parentNode.children[0]).attr('height', 19 * (lineNumber+1));
           
         
       });

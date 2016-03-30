@@ -47,6 +47,7 @@ include "../PHP/Core/verify.php";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script src="../js/Pathmaker/converter.js"></script>
+<script src="../js/Pathmaker/pathway.js"></script>
 
 
 
@@ -58,7 +59,7 @@ body {
 
 }
 </style>
-<body onload="drawpath()">
+<body onload="drawpath(); pathway()">
     
    
 
@@ -108,27 +109,27 @@ body {
 
   <style>
 
-.node {
-    cursor: pointer;
-}
-.node circle {
-    fill: #fff;
-    stroke: red;
-    stroke-width: 1.5px;
-    
-}
-.node text {
-    font: 10px sans-serif;
-    
-}
-.link {
-    fill: none;
-    stroke: #ccc;
-    stroke-width: 1.5px;
+.node rect {
+  cursor: pointer;
+  fill: red;
+  fill-opacity: 1;
+  stroke: #3182bd;
+  stroke-width: 2px;
+  
+  
 }
 
-body {
-    overflow: hidden;
+.node text {
+  font: 15px sans-serif;
+  pointer-events: none;
+    
+    font-weight: bold;
+}
+
+path.link {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
 }
 
   </style>
