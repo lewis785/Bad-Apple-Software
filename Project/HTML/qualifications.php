@@ -90,8 +90,10 @@ include "../PHP/Core/verify.php";
 
 <section id="page-center" class=" col-md-6 col-md-offset-3">
  <div id="center" class="main-section container-fluid">
-     <h2> Current Qualifications</h2>    
+     <h2> Current Qualifications</h2>   
 
+     <?php include"../php/qualifications/getPoints.php" ?>
+     
      <div class="row contact-wrap"> 
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">

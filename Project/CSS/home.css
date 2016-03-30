@@ -371,3 +371,20 @@ textarea {
 .rightdrop{
 	margin-left: 10px !important;
 }
+
+#pointwrapper{
+	display: inline-block;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	/*width: 300px;*/
+	font-size: 1.8em;
+	font-weight: bold;
+
+}
+
+#points{
+	display: inline-block;
+	text-decoration: underline;
+	font-weight: bolder;
+}
