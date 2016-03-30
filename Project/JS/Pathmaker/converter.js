@@ -4,16 +4,19 @@ function drawpath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/pathmaker/pathqualifications.php",
+		url: "../PHP/Pathmaker/pathqualifications.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
 		success: function(result){
+          
 			var lastlevel = "not a grade";
 			var parentid = 100;
 			var data = [];
-			$("body").append("<br>")
-            data.push('{"name":"qualifications","parent":"null"}');
+            var id = 0;
+			$("body").append("<br>");
+            data.push('{"id":"'+id+'","name":"qualifications","parent":"null"}');
+            id += 1;
 
 			for (var i=0; i<result.length; i++){
 				
@@ -22,28 +25,38 @@ function drawpath(){
 				var grade= result[i].grade;
 
 				// alert(curlevel + lastlevel);
-				$("body").append("<br>")
+				
+              $("body").append("<br>")
 				if(curlevel === lastlevel){
-					$("body").append("-------"+course+": "+grade+"<br>");
-					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
-				}
+					//$("body").append("-------"+course+": "+grade+"<br>");
+					data.push('{"id":"'+id+'","name":"'+course+':'+curlevel+'","parent":"'+curlevel+'"}');
+                  id += 1;
+					data.push('{"id":"'+id+'","name":"'+grade+'","parent":"'+course+':'+curlevel+'"}');
+                  id += 1;
+                }
+
 				else
 				{
-					$("body").append(curlevel+"<br>");
-					data.push('{"name":"'+curlevel+'","parent":"qualifications"}');
-					$("body").append("-------"+course+": "+grade+"<br>");
-					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
+					//$("body").append(curlevel+"<br>");
+					data.push('{"id":"'+id+'","name":"'+curlevel+'","parent":"qualifications"}');
+                  id += 1;
+					//$("body").append("-------"+course+": "+grade+"<br>");
+					data.push('{"id":"'+id+'","name":"'+course+':'+curlevel+'","parent":"'+curlevel+'"}');
+                  id += 1;
+                    data.push('{"id":"'+id+'","name":"'+grade+'","parent":"'+course+':'+curlevel+'"}');
+                  id += 1;
+                  
+        
 					var lastlevel = curlevel;
 				}
 			}
             
             
-            
-            
           alert(data);
           data = '[' +data+ ']';
           data = JSON.parse(data);
-            
+          d3.select('body').append('pre')
+    .text(JSON.stringify(data, null, '  '));
     
 var dataMap = data.reduce(function(map, node) {
 	map[node.name] = node;
@@ -59,6 +72,7 @@ data.forEach(function(node) {
 		// create child array if it doesn't exist
 		(parent.children || (parent.children = []))
 			// add node to child array
+
               .push(node);
 	} else {
 		// parent is null or missing

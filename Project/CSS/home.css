@@ -3,8 +3,7 @@ html{
 	height: 100%;
 }
 
-
-body {
+body { 
 	background: url(../Images/current.png) no-repeat center center fixed;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -26,7 +25,7 @@ html,body{
 
 .navbar{
 	border: 0px solid transparent;
-	background-color: #1D2A59;
+	background-color: #68D7FF;  
 }
 
 
@@ -49,7 +48,7 @@ a{
 	padding: 9px 10px 11px;
 	text-decoration: none;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	color:  #ffffff;
+	color:  #B2AC40;
 	font-size: 21px;
 }
 
@@ -74,8 +73,8 @@ a{
 }
 
 #popin{
-	cursor: pointer;
-	cursor: hand;
+	cursor: pointer; 
+	cursor: hand; 
 }
 
 .close-btn {
@@ -88,22 +87,18 @@ a{
 
 .close-btn:hover{
 	background: #A9A9A9;
-	cursor: hand;
+	cursor: hand; 
 }
 /*End of Popup CSS*/
 
 label.error {
+
 	color: red !important;
+
 }
+
 
 /*Main-Section CSS*/
-
-.panel-info > .panel-heading {
-
-color:black;
-
-}
-
 
 .main-section{
 	background-color: rgba(94,156,178,0.9);
@@ -126,7 +121,7 @@ div #center{
 
 
 #main-nav ul {
-	background-color: #1D2A59;
+	background-color: #68D7FF;
 }
 
 #main-nav li:hover{
@@ -135,10 +130,6 @@ div #center{
 
 #nav-drop li:hover{
 	background-color: white;
-}
-
-#nav-drop li > a{
-	color: black;
 }
 
 
@@ -182,13 +173,6 @@ h3,h4,h5{
 
 }
 
-.panel {
-	background-color: rgba(94,156,178,0.1);
-}
-
-.panel-info > .panel-heading{
-	background-color: rgba(94,156,178,0.1);
-}
 
 #profile-page{
 	min-height: 100%;
@@ -224,7 +208,7 @@ h3,h4,h5{
 }
 
 #footer {
-	background-color: #1D2A59;
+	background-color: #68D7FF;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -242,7 +226,7 @@ h3,h4,h5{
 	min-height: 30px;
 	clear: both;
 	margin-top: 0px;
-}
+} 
 
 #footer{
 
@@ -271,16 +255,13 @@ h3,h4,h5{
 }
 
 textarea {
-
-	width: 100%;
-	min-width:100%;
-
+	width: 100%; 
+	min-width:100%; 
 	max-width:100%;
 
 	min-height: 60px;
 	max-height: 250px;
 }
-
 
 .overlay {
 	background: #e9e9e9;  <- I left your 'gray' background
@@ -338,7 +319,7 @@ textarea {
 
 #currentQualifications tbody tr:hover{
 	background-color: white;
-	cursor: pointer;
+	cursor: pointer; 
 	cursor: hand;;
 }
 
@@ -384,4 +365,3 @@ textarea {
 .rightdrop{
 	margin-left: 10px !important;
 }
-
