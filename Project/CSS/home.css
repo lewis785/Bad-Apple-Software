@@ -406,6 +406,12 @@ textarea {
 .current{
 	background-color: blue;
 }
+.completed{
+	background-color: green;
+}
+.incomplete{
+	background-color: yellow;
+}
 
 #progress-bar li div{
 	width: auto;
@@ -414,3 +420,15 @@ textarea {
 	padding: 10px 0px;
 	border-radius: 25px;
 }
+
+
+/*Make Account CSS*/
+
+#nextbtn{
+	position: relative;
+	bottom: 15px;
+	left: 90%;
+}
+
+
+/*End of Make Account CSS*/

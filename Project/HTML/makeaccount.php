@@ -53,19 +53,51 @@ include "../PHP/Core/verify.php";
 
 
     <section id="page-center" class=" col-md-6 col-md-offset-3">
-     <div id="center" class="main-section container-fluid">
-         <h2> Account Creation Wizard </h2>    
+       <div id="center" class="main-section container-fluid">
+           <h2> Account Creation Wizard </h2>    
 
 
-         <ul id="progress-bar" class="col-md-12">
+           <ul id="progress-bar" class="col-md-12">
             <li class="col-md-3 "><div class="current">Detail</div></li>
-            <li class="col-md-3"><div>Address</div></li>
-            <li class="col-md-3"><div>Employment</div></li>
+            <li class="col-md-3"><div class="completed">Address</div></li>
+            <li class="col-md-3"><div class="incomplete">Employment</div></li>
             <li class="col-md-3"><div>Qualifications</div></li>
         </ul>
 
+        <div id="formarea">
 
-fslfkjsdflkdsfkjl
+            <div class="form-group">
+                <label> First Name * </label>
+                <input type="text" name="firstname" class="form-control glow" placeholder="Enter Firstname">
+            </div>
+            <div class="form-group">
+                <label> Last Name * </label>
+                <input type="text" name="surname" class="form-control glow" placeholder="Enter Lastname">
+            </div>    
+
+            <div class="form-group">
+                <label> Occupation * </label>
+                <select id="occupationselect" name="occupation" class="form-control">
+                    <option name="NonSelect">Select Occupation</option>
+                    <?php include "../php/displayOccupations.php" ?>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label> Date Of Birth * </label>
+                <input type="Date" name="DoB" class="form-control glow" placeholder="Enter Date of Birth">
+            </div>
+
+        </div>
+
+
+        <button class="btn btn-primary" id="nextbtn"> Next </button>
+
+
+
+
+
+        fslfkjsdflkdsfkjl
 
     </div><!--/.container-->
 </section><!--/#contact-page-->
