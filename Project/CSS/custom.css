@@ -42,11 +42,6 @@ div #center{
 	opacity: 0.8 !important;
 }
 
-
-#nav-drop li:hover{
-	background-color: white;
-}
-
 h3,h4,h5{
 	color:white;
 }
@@ -235,7 +230,7 @@ textarea {
 /*Make Account CSS*/
 
 .current{
-	background-color: 	#71A6D2;
+	background-color: #71A6D2;
 }
 .completed{
 	background-color: #009966;
