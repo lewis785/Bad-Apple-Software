@@ -37,7 +37,7 @@ include "../PHP/Core/verify.php";
     <script src="../js/Bootstrap/wow.min.js"></script>
     
     <!-- Code for loading user information -->
-    <script src="../js/accountwizard.js"></script>
+    <script src="../js/accountwizard2.js"></script>
     <script src="../js/storeGrade.js"></script>
     <script src="../js/career.js"></script>
 

@@ -103,3 +103,8 @@ div.feature-box h5{
     overflow: hidden;
     z-index: 100;
 }
+
+
+#currentQualifications{
+    margin-bottom: 50px;
+}

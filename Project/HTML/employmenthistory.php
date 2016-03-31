@@ -114,6 +114,7 @@ include "../PHP/Core/verify.php";
        <!-- Feature Box 1 -->
 
        <?php include "../php/displayJobs.php" ?>
+       
    </div>
 </div>
 <!--/.container-->
