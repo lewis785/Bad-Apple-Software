@@ -34,7 +34,7 @@
     <!--/head-->
     <body data-spy="scroll" data-target="nav">
         <header id="header-1" class="soft-scroll header-1">
-            <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
+            <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-deco">
                 <div class="container-fluid">
                     <!-- Brand and toggle -->
                     <div class="navbar-header">
@@ -52,13 +52,13 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="nav-item">
-                                <a href="index.html" class="littlestuff-hover">Home</a>
+                                <a href="home.html" class="aqua-hover deepocean">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="login.php" class="littlestuff-hover">Login</a>
+                                <a href="login.php" class="aqua-hover deepocean">Login</a>
                             </li>
                             <li class="active nav-item">
-                                <a href="#" class="littlestuff-hover">Register</a>
+                                <a href="#" class="aqua-hover deepocean">Register</a>
                             </li>                             
                         </ul>
                         <!--//nav-->
@@ -70,78 +70,89 @@
             <!--// End Navbar -->
         </header>
         <div class="mask">
-        	<img href="../images/current.png" />
+        	<img href="../Images/current.png" />
 		</div>
-		<div class="col-sm-10 col-sm-offset-1">
-			<div class="underlined-title">
-				<h1>Please Register an Account Below</h1>
-				<hr class="headings">
-			</div>
+		<div class="center"> 
+			<h2> Please Register an Account below </h2>
 		</div>
-		<!-- Register Form start -->
-		<form role="form" id="register-form" class="register-form text-center lead" name="login" method="post" action="../php/createUser.php">
-			<div class="form-group">
-				<input type="text" name="username" class="form-control" required="required" placeholder="Enter Username">
-			</div>
-			
-			<div class="form-group">
-				<input type="Email" name="email1" class="form-control" required="required" placeholder="Enter Email">
-			</div>
-			
-			<div id="passdiv" class="form-group">
-				<input type="Password" id="pass1" name="pass1" onblur="validatePassword()" class="form-control" required="required" placeholder="Enter Password">
-			</div>
-		                 
-			 <div class="form-group">
-				<input type="Password" id="pass2" name="pass2" class="form-control" required="required" placeholder="Enter Password again">
-			</div>            
-			<div class="form-group">
-				<button type="submit" name="register" class="btn btn-llg bg-headings" required="required"> Register </button>
-			</div>  
-		</form>
-       <!-- register end -->
-        <!--// footer -->
-        <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
-                <div class="container footer-1-3">
-                    <div class="col-md-4 pull-left">
-                        <img src="../images/carell.png" class="brand-img img-responsive">
-                        <ul class="social social-dark">
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-html5 white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-css3 white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-git white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-linux white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-fonticons white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-chrome white"></i></a>
-                            </li>
-                        </ul>
-                        <!-- /.social -->
-                    </div>
-                    <div class="col-md-3 pull-right">
-                        <p class="address-bold-line">We <i class="fa fa-2x fa-heart littlestuff"></i> our career paths.</p>
-                    </div>
-                    <div class="col-xs-12 footer-text">
-                        <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
-                    </div>
+            <div class="container-fluid m">
+                <div class="row contact-wrap"> 
+                    <form id="register-form" class="contact-form" name="contact-form" method="post" action="../PHP/createUser.php"> 
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="form-group">
+                                <label> Last Name * </label>
+                                <input type="text" name="surname" class="form-control glow" placeholder="Enter Lastname">
+                            </div>                             
+                            <div class="form-group">
+                                <label> Username * </label>
+                                <input type="text" name="username" class="form-control glow" placeholder="Enter Username">
+                            </div>
+                            <div class="form-group">
+                                <label> Email * </label>
+                                <input type="Email" name="email1" class="form-control glow" placeholder="Enter Email">
+                            </div>
+                            <div id="passdiv" class="form-group">
+                                <label> Password * </label>
+                                <input type="Password" id="pass1" name="pass1" onblur="validatePassword()" class="form-control glow" placeholder="Enter Password">
+                            </div>
+                            <div class="form-group">
+                                <label> Confirm Password * </label>
+                                <input type="Password" id="pass2" name="pass2" class="form-control glow" placeholder="Enter Password again">
+                            </div>
+                            <br> 
+                            <div class="form-group">
+                                <button type="submit" name="register" class="btn btn-primary" required="required"> Register </button>                                 
+                                <!-- still to be made -->
+                            </div>                             
+                        </div>
+                    </form>                     
+                    <a href="buildprofile.php" class="btn btn-primary"> Click here too get a run though </a>
                 </div>
-                <!-- /.container -->
-            </section>
-            <!--/#footer-->
-            <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>             
-            <script type="text/javascript" src="js/bootstrap.min.js"></script>             
-            <script type="text/javascript" src="js/plugins.js"></script>
-            <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-
-			<script type="text/javascript" src="js/bskit-scripts.js"></script>
-	</body>
+            </div>
+            <!--/.container-->
+        </section>
+        <!--/#Register-page-->
+        <!--// footer -->
+        <section class="content-block-nopad footer-wrap-1-3 bg-deco">
+            <div class="container footer-1-3">
+                <div class="col-md-4 pull-left">
+                    <img src="../images/carell.png" class="brand-img img-responsive">
+                    <ul class="social social-light">
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-html5 deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-css3 deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-git deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-linux deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-fonticons deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-chrome deepocean"></i></a>
+                        </li>
+                    </ul>
+                    <!-- /.social -->
+                </div>
+                <div class="col-md-3 pull-right">
+                    <p class="address-bold-line deepocean">We <i class="fa fa-2x fa-heart pomegranate"></i> our career paths.</p>
+                </div>
+                <div class="col-xs-12 footer-text">
+                    <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
+                </div>
+            </div>
+            <!-- /.container -->
+        </section>
+        <!--/#footer-->
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>         
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>         
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript" src="js/bskit-scripts.js"></script>
+    </body>
 </html>

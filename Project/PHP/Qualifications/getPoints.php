@@ -13,7 +13,8 @@ $result = mysqli_stmt_get_result($getPoints);
 $points = $result -> fetch_row();
 
 
-echo "<h2>Your Total UCAS Points: <i class='fa fa-money littlestuff'><div id='points'>".$points[0]."</div></i></h2>";
+echo "<span id='pointwrapper' class='col-md-offset-4 col-md-6'>Total UCAS Points: <div id='points'>".$points[0]."</div></span>";
+
 
 mysqli_close($link);
 

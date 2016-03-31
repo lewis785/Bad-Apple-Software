@@ -32,7 +32,7 @@ include "../php/Core/alreadyLoggedIn.php";
     <!--/head-->
     <body onload="checkKey()" data-spy="scroll" data-target="nav">
         <header id="header-1" class="soft-scroll header-1">
-            <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
+            <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-deco">
                 <div class="container-fluid">
                     <!-- Brand and toggle -->
                     <div class="navbar-header">
@@ -50,13 +50,13 @@ include "../php/Core/alreadyLoggedIn.php";
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="nav-item">
-                                <a href="index.html" class="littlestuff-hover">Home</a>
+                                <a href="home.html" class="aqua-hover deepocean">Home</a>
                             </li>
                             <li class="active nav-item">
-                                <a href="#" class="littlestuff-hover">Login</a>
+                                <a href="#" class="aqua-hover deepocean">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a href="register.php" class="littlestuff-hover">Register</a>
+                                <a href="register.php" class="aqua-hover deepocean">Register</a>
                             </li>                             
                         </ul>
                         <!--//nav-->
@@ -68,80 +68,80 @@ include "../php/Core/alreadyLoggedIn.php";
             <!--// End Navbar -->
         </header>
         <div class="mask">
-        	<img href="../images/current.png" />
+        <img href="../Images/current.png" />
 		</div>
-		<div class="col-sm-10 col-sm-offset-1">
-			<div class="underlined-title">
-				<h1>Careers Pathfinder Login</h1>
-				<hr class="headings">
-				<h2>If you don't have an account please Register<i class="fa fa-heart littlestuff" href="register.php">Here</i></h2>
-			</div>
-		</div>
-		<form role="form" id="login-form" class="login-form text-center lead" name="login" method="post" action="../php/profile.php">
-			<div id="userdiv" class="form-group">
-				<input type="text" id="userinput" name="username" class="form-control" required="required" placeholder="Enter Username">
-			</div>
-			<div id="passdiv" class="form-group">
-				<input type="Password" id="passinput" name="password" class="form-control" required="required" placeholder="Enter Password">
-			</div>                 
-			<div class="form-group">
-				<label>
-					<u class="littlestuff"><i class="fa-bolt fa">Remember me</i></u>
-				</label>
-				<input type="checkbox" value="remember-me">
-			</div>                 
-			<div class="form-group">
-				<button onclick="Login()" class="btn btn-llg bg-headings">Sign in</button>
-				<a href="register.php" class="btn btn-llg bg-headings">Register</a> 
-				<br>
-				<label>
-					<i><a href="#" class="littlestuff">Forgotten Password?</a></i>
-				</label>
-			</div>  
-		</form>
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="underlined-title">
+                    <h1>Careers Pathfinder Login</h1>
+                    <hr class="deco">
+                    <h2>If you don't have an account please Register below</h2>
+                </div>
+            </div>
+            <form role="form" id="login-form" class="login-form text-center lead" name="login" method="post" action="profile.php">
+                <div id="userdiv" class="form-group">
+                    <input type="text" id="userinput" name="username" class="form-control deepocean" required="required" placeholder="Enter Username">
+                </div>
+                <div id="passdiv" class="form-group">
+                    <input type="Password" id="passinput" name="password" class="form-control deepocean" required="required" placeholder="Enter Password">
+                </div>                 
+                <div class="form-group">
+                    <label>
+                        <u class="deepocean"><i class="fa-bolt fa">Remember me</i></u>
+                    </label>
+                    <input type="checkbox" value="remember-me">
+                </div>                 
+                <div class="form-group">
+                    <button onclick="Login()" class="btn btn-llg bg-deco deepocean">Sign in</button>
+                    <a href="register.php" class="btn btn-llg bg-deco deepocean">Register</a> 
+                    <br>
+                    <label>
+                        <i><a href="#" class="deepocean">Forgotten Password?</a></i>
+                    </label>
+                </div>  
+            </form>             
+        
         <!--// End of Login-->  
         <!--// footer -->
-        <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
-                <div class="container footer-1-3">
-                    <div class="col-md-4 pull-left">
-                        <img src="../images/carell.png" class="brand-img img-responsive">
-                        <ul class="social social-dark">
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-html5 white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-css3 white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-git white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-linux white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-fonticons white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-chrome white"></i></a>
-                            </li>
-                        </ul>
-                        <!-- /.social -->
-                    </div>
-                    <div class="col-md-3 pull-right">
-                        <p class="address-bold-line">We <i class="fa fa-2x fa-heart littlestuff"></i> our career paths.</p>
-                    </div>
-                    <div class="col-xs-12 footer-text">
-                        <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
-                    </div>
+        <section class="content-block-nopad footer-wrap-1-3 bg-deco">
+            <div class="container footer-1-3">
+                <div class="col-md-4 pull-left">
+                    <img src="../images/carell.png" class="brand-img img-responsive">
+                    <ul class="social social-dark">
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-html5 deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-css3 deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-git deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-linux deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-fonticons deepocean"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-2x fa-chrome deepocean"></i></a>
+                        </li>
+                    </ul>
+                    <!-- /.social -->
                 </div>
-                <!-- /.container -->
-            </section>
-            <!--/#footer-->
-            <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>             
-            <script type="text/javascript" src="js/bootstrap.min.js"></script>             
-            <script type="text/javascript" src="js/plugins.js"></script>
-            <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-
-			<script type="text/javascript" src="js/bskit-scripts.js"></script>
-	</body>
+                <div class="col-md-3 pull-right">
+                    <p class="address-bold-line deepocean">We <i class="fa fa-2x fa-heart pomegranate"></i> our career paths.</p>
+                </div>
+                <div class="col-xs-12 footer-text">
+                    <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
+                </div>
+            </div>
+            <!-- /.container -->
+        </section>
+        <!--/#footer-->
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>         
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>         
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/javascript" src="js/bskit-scripts.js"></script>
+    </body>
 </html>

@@ -3,6 +3,7 @@ var usernumber = 0;
 
 
 function searchUsers(){
+
   var user = $("#usersearch").val();
 
   $.ajax({
@@ -15,7 +16,7 @@ function searchUsers(){
 
     $("#usertable tbody tr").remove();
 
-    for(var i=0; i<data.length; i++){
+    for (var i=0; i<data.length; i++){
       var id = data[i].userid;
       var username = data[i].username;
       var firstname = data[i].first;
@@ -101,7 +102,7 @@ function genusers(){
    cache: false,
    success: function(data){
     $('#usergen').toggleClass("btn-warning").toggleClass("btn-success");
-    $('#usergen').prop('disabled', true);
+    $('#usergen').prop('disabled', true)
     $('#usergen').html("Insert Successful");
     
     var total = data.total;
@@ -127,7 +128,7 @@ function updatecourses(){
    cache: false,
    success: function(data){
     $('#courseupdate').toggleClass("btn-warning").toggleClass("btn-success");
-    $('#courseupdate').prop('disabled', true);
+    $('#courseupdate').prop('disabled', true)
     $('#courseupdate').html("Insert Successful");
 
   },
@@ -153,7 +154,7 @@ function updatefromfile(){
    success: function(data){
 
     $('#fileupdate').toggleClass("btn-warning").toggleClass("btn-success");
-    $('#fileupdate').prop('disabled', true);
+    $('#fileupdate').prop('disabled', true)
     $('#fileupdate').html("Insert Successful");
 
   },
@@ -163,27 +164,6 @@ function updatefromfile(){
 });
 
 }
-
-
-function changeAccess(level){
-  var newlevel = level;
-  var id = $("div#userid").text();
-  // alert(id);
-  $.ajax({
-   type: 'POST',
-   url: "../../php/Admin/changeAccess.php",
-   data: {userID:id, newAccess:newlevel},
-   cache: false,
-   success: function(data){
-    alert(level+" created");
-  },
-  error: function(error){
-    alert("Problem has occured changing access rights");
-  }
-});
-
-}
-
 
 $(document).ready(function(){
 
