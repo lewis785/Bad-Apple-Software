@@ -24,153 +24,154 @@ include "../PHP/Core/verify.php";
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Code for loading user information -->
     <script src="../js/storeGrade.js"></script>
-    </head>
-    <!--/head-->
-	<body data-spy="scroll" data-target="nav"> 
-        <header id="header-1" class="header-1">
-            <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
-                <div class="container-fluid">
-                    <!-- Brand and toggle -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="#">
-                            <img src="../images/carel.png" class="brand-img img-responsive">
-                        </a>
-                    </div>
-                    <!-- Navigation -->
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                           <li class="nav-item">
-                                <a href="profile.php" class="littlestuff-hover">Home</a>
-                            </li>
-                            <?php 
-							include "../php/admin/adminButton.php";
-							?>
-                            <li class="nav-item">
-                                <a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
-                            </li>
-                            <li class="active nav-item">
-                                <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
-                            </li>                             
-                            <li class="nav-item">
-                                <a href="index.html" class="littlestuff-hover">Contact</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Profile<i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
-                                    </li>
-                                    <li>
-                                        <a href="addgrades.php" class="littlestuff-hover">Add Grades</a>
-                                    </li>                                     
-                                    <li>
-                                        <a href="addjob.php" class="littlestuff-hover">Add Employment</a>
-                                    </li>                                     
-                                    <li>
-                                        <a href="#" class="littlestuff-hover">Starred Paths</a>
-                                    </li>                                     
-                                    <!-- still to be made -->
-                                    <li role="separator" class="divider"></li>
-                                    <li>
-                                        <a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
-                                    </li>
-                                </ul>                                 
-                            </li>
-                            <!--//dropdown-->
-                        </ul>
-                        <!--//nav-->
-                    </div>
-                    <!--// End Navigation -->
+</head>
+<!--/head-->
+<body data-spy="scroll" data-target="nav"> 
+    <header id="header-1" class="header-1">
+        <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
+            <div class="container-fluid">
+                <!-- Brand and toggle -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#">
+                        <img src="../images/carel.png" class="brand-img img-responsive">
+                    </a>
                 </div>
-                <!--// End Container -->
-            </nav>
-            <!--// End Navbar -->
-        </header>
-		<div class="mask">
-			<img href="../images/current.png" />
-		</div>
-		<div class="col-sm-10 col-sm-offset-1">
-			<div class="underlined-title">
-				<h1>Your Qualification History</h1>
-				<hr class="headings">
-				<?php 
-				include"../php/Qualifications/getPoints.php"; 
-				?>
-			</div>
-		</div>                 
-		<div class="row contact-wrap"> 
-			<div class="col-md-8 col-md-offset-2">
-				<div class="panel panel-default">
-					<table id="currentQualifications"class="table">
-						<thead>
-							<tr>
-								<th>Subject</th>
-								<th>Qualification</th>
-								<th>Grade</th>
-							</tr>
-						</thead>
-						<tbody>
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                     <li class="nav-item">
+                        <a href="profile.php" class="littlestuff-hover">Home</a>
+                    </li>
+                    <?php 
+                    include "../php/admin/adminButton.php";
+                    ?>
+                    <li class="nav-item">
+                        <a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
+                    </li>
+                    <li class="active nav-item">
+                        <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
+                    </li>                             
+                    <li class="nav-item">
+                        <a href="index.html" class="littlestuff-hover">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Profile<i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
+                            </li>
+                            <li>
+                                <a href="addgrades.php" class="littlestuff-hover">Add Grades</a>
+                            </li>                                     
+                            <li>
+                                <a href="addjob.php" class="littlestuff-hover">Add Employment</a>
+                            </li>                                     
+                            <li>
+                                <a href="#" class="littlestuff-hover">Starred Paths</a>
+                            </li>                                     
+                            <!-- still to be made -->
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
+                            </li>
+                        </ul>                                 
+                    </li>
+                    <!--//dropdown-->
+                </ul>
+                <!--//nav-->
+            </div>
+            <!--// End Navigation -->
+        </div>
+        <!--// End Container -->
+    </nav>
+    <!--// End Navbar -->
+</header>
+<div class="mask">
+ <img href="../images/current.png" />
+</div>
 
-							<?php include "../php/Qualifications/displayGrades.php" ?>
+<div class="row contact-wrap"> 
+ <div class="col-md-8 col-md-offset-2">
+    <div class="col-sm-10 col-sm-offset-1">
+        <div class="underlined-title">
+            <h1>Your Qualification History</h1>
+            <hr class="headings">
+            <?php 
+            include"../php/Qualifications/getPoints.php"; 
+            ?>
+        </div>
+    </div>  
+    <div class="panel panel-default" id="currentQualifications">
+       <table class="table">
+          <thead>
+             <tr>
+                <th>Subject</th>
+                <th>Qualification</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
 
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-		<section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
-                <div class="container footer-1-3">
-                    <div class="col-md-4 pull-left">
-                        <img src="../images/carell.png" class="brand-img img-responsive">
-                        <ul class="social social-dark">
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-html5 white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-css3 white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-git white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-linux white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-fonticons white"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-chrome white"></i></a>
-                            </li>
-                        </ul>
-                        <!-- /.social -->
-                    </div>
-                    <div class="col-md-3 pull-right">
-                        <p class="address-bold-line">We <i class="fa fa-2x fa-heart littlestuff"></i> our career paths.</p>
-                    </div>
-                    <div class="col-xs-12 footer-text">
-                        <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
-                    </div>
-                </div>
-                <!-- /.container -->
-            </section>
-            <!--/#footer-->
-            <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>             
-            <script type="text/javascript" src="js/bootstrap.min.js"></script>             
-            <script type="text/javascript" src="js/plugins.js"></script>
-            <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+         <?php include "../php/Qualifications/displayGrades.php" ?>
 
-			<script type="text/javascript" src="js/bskit-scripts.js"></script>
-	</body>
+     </tbody>
+ </table>
+</div>
+</div>
+</div>
+<section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
+    <div class="container footer-1-3">
+        <div class="col-md-4 pull-left">
+            <img src="../images/carell.png" class="brand-img img-responsive">
+            <ul class="social social-dark">
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-html5 white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-css3 white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-git white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-linux white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-fonticons white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-chrome white"></i></a>
+                </li>
+            </ul>
+            <!-- /.social -->
+        </div>
+        <div class="col-md-3 pull-right">
+            <p class="address-bold-line">We <i class="fa fa-2x fa-heart littlestuff"></i> our career paths.</p>
+        </div>
+        <div class="col-xs-12 footer-text">
+            <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!-- /.container -->
+</section>
+<!--/#footer-->
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>             
+<script type="text/javascript" src="js/bootstrap.min.js"></script>             
+<script type="text/javascript" src="js/plugins.js"></script>
+<script src="https://maps.google.com/maps/api/js?sensor=true"></script>
+
+<script type="text/javascript" src="js/bskit-scripts.js"></script>
+</body>
 </html>
