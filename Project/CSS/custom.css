@@ -83,3 +83,23 @@ div.feature-box h5{
 {
     background-color: #1d2a59 !important;
 }
+
+
+
+
+.options {
+    width: 25%;
+    min-width: 420px;
+    min-height: 250px;
+    min-height: auto;
+    position: relative;
+    top: 35%;
+    left: 37.5%;
+    background-color: #DBE9F4;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px 10px 20px 10px;
+    overflow: hidden;
+    z-index: 100;
+}
