@@ -283,7 +283,6 @@ textarea {
 .jobblock {
 	cursor: pointer; 
 	cursor: hand;
-	color: black;
 }
 
 .jobblock ul li:hover{
@@ -368,11 +367,9 @@ textarea {
 
 .leftdrop{
 	margin-right: 10px !important;
-	width: 40% !important;
 }
 .rightdrop{
 	margin-left: 10px !important;
-	width:40% !important;
 }
 
 #pointwrapper{
@@ -433,13 +430,7 @@ textarea {
 	text-align: center;
 	padding: 10px 0px;
 	border-radius: 25px;
-	font-weight: bold;
-	font-size: 1.2em;
-	color: white;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-#jobblock
 
 /*End of Make Account CSS*/

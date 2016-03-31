@@ -199,12 +199,10 @@ function checkarray(course, level, submitting){
 
 
 
-function checkconnect(output){
-	alert("We managed to connect "+output);
-}
 
 
-function submitForm(redirect){
+
+function submitForm(){
 
 	selectedCourse = $('#courseselect').val();
 	selectedLevel = $('#levelselect').val();
@@ -212,19 +210,19 @@ function submitForm(redirect){
 
 
 	if( !checkarray(selectedCourse, selectedLevel, true) ){
-		$.when($.ajax(addGrade())).then(function(){ insertGrades(redirect); });
+		$.when($.ajax(addGrade())).then(function(){ insertGrades(); });
 	}
 	else
 	{
 		$("div").remove(".errormessage");
-		insertGrades(redirect);
+		insertGrades();
 	}
 
 }
 
 
 
-function insertGrades(redirect){
+function insertGrades(){
 
 	if ($(".errormessage").length){
 	}
@@ -266,10 +264,7 @@ function insertGrades(redirect){
 								alert("Error Occured While Updating UCAS Points");
 							}
 						});
-						
-						if(redirect)
-							window.location.href="../html/qualifications.php";
-
+						// window.location.href="../html/qualifications.php";
 					}
 				}
 			});

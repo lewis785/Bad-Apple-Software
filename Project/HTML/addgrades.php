@@ -131,7 +131,7 @@ include "../PHP/Core/verify.php";
         </div> 
 
         <div class="form-group">
-            <button onclick="submitForm(true)" id="submitGrades" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
+            <button onclick="submitForm()" id="submitGrades" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
         </div> 
 
 

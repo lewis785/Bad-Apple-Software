@@ -40,13 +40,13 @@ if($verified){
 		if($userlevel < 10)
 		{
 			$levelset = "<div class='col-sm-".$width." col-sm-offset-".$offset."'> 
-			<button class='btn-warning btn-lg' onclick='changeAccess('admin')'>Make Admin</button>
+			<button class='btn-warning btn-lg' onclick='accesschange('admin')'>Make Admin</button>
 			</div>";
 		}
 		else
 		{
 			$levelset = "<div class='col-sm-".$width." col-sm-offset-".$offset."'> 
-			<button class='btn-warning btn-lg' onclick='changeAccess('user')'>Make User</button>
+			<button class='btn-warning btn-lg' onclick='accesschange('user')'>Make User</button>
 			</div>";
 		}
 

@@ -12,7 +12,7 @@ function pathway(){
 			var lastlevel = "not a grade";
 			var parentid = 100;
 			var data = [];
-            data.push('{"name":"Your Paths","parent":"null"}');
+            data.push('{"name":"Qualifications","parent":"null"}');
 
 			for (var i=0; i<result.length; i++){
 				
@@ -26,7 +26,7 @@ function pathway(){
 				}
 				else
 				{
-					data.push('{"name":"'+curlevel+'","parent":"Your Paths"}');
+					data.push('{"name":"'+curlevel+'","parent":"Qualifications"}');
 					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
 					var lastlevel = curlevel;
 				}
@@ -66,9 +66,9 @@ data.forEach(function(node) {
 
             
 var margin = {top: 20, right: 100, bottom: 20, left: 100},
-    w = 900 - margin.right - margin.left,
+    w = 960 - margin.right - margin.left,
     h = 800 - margin.top - margin.bottom,
-      i = 0,
+      i = 2,
       duration = 600,
       root;
 
@@ -126,7 +126,7 @@ function collapse(d) {
       // Enter any new nodes at the parent's previous position.
 
       nodeEnter.append("svg:rect")
-        .attr("width", 160)
+        .attr("width", 150)
         .attr("height", function(d) {
           return 19;
         })
