@@ -66,10 +66,10 @@ data.forEach(function(node) {
 
             
 var margin = {top: 20, right: 100, bottom: 20, left: 100},
-    w = 960 - margin.right - margin.left,
+    w = 600- margin.right - margin.left,
     h = 800 - margin.top - margin.bottom,
       i = 0,
-      duration = 750,
+      duration = 600,
       root;
 
     var tree = d3.layout.tree()
@@ -84,22 +84,22 @@ var margin = {top: 20, right: 100, bottom: 20, left: 100},
       .attr("width", w + margin.right + margin.left)
       .attr("height", h + margin.top + margin.bottom)
       .append("g")
-      .attr("transform", "translate(" + margin.left - 10 + "," + margin.top + ")");
+      .attr("transform", "translate(" + margin.left  + "," + margin.top + ")");
       
 
     root = treeData[0];
-    root.x0 = h / 2;
+    root.x0 = h/2;
     root.y0 = w;
             
 function collapse(d) {
     if (d.children) {
       d._children = d.children;
-      d._children.forEach(collapse);
       d.children = null;
     }
   }
 
     root.children.forEach(collapse);
+        
              
     update(root);
             

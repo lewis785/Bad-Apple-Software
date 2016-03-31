@@ -59,7 +59,7 @@ body {
 
 }
 </style>
-<body onload="drawpath(); pathway()">
+<body onload="drawpath(); setTimeout(pathway,100);">
     
    
 
