@@ -1,4 +1,6 @@
 <?php 
+header('Content-Type: application/json');
+
 
 include(dirname(__FILE__)."/../Core/connection.php");
 include(dirname(__FILE__)."/../Core/validCookie.php");
@@ -20,6 +22,7 @@ if ($verified){
 
 
 		if($validcourse[0] == 1){
+
 			$checkGradeLevel = mysqli_stmt_init($link);
 			mysqli_stmt_prepare($checkGradeLevel, "SELECT count(*),levels.LevelID, grades.GradeID FROM grades INNER JOIN levels ON grades.GradeSetID = levels.GradeSet
 				WHERE levels.Level = ? and grades.Grade = ?");
@@ -30,6 +33,20 @@ if ($verified){
 			$validgrade = $result -> fetch_row();
 
 
+			$getUCASValue = mysqli_stmt_init($link);
+			mysqli_stmt_prepare($getUCASValue, "SELECT count(*), ucaspoints.UCASValue FROM ucaspoints
+				WHERE ucaspoints.Level = ? AND ucaspoints.Grade = ?");
+			mysqli_stmt_bind_param($getUCASValue, 'ii', $validgrade[1], $validgrade[2]);   
+			mysqli_stmt_execute($getUCASValue); 
+			$result = mysqli_stmt_get_result($getUCASValue);
+			$UCAS = $result -> fetch_row();
+
+			if($UCAS[0] == 1)
+				$UCASPoints = $UCAS[1];
+			else
+				$UCASPoints = 0;
+
+
 			if ($validgrade[0] == 1) {
 
 				$insertUserGrade = mysqli_stmt_init($link);
@@ -37,14 +54,14 @@ if ($verified){
 				mysqli_stmt_bind_param($insertUserGrade, 'iiii', $user[1], $validcourse[1], $validgrade[1], $validgrade[2]);   
 				mysqli_stmt_execute($insertUserGrade);
 
-				echo json_encode(array("completed"=>true));
+				echo json_encode(array("completed"=>true,"UCASPoints"=>$UCASPoints));
 
 			}
-            else
-            {
-                echo json_encode(array("completed"=>false));
-            }
-                
+			else
+			{
+				echo json_encode(array("completed"=>false));
+			}
+
 		}
 
 

@@ -25,10 +25,8 @@ include "../../PHP/Admin/validAdmin.php";
 
   <link href="../../css/admin.css" rel="stylesheet">
 
-
   <!-- Custom styles for this template -->
   <link href="../../admincss/dashboard.css" rel="stylesheet">
-  <script src="admincss/ie-emulation-modes-warning.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="../../js/admins.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -70,7 +68,7 @@ include "../../PHP/Admin/validAdmin.php";
               <li><a href="admin.php">Overview<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
               <li class="active"><a href="manageusers.php">Manage Users<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
               <li ><a href="managewebpage.php">Manage Webpages<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-globe"></span></a></li>
-              <li ><a href="#">Manage Admin Settings<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-wrench"></span></a></li>
+              <li ><a href="settings.php">Manage Admin Settings<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-wrench"></span></a></li>
             </ul>
           </div>
         </div>
@@ -118,16 +116,6 @@ include "../../PHP/Admin/validAdmin.php";
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="Dashboard%20Template%20for%20Bootstrap_files/jquery.js"></script>
-
-    <script src="Dashboard%20Template%20for%20Bootstrap_files/bootstrap.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="Dashboard%20Template%20for%20Bootstrap_files/holder.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="Dashboard%20Template%20for%20Bootstrap_files/ie10-viewport-bug-workaround.js"></script>
 
   </body>
   </html>

@@ -5,6 +5,7 @@ var qualificationpresent = false;
 var selectedCourse;
 var selectedLevel;
 var selectedGrade;
+var UCASScore = 0;
 
 function addGrade(){
 
@@ -198,10 +199,12 @@ function checkarray(course, level, submitting){
 
 
 
+function checkconnect(output){
+	alert("We managed to connect "+output);
+}
 
 
-
-function submitForm(){
+function submitForm(redirect){
 
 	selectedCourse = $('#courseselect').val();
 	selectedLevel = $('#levelselect').val();
@@ -209,27 +212,28 @@ function submitForm(){
 
 
 	if( !checkarray(selectedCourse, selectedLevel, true) ){
-		$.when($.ajax(addGrade())).then(function(){ insertGrades(); });
+		$.when($.ajax(addGrade())).then(function(){ insertGrades(redirect); });
 	}
 	else
 	{
 		$("div").remove(".errormessage");
-		insertGrades();
+		insertGrades(redirect);
 	}
 
 }
 
 
 
-function insertGrades(){
+function insertGrades(redirect){
 
 	if ($(".errormessage").length){
 	}
 	else
 	{
 		length = qualificationsarray.length;
-
-		for(var i = 0; i < length; i +=3){
+		var posCheck = 3;
+		for(var i = 0; i < length; i +=3)
+		{
 
 			selectedCourse = qualificationsarray[i];
 			selectedLevel = qualificationsarray[i+1];
@@ -242,18 +246,38 @@ function insertGrades(){
 				data: {grade: selectedGrade, level: selectedLevel, course: selectedCourse},
 				cache: false,
 				success: function(result){
-
+					UCASScore += result.UCASPoints;
 				},
 				error: function(){
 					alert("Error Occured While Inserting");
+				},
+				complete: function(){
+					posCheck += 3;
+					if( posCheck > length)
+					{
+						$.ajax({  
+							type: 'POST',
+							url: "../PHP/Qualifications/updatePoints.php",
+							data: {points: UCASScore},
+							cache: false,
+							success: function(result){
+							},
+							error: function(error){
+								alert("Error Occured While Updating UCAS Points");
+							}
+						});
+						
+						if(redirect)
+							window.location.href="../html/qualifications.php";
+
+					}
 				}
 			});
+
 		}
-		window.location.href="../html/qualifications.php";
-
 	}
-
 }
+
 
 function deleteGrade(inputnum){
 	$("div").remove(".errormessage");
@@ -268,6 +292,7 @@ function deleteGrade(inputnum){
 		success: function(result){
 			$("table#currentQualifications tr#"+deleteGrade).remove();
 			$(".options").remove();
+			$("div#points").html(result.total);
 		},
 		error: function(){
 			alert("Error Occured While Deleting");
@@ -354,6 +379,9 @@ function updatequalification(QID)
 			// alert("update complete");
 			$("tr#"+inQID).find("td#level").html(inlevel);
 			$("tr#"+inQID).find("td#grade").html(ingrade);
+			var Points = parseInt($("div#points").text());
+			Points = Points + parseInt(result);
+			$("div#points").html(Points);
 			$(".options").remove();
 
 		},
@@ -362,11 +390,11 @@ function updatequalification(QID)
 			alert(error);
 			console.log(error);
 		}
-		});
+	});
 	}
 	else
 	{
-				$("#gradediv").append("<div id='invalid' class='errormessage'> Select Grade </div>");
+		$("#gradediv").append("<div id='invalid' class='errormessage'> Select Grade </div>");
 	}
 	
 }

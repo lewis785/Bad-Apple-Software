@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-
 <?php 
 include "../PHP/Core/verify.php";
 ?>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -161,4 +159,5 @@ path.link {
 </footer><!--/#footer-->
 
 </body>
+
 </html>
