@@ -52,7 +52,7 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="nav-item">
-                                <a href="home.html" class="aqua-hover deepocean">Home</a>
+                                <a href="index.html" class="aqua-hover deepocean">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a href="login.php" class="aqua-hover deepocean">Login</a>
@@ -69,82 +69,37 @@
             </nav>
             <!--// End Navbar -->
         </header>
-        <section id="register-page" class="main-section col-md-6 col-md-offset-3">
-            <div class="center"> 
-                <h2> Please Register an Account below </h2>
-            </div>
-            <div class="container-fluid m">
-                <div class="row contact-wrap"> 
-                    <form id="register-form" class="contact-form" name="contact-form" method="post" action="../PHP/createUser.php"> 
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="form-group">
-                                <label> First Name * </label>
-                                <input type="text" name="firstname" class="form-control glow" placeholder="Enter Firstname">
-                            </div>
-                            <div class="form-group">
-                                <label> Last Name * </label>
-                                <input type="text" name="surname" class="form-control glow" placeholder="Enter Lastname">
-                            </div>                             
-                            <div class="form-group">
-                                <label> Username * </label>
-                                <input type="text" name="username" class="form-control glow" placeholder="Enter Username">
-                            </div>
-                            <div class="form-group">
-                                <label> Occupation * </label>
-                                <select id="occupationselect" name="occupation" class="form-control">
-                                    <option name="NonSelect">Select Occupation</option>
-                                    <?php include "../php/displayOccupations.php" ?>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label> House Number * </label>
-                                <input type="text" name="number" class="form-control glow" placeholder="Enter House Number">
-                            </div>
-                            <div class="form-group">
-                                <label> Street Name * </label>
-                                <input type="text" name="street" class="form-control glow" placeholder="Enter Street Name">
-                            </div>
-                            <div class="form-group">
-                                <label> Postcode * </label>
-                                <input type="text" name="postcode" class="form-control glow" placeholder="Enter PostCode">
-                            </div>
-                            <div class="form-group">
-                                <label> City * </label>
-                                <input type="text" name="city" class="form-control glow" placeholder="Enter City">
-                            </div>
-                            <div class="form-group">
-                                <label> Date Of Birth * </label>
-                                <input type="Date" name="DoB" class="form-control glow" placeholder="Enter Date of Birth">
-                            </div>
-                            <div class="form-group">
-                                <label> Email * </label>
-                                <input type="Email" name="email1" class="form-control glow" placeholder="Enter Email">
-                            </div>
-                            <div class="form-group">
-                                <label> Confirm Email * </label>
-                                <input type="Email" name="email2" class="form-control glow" placeholder="Enter Email again">
-                            </div>
-                            <div id="passdiv" class="form-group">
-                                <label> Password * </label>
-                                <input type="Password" id="pass1" name="pass1" onblur="validatePassword()" class="form-control glow" placeholder="Enter Password">
-                            </div>
-                            <div class="form-group">
-                                <label> Confirm Password * </label>
-                                <input type="Password" id="pass2" name="pass2" class="form-control glow" placeholder="Enter Password again">
-                            </div>
-                            <br> 
-                            <div class="form-group">
-                                <button type="submit" name="register" class="btn btn-primary" required="required"> Register </button>                                 
-                                <!-- still to be made -->
-                            </div>                             
-                        </div>
-                    </form>                     
-                    <a href="buildprofile.php" class="btn btn-primary"> Click here too get a run though </a>
-                </div>
-            </div>
-            <!--/.container-->
-        </section>
-        <!--/#Register-page-->
+        <div class="mask">
+        	<img href="../images/current.png" />
+		</div>
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="underlined-title">
+				<h1>Please Register an Account Below</h1>
+				<hr class="deco">
+			</div>
+		</div>
+		<!-- Register Form start -->
+		<form role="form" id="register-form" class="register-form text-center lead" name="login" method="post" action="../php/createUser.php">
+			<div class="form-group">
+				<input type="text" name="username" class="form-control deepocean" required="required" placeholder="Enter Username">
+			</div>
+			
+			<div class="form-group">
+				<input type="Email" name="email1" class="form-control deepocean" required="required" placeholder="Enter Email">
+			</div>
+			
+			<div id="passdiv" class="form-group">
+				<input type="Password" id="pass1" name="pass1" onblur="validatePassword()" class="form-control deepocean" required="required" placeholder="Enter Password">
+			</div>
+		                 
+			 <div class="form-group">
+				<input type="Password" id="pass2" name="pass2" class="form-control deepocean" required="required" placeholder="Enter Password again">
+			</div>            
+			<div class="form-group">
+				<button type="submit" name="register" class="btn btn-llg bg-deco deepocean" required="required"> Register </button>
+			</div>  
+		</form>
+       <!-- register end -->
         <!--// footer -->
         <section class="content-block-nopad footer-wrap-1-3 bg-deco">
             <div class="container footer-1-3">
