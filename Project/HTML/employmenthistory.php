@@ -30,7 +30,7 @@ include "../PHP/Core/verify.php";
         <![endif]-->         
     </head>
     <!--/head-->
-    <body onload="loadInfo()" data-spy="scroll" data-target="nav"> 
+    <body data-spy="scroll" data-target="nav"> 
         <header id="header-1" class="header-1">
             <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-deco">
                 <div class="container-fluid">
@@ -52,7 +52,7 @@ include "../PHP/Core/verify.php";
                     <!-- Navigation -->
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                         <li class="nav-item">
+                           <li class="nav-item">
                             <a href="profile.php" class="aqua-hover deepocean">Home</a>
                         </li>
                         <li class="nav-item">
@@ -100,57 +100,56 @@ include "../PHP/Core/verify.php";
         <!--// End Navbar -->
     </header>
     <section id="content-3-5" class="content-block content-3-5">
-     <div class="mask">
+       <div class="mask">
         <img href="../images/current.png" />
     </div>
-    <div class="col-sm-10 col-sm-offset-1">
-        <div class="underlined-title">
-           <h1 class="deepocean">Your Careers Employment History</h1>
-           <hr class="deco">
-       </div>
-   </div>
-   <div class="container">
-    <div class="row">
-       <!-- Feature Box 1 -->
+    
+    <div class="underlined-title">
+        <h1 class="deepocean">Your Careers Employment History</h1>
+    </div>
 
-       <?php include "../php/displayJobs.php" ?>
-       
-   </div>
-</div>
-<!--/.container-->
+    <div class="container">
+        <div class="row">
+         <!-- Feature Box 1 -->
+
+         <?php include "../php/displayJobs.php" ?>
+
+     </div>
+ </div>
+ <!--/.container-->
 </section>
 <!--/#contact-page-->
 <section class="content-block-nopad footer-wrap-1-3 bg-deco">
- <div class="container footer-1-3">
+   <div class="container footer-1-3">
     <div class="col-md-4 pull-left">
-       <img src="../images/carell.png" class="brand-img img-responsive">
-       <ul class="social social-light">
-          <li>
-             <a href="#"><i class="fa fa-2x fa-html5 deepocean"></i></a>
-         </li>
-         <li>
-             <a href="#"><i class="fa fa-2x fa-css3 deepocean"></i></a>
-         </li>
-         <li>
-             <a href="#"><i class="fa fa-2x fa-git deepocean"></i></a>
-         </li>
-         <li>
-             <a href="#"><i class="fa fa-2x fa-linux deepocean"></i></a>
-         </li>
-         <li>
-             <a href="#"><i class="fa fa-2x fa-fonticons deepocean"></i></a>
-         </li>
-         <li>
-             <a href="#"><i class="fa fa-2x fa-chrome deepocean"></i></a>
-         </li>
-     </ul>
-     <!-- /.social -->
- </div>
- <div class="col-md-3 pull-right">
-   <p class="address-bold-line deepocean">We <i class="fa fa-2x fa-heart pomegranate"></i> our career paths.</p>
+     <img src="../images/carell.png" class="brand-img img-responsive">
+     <ul class="social social-light">
+      <li>
+       <a href="#"><i class="fa fa-2x fa-html5 deepocean"></i></a>
+   </li>
+   <li>
+       <a href="#"><i class="fa fa-2x fa-css3 deepocean"></i></a>
+   </li>
+   <li>
+       <a href="#"><i class="fa fa-2x fa-git deepocean"></i></a>
+   </li>
+   <li>
+       <a href="#"><i class="fa fa-2x fa-linux deepocean"></i></a>
+   </li>
+   <li>
+       <a href="#"><i class="fa fa-2x fa-fonticons deepocean"></i></a>
+   </li>
+   <li>
+       <a href="#"><i class="fa fa-2x fa-chrome deepocean"></i></a>
+   </li>
+</ul>
+<!-- /.social -->
+</div>
+<div class="col-md-3 pull-right">
+ <p class="address-bold-line deepocean">We <i class="fa fa-2x fa-heart pomegranate"></i> our career paths.</p>
 </div>
 <div class="col-xs-12 footer-text">
-   <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
+ <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
 </div>
 </div>
 <!-- /.container -->

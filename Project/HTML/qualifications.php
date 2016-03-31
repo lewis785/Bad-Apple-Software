@@ -48,7 +48,7 @@ include "../PHP/Core/verify.php";
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                     <li class="nav-item">
+                       <li class="nav-item">
                         <a href="profile.php" class="littlestuff-hover">Home</a>
                     </li>
                     <?php 
@@ -99,35 +99,38 @@ include "../PHP/Core/verify.php";
     <!--// End Navbar -->
 </header>
 <div class="mask">
- <img href="../images/current.png" />
+   <img href="../images/current.png" />
 </div>
 
 <div class="row contact-wrap"> 
- <div class="col-md-8 col-md-offset-2">
-    <div class="col-sm-10 col-sm-offset-1">
-        <div class="underlined-title">
-            <h1>Your Qualification History</h1>
-            <hr class="headings">
-            <?php 
-            include"../php/Qualifications/getPoints.php"; 
-            ?>
-        </div>
-    </div>  
+   <div class="col-md-8 col-md-offset-2">
+
+
+    <div class="underlined-title">
+        <h1>Your Qualification History</h1>
+        <hr class="headings">
+        <?php 
+        include"../php/Qualifications/getPoints.php"; 
+        ?>
+    </div>
+    
+
+
     <div class="panel panel-default" id="currentQualifications">
-       <table class="table">
-          <thead>
-             <tr>
-                <th>Subject</th>
-                <th>Qualification</th>
-                <th>Grade</th>
-            </tr>
-        </thead>
-        <tbody>
+     <table class="table">
+      <thead>
+       <tr>
+        <th>Subject</th>
+        <th>Qualification</th>
+        <th>Grade</th>
+    </tr>
+</thead>
+<tbody>
 
-         <?php include "../php/Qualifications/displayGrades.php" ?>
+   <?php include "../php/Qualifications/displayGrades.php" ?>
 
-     </tbody>
- </table>
+</tbody>
+</table>
 </div>
 </div>
 </div>

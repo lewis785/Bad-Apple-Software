@@ -29,195 +29,195 @@ include "../PHP/Core/verify.php";
         <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
-    <![endif]-->         
-    </head>     
-    <!--/head-->
-    <body onload="loadInfo()" data-spy="scroll" data-target="nav"> 
-        <header id="header-1" class="header-1">
-            <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
-                <div class="container-fluid">
-                    <!-- Brand and toggle -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="#">
-                            <img src="../images/carel.png" class="brand-img img-responsive">
-                        </a>
-                    </div>
-                    <!-- Navigation -->
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                           <li class="nav-item">
-                                <a href="profile.php" class="littlestuff-hover">Home</a>
-                            </li>
-                            <?php 
-							include "../php/admin/adminButton.php";
-							?>
-                            <li class="nav-item">
-                                <a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
-                            </li>                             
-                            <li class="nav-item">
-                                <a href="index.html" class="littlestuff-hover">Contact</a>
-                            </li>
-                            <li class="active nav-item dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Profile<i class="fa fa-angle-down"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
-                                    </li>
-                                    <li>
-                                        <a href="addgrades.php" class="littlestuff-hover">Add Grades</a>
-                                    </li>                                     
-                                    <li>
-                                        <a href="addjob.php" class="littlestuff-hover">Add Employment</a>
-                                    </li>                                     
-                                    <li>
-                                        <a href="#" class="littlestuff-hover">Starred Paths</a>
-                                    </li>                                     
-                                    <!-- still to be made -->
-                                    <li role="separator" class="divider"></li>
-                                    <li>
-                                        <a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
-                                    </li>
-                                </ul>                                 
-                            </li>
-                            <!--//dropdown-->
-                        </ul>
-                        <!--//nav-->
-                    </div>
-                    <!--// End Navigation -->
+      <![endif]-->         
+  </head>     
+  <!--/head-->
+  <body onload="loadInfo()" data-spy="scroll" data-target="nav"> 
+    <header id="header-1" class="header-1">
+        <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
+            <div class="container-fluid">
+                <!-- Brand and toggle -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#">
+                        <img src="../images/carel.png" class="brand-img img-responsive">
+                    </a>
                 </div>
-                <!--// End Container -->
-            </nav>
-            <!--// End Navbar -->
-        </header>
-		<section id="content-3-5" class="content-block content-3-5">
-			<div class="mask">
-				<img href="../images/current.png" />
-			</div>
-			<div class="col-sm-10 col-sm-offset-1">
-				<div class="underlined-title">
-					<h1>Your Careers Pathfinder Profile</h1>
-					<hr class="headings">
-				</div>
-			</div>                 
-			<div class="container">
-				<div class="row">
-					<!-- Feature Box 1 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-sign-in black"></span>
-							</div>
-							<h5>Joined</h5>
-							<div id="joined">01/01/01</div>
-						</div>
-					</div>
-					<!-- Feature Box 2 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-pencil black"></span>
-							</div>
-							<h5>Name</h5>
-							<div id="name">John Smith</div>
-						</div>
-					</div>
-					<!-- Feature Box 3 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-empire black"></span>
-							</div>
-							<h5>Occupation</h5>
-							<div id="occupation">Employed</div>
-						</div>
-					</div>
-					<!-- Feature Box 4 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-calendar-o black"></span>
-							</div>
-							<h5>Date of Birth</h5>
-							<div id="dob">01/01/01</div>
-						</div>
-					</div>
-					<!-- Feature Box 5 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-envelope-o black"></span>
-							</div>
-							<h5>Email</h5>
-							<div id="email">js@hw.ac.uk</div>
-						</div>
-					</div>
-					<!-- Feature Box 6 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-home black"></span>
-							</div>
-							<h5>Address</h5>
-							<div id="address">01/01/01</div>
-						</div>
-					</div>
-				</div>
-				<!-- Row Ends -->
-			</div>
-			<!-- Container Ends -->
-			<!-- </section> -->
-			</section>
-            <!--// End of profile-->
-            <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
-                <div class="container footer-1-3">
-                    <div class="col-md-4 pull-left">
-                        <img src="../images/carell.png" class="brand-img img-responsive">
-                        <ul class="social social-dark">
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                     <li class="nav-item">
+                        <a href="profile.php" class="littlestuff-hover">Home</a>
+                    </li>
+                    <?php 
+                    include "../php/admin/adminButton.php";
+                    ?>
+                    <li class="nav-item">
+                        <a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
+                    </li>                             
+                    <li class="nav-item">
+                        <a href="index.html" class="littlestuff-hover">Contact</a>
+                    </li>
+                    <li class="active nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Profile<i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-html5 white"></i></a>
+                                <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-css3 white"></i></a>
-                            </li>
+                                <a href="addgrades.php" class="littlestuff-hover">Add Grades</a>
+                            </li>                                     
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-git white"></i></a>
-                            </li>
+                                <a href="addjob.php" class="littlestuff-hover">Add Employment</a>
+                            </li>                                     
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-linux white"></i></a>
-                            </li>
+                                <a href="#" class="littlestuff-hover">Starred Paths</a>
+                            </li>                                     
+                            <!-- still to be made -->
+                            <li role="separator" class="divider"></li>
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-fonticons white"></i></a>
+                                <a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
                             </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-chrome white"></i></a>
-                            </li>
-                        </ul>
-                        <!-- /.social -->
-                    </div>
-                    <div class="col-md-3 pull-right">
-                        <p class="address-bold-line">We <i class="fa fa-2x fa-heart littlestuff"></i> our career paths.</p>
-                    </div>
-                    <div class="col-xs-12 footer-text">
-                        <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
-                    </div>
-                </div>
-                <!-- /.container -->
-            </section>
-            <!--/#footer-->
-	</body>
+                        </ul>                                 
+                    </li>
+                    <!--//dropdown-->
+                </ul>
+                <!--//nav-->
+            </div>
+            <!--// End Navigation -->
+        </div>
+        <!--// End Container -->
+    </nav>
+    <!--// End Navbar -->
+</header>
+<section id="content-3-5" class="content-block content-3-5">
+ <div class="mask">
+    <img href="../images/current.png" />
+</div>
+<div class="col-sm-10 col-sm-offset-1">
+    <div class="underlined-title">
+       <h1>Your Careers Pathfinder Profile</h1>
+       <hr class="headings">
+   </div>
+</div>                 
+<div class="container">
+    <div class="row">
+       <!-- Feature Box 1 -->
+       <div class="col-md-2 col-sm-4 col-xs-8">
+          <div class="feature-box bg-headings">
+             <div class="icon">
+                <span class="fa fa-sign-in black"></span>
+            </div>
+            <h5>Joined</h5>
+            <div id="joined">01/01/01</div>
+        </div>
+    </div>
+    <!-- Feature Box 2 -->
+    <div class="col-md-2 col-sm-4 col-xs-8">
+      <div class="feature-box bg-headings">
+         <div class="icon">
+            <span class="fa fa-pencil black"></span>
+        </div>
+        <h5>Name</h5>
+        <div id="name">John Smith</div>
+    </div>
+</div>
+<!-- Feature Box 3 -->
+<div class="col-md-2 col-sm-4 col-xs-8">
+  <div class="feature-box bg-headings">
+     <div class="icon">
+        <span class="fa fa-empire black"></span>
+    </div>
+    <h5>Occupation</h5>
+    <div id="occupation">Employed</div>
+</div>
+</div>
+<!-- Feature Box 4 -->
+<div class="col-md-2 col-sm-4 col-xs-8">
+  <div class="feature-box bg-headings">
+     <div class="icon">
+        <span class="fa fa-calendar-o black"></span>
+    </div>
+    <h5>Date of Birth</h5>
+    <div id="dob">01/01/01</div>
+</div>
+</div>
+<!-- Feature Box 5 -->
+<div class="col-md-2 col-sm-4 col-xs-8">
+  <div class="feature-box bg-headings">
+     <div class="icon">
+        <span class="fa fa-envelope-o black"></span>
+    </div>
+    <h5>Email</h5>
+    <div id="email">js@hw.ac.uk</div>
+</div>
+</div>
+<!-- Feature Box 6 -->
+<div class="col-md-2 col-sm-4 col-xs-8">
+  <div class="feature-box bg-headings">
+     <div class="icon">
+        <span class="fa fa-home black"></span>
+    </div>
+    <h5>Address</h5>
+    <div id="address">01/01/01</div>
+</div>
+</div>
+</div>
+<!-- Row Ends -->
+</div>
+<!-- Container Ends -->
+<!-- </section> -->
+</section>
+<!--// End of profile-->
+<footer class="content-block-nopad footer-wrap-1-3 bg-navfoot">
+    <div class="container footer-1-3">
+        <div class="col-md-4 pull-left">
+            <img src="../images/carell.png" class="brand-img img-responsive">
+            <ul class="social social-dark">
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-html5 white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-css3 white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-git white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-linux white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-fonticons white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-chrome white"></i></a>
+                </li>
+            </ul>
+            <!-- /.social -->
+        </div>
+        <div class="col-md-3 pull-right">
+            <p class="address-bold-line">We <i class="fa fa-2x fa-heart littlestuff"></i> our career paths.</p>
+        </div>
+        <div class="col-xs-12 footer-text">
+            <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!-- /.container -->
+</footer>
+<!--/#footer-->
+</body>
 </html>

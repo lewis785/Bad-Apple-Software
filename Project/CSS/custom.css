@@ -4,6 +4,11 @@ body {
 	height: 100%;
 }
 
+section{
+    min-height: 100%;
+    height: 100%;
+}
+
 .header-1{
     padding-bottom: 50px;
 }
@@ -92,8 +97,8 @@ div.feature-box h5{
     min-width: 420px;
     min-height: 250px;
     min-height: auto;
-    position: relative;
-    top: 35%;
+    position: fixed;
+    top: 20%;
     left: 37.5%;
     background-color: #DBE9F4;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
