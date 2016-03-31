@@ -4,8 +4,9 @@ var validform = true;
 function nextform()
 {
 	$("div.errormessage").remove();
+	alert(page);
 
-	validform = true;
+	validform = false;
 	if (page === 1)
 	{
 		var firstname = $("input#firstname").val();
@@ -16,26 +17,25 @@ function nextform()
 		// if (!empty(firstname,'firstname') && !empty(surname,'surname') && !empty(occupation,'occupation') && !empty(DOB,'DOB'))
 		// {
 
-			// $.ajax
-			// ({  
-			// 	type: 'POST',
-			// 	url: "../PHP/Wizard/insertDetails.php",
-			// 	data: { first: firstname, surname: surname, occupation: occupation, dob: DOB},
-			// 	cache: false,
-			// 	success: function(result){
-			// 		page += 1;
-			// 	},
-			// 	error: function(error){
-			// 		alert("Error Occured While Inserting Details");
-			// 		alert(error);
-			// 	}
-			// });
-$("div#formarea").html(addressHTML);
-swapclass("detailcircle","current","completed");
-swapclass("addresscircle","incomplete","current");
+			$.ajax
+			({  
+				type: 'POST',
+				url: "../PHP/Wizard/insertDetails.php",
+				data: { first: firstname, surname: surname, occupation: occupation, dob: DOB},
+				cache: false,
+				success: function(result){
+					page += 1;
+					$("div#formarea").html(addressHTML);
+					swapclass("detailcircle","current","completed");
+					swapclass("addresscircle","incomplete","current");
+				},
+				error: function(error){
+					alert("Error Occured While Inserting Details");
+					alert(error);
+				}
+			});
+
 // }
-
-
 }
 
 if(page === 2)
@@ -48,20 +48,31 @@ if(page === 2)
 	// if (!empty(number,'housenumber') && !empty(street,'street') && !empty(city,'city') && !empty(postcode,'postcode'))
 	// {
 
-		$("div#formarea").html(qualificationHTML);
-		swapclass("addresscircle","current","completed");
-		swapclass("qualificationcircle","incomplete","current");
-		
-		$("select#levelselect").load("../../php/Qualifications/getLevels.php");
-		$("select#courseselect").load("../../php/Qualifications/getCourses.php");
+
+		alert(number+street+city+postcode);
+		$.ajax
+		({  
+			type: 'POST',
+			url: "../PHP/Wizard/insertAddress.php",
+			data: { number: number, street: street, postcode: postcode, city: city},
+			cache: false,
+			success: function(result){
+				$("div#formarea").html(qualificationHTML);
+				swapclass("addresscircle","current","completed");
+				swapclass("qualificationcircle","incomplete","current");
+				$("select#levelselect").load("../../php/Qualifications/getLevels.php");
+				$("select#courseselect").load("../../php/Qualifications/getCourses.php");
+				page+=1;
+			},
+			error: function(error){
+				alert("Error Occured While Inserting Details");
+				alert(error);
+			}
+		});
+
 
 
 	// }
-	// else
-	// {
-		// validform =false;
-	// }
-
 }
 
 
@@ -74,10 +85,14 @@ if(page === 3)
 	swapclass("employmentcircle","incomplete","current");
 	$("select#monthstart").load("../../php/core/monthOptions.php");
 	$("select#monthend").load("../../php/core/monthOptions.php");
+	getYear();
+	page+=1;
 }
 
 if(page === 4)
-{}
+{
+
+}
 
 if(validform)
 	page+=1;
@@ -115,6 +130,22 @@ function swapclass($divID,$remove,$add)
 {
 	$("div#"+$divID).removeClass($remove);
 	$("div#"+$divID).addClass($add);
+}
+
+function getYear(){
+	var first = document.getElementById("yearstart");
+	var second = document.getElementById("yearend");
+	var year = new Date().getFullYear();
+	var gen = function(max){
+		do{
+			yearstart.add(new Option(year,year),null);
+			yearend.add(new Option(year,year),null);
+			year--;
+			max--;
+		}
+		while(max>0);
+	}
+	(60);
 }
 
 
