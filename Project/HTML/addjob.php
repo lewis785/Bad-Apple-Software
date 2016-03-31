@@ -38,6 +38,7 @@ include "../PHP/Core/verify.php";
 
 
     <script src="../js/loadUser.js"></script>
+    <script src="../js/career.js"></script>
 
 </head><!--/head-->
 
@@ -99,78 +100,63 @@ include "../PHP/Core/verify.php";
 
 
 
-
-        <form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertjob.php">  
-
-            <div class="form-group">
-                <label> Employer </label>
-                <input type="text" name="employer" class="form-control glow" placeholder="Employer">
-            </div>
-
-            <div class="form-group">
-                <label> Job Title </label>
-                <input type="text" name="title" class="form-control glow" placeholder="Job Title">
-            </div> 
-            
-
-            <div class="form-group">
-                <label> Start Date </label>
-
-                <select id="monthstart" name="startmonth" class="form-control">
-                    <option name="NonSelect">Select Month</option>
-                    <?php include "../php/core/monthOptions.php" ?>
-                </select>
-
-
-                <select id="yearstart" name="startyear" class="form-control">
-                    <option name="NonSelect">Select Year</option>
-                </select>
-            </div> 
-
-            <div class="form-group">
-                <label> Start Date </label>
-
-                <select id="monthstart" name="endmonth" class="form-control">
-                    <option name="NonSelect">Select Month</option>
-                    <?php include "../php/core/monthOptions.php" ?>
-                </select>
-
-                <select id="yearend" name="endyear" class="form-control">
-                    <option name="NonSelect">Select Year</option>
-                </select>
-
-            </div> 
-
-
-            <div class="form-group">
-                <label> Description </label>
-                <textarea class="form-control" rows="3" name="description" placeholder="Job Description"></textarea>
-            </div> 
-
-
-            <div class="form-group">
-                <button type="submit" name="register" class="btn btn-primary" required="required"> New Job </button>  <!-- still to be made -->
-            </div> 
-
-        </form>
-
-
-
-
-        <div class="form-group">
-            <button onclick="#" id="storeGrade" class="btn btn-primary"> Add Another Job </button>  <!-- still to be made -->
-        </div> 
-
-        <div class="form-group">
-            <button onclick="#" id="submitGrades" class="btn btn-primary"> Submit Employment </button>  <!-- still to be made -->
-        </div> 
-
-
-        <div id="qualificationslist"></div>
-
+       <div class="form-group" id="employer">
+        <label> Employer </label>
+        <input type="text" name="employer" class="form-control glow" placeholder="Employer">
     </div>
+
+    <div class="form-group" id="jobtitle">
+        <label> Job Title </label>
+        <input type="text" name="title" class="form-control glow" placeholder="Job Title">
+    </div>
+
+    <div class="form-group onerow" id="startdate">
+        <label class="col-md-12"> Start Date </label>
+        <select id="monthstart" name="startmonth" class="form-control leftdrop">
+            <?php include"../php/core/monthOptions.php" ?>
+        </select>
+        <select id="yearstart" name="startyear" class="form-control rightdrop">
+            <option value="NonSelect">Select Year</option>
+        </select>
+    </div>
+
+    <div class="onerow form-group" id="enddate">
+        <label class="col-md-12"> End Date </label>
+        <select id="monthend" name="endmonth" class="form-control leftdrop">
+            <?php include"../php/core/monthOptions.php" ?>
+        </select>
+        <select id="yearend" name="endyear" class="form-control rightdrop">
+            <option value="NonSelect">Select Year</option>
+        </select>
+    </div>
+
+    <div class="form-group" id="description">
+        <label> Description </label>
+        <textarea id="descript" class="form-control" rows="3" name="description" placeholder="Job Description"></textarea>
+    </div>
+    
+
+
+    <div class="form-group">
+        <button id="storeGrade" class="btn btn-primary" onclick="addJobArray()"> Add Another Job </button>  <!-- still to be made -->
+    </div> 
+
+
+    <div>
+        <button class="btn btn-primary" onclick="clearinput()"> Clear Job Form </button>
+    </div>
+
+    <div class="form-group">
+        <button id="submitGrades" class="btn btn-primary" onclick="submitJobs(true)"> Submit Employment </button>  <!-- still to be made -->
+    </div> 
+
+
+
+
+</div>
 </div>
 
+    <div id="joblist"></div>
 </div><!-- End of page-center-->
 
 
