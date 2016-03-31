@@ -1,9 +1,3 @@
-/* Put your custom styles here */
-a{
-
-	color:white;
-
-}
 /* Popup CSS */
 
 #popup {
@@ -282,10 +276,6 @@ textarea {
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
-#jobblock
-
-/*End of Make Account CSS*/
 body { 
 	margin-bottom: 80px
 	height: 100%;
@@ -303,6 +293,21 @@ div.mask.img{
     width: auto;
 }
 
+a{
+
+	color:white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+	
+div.middle-bit{
+		flex:1;
+	}	
+	
 .mask{
 	background-image: url("../images/current.png");
     position: absolute;
@@ -312,6 +317,7 @@ div.mask.img{
     bottom: 0;
     background-color: black;
     opacity: 0.5;
+	padding-bottom: 200px
 
     filter: blur(10px);
     -webkit-filter: blur(10px);
@@ -376,8 +382,6 @@ div.feature-box h5{
    cursor: default;
 }
 
-
-
 .options {
     width: 25%;
     min-width: 420px;
@@ -394,7 +398,6 @@ div.feature-box h5{
     overflow: hidden;
     z-index: 100;
 }
-
 
 #currentQualifications{
     margin-bottom: 50px;

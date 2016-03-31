@@ -72,6 +72,7 @@
             </nav>
             <!--// End Navbar -->
         </header>
+        <div class="middle-bit">
         <div class="mask">
         	<img href="../images/current.png" />
 		</div>
@@ -102,6 +103,7 @@
 				<button type="submit" name="register" class="btn btn-llg bg-headings" required="required"> Register </button>
 			</div>  
 		</form>
+		</div>
        <!-- register end -->
         <!--// footer -->
         <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">

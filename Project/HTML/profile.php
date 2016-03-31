@@ -104,6 +104,7 @@ include "../PHP/Core/verify.php";
             </nav>
             <!--// End Navbar -->
         </header>
+        <div class="middle-bit">
 		<section id="content-3-5" class="content-block content-3-5">
 			<div class="mask">
 				<img href="../images/current.png" />
@@ -182,6 +183,7 @@ include "../PHP/Core/verify.php";
 			<!-- Container Ends -->
 			<!-- </section> -->
 			</section>
+		</div>
             <!--// End of profile-->
             <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
                 <div class="container footer-1-3">

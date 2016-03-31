@@ -98,38 +98,40 @@ include "../PHP/Core/verify.php";
     </nav>
     <!--// End Navbar -->
 </header>
-<div class="mask">
- <img href="../images/current.png" />
-</div>
+<div class="middle-bit">
+	<div class="mask">
+	 <img href="../images/current.png" />
+	</div>
 
-<div class="row contact-wrap"> 
- <div class="col-md-8 col-md-offset-2">
-    <div class="col-sm-10 col-sm-offset-1">
-        <div class="underlined-title">
-            <h1>Your Qualification History</h1>
-            <hr class="headings">
-            <?php 
-            include"../php/Qualifications/getPoints.php"; 
-            ?>
-        </div>
-    </div>  
-    <div class="panel panel-default" id="currentQualifications">
-       <table class="table">
-          <thead>
-             <tr>
-                <th>Subject</th>
-                <th>Qualification</th>
-                <th>Grade</th>
-            </tr>
-        </thead>
-        <tbody>
+	<div class="row contact-wrap"> 
+	 <div class="col-md-8 col-md-offset-2">
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="underlined-title">
+				<h1>Your Qualification History</h1>
+				<hr class="headings">
+				<?php 
+				include"../php/Qualifications/getPoints.php"; 
+				?>
+			</div>
+		</div>  
+		<div class="panel panel-default" id="currentQualifications">
+		   <table class="table">
+			  <thead>
+				 <tr>
+					<th>Subject</th>
+					<th>Qualification</th>
+					<th>Grade</th>
+				</tr>
+			  </thead>
+				<tbody>
 
-         <?php include "../php/Qualifications/displayGrades.php" ?>
+			 		<?php include "../php/Qualifications/displayGrades.php" ?>
 
-     </tbody>
- </table>
-</div>
-</div>
+		 		</tbody>
+	 		</table>
+		</div>
+	 </div>
+	</div>
 </div>
 <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
     <div class="container footer-1-3">
