@@ -177,15 +177,12 @@ function changeAccess(level){
    success: function(data){
     alert(level+" created");
   },
-  error: function (error) {
+  error: function(error){
     alert("Problem has occured changing access rights");
   }
 });
 
 }
-
-
-
 
 
 $(document).ready(function(){
