@@ -38,5 +38,48 @@ input.form-control{
     margin-left: auto;
     margin-right: auto;
     width: 45%
-    
+}
+
+div #name, #joined, #occupation, #dob, #email, #address{
+	color: white !important;
+}
+
+.underlined-title h1{
+	color: #165f32 !important;
+}
+
+div.feature-box h5{
+	color: white !important;
+}
+
+.littlestuff-hover:hover
+{
+    color: #165f32 !important;
+}
+
+.headings{
+	color: #431857 !important;
+}
+
+.navfoot{
+    color: #1d2a59 !important;
+}
+
+.littlestuff
+{
+    color: #165f32 !important;
+}
+
+.bg-littlestuff
+{
+    background-color: #165f32 !important;
+}
+
+.bg-headings{
+	background-color: #431857 !important;	
+}
+
+.bg-navfoot
+{
+    background-color: #1d2a59 !important;
 }
