@@ -70,7 +70,7 @@ if($verified){
 
 
 
-		echo json_encode(array("completed"=>true,"total"=>$points));
+		echo json_encode(array("completed"=>true,"total"=>$totalpoints));
 	}
 
 }

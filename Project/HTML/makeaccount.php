@@ -39,6 +39,7 @@ include "../PHP/Core/verify.php";
     <!-- Code for loading user information -->
     <script src="../js/accountwizard.js"></script>
     <script src="../js/storeGrade.js"></script>
+    <script src="../js/career.js"></script>
 
 
 </head><!--/head-->
@@ -53,11 +54,11 @@ include "../PHP/Core/verify.php";
 
 
     <section id="page-center" class=" col-md-6 col-md-offset-3">
-       <div id="center" class="main-section container-fluid">
-           <h2> Account Creation Wizard </h2>    
+     <div id="center" class="main-section container-fluid">
+         <h2> Account Creation Wizard </h2>    
 
 
-           <ul id="progress-bar" class="col-md-12">
+         <ul id="progress-bar" class="col-md-12">
             <li class="col-md-3 "><div id="detailcircle"class="current">Detail</div></li>
             <li class="col-md-3"><div id="addresscircle" class="incomplete">Address</div></li>
             <li class="col-md-3"><div id="qualificationcircle" class="incomplete">Qualifications</div></li>

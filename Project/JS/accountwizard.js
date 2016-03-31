@@ -4,18 +4,19 @@ var validform = true;
 function nextform()
 {
 	$("div.errormessage").remove();
-	alert(page);
 
-	validform = false;
-	if (page === 1)
-	{
+
+
+
+	switch(page) {
+		case 1:
 		var firstname = $("input#firstname").val();
 		var surname =  $("input#surname").val();
 		var occupation = $("#occupationselect").val();
 		var DOB = $("input#DOB").val();
 
-		// if (!empty(firstname,'firstname') && !empty(surname,'surname') && !empty(occupation,'occupation') && !empty(DOB,'DOB'))
-		// {
+		if (!empty(firstname,'firstname') && !empty(surname,'surname') && !empty(occupation,'occupation') && !empty(DOB,'DOB'))
+		{
 
 			$.ajax
 			({  
@@ -25,6 +26,7 @@ function nextform()
 				cache: false,
 				success: function(result){
 					page += 1;
+					validform = true;
 					$("div#formarea").html(addressHTML);
 					swapclass("detailcircle","current","completed");
 					swapclass("addresscircle","incomplete","current");
@@ -34,68 +36,62 @@ function nextform()
 					alert(error);
 				}
 			});
-
-// }
-}
-
-if(page === 2)
-{
-	var number = $("input[name=number]").val();
-	var street =  $("input[name=street]").val();
-	var city = $("input[name=city]").val();
-	var postcode = $("input[name=postcode]").val();
-
-	// if (!empty(number,'housenumber') && !empty(street,'street') && !empty(city,'city') && !empty(postcode,'postcode'))
-	// {
+		}
+		break;
 
 
-		alert(number+street+city+postcode);
-		$.ajax
-		({  
-			type: 'POST',
-			url: "../PHP/Wizard/insertAddress.php",
-			data: { number: number, street: street, postcode: postcode, city: city},
-			cache: false,
-			success: function(result){
-				$("div#formarea").html(qualificationHTML);
-				swapclass("addresscircle","current","completed");
-				swapclass("qualificationcircle","incomplete","current");
-				$("select#levelselect").load("../../php/Qualifications/getLevels.php");
-				$("select#courseselect").load("../../php/Qualifications/getCourses.php");
-				page+=1;
-			},
-			error: function(error){
-				alert("Error Occured While Inserting Details");
-				alert(error);
-			}
-		});
+		case 2:
+		var number = $("input[name=number]").val();
+		var street =  $("input[name=street]").val();
+		var city = $("input[name=city]").val();
+		var postcode = $("input[name=postcode]").val();
+
+		if (!empty(number,'housenumber') && !empty(street,'street') && !empty(city,'city') && !empty(postcode,'postcode'))
+		{
+			$.ajax
+			({  
+				type: 'POST',
+				url: "../PHP/Wizard/insertAddress.php",
+				data: { number: number, street: street, postcode: postcode, city: city},
+				cache: false,
+				success: function(result){
+					$("div#formarea").html(qualificationHTML);
+					swapclass("addresscircle","current","completed");
+					swapclass("qualificationcircle","incomplete","current");
+					$("select#levelselect").load("../../php/Qualifications/getLevels.php");
+					$("select#courseselect").load("../../php/Qualifications/getCourses.php");
+					page+=1;
+					validform = true;
+				},
+				error: function(error){
+					alert("Error Occured While Inserting Details");
+					alert(error);
+				}
+			});
+
+		}
+		break;
 
 
+		case 3:
+		submitForm(false);
+		$("div#formarea").html(employmentHTML);
+		swapclass("qualificationcircle","current","completed");
+		swapclass("employmentcircle","incomplete","current");
+		$("select#monthstart").load("../../php/core/monthOptions.php");
+		$("select#monthend").load("../../php/core/monthOptions.php");
+		getYear();
+		page+=1;
+		break;
 
-	// }
-}
 
-
-
-if(page === 3)
-{
-	submitForm(false);
-	$("div#formarea").html(employmentHTML);
-	swapclass("qualificationcircle","current","completed");
-	swapclass("employmentcircle","incomplete","current");
-	$("select#monthstart").load("../../php/core/monthOptions.php");
-	$("select#monthend").load("../../php/core/monthOptions.php");
-	getYear();
-	page+=1;
-}
-
-if(page === 4)
-{
-
-}
-
-if(validform)
-	page+=1;
+		case 4:
+		submitJobs(false);
+		page += 1;
+		$("div#formarea").html(addressHTML);
+		swapclass("addresscircle","current","completed");
+		break;
+	}
 
 }
 
@@ -103,7 +99,6 @@ if(validform)
 
 function empty(divValue, divID)
 {
-	// alert(divValue);
 
 	if(divValue === "")
 	{
@@ -115,7 +110,6 @@ function empty(divValue, divID)
 		if(divValue === "NonSelect")
 		{
 			$("div#"+divID).append("<div id='invalid' class='errormessage'> Select an option </div>");
-			return true;
 		}
 		else
 		{
@@ -164,14 +158,15 @@ var qualificationHTML = '<div id="coursediv" class="form-group"><label> Course N
 '<div class="form-group"><button onclick="addGrade()" id="storeGrade" class="btn btn-primary"> Add Grade </button>'+
 '<div id="qualificationslist"></div>';
 
-var employmentHTML = '<div class="form-group"><label> Employer </label><input type="text" name="employer" class="form-control glow" placeholder="Employer"></div>'+
-'<div class="form-group"><label> Job Title </label><input type="text" name="title" class="form-control glow" placeholder="Job Title"></div>'+
-'<div class="form-group onerow"><label class="col-md-12"> Start Date </label><select id="monthstart" name="startmonth" class="form-control leftdrop"><option name="NonSelect">Select Month</option></select>'+
-'<select id="yearstart" name="startyear" class="form-control rightdrop"><option name="NonSelect">Select Year</option></select></div>'+ 
-'<div class="onerow form-group"><label class="col-md-12"> End Date </label><select id="monthend" name="endmonth" class="form-control leftdrop"><option name="NonSelect">Select Month</option></select>'+
-'<select id="yearend" name="endyear" class="form-control rightdrop"><option name="NonSelect">Select Year</option></select></div>'+ 
-'<div class="form-group"><label> Description </label><textarea class="form-control" rows="3" name="description" placeholder="Job Description"></textarea></div>'+
-'<div class="form-group"><button type="submit" name="register" class="btn btn-primary" required="required"> New Job </button></div>'; 
+var employmentHTML = '<div class="form-group" id="employer"><label> Employer </label><input type="text" name="employer" class="form-control glow" placeholder="Employer"></div>'+
+'<div class="form-group" id="jobtitle"><label> Job Title </label><input type="text" name="title" class="form-control glow" placeholder="Job Title"></div>'+
+'<div class="form-group onerow" id="startdate"><label class="col-md-12"> Start Date </label><select id="monthstart" name="startmonth" class="form-control leftdrop"><option value="NonSelect">Select Month</option></select>'+
+'<select id="yearstart" name="startyear" class="form-control rightdrop"><option value="NonSelect">Select Year</option></select></div>'+ 
+'<div class="onerow form-group" id="enddate"><label class="col-md-12"> End Date </label><select id="monthend" name="endmonth" class="form-control leftdrop"><option value="NonSelect">Select Month</option></select>'+
+'<select id="yearend" name="endyear" class="form-control rightdrop"><option value="NonSelect">Select Year</option></select></div>'+ 
+'<div class="form-group" id="description"><label> Description </label><textarea id="descript" class="form-control" rows="3" name="description" placeholder="Job Description"></textarea></div>'+
+'<div class="form-group"><button class="btn btn-primary" onclick="addJobArray()"> Add Another Job </button></div><div><button class="btn btn-primary" onclick="clearinput()"> Clear Job Form </button></div>'+
+'<div id="joblist"></div>'; 
 
 
 
