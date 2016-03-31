@@ -219,5 +219,9 @@ include "../PHP/Core/verify.php";
                 <!-- /.container -->
             </section>
             <!--/#footer-->
+            <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>             
+            <script type="text/javascript" src="js/bootstrap.min.js"></script>             
+            <script type="text/javascript" src="js/plugins.js"></script>
+			<script type="text/javascript" src="js/bskit-scripts.js"></script>
 	</body>
 </html>
