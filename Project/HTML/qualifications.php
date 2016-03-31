@@ -48,7 +48,7 @@ include "../PHP/Core/verify.php";
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                     <li class="nav-item">
+                       <li class="nav-item">
                         <a href="profile.php" class="littlestuff-hover">Home</a>
                     </li>
                     <?php 
@@ -98,6 +98,7 @@ include "../PHP/Core/verify.php";
     </nav>
     <!--// End Navbar -->
 </header>
+
 <div class="middle-bit">
 	<div class="mask">
 	 <img href="../images/current.png" />
@@ -132,7 +133,10 @@ include "../PHP/Core/verify.php";
 		</div>
 	 </div>
 	</div>
+
+</thead>
 </div>
+
 <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
     <div class="container footer-1-3">
         <div class="col-md-4 pull-left">
