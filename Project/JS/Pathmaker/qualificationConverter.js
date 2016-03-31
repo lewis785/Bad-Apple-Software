@@ -41,8 +41,7 @@ function drawqualificationpath(){
 
           data = '[' +data+ ']';
           data = JSON.parse(data);
-          d3.select('body').append('pre')
-    .text(JSON.stringify(data, null, '  '));
+         
     
 var dataMap = data.reduce(function(map, node) {
 	map[node.name] = node;

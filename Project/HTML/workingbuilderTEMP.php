@@ -44,8 +44,8 @@ include "../PHP/Core/verify.php";
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
-<script src="../js/Pathmaker/converter.js"></script>
-<script src="../js/Pathmaker/pathway.js"></script>
+<script src="../js/Pathmaker/qualificationConverter.js"></script>
+<script src="../js/Pathmaker/choiceConverter.js"></script>
 
 
 
@@ -57,7 +57,7 @@ body {
 
 }
 </style>
-<body onload="drawpath(); setTimeout(pathway,100);">
+<body onload="drawqualificationpath(); setTimeout(drawchoicespath,100);">
     
    
 
