@@ -331,7 +331,6 @@ input.form-control{
     margin-left: auto;
     margin-right: auto;
     width: 45%
-<<<<<<< HEAD
 }
 
 div #name, #joined, #occupation, #dob, #email, #address{
@@ -375,12 +374,8 @@ div.feature-box h5{
 	background-color: #431857 !important;	
 }
 
-.bg-navfoot
-{
+.bg-navfoot{
     background-color: #1d2a59 !important;
-=======
-    
->>>>>>> refs/remotes/origin/Donnald
 }
 
 .disabled {
@@ -405,12 +400,22 @@ div.feature-box h5{
     z-index: 100;
 }
 
-<<<<<<< HEAD
-#currentQualifications{
-=======
+.glow {
+	border: 2px solid #dadada;
+}
+
+.glow:focus{
+	outline: none;
+	border-color: #9ecaed;
+	box-shadow: 0 0 10px #9ecaed;
+}
 
 #qualificationPanel{
->>>>>>> origin/Lewis
     margin-bottom: 50px;
+}
+
+#currentQualifications ul{
+	margin-bottom: 25px;
+	border: solid 2px black;
 }
 

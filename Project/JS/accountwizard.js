@@ -8,6 +8,7 @@ function nextform()
 
 	switch(page) {
 		case 1:
+
 		var firstname = $("input#firstname").val();
 		var surname =  $("input#surname").val();
 		var occupation = $("#occupationselect").val();
@@ -70,7 +71,6 @@ function nextform()
 		}
 		break;
 
-
 		case 3:
 		submitForm(false);
 		$("div#formarea").html(employmentHTML);
@@ -94,6 +94,7 @@ function nextform()
 			}
 		});
 		break;
+
 
 
 		case 4:
@@ -212,7 +213,9 @@ var addressHTML = '<div class="form-group" id="housenumber"><input type="text" n
 '<div class="form-group" id="postcode"><input type="text" name="postcode" class="form-control" placeholder="Enter PostCode"></div>'+
 '<div class="form-group" id="city"><input type="text" name="city" class="form-control" placeholder="Enter City"></div>';
 
-var qualificationHTML = '<div id="coursediv" class="form-group"><select id="courseselect" name="course" class="form-control"><option value="NoneSelect" selected>Select Course</option>'+
+
+
+var qualificationHTML = '<div id="coursediv" class="form-group"><label> Course Name * </label><select id="courseselect" name="course" class="form-control"><option value="NoneSelect" selected>Select Course</option>'+
 '</select></div>'+
 '<div id="leveldiv" class="form-group"><select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">'+
 '<option value="NoneSelect" selected>Select Level</option></select></div>'+
@@ -230,6 +233,3 @@ var employmentHTML = '<div class="form-group" id="employer"><input type="text" n
 '<div class="form-group" id="description"><textarea id="descript" class="form-control" rows="3" name="description" placeholder="Job Description"></textarea></div>'+
 '<div class="form-group"><button class="btn btn-llg bg-headings" onclick="addJobArray()"> Add Another Job </button></div><div><button class="btn btn-llg bg-headings" onclick="clearinput()"> Clear Job Form </button></div>'+
 '<div id="joblist"></div>'; 
-
-
-

@@ -45,56 +45,51 @@ include "../PHP/Core/verify.php";
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                       <li class="nav-item">
-                        <a href="profile.php" class="littlestuff-hover">Home</a>
-                    </li>
-                    <?php 
-                    include "../php/admin/adminButton.php";
-                    ?>
-                    <li class="nav-item">
-                        <a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
-                    </li>
-                    <li class="active nav-item">
-                        <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
-                    </li>                             
-                    <li class="nav-item">
-                        <a href="index.html" class="littlestuff-hover">Contact</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others= href="#">Profile<i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
-                            </li>
-                            <li>
-                                <a href="addgrades.php" class="littlestuff-hover">Add Grades</a>
-                            </li>                                     
-                            <li>
-                                <a href="addjob.php" class="littlestuff-hover">Add Employment</a>
-                            </li>                                     
-                            <li>
-                                <a href="#" class="littlestuff-hover">Starred Paths</a>
-                            </li>                                     
-                            <!-- still to be made -->
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
-                            </li>
-                        </ul>                                 
-                    </li>
-                    <!--//dropdown-->
-                </ul>
-                <!--//nav-->
+                        <li class="nav-item">
+                            <a href="home.html" class="littlestuff-hover">Home</a>
+                        </li>
+                        <?php 
+                        include "../php/admin/adminButton.php";
+                        ?>
+                        <li class="nav-item">
+                            <a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
+                        </li>
+                        <li class="active nav-item">
+                            <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
+                        </li>                             
+                        <li class="nav-item dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true" href="profile.php">Profile<i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
+                                </li>
+                                <li>
+                                    <a href="addgrades.php" class="littlestuff-hover">Add Grades</a>
+                                </li>                                     
+                                <li>
+                                    <a href="addjob.php" class="littlestuff-hover">Add Employment</a>
+                                </li>                                     
+                                <li>
+                                    <a href="#" class="littlestuff-hover">Starred Paths</a>
+                                </li>                                     
+                                <!-- still to be made -->
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
+                                </li>
+                            </ul>                                 
+                        </li>
+                    </ul>
+                </div>
+                <!--// End collapse navbar -->
             </div>
-            <!--// End Navigation -->
-        </div>
-        <!--// End Container -->
-    </nav>
-    <!--// End Navbar -->
-</header>
+            <!--// End fluid container  -->
+        </nav>
+        <!--// End nav -->
+    </header>
 
 <div class="mask">
    <img href="../images/current.png" />
@@ -111,16 +106,14 @@ include "../PHP/Core/verify.php";
 
       <div class="row contact-wrap"> 
           <div class="col-md-8 col-md-offset-2">
-              <div class="col-sm-10 col-sm-offset-1">
                  <div class="underlined-title">
                     <h1>Your Qualification History</h1>
                     <?php 
                     include"../php/Qualifications/getPoints.php"; 
                     ?>
                 </div>
-            </div>  
-            <div class="panel panel-default" id="currentQualifications">
-               <table class="table">
+            <div class="panel panel-default" id="qualificationPanel">
+               <table class="table" id="currentQualifications">
                    <thead>
                        <tr>
                            <th>Subject</th>

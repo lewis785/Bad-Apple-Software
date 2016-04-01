@@ -23,10 +23,12 @@ include"../php/wizard/validWizard.php";
     <!-- Custom Library -->        
     <link href="../css/custom.css" rel="stylesheet">      
     <!-- Code for loading user information -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../js/accountwizard.js"></script>
     <script src="../js/storeGrade.js"></script>
     <script src="../js/career.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
     <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 </head><!--/head-->
@@ -73,16 +75,16 @@ include"../php/wizard/validWizard.php";
         	<img href="../images/current.png" />
         </div>
         <div class="col-sm-10 col-sm-offset-1">
-         <div class="underlined-title">
+           <div class="underlined-title">
             <h1>Please Provide Further Details</h1>
             <hr class="headings">
             <h2>Accurate Data gives Reliable Results</h2>
         </div>
     </div>
     <section id="page-center" class=" col-md-6 col-md-offset-3">
-       <div id="center" class="main-section container-fluid">  
+     <div id="center" class="main-section container-fluid">  
 
-           <ul id="progress-bar" class="col-md-12">
+         <ul id="progress-bar" class="col-md-12">
             <li class="col-md-3 "><div id="detailcircle"class="current">Detail</div></li>
             <li class="col-md-3"><div id="addresscircle" class="incomplete">Address</div></li>
             <li class="col-md-3"><div id="qualificationcircle" class="incomplete">Qualifications</div></li>

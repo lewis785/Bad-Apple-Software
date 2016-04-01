@@ -24,6 +24,12 @@ if(isset($_POST['first']) && isset($_POST['surname']) && isset($_POST['dob']) &&
 	$ID = $result -> fetch_row();
 	$occupation = $ID[0];
 
+	$checkDetails = mysqli_stmt_init($link);
+	mysqli_stmt_prepare($checkDetails, 'SELECT count(*) from userdetails WHERE User = ?');
+	mysqli_stmt_bind_param($checkDetails, '', $user[1]);   
+	mysqli_stmt_execute($checkDetails);
+	$result = mysqli_stmt_get_result($checkDetails);
+	$check = $result -> fetch_row();
 
 	if($check[0] === 0)
 	{
@@ -43,6 +49,7 @@ if(isset($_POST['first']) && isset($_POST['surname']) && isset($_POST['dob']) &&
 	}
 
 	include"incrementWizard.php";
+
 }
 
 ?>

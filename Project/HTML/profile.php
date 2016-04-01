@@ -118,75 +118,75 @@ include "../PHP/Wizard/wizardCheck.php"
 					<h1>Your Careers Pathfinder Profile</h1>
 					<hr class="headings">
 				</div>
-			</div>                 
-			<div class="container">
-				<div class="row">
-					<!-- Feature Box 1 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-sign-in black"></span>
+              
+				<div class="container">
+					<div class="row">
+						<!-- Feature Box 1 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-sign-in black"></span>
+								</div>
+								<h5>Joined</h5>
+								<div id="joined">01/01/01</div>
 							</div>
-							<h5>Joined</h5>
-							<div id="joined">01/01/01</div>
+						</div>
+						<!-- Feature Box 2 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-pencil black"></span>
+								</div>
+								<h5>Name</h5>
+								<div id="name">John Smith</div>
+							</div>
+						</div>
+						<!-- Feature Box 3 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-empire black"></span>
+								</div>
+								<h5>Occupation</h5>
+								<div id="occupation">Employed</div>
+							</div>
+						</div>
+						<!-- Feature Box 4 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-calendar-o black"></span>
+								</div>
+								<h5>Date of Birth</h5>
+								<div id="dob">01/01/01</div>
+							</div>
+						</div>
+						<!-- Feature Box 5 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-envelope-o black"></span>
+								</div>
+								<h5>Email</h5>
+								<div id="email">js@hw.ac.uk</div>
+							</div>
+						</div>
+						<!-- Feature Box 6 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-home black"></span>
+								</div>
+								<h5>Address</h5>
+								<div id="address">01/01/01</div>
+							</div>
 						</div>
 					</div>
-					<!-- Feature Box 2 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-pencil black"></span>
-							</div>
-							<h5>Name</h5>
-							<div id="name">John Smith</div>
-						</div>
-					</div>
-					<!-- Feature Box 3 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-empire black"></span>
-							</div>
-							<h5>Occupation</h5>
-							<div id="occupation">Employed</div>
-						</div>
-					</div>
-					<!-- Feature Box 4 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-calendar-o black"></span>
-							</div>
-							<h5>Date of Birth</h5>
-							<div id="dob">01/01/01</div>
-						</div>
-					</div>
-					<!-- Feature Box 5 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-envelope-o black"></span>
-							</div>
-							<h5>Email</h5>
-							<div id="email">js@hw.ac.uk</div>
-						</div>
-					</div>
-					<!-- Feature Box 6 -->
-					<div class="col-md-2 col-sm-4 col-xs-8">
-						<div class="feature-box bg-headings">
-							<div class="icon">
-								<span class="fa fa-home black"></span>
-							</div>
-							<h5>Address</h5>
-							<div id="address">01/01/01</div>
-						</div>
-					</div>
+					<!-- Row Ends -->
 				</div>
-				<!-- Row Ends -->
-			</div>
-			<!-- Container Ends -->
-			<!-- </section> -->
+				<!-- Container Ends -->
 			</section>
+			<!-- </section> -->
 		</div>
             <!--// End of profile-->
 
