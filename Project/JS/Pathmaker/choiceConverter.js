@@ -73,7 +73,7 @@ data.forEach(function(node) {
             
 var margin = {top: 20, right: 100, bottom: 20, left: 100},
     w = 600- margin.right - margin.left,
-    h = 800 - margin.top - margin.bottom,
+    h = 1000 - margin.top - margin.bottom,
       i = 0,
       duration = 600,
       root;
