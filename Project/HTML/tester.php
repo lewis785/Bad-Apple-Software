@@ -83,12 +83,12 @@ include "../php/readFile.php";
 ?>
 
 
-<form method="post" action="../PHP/wizard/insertAddress.php">
+<form method="post" action="../PHP/wizard/insertdetails.php">
 
-	<input type="text" name="number" id="inputarea">
-	<input type="text" name="street" id="inputarea">
-	<input type="text" name="city" id="inputarea">
-	<input type="text" name="postcode" id="inputarea">
+	<input type="text" name="first" id="inputarea">
+	<input type="text" name="surname" id="inputarea">
+	<input type="text" name="dob" id="inputarea">
+	<input type="text" name="occupation" id="inputarea">
 	<input type="checkbox" value="true" name="checkCookie" required="required">
 
 	<button type="submit" > Search </button>
