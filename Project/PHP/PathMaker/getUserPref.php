@@ -63,15 +63,15 @@ while($row = mysqli_fetch_assoc($result)){
 }
 
 $prefCourses = array();
-$courselist = array();
+$longcourselist = array();
 
 foreach($checkedPrefs as $pref){
   
   foreach($institutearray as $course){ 
 
-      if (strpos($course['coursetitle'], $pref) !== false && !(in_array($course['coursetitle'], $courselist))) {
+      if (strpos($course['coursetitle'], $pref) !== false && !(in_array($course['coursetitle'], $longcourselist))) {
         
-        $courselist[] = $course['coursetitle'];
+        $longcourselist[] = $course['coursetitle'];
         $prefCourses[] = array("institute" => $course["institute"], "preference" => $pref, "coursetitle" => $course["coursetitle"]);
       }
   }
