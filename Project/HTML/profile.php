@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php 
 include "../PHP/Core/verify.php";
+include "../PHP/Wizard/wizardCheck.php"
 ?>
 <html lang="en">
 <head> 
@@ -11,6 +12,7 @@ include "../PHP/Core/verify.php";
     <meta name="description" content="BAS" />
     <link rel="shortcut icon" href="ico/favicon.png"> 
     <!-- Core CSS -->         
+    <link href="../css/responsive.css" rel="stylesheet">
     <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet">
@@ -33,17 +35,13 @@ include "../PHP/Core/verify.php";
   </head>     
   <!--/head-->
   <body onload="loadInfo()" data-spy="scroll" data-target="nav"> 
-    <!--// footer -->
     <header id="header-1" class="header-1">
-        <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-deco">
+        <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
             <div class="container-fluid">
                 <!-- Brand and toggle -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -55,169 +53,178 @@ include "../PHP/Core/verify.php";
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <?php include "../PHP/admin/adminButton.php" ?>
-                        <li class="nav-item">
-                            <a href="pathway.php" class="aqua-hover deepocean">Path</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="employmenthistory.php" class="aqua-hover deepocean">Employment</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="qualifications.php" class="aqua-hover deepocean">Qualifications</a>
-                        </li>                             
-                        <li class="nav-item">
-                            <a href="#contact" class="deepocean aqua-hover">Contact</a>
-                        </li>
-                        <li class="active nav-item dropdown">
-                            <a class="dropdown-toggle aqua-hover deepocean" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" role="button" aria-haspopup="true" aria-expanded="false" href="profile.php">Profile<i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="profiledetail.php" class="aqua-hover deepocean">Edit Info</a>
-                                </li>
-                                <li>
-                                    <a href="addgrades.php" class="aqua-hover deepocean">Add Grades</a>
-                                </li>                                     
-                                <li>
-                                    <a href="addjob.php" class="aqua-hover deepocean">Add Employment</a>
-                                </li>                                     
-                                <li>
-                                    <a href="#" class="aqua-hover deepocean">Starred Paths</a>
-                                </li>                                     
-                                <!-- still to be made -->
-                                <li role="separator" class="divider"></li>
-                                <li>
-                                    <a href="../php/Core/signout.php">Log out</a>
-                                </li>
-                            </ul>                                 
-                        </li>
-                        <!--//dropdown-->
-                    </ul>
-                    <!--//nav-->
-                </div>
-                <!--// End Navigation -->
-            </div>
-            <!--// End Container -->
-        </nav>
-        <!--// End Navbar -->
-    </header>
-    <section class="login-wrap">
-        <section id="content-3-5" class="content-block content-3-5 bg-image-cover" style="background-image:url('../images/current.png');">
-            <div class="col-sm-10 col-sm-offset-1">
-                <div class="underlined-title">
-                    <h1 class="deepocean">Your Careers Pathfinder Profile</h1>
-                    <hr class="deco">
-                </div>
-            </div>                 
-            <div class="container">
-                <div class="row">
-                    <!-- Feature Box 1 -->
-                    <div class="col-md-2 col-sm-4 col-xs-8">
-                        <div class="feature-box bg-deepocean">
-                            <div class="icon">
-                                <span class="fa fa-sign-in deepocean"></span>
-                            </div>
-                            <h5 class="deco">Joined</h5>
-                            <div id="joined">01/01/01</div>
-                        </div>
-                    </div>
-                    <!-- Feature Box 2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-8">
-                        <div class="feature-box bg-deepocean">
-                            <div class="icon">
-                                <span class="fa fa-pencil deepocean"></span>
-                            </div>
-                            <h5 class="deco">Name</h5>
-                            <div id="name">John Smith</div>
-                        </div>
-                    </div>
-                    <!-- Feature Box 3 -->
-                    <div class="col-md-2 col-sm-4 col-xs-8">
-                        <div class="feature-box bg-deepocean">
-                            <div class="icon">
-                                <span class="fa fa-empire deepocean"></span>
-                            </div>
-                            <h5 class="deco">Occupation</h5>
-                            <div id="occupation">Employed</div>
-                        </div>
-                    </div>
-                    <!-- Feature Box 4 -->
-                    <div class="col-md-2 col-sm-4 col-xs-8">
-                        <div class="feature-box bg-deepocean">
-                            <div class="icon">
-                                <span class="fa fa-calendar-o deepocean"></span>
-                            </div>
-                            <h5 class="deco">Date of Birth</h5>
-                            <div id="dob">01/01/01</div>
-                        </div>
-                    </div>
-                    <!-- Feature Box 5 -->
-                    <div class="col-md-2 col-sm-4 col-xs-8">
-                        <div class="feature-box bg-deepocean">
-                            <div class="icon">
-                                <span class="fa fa-envelope-o deepocean"></span>
-                            </div>
-                            <h5 class="deco">Email</h5>
-                            <div id="email">js@hw.ac.uk</div>
-                        </div>
-                    </div>
-                    <!-- Feature Box 6 -->
-                    <div class="col-md-2 col-sm-4 col-xs-8">
-                        <div class="feature-box bg-deepocean">
-                            <div class="icon">
-                                <span class="fa fa-home deepocean"></span>
-                            </div>
-                            <h5 class="deco">Address</h5>
-                            <div id="address">01/01/01</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Row Ends -->
-            </div>
-            <!-- Container Ends -->
-                <!-- </section>
-                <!--// End of profile-->                 
-            </section>
-            <section class="content-block-nopad footer-wrap-1-3 bg-deco">
-                <div class="container footer-1-3">
-                    <div class="col-md-4 pull-left">
-                        <img src="../images/carell.png" class="brand-img img-responsive">
-                        <ul class="social social-light">
+                       <li class="nav-item">
+                        <a href="profile.php" class="littlestuff-hover">Home</a>
+                    </li>
+                    <?php 
+                    include "../php/admin/adminButton.php";
+                    ?>
+                    <li class="nav-item">
+                        <a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
+                    </li>                             
+                    <li class="nav-item">
+                        <a href="index.html" class="littlestuff-hover">Contact</a>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                        <ul id="nav-drop" class="dropdown-menu">
+
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-html5 deepocean"></i></a>
+                                <a href="profiledetail.php"> Edit Info </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-css3 deepocean"></i></a>
-                            </li>
+                                <a href="addgrades.php"> Add Grades </a>
+                            </li>                                     
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-git deepocean"></i></a>
-                            </li>
+                                <a href="addjob.php"> Add Employment </a>
+                            </li>                                     
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-linux deepocean"></i></a>
-                            </li>
+                                <a href="#"> Starred Paths </a>
+                            </li>                                     
+                            <!-- still to be made -->
+                            <li role="separator" class="divider"></li>
                             <li>
-                                <a href="#"><i class="fa fa-2x fa-fonticons deepocean"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-2x fa-chrome deepocean"></i></a>
-                            </li>
+                                <a href="../php/Core/signout.php"> Log out </a>
+                            </li>                                     
+                            <!-- still to be made -->
                         </ul>
-                        <!-- /.social -->
-                    </div>
-                    <div class="col-md-3 pull-right">
-                        <p class="address-bold-line deepocean">We <i class="fa fa-2x fa-heart pomegranate"></i> our career paths.</p>
-                    </div>
-                    <div class="col-xs-12 footer-text">
-                        <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
-                    </div>
+                    </li> 
+                    <!--//dropdown-->
+                </ul>
+                <!--//nav-->
                 </div>
-                <!-- /.container -->
-            </section>
-            <!--/#footer-->
-            <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>             
-            <script type="text/javascript" src="js/bootstrap.min.js"></script>             
-            <script type="text/javascript" src="js/plugins.js"></script>
-            <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-            <script type="text/javascript" src="js/bskit-scripts.js"></script>
-        </section>
-    </body>
-    </html>
+        </div>
+        <!--// End Container -->
+    </nav>
+    <!--// End Navbar -->
+
+
+    
+</header>
+    <div class="middle-bit">
+		<section id="content-3-5" class="content-block content-3-5">
+			<div class="mask">
+				<img href="../images/current.png" />
+			</div>
+			<div class="col-sm-10 col-sm-offset-1">
+				<div class="underlined-title">
+					<h1>Your Careers Pathfinder Profile</h1>
+					<hr class="headings">
+				</div>
+              
+				<div class="container">
+					<div class="row">
+						<!-- Feature Box 1 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-sign-in black"></span>
+								</div>
+								<h5>Joined</h5>
+								<div id="joined">01/01/01</div>
+							</div>
+						</div>
+						<!-- Feature Box 2 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-pencil black"></span>
+								</div>
+								<h5>Name</h5>
+								<div id="name">John Smith</div>
+							</div>
+						</div>
+						<!-- Feature Box 3 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-empire black"></span>
+								</div>
+								<h5>Occupation</h5>
+								<div id="occupation">Employed</div>
+							</div>
+						</div>
+						<!-- Feature Box 4 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-calendar-o black"></span>
+								</div>
+								<h5>Date of Birth</h5>
+								<div id="dob">01/01/01</div>
+							</div>
+						</div>
+						<!-- Feature Box 5 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-envelope-o black"></span>
+								</div>
+								<h5>Email</h5>
+								<div id="email">js@hw.ac.uk</div>
+							</div>
+						</div>
+						<!-- Feature Box 6 -->
+						<div class="col-md-2 col-sm-4 col-xs-8">
+							<div class="feature-box bg-headings">
+								<div class="icon">
+									<span class="fa fa-home black"></span>
+								</div>
+								<h5>Address</h5>
+								<div id="address">01/01/01</div>
+							</div>
+						</div>
+					</div>
+					<!-- Row Ends -->
+				</div>
+				<!-- Container Ends -->
+			</section>
+			<!-- </section> -->
+		</div>
+            <!--// End of profile-->
+
+<footer class="content-block-nopad footer-wrap-1-3 bg-navfoot">
+    <div class="container footer-1-3">
+        <div class="col-md-4 pull-left">
+            <img src="../images/carell.png" class="brand-img img-responsive">
+            <ul class="social social-dark">
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-html5 white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-css3 white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-git white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-linux white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-fonticons white"></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-2x fa-chrome white"></i></a>
+                </li>
+            </ul>
+            <!-- /.social -->
+        </div>
+        <div class="col-md-3 pull-right">
+            <p class="address-bold-line">We <i class="fa fa-2x fa-heart littlestuff"></i> our career paths.</p>
+        </div>
+        <div class="col-xs-12 footer-text">
+            <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!-- /.container -->
+</footer>
+<!--/#footer-->
+</body>
+</html>

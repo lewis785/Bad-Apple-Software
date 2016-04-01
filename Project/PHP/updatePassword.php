@@ -49,7 +49,7 @@ if (isset($_COOKIE['confirmation'])) {
 
 	}
 }
-
+	header('Location: ../HTML/profile.php');
 
 mysqli_close($link);
 ?>

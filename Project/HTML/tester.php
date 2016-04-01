@@ -83,11 +83,13 @@ include "../php/readFile.php";
 ?>
 
 
-<form method="post" action="../PHP/qualifications/deletequalification.php">
+<form method="post" action="../PHP/wizard/insertAddress.php">
 
-	<input type="text" name="QID" id="inputarea">
-	<!-- <input type="text" name="level" id="inputarea"> -->
-	<!-- <input type="text" name="grade" id="inputarea"> -->
+	<input type="text" name="number" id="inputarea">
+	<input type="text" name="street" id="inputarea">
+	<input type="text" name="city" id="inputarea">
+	<input type="text" name="postcode" id="inputarea">
+	<input type="checkbox" value="true" name="checkCookie" required="required">
 
 	<button type="submit" > Search </button>
 </form>
