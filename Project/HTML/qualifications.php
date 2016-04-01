@@ -37,9 +37,6 @@ include "../PHP/Core/verify.php";
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
                     </button>
                     <a href="#">
                         <img src="../images/carel.png" class="brand-img img-responsive">
@@ -67,7 +64,7 @@ include "../PHP/Core/verify.php";
                         <a href="index.html" class="littlestuff-hover">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Profile<i class="fa fa-angle-down"></i></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others= href="#">Profile<i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
@@ -98,14 +95,53 @@ include "../PHP/Core/verify.php";
     </nav>
     <!--// End Navbar -->
 </header>
+<<<<<<< HEAD
+=======
 <div class="mask">
  <img href="../images/current.png" />
 </div>
 
 <div class="row contact-wrap"> 
  <div class="col-md-8 col-md-offset-2">
+>>>>>>> origin/Lewis
 
+<div class="middle-bit">
+	<div class="mask">
+	 <img href="../images/current.png" />
+	</div>
 
+<<<<<<< HEAD
+	<div class="row contact-wrap"> 
+	 <div class="col-md-8 col-md-offset-2">
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="underlined-title">
+				<h1>Your Qualification History</h1>
+				<hr class="headings">
+				<?php 
+				include"../php/Qualifications/getPoints.php"; 
+				?>
+			</div>
+		</div>  
+		<div class="panel panel-default" id="currentQualifications">
+		   <table class="table">
+			  <thead>
+				 <tr>
+					<th>Subject</th>
+					<th>Qualification</th>
+					<th>Grade</th>
+				</tr>
+			  </thead>
+				<tbody>
+
+			 		<?php include "../php/Qualifications/displayGrades.php" ?>
+
+		 		</tbody>
+	 		</table>
+		</div>
+	 </div>
+	</div>
+	</div>
+=======
     <div class="underlined-title">
         <h1>Your Qualification History</h1>
         <hr class="headings">
@@ -134,6 +170,7 @@ include "../PHP/Core/verify.php";
 </div>
 </div>
 </div>
+>>>>>>> origin/Lewis
 <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
     <div class="container footer-1-3">
         <div class="col-md-4 pull-left">
@@ -170,11 +207,9 @@ include "../PHP/Core/verify.php";
     <!-- /.container -->
 </section>
 <!--/#footer-->
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>             
-<script type="text/javascript" src="js/bootstrap.min.js"></script>             
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>      
+<script type="text/javascript" src="js/bootstrap.min.js"></script>         
 <script type="text/javascript" src="js/plugins.js"></script>
-<script src="https://maps.google.com/maps/api/js?sensor=true"></script>
-
 <script type="text/javascript" src="js/bskit-scripts.js"></script>
 </body>
 </html>
