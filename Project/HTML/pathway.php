@@ -45,19 +45,20 @@ include "../PHP/Core/verify.php";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script src="../js/Pathmaker/qualificationConverter.js"></script>
-<script src="../js/Pathmaker/choiceConverter.js"></script>
+<script src="../js/Pathmaker/instituteConverter.js"></script>
 
 
 
 </head><!--/head-->
 <style>
+    
 body {
  background-image: none; 
  background-color: lightcyan !important;
 
 }
 </style>
-<body onload="drawqualificationpath(); setTimeout(drawchoicespath,100);">
+<body onload="drawqualificationpath(); setTimeout(drawinstitutespath,100);">
     
    
 
@@ -125,7 +126,7 @@ body {
 
         
             
-        <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove(); setTimeout(drawchoicespath,10)">Reload Choices Tree</button>
+        <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove(); setTimeout(drawinstitutepath,10)">Reload Choices Tree</button>
         <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove();">Delete Choices Tree</button>
 
 
