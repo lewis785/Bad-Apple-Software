@@ -92,7 +92,7 @@ var margin = {top: 20, right: 100, bottom: 20, left: 100},
       
 
     root = treeData[0];
-    root.x0 = h/2;
+    root.x0 = 400;
     root.y0 = w;
             
 function collapse(d) {
@@ -255,7 +255,7 @@ function collapse(d) {
     function wrap(text, width) {
       text.each(function() {
         var text = d3.select(this),
-          words = text.text().split(/\s+/).reverse(),
+         words = d3.select(this).data()[0].name.split(/\s+/).reverse(),
           word,
           line = [],
           lineNumber = 0,

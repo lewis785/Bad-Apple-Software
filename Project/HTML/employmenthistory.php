@@ -53,7 +53,7 @@ include "../PHP/Core/verify.php";
                         <ul class="nav navbar-nav navbar-right">
                             <?php include "../PHP/admin/adminButton.php" ?>
                             <li>
-                                <a href="workingbuilderTemp.php"> Path </a>
+                                <a href="pathway.php"> Path </a>
                             </li>
                             <li>
                                 <a href="employmenthistory.php"> Employment </a>

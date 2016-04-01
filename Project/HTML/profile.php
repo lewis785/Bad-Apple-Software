@@ -57,7 +57,7 @@ include "../PHP/Core/verify.php";
                     <ul class="nav navbar-nav navbar-right">
                         <?php include "../PHP/admin/adminButton.php" ?>
                         <li class="nav-item">
-                            <a href="workingbuilderTemp.php" class="aqua-hover deepocean">Path</a>
+                            <a href="pathway.php" class="aqua-hover deepocean">Path</a>
                         </li>
                         <li class="nav-item">
                             <a href="employmenthistory.php" class="aqua-hover deepocean">Employment</a>

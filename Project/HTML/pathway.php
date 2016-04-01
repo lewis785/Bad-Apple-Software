@@ -77,11 +77,11 @@ body {
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 
             <ul class="nav navbar-nav navbar-right">
                 <?php include "../PHP/admin/adminButton.php" ?>
-                <li><a href="workingbuilderTemp.php"> Path </a></li>
+                <li><a href="pathway.php"> Path </a></li>
                 <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
                   <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
@@ -99,6 +99,39 @@ body {
             <li><a href="profile.php"> Home </a></li>  
 
         </ul>
+    </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+        
+        
+</div>
+<div id="pathnav">
+        <nav id="pathnav" class="navbar navbar-default">
+
+          <div class="container-fluid">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        
+            
+        <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove(); setTimeout(drawchoicespath,10)">Reload Choices Tree</button>
+        <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove();">Delete Choices Tree</button>
+
+
+
+
+        
     </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>
