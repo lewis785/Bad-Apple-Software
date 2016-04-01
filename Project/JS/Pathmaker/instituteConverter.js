@@ -226,6 +226,7 @@ $.ajax({
   success : function(result){
     
     var lastInst = "";
+    var ID = 0;
     
     $.each(result, function () {
       
@@ -236,9 +237,10 @@ $.ajax({
 				{
         
         $("#checklist").append($("<label>").text(this.institute).prepend(
-            $("<input>").attr('type', 'checkbox')));
+            $("<input>").attr('type', 'checkbox').val(ID)));
       $("#checklist").append("<br>");
       
+      ID =+ 1;
       lastInst = curInst;
                 }
       
