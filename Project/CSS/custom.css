@@ -401,12 +401,17 @@ div.feature-box h5{
     z-index: 100;
 }
 
-<<<<<<< HEAD
-#currentQualifications{
-=======
+.glow {
+	border: 2px solid #dadada;
+}
+
+.glow:focus{
+	outline: none;
+	border-color: #9ecaed;
+	box-shadow: 0 0 10px #9ecaed;
+}
 
 #qualificationPanel{
->>>>>>> origin/Lewis
     margin-bottom: 50px;
 }
 

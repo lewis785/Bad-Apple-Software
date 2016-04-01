@@ -154,7 +154,7 @@ var qualificationHTML = '<div id="coursediv" class="form-group"><label> Course N
 '<option value="NoneSelect" selected>Select Level</option></select></div>'+
 '<div id="gradediv" class="form-group"><label> Course Grade * </label><select id="gradeselect" name="grade" class="form-control"><option value="NoneSelect">Select Grade</option>'+
 '</select></div>'+
-'<div class="form-group"><button onclick="addGrade()" id="storeGrade" class="btn btn-primary"> Add Grade </button>'+
+'<div class="form-group"><button onclick="addGrade()" id="storeGrade" class="btn btn-llg bg-headings"> Add Grade </button>'+
 '<div id="qualificationslist"></div>';
 
 var employmentHTML = '<div class="form-group" id="employer"><label> Employer </label><input type="text" name="employer" class="form-control glow" placeholder="Employer"></div>'+
@@ -164,7 +164,7 @@ var employmentHTML = '<div class="form-group" id="employer"><label> Employer </l
 '<div class="onerow form-group" id="enddate"><label class="col-md-12"> End Date </label><select id="monthend" name="endmonth" class="form-control leftdrop"><option value="NonSelect">Select Month</option></select>'+
 '<select id="yearend" name="endyear" class="form-control rightdrop"><option value="NonSelect">Select Year</option></select></div>'+ 
 '<div class="form-group" id="description"><label> Description </label><textarea id="descript" class="form-control" rows="3" name="description" placeholder="Job Description"></textarea></div>'+
-'<div class="form-group"><button class="btn btn-primary" onclick="addJobArray()"> Add Another Job </button></div><div><button class="btn btn-primary" onclick="clearinput()"> Clear Job Form </button></div>'+
+'<div class="form-group"><button class="btn btn-llg bg-headings" onclick="addJobArray()"> Add Another Job </button></div><div><button class="btn btn-llg bg-headings" onclick="clearinput()"> Clear Job Form </button></div>'+
 '<div id="joblist"></div>'; 
 
 
