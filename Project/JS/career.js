@@ -12,7 +12,7 @@ var descript;
 
 function submitJobs(redirect){
 
-	if(isemptyform())
+	if(!isemptyform())
 	{
 
 		if(employmentarray.length != 0)
