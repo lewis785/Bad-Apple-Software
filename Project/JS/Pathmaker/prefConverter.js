@@ -1,17 +1,18 @@
 src="http://d3js.org/d3.v3.min.js";
 
-function drawchoicespath(){
+function drawprefpath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Pathmaker/getUserChoices.php",
+		url: "../PHP/Pathmaker/getUserPref.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
 		success: function(result){
           
-			var lastinstitute = "";
-			var data = [];
+		var lastinstitute = "";
+          var lastpref = "";
+          var data = [];
             var id = 0;
 
             data.push('{"id":"'+id+'","name":"Choices","parent":"null"}');
@@ -20,31 +21,43 @@ function drawchoicespath(){
 			for (var i=0; i<result.length; i++){
 				
 				var curinstitute  = result[i].institute;
-                var coursetitle   = result[i].coursetitle;
+               var curpref= result[i].preference;
+				var course= result[i].coursetitle;
                 
 				// alert(curlevel + lastlevel);
               
               if(curinstitute === lastinstitute){
-					data.push('{"id":"'+id+'","name":"'+coursetitle+'","parent":"'+curinstitute+'"}');
+                if(curpref === lastpref){
+                data.push('{"id":"'+id+'","name":"'+course+'","parent":"'+curpref+':'+curinstitute+'"}');
                   id += 1;
+                  
+                }else{
+                  data.push('{"id":"'+id+'","name":"'+curpref+':'+curinstitute+'","parent":"'+curinstitute+'"}');
+                  id += 1;
+                data.push('{"id":"'+id+'","name":"'+course+'","parent":"'+curpref+':'+curinstitute+'"}');
+                  id += 1;
+                  
+                  lastpref = curpref;
+                }
 				}
 				else
 				{
 					data.push('{"id":"'+id+'","name":"'+curinstitute+'","parent":"Choices"}');
                   id += 1;
-					data.push('{"id":"'+id+'","name":"'+coursetitle+'","parent":"'+curinstitute+'"}');
+                  data.push('{"id":"'+id+'","name":"'+curpref+':'+curinstitute+'","parent":"'+curinstitute+'"}');
                   id += 1;
-        
+                  data.push('{"id":"'+id+'","name":"'+course+'","parent":"'+curpref+':'+curinstitute+'"}');
+                  id += 1;
+                  
+                    lastpref = curpref;
 					lastinstitute = curinstitute;
 				}
 			}
-            
-            
-
+          
+          
           data = '[' +data+ ']';
           data = JSON.parse(data);
          
-    
 var dataMap = data.reduce(function(map, node) {
 	map[node.name] = node;
 	return map;
@@ -66,12 +79,13 @@ data.forEach(function(node) {
 		treeData.push(node);
 	}
 });
-         
+                  
+          d3.select('body').append('pre')
+    .text(JSON.stringify(treeData, null, '  '));
+            
     
 
-
-            
-var margin = {top: 20, right: 100, bottom: 20, left: 100},
+   var margin = {top: 20, right: 100, bottom: 20, left: 100},
     w = 600- margin.right - margin.left,
     h = 1000 - margin.top - margin.bottom,
       i = 0,
@@ -90,14 +104,13 @@ var margin = {top: 20, right: 100, bottom: 20, left: 100},
       .attr("width", w + margin.right + margin.left)
       .attr("height", h + margin.top + margin.bottom)
       .append("g")
-      .attr("id", "choicessvg")
       .attr("transform", "translate(" + margin.left  + "," + margin.top + ")");
       
 
     root = treeData[0];
-    root.x0 = h;
+    root.x0 = 400;
     root.y0 = w;
-         
+            
 function collapse(d) {
     if (d.children) {
       d._children = d.children;
@@ -129,8 +142,8 @@ function collapse(d) {
           return "translate(" + source.y0 + "," + source.x0  + ")";
         });
 
-//    nodes.forEach(function(d) { d.y = w + (d.depth) * 180 });
-//    
+    //nodes.forEach(function(d) { d.y = w - (d.depth) * 190 });
+    
       // Enter any new nodes at the parent's previous position.
 
       nodeEnter.append("svg:rect")
