@@ -33,6 +33,7 @@ include "../PHP/Core/verify.php";
   <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
   <script src="../js/Bootstrap/main.js"></script>
   <script src="../js/Bootstrap/wow.min.js"></script>
+  <script src="../js/pathmaker/pathfilter.js"></script>
 
   <!-- Code for loading user information -->
   <script src="../js/loadUser.js"></script>
@@ -45,19 +46,20 @@ include "../PHP/Core/verify.php";
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script src="../js/Pathmaker/qualificationConverter.js"></script>
-<script src="../js/Pathmaker/choiceConverter.js"></script>
+<script src="../js/Pathmaker/instituteConverter.js"></script>
 
 
 
 </head><!--/head-->
 <style>
+    
 body {
  background-image: none; 
  background-color: lightcyan !important;
 
 }
 </style>
-<body onload="drawqualificationpath(); setTimeout(drawchoicespath,100);">
+<body onload="drawqualificationpath(); setTimeout(drawinstitutespath,100);">
     
    
 
@@ -77,11 +79,11 @@ body {
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 
             <ul class="nav navbar-nav navbar-right">
                 <?php include "../PHP/admin/adminButton.php" ?>
-                <li><a href="workingbuilderTemp.php"> Path </a></li>
+                <li><a href="pathway.php"> Path </a></li>
                 <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
                   <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
@@ -99,6 +101,78 @@ body {
             <li><a href="profile.php"> Home </a></li>  
 
         </ul>
+    </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+        
+        
+</div>
+<div id="pathnav">
+        <nav id="pathnav" class="navbar navbar-default">
+
+          <div class="container-fluid">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+        
+            
+        <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove(); setTimeout(drawinstitutespath,10)">Reload Choices Tree</button>
+        <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove();">Delete Choices Tree</button>
+        <button class = "btn btn-warning" onclick="toggleDiv(); showInstituteChecklist();">Refine your search</button>
+            
+            
+    <div class="invisible" id='updateTree'>
+    <div   text="color:#FFFFFF" style="float:left" id='checkInst'>
+        
+        </div>
+      
+      <lable>
+        <input type="checkbox" name="field" id="courseBox"value="Engineering">Engineering<br>
+    </lable>
+        <input type="checkbox" name="field" id="courseBox" value="Accountancy" >Accountancy<br>
+        <input type="checkbox" name="field" id="courseBox" value="Chemistry" >Chemistry<br>
+        <input type="checkbox" name="field" id="courseBox" value="Mathematics" >Mathematics<br>
+        <input type="checkbox" name="field" id="courseBox" value="Sport" >Sport<br>
+        <input type="checkbox" name="field" id="courseBox" value="Psychology" >Psychology<br>
+        <input type="checkbox" name="field" id="courseBox" value="Sciences" >Sciences<br>
+        <input type="checkbox" name="field" id="courseBox" value="English" >English<br>
+        <input type="checkbox" name="field" id="courseBox" value="History" >History<br>
+        <input type="checkbox" name="field" id="courseBox" value="Economics" >Economics<br>
+        <input type="checkbox" name="field" id="courseBox" value="Law" >Law<br>
+        <input type="checkbox" name="field" id="courseBox" value="Philosophy" >Philosophy<br>
+        <div><button class = "btn btn-warning" value="Update Tree" onclick="getChoices()"> Update tree </button>
+     </div>
+</div>
+      
+    
+    
+   <!-- <script type="text/javascript">
+      drawinstitutespath();
+    showInstituteChecklist();
+</script> -->
+    
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="../js/Pathmaker/employmentConverter.js"></script>
+  <script src="../js/Pathmaker/qualificationConverter.js"></script>
+    <script src="../js/Pathmaker/instituteConverter.js"></script>
+
+
+
+
+        
     </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
 </nav>

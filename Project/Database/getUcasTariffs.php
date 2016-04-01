@@ -5,7 +5,9 @@ function getUcasTariffs(){
   ini_set('max_execution_time', 300);
   include "../PHP/Core/connection.php";
 
-  $filepath = 'C:/wamp/www/badapple/Database/UCASTARIFF.csv';
+//  $filepath = 'C:/wamp/www/badapple/Database/UCASTARIFF.csv';
+$filepath = 'C:/Users/PbZeppelin/Desktop/BAS/Bad-Apple-Software/Project/Database/UCASTARIFF.csv';
+
   
 $truncateucastariffs = "TRUNCATE TABLE `ucastariffs`";
 
@@ -28,7 +30,7 @@ $res = mysqli_query($link,$truncateucastariffs);
               $result = new stdClass();
               $result->status = false;
               $result->msg = mysql_error();
-              echo nl2br ("Unsuccesful!\n");
+              echo nl2br ("Unsuccesful1!\n");
               exit;
             }
   
@@ -38,7 +40,7 @@ $res = mysqli_query($link,$tariffquery);
               $result = new stdClass();
               $result->status = false;
               $result->msg = mysql_error();
-              echo nl2br ("Unsuccesful!\n");
+              echo nl2br ("Unsuccesful2!\n");
               exit;
             }
   
@@ -48,7 +50,7 @@ $res = mysqli_query($link,$inserttariffs);
               $result = new stdClass();
               $result->status = false;
               $result->msg = mysql_error();
-              echo nl2br ("Unsuccessful!\n");
+              echo nl2br ("Unsuccessful3!\n");
               exit;
             }
 }
