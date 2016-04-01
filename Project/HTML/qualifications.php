@@ -27,7 +27,7 @@ include "../PHP/Core/verify.php";
 </head>
 <!--/head-->
 <body data-spy="scroll" data-target="nav"> 
-    <header id="header-1" class="header-1">
+     <header id="header-1" class="header-1">
         <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
             <div class="container-fluid">
                 <!-- Brand and toggle -->
@@ -45,52 +45,61 @@ include "../PHP/Core/verify.php";
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a href="home.html" class="littlestuff-hover">Home</a>
-                        </li>
-                        <?php 
-                        include "../php/admin/adminButton.php";
-                        ?>
-                        <li class="nav-item">
-                            <a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
-                        </li>
-                        <li class="active nav-item">
-                            <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
-                        </li>                             
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true" href="profile.php">Profile<i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
-                                </li>
-                                <li>
-                                    <a href="addgrades.php" class="littlestuff-hover">Add Grades</a>
-                                </li>                                     
-                                <li>
-                                    <a href="addjob.php" class="littlestuff-hover">Add Employment</a>
-                                </li>                                     
-                                <li>
-                                    <a href="#" class="littlestuff-hover">Starred Paths</a>
-                                </li>                                     
-                                <!-- still to be made -->
-                                <li role="separator" class="divider"></li>
-                                <li>
-                                    <a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
-                                </li>
-                            </ul>                                 
-                        </li>
-                    </ul>
-                </div>
-                <!--// End collapse navbar -->
-            </div>
-            <!--// End fluid container  -->
-        </nav>
-        <!--// End nav -->
-    </header>
+                       <li class="nav-item">
+                        <a href="profile.php" class="littlestuff-hover">Home</a>
+                    </li>
+                    <?php 
+                    include "../php/admin/adminButton.php";
+                    ?>
+                    <li class="nav-item">
+                        <a href="pathway.php" class="littlestuff-hover">Path</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
+                    </li>                             
+                    <li class="nav-item">
+                        <a href="index.html" class="littlestuff-hover">Contact</a>
+                    </li>
 
+                    <li class="dropdown">
+                        <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                        <ul id="nav-drop" class="dropdown-menu">
+
+                            <li>
+                                <a href="profiledetail.php"> Edit Info </a>
+                            </li>
+                            <li>
+                                <a href="addgrades.php"> Add Grades </a>
+                            </li>                                     
+                            <li>
+                                <a href="addjob.php"> Add Employment </a>
+                            </li>                                     
+                            <li>
+                                <a href="#"> Starred Paths </a>
+                            </li>                                     
+                            <!-- still to be made -->
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="../php/Core/signout.php"> Log out </a>
+                            </li>                                     
+                            <!-- still to be made -->
+                        </ul>
+                    </li> 
+                    <!--//dropdown-->
+                </ul>
+                <!--//nav-->
+                </div>
+        </div>
+        <!--// End Container -->
+    </nav>
+    <!--// End Navbar -->
+
+
+    
+</header>
 <div class="mask">
    <img href="../images/current.png" />
 </div>

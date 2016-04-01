@@ -83,12 +83,12 @@ include "../php/readFile.php";
 ?>
 
 
-<form method="post" action="../PHP/wizard/insertdetails.php">
+<form method="post" action="../PHP/wizard/insertLogin.php">
 
-	<input type="text" name="first" id="inputarea">
-	<input type="text" name="surname" id="inputarea">
-	<input type="text" name="dob" id="inputarea">
-	<input type="text" name="occupation" id="inputarea">
+	<input type="text" name="username" id="inputarea">
+	<input type="text" name="email" id="inputarea">
+	<input type="text" name="pass1" id="inputarea">
+	<input type="text" name="pass2" id="inputarea">
 	<input type="checkbox" value="true" name="checkCookie" required="required">
 
 	<button type="submit" > Search </button>

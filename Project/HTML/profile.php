@@ -60,7 +60,7 @@ include "../PHP/Wizard/wizardCheck.php"
                     include "../php/admin/adminButton.php";
                     ?>
                     <li class="nav-item">
-                        <a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
+                        <a href="pathway.php" class="littlestuff-hover">Path</a>
                     </li>
                     <li class="nav-item">
                         <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>

@@ -93,9 +93,14 @@ include "../../PHP/Admin/validAdmin.php";
                 <button id="courseupdate" data-toggle="popover" data-content="Click button to Update Courses Table"class="btn-primary btn-flat" onclick="updatecourses()"> Course Table Update <span class="glyphicon glyphicon-refresh"></span> </button>
               </div>
             </div>
-            <div id="gridblock" class="col-lg-5 col-md-offset-3">
+            <div id="gridblock" class="col-lg-5 ">
               <div id="blockbutton">
                 <button id="usergen" data-toggle="popover" data-content="Generates 1000 users everytime the button is clicked" class="btn-primary btn-flat icon-spinner icon-spin icon-large" onclick="genusers()"> Generate Users<span class="glyphicon glyphicon-user"></span> </button>
+              </div>
+            </div>
+            <div id="gridblock" class="col-lg-5 col-md-offset-1">
+              <div id="blockbutton">
+                <button id="unistat" data-toggle="popover" data-content="Retrieves all Universitys and Course from UniStats" class="btn-primary btn-flat icon-spinner icon-spin icon-large" onclick="getUniversity()"> Update From Uni Stats<span class="glyphicon glyphicon-user"></span> </button>
               </div>
             </div>
 
