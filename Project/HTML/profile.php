@@ -53,142 +53,141 @@ include "../PHP/Wizard/wizardCheck.php"
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                       <li class="nav-item">
-                        <a href="profile.php" class="littlestuff-hover">Home</a>
-                    </li>
-                    <?php 
-                    include "../php/admin/adminButton.php";
-                    ?>
-                    <li class="nav-item">
-                        <a href="pathway.php" class="littlestuff-hover">Path</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
-                    </li>                             
-                    <li class="nav-item">
-                        <a href="index.html" class="littlestuff-hover">Contact</a>
-                    </li>
+                      
+                        <?php 
+                        include "../php/admin/adminButton.php";
+                        ?>
+                        <li class="nav-item">
+                            <a href="pathway.php" class="littlestuff-hover">Path</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
+                        </li>                             
 
-                    <li class="dropdown">
-                        <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
-                        <ul id="nav-drop" class="dropdown-menu">
 
-                            <li>
-                                <a href="profiledetail.php"> Edit Info </a>
-                            </li>
-                            <li>
-                                <a href="addgrades.php"> Add Grades </a>
-                            </li>                                     
-                            <li>
-                                <a href="addjob.php"> Add Employment </a>
-                            </li>                                     
-                            <li>
-                                <a href="#"> Starred Paths </a>
-                            </li>                                     
-                            <!-- still to be made -->
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="../php/Core/signout.php"> Log out </a>
-                            </li>                                     
-                            <!-- still to be made -->
-                        </ul>
-                    </li> 
-                    <!--//dropdown-->
-                </ul>
-                <!--//nav-->
+                        <li class="dropdown">
+                            <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+                            <ul id="nav-drop" class="dropdown-menu">
+
+                                <li>
+                                    <a href="profiledetail.php"> Edit Info </a>
+                                </li>
+                                <li>
+                                    <a href="addgrades.php"> Add Grades </a>
+                                </li>                                     
+                                <li>
+                                    <a href="addjob.php"> Add Employment </a>
+                                </li>                                     
+                                <li>
+                                    <a href="#"> Starred Paths </a>
+                                </li>                                     
+                                
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="../php/Core/signout.php"> Log out </a>
+                                </li>                                     
+                                
+                            </ul>
+                        </li> 
+                        <!--//dropdown-->
+                        <li class="nav-item">
+                            <a href="profile.php" class="littlestuff-hover">Home</a>
+                        </li>
+                    </ul>
+                    <!--//nav-->
                 </div>
-        </div>
-        <!--// End Container -->
-    </nav>
-    <!--// End Navbar -->
+            </div>
+            <!--// End Container -->
+        </nav>
+        <!--// End Navbar -->
 
 
-    
-</header>
+        
+    </header>
     <div class="middle-bit">
-		<section id="content-3-5" class="content-block content-3-5">
-			<div class="mask">
-				<img href="../images/current.png" />
-			</div>
-			<div class="col-sm-10 col-sm-offset-1">
-				<div class="underlined-title">
-					<h1>Your Careers Pathfinder Profile</h1>
-					<hr class="headings">
-				</div>
-              
-				<div class="container">
-					<div class="row">
-						<!-- Feature Box 1 -->
-						<div class="col-md-2 col-sm-4 col-xs-8">
-							<div class="feature-box bg-headings">
-								<div class="icon">
-									<span class="fa fa-sign-in black"></span>
-								</div>
-								<h5>Joined</h5>
-								<div id="joined">01/01/01</div>
-							</div>
-						</div>
-						<!-- Feature Box 2 -->
-						<div class="col-md-2 col-sm-4 col-xs-8">
-							<div class="feature-box bg-headings">
-								<div class="icon">
-									<span class="fa fa-pencil black"></span>
-								</div>
-								<h5>Name</h5>
-								<div id="name">John Smith</div>
-							</div>
-						</div>
-						<!-- Feature Box 3 -->
-						<div class="col-md-2 col-sm-4 col-xs-8">
-							<div class="feature-box bg-headings">
-								<div class="icon">
-									<span class="fa fa-empire black"></span>
-								</div>
-								<h5>Occupation</h5>
-								<div id="occupation">Employed</div>
-							</div>
-						</div>
-						<!-- Feature Box 4 -->
-						<div class="col-md-2 col-sm-4 col-xs-8">
-							<div class="feature-box bg-headings">
-								<div class="icon">
-									<span class="fa fa-calendar-o black"></span>
-								</div>
-								<h5>Date of Birth</h5>
-								<div id="dob">01/01/01</div>
-							</div>
-						</div>
-						<!-- Feature Box 5 -->
-						<div class="col-md-2 col-sm-4 col-xs-8">
-							<div class="feature-box bg-headings">
-								<div class="icon">
-									<span class="fa fa-envelope-o black"></span>
-								</div>
-								<h5>Email</h5>
-								<div id="email">js@hw.ac.uk</div>
-							</div>
-						</div>
-						<!-- Feature Box 6 -->
-						<div class="col-md-2 col-sm-4 col-xs-8">
-							<div class="feature-box bg-headings">
-								<div class="icon">
-									<span class="fa fa-home black"></span>
-								</div>
-								<h5>Address</h5>
-								<div id="address">01/01/01</div>
-							</div>
-						</div>
-					</div>
-					<!-- Row Ends -->
-				</div>
-				<!-- Container Ends -->
-			</section>
-			<!-- </section> -->
-		</div>
-            <!--// End of profile-->
+      <section id="content-3-5" class="content-block content-3-5">
+         <div class="mask">
+            <img href="../images/current.png" />
+        </div>
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="underlined-title">
+               <h1>Your Careers Pathfinder Profile</h1>
+               <hr class="headings">
+           </div>
+           
+           <div class="container">
+               <div class="row">
+                  <!-- Feature Box 1 -->
+                  <div class="col-md-2 col-sm-4 col-xs-8">
+                     <div class="feature-box bg-headings">
+                        <div class="icon">
+                           <span class="fa fa-sign-in black"></span>
+                       </div>
+                       <h5>Joined</h5>
+                       <div id="joined">01/01/01</div>
+                   </div>
+               </div>
+               <!-- Feature Box 2 -->
+               <div class="col-md-2 col-sm-4 col-xs-8">
+                 <div class="feature-box bg-headings">
+                    <div class="icon">
+                       <span class="fa fa-pencil black"></span>
+                   </div>
+                   <h5>Name</h5>
+                   <div id="name">John Smith</div>
+               </div>
+           </div>
+           <!-- Feature Box 3 -->
+           <div class="col-md-2 col-sm-4 col-xs-8">
+             <div class="feature-box bg-headings">
+                <div class="icon">
+                   <span class="fa fa-empire black"></span>
+               </div>
+               <h5>Occupation</h5>
+               <div id="occupation">Employed</div>
+           </div>
+       </div>
+       <!-- Feature Box 4 -->
+       <div class="col-md-2 col-sm-4 col-xs-8">
+         <div class="feature-box bg-headings">
+            <div class="icon">
+               <span class="fa fa-calendar-o black"></span>
+           </div>
+           <h5>Date of Birth</h5>
+           <div id="dob">01/01/01</div>
+       </div>
+   </div>
+   <!-- Feature Box 5 -->
+   <div class="col-md-2 col-sm-4 col-xs-8">
+     <div class="feature-box bg-headings">
+        <div class="icon">
+           <span class="fa fa-envelope-o black"></span>
+       </div>
+       <h5>Email</h5>
+       <div id="email">js@hw.ac.uk</div>
+   </div>
+</div>
+<!-- Feature Box 6 -->
+<div class="col-md-2 col-sm-4 col-xs-8">
+ <div class="feature-box bg-headings">
+    <div class="icon">
+       <span class="fa fa-home black"></span>
+   </div>
+   <h5>Address</h5>
+   <div id="address">01/01/01</div>
+</div>
+</div>
+</div>
+<!-- Row Ends -->
+</div>
+<!-- Container Ends -->
+</section>
+<!-- </section> -->
+</div>
+<!--// End of profile-->
 
 <footer class="content-block-nopad footer-wrap-1-3 bg-navfoot">
     <div class="container footer-1-3">

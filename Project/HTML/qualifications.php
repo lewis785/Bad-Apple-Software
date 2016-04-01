@@ -15,6 +15,7 @@ include "../PHP/Core/verify.php";
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
     <!-- Style Library -->         
     <link href="../css/style-library-1.css" rel="stylesheet">
     <link href="../css/plugins.css" rel="stylesheet">
@@ -27,27 +28,25 @@ include "../PHP/Core/verify.php";
 </head>
 <!--/head-->
 <body data-spy="scroll" data-target="nav"> 
-     <header id="header-1" class="header-1">
-        <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
-            <div class="container-fluid">
-                <!-- Brand and toggle -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="#">
-                        <img src="../images/carel.png" class="brand-img img-responsive">
-                    </a>
-                </div>
-                <!-- Navigation -->
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                       <li class="nav-item">
-                        <a href="profile.php" class="littlestuff-hover">Home</a>
-                    </li>
+   <header id="header-1" class="header-1">
+    <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
+        <div class="container-fluid">
+            <!-- Brand and toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#">
+                    <img src="../images/carel.png" class="brand-img img-responsive">
+                </a>
+            </div>
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+
                     <?php 
                     include "../php/admin/adminButton.php";
                     ?>
@@ -60,9 +59,7 @@ include "../PHP/Core/verify.php";
                     <li class="nav-item">
                         <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
                     </li>                             
-                    <li class="nav-item">
-                        <a href="index.html" class="littlestuff-hover">Contact</a>
-                    </li>
+
 
                     <li class="dropdown">
                         <a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
@@ -80,18 +77,21 @@ include "../PHP/Core/verify.php";
                             <li>
                                 <a href="#"> Starred Paths </a>
                             </li>                                     
-                            <!-- still to be made -->
+                            
                             <li role="separator" class="divider"></li>
                             <li>
                                 <a href="../php/Core/signout.php"> Log out </a>
                             </li>                                     
-                            <!-- still to be made -->
+                            
                         </ul>
                     </li> 
                     <!--//dropdown-->
+                    <li class="nav-item">
+                        <a href="profile.php" class="littlestuff-hover">Home</a>
+                    </li>
                 </ul>
                 <!--//nav-->
-                </div>
+            </div>
         </div>
         <!--// End Container -->
     </nav>
@@ -101,44 +101,44 @@ include "../PHP/Core/verify.php";
     
 </header>
 <div class="mask">
-   <img href="../images/current.png" />
+ <img href="../images/current.png" />
 </div>
 
 <div class="row contact-wrap"> 
-   <div class="col-md-8 col-md-offset-2">
+ <div class="col-md-8 col-md-offset-2">
 
 
     <div class="middle-bit">
-       <div class="mask">
-          <img href="../images/current.png" />
-      </div>
-
-      <div class="row contact-wrap"> 
-          <div class="col-md-8 col-md-offset-2">
-                 <div class="underlined-title">
-                    <h1>Your Qualification History</h1>
-                    <?php 
-                    include"../php/Qualifications/getPoints.php"; 
-                    ?>
-                </div>
-            <div class="panel panel-default" id="qualificationPanel">
-               <table class="table" id="currentQualifications">
-                   <thead>
-                       <tr>
-                           <th>Subject</th>
-                           <th>Qualification</th>
-                           <th>Grade</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-
-                      <?php include "../php/Qualifications/displayGrades.php" ?>
-
-                  </tbody>
-              </table>
-          </div>
-      </div>
+     <div class="mask">
+      <img href="../images/current.png" />
   </div>
+
+  <div class="row contact-wrap"> 
+      <div class="col-md-8 col-md-offset-2">
+       <div class="underlined-title">
+        <h1>Your Qualification History</h1>
+        <?php 
+        include"../php/Qualifications/getPoints.php"; 
+        ?>
+    </div>
+    <div class="panel panel-default" id="qualificationPanel">
+     <table class="table" id="currentQualifications">
+         <thead>
+             <tr>
+                 <th>Subject</th>
+                 <th>Qualification</th>
+                 <th>Grade</th>
+             </tr>
+         </thead>
+         <tbody>
+
+          <?php include "../php/Qualifications/displayGrades.php" ?>
+
+      </tbody>
+  </table>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>

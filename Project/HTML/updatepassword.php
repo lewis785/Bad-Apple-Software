@@ -85,12 +85,12 @@
 									<li>
 										<a href="#"> Starred Paths </a>
 									</li>                                     
-									<!-- still to be made -->
+									
 									<li role="separator" class="divider"></li>
 									<li>
 										<a href="../php/Core/signout.php"> Log out </a>
 									</li>                                     
-									<!-- still to be made -->
+									
 								</ul>
 							</li> 
 							<!--//dropdown-->
