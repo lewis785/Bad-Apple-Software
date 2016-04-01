@@ -44,6 +44,7 @@ if(!empty($_POST['number']) && !empty($_POST['street']) && !empty($_POST['postco
 			mysqli_stmt_execute($updateAddress);
 		}
 
+		include"incrementWizard.php";
 	}
 }
 

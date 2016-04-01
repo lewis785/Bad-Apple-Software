@@ -43,6 +43,8 @@ if(!empty($_POST['first']) && !empty($_POST['surname']) && !empty($_POST['dob'])
 		mysqli_stmt_bind_param($updateDetails, 'ssssi',$firstname, $surname, $dob, $occupation, $user[1]);
 		mysqli_stmt_execute($updateDetails);
 	}
+
+	include"incrementWizard.php";
 }
 else
 {

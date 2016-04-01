@@ -68,6 +68,8 @@ div.feature-box h5{
 
 .navfoot{
     color: #1d2a59 !important;
+    position: absolute;
+    bottom: 0px;
 }
 
 .littlestuff
@@ -110,6 +112,6 @@ div.feature-box h5{
 }
 
 
-#currentQualifications{
+#qualificationPanel{
     margin-bottom: 50px;
 }

@@ -131,5 +131,7 @@ include "../PHP/Core/verify.php";
     </div>
 </footer><!--/#footer-->
 
+<?php include"../php/Wizard/validWizard.php" ?>
+
 </body>
 </html>
