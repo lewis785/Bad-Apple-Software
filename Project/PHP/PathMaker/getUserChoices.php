@@ -3,6 +3,10 @@
 include(dirname(__FILE__)."/../Core/connection.php");
 include(dirname(__FILE__)."/../Core/validCookie.php");
 
+$variable = "Engineering";
+$variable = "%".$variable."%";
+
+
 $getChoices = mysqli_stmt_init($link);
 
 mysqli_stmt_prepare($getChoices, "SELECT Title, unistatsinstitutes.Name, userlogin.UserName, userdetails.UCASPoints FROM unistatscourses
@@ -10,9 +14,11 @@ mysqli_stmt_prepare($getChoices, "SELECT Title, unistatsinstitutes.Name, userlog
                                   INNER JOIN userlogin ON userlogin.UserName = ? and userlogin.Password = ?
                                   INNER JOIN userdetails ON userlogin.UserID = userdetails.User
                                   WHERE userdetails.UCASPoints >= unistatscourses.UCASTariff
+                                  AND unistatscourses.UCASTariff != 0
+                                  AND Title LIKE ?
                                   "); 
 
-mysqli_stmt_bind_param($getChoices, 'ss', $temp['user'], $temp['pass']); 
+mysqli_stmt_bind_param($getChoices, 'sss', $temp['user'], $temp['pass'], $variable); 
 mysqli_stmt_execute($getChoices); 
 
 $result = mysqli_stmt_get_result($getChoices);

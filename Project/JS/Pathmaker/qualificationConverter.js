@@ -13,8 +13,8 @@ function drawqualificationpath(){
 			var lastlevel = "not a grade";
 			var parentid = 100;
 			var data = [];
+          
             data.push('{"name":"Qualifications","parent":"null"}');
-
 
 			for (var i=0; i<result.length; i++){
 				

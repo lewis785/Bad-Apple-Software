@@ -1,17 +1,17 @@
 src="http://d3js.org/d3.v3.min.js";
 
-function drawchoicespath(){
+function drawinstitutespath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Pathmaker/getUserChoices.php",
+		url: "../PHP/Pathmaker/getUserInstitutes.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
 		success: function(result){
           
-			var lastinstitute = "";
-			var data = [];
+		var lastinstitute = "";	
+          var data = [];
             var id = 0;
 
             data.push('{"id":"'+id+'","name":"Choices","parent":"null"}');
@@ -20,25 +20,19 @@ function drawchoicespath(){
 			for (var i=0; i<result.length; i++){
 				
 				var curinstitute  = result[i].institute;
-                var coursetitle   = result[i].coursetitle;
                 
 				// alert(curlevel + lastlevel);
               
               if(curinstitute === lastinstitute){
-					data.push('{"id":"'+id+'","name":"'+coursetitle+'","parent":"'+curinstitute+'"}');
-                  id += 1;
 				}
 				else
 				{
 					data.push('{"id":"'+id+'","name":"'+curinstitute+'","parent":"Choices"}');
                   id += 1;
-					data.push('{"id":"'+id+'","name":"'+coursetitle+'","parent":"'+curinstitute+'"}');
-                  id += 1;
         
 					lastinstitute = curinstitute;
 				}
 			}
-            
           
           
           data = '[' +data+ ']';
@@ -216,8 +210,47 @@ function click(d) {
 
 		},
 		error: function(){
-			alert("Error Occured While Deleting");
+			alert("Error Occured While Forming The Pathway");
 		}
 	});
 
+}
+
+
+ function showInstituteChecklist(){
+
+$.ajax({ 
+  type : 'GET', 
+  url : "../PHP/Pathmaker/getUserInstitutes.php", 
+  dataType : 'json', 
+  success : function(result){
+    
+    var lastInst = "";
+    
+    $.each(result, function () {
+      
+      var curInst = this.institute;
+      if(curInst === lastInst){
+				}
+				else
+				{
+        
+        $("#checklist").append($("<label>").text(this.institute).prepend(
+            $("<input>").attr('type', 'checkbox')));
+      $("#checklist").append("<br>");
+      
+      lastInst = curInst;
+                }
+      
+    });
+
+
+    $("#checklist").on('change', '[type=checkbox]', function () {
+       console.log($(this).val());
+    });
+  },
+		error: function(){
+			alert("Error Occured While Forming List");
+		}
+	});
 }
