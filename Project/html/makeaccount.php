@@ -76,58 +76,55 @@ include"../php/wizard/validWizard.php";
         </div>
         <div class="col-sm-10 col-sm-offset-1">
            <div class="underlined-title">
-            <h1>Please Provide Further Details</h1>
-            <hr class="headings">
-            <h2>Accurate Data gives Reliable Results</h2>
-        </div>
+                <h1>Please Provide Further Details</h1>
+                <hr class="headings">
+                <h2>Accurate Data gives Reliable Results</h2>
+            </div>
+        </div>    
+        <section id="page-center" class=" col-md-6 col-md-offset-3">
+            <div id="center" class="main-section container-fluid">  
+
+                <ul id="progress-bar" class="col-md-12">
+                    <li class="col-md-3 "><div id="detailcircle"class="current">Detail</div></li>
+                    <li class="col-md-3"><div id="addresscircle" class="incomplete">Address</div></li>
+                    <li class="col-md-3"><div id="qualificationcircle" class="incomplete">Qualifications</div></li>
+                    <li class="col-md-3"><div id="employmentcircle" class="incomplete">Employment</div></li>
+                </ul>
+
+                <div id="formarea" class="col-md-12">
+
+                    <div class="form-group">
+                        <div id="firstname">
+                            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Enter Firstname">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="surname">
+                            <input type="text" name="surname" class="form-control" id="surname" placeholder="Enter Lastname">
+                        </div>
+                    </div>    
+
+                    <div class="form-group">
+                        <div id="occupation">
+                            <select id="occupationselect" name="occupation" class="form-control">
+                                <option value="NonSelect">Select Occupation</option>
+                                <?php include "../php/displayOccupations.php" ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div id="DOB">
+                            <input type="Date" name="DoB" class="form-control" id="DOB" placeholder="Enter Date of Birth">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-llg bg-headings" id="nextbtn" onclick="nextform()"> Next </button>
+
+            </div><!--/.container-->
+        </section><!--/#contact-page-->
     </div>
-    <section id="page-center" class=" col-md-6 col-md-offset-3">
-     <div id="center" class="main-section container-fluid">  
-
-         <ul id="progress-bar" class="col-md-12">
-            <li class="col-md-3 "><div id="detailcircle"class="current">Detail</div></li>
-            <li class="col-md-3"><div id="addresscircle" class="incomplete">Address</div></li>
-            <li class="col-md-3"><div id="qualificationcircle" class="incomplete">Qualifications</div></li>
-            <li class="col-md-3"><div id="employmentcircle" class="incomplete">Employment</div></li>
-        </ul>
-
-        <div id="formarea" class="col-md-12">
-
-            <div class="form-group">
-                <div id="firstname">
-                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Enter Firstname">
-                </div>
-            </div>
-            <div class="form-group">
-                <div id="surname">
-                    <input type="text" name="surname" class="form-control" id="surname" placeholder="Enter Lastname">
-                </div>
-            </div>    
-
-            <div class="form-group">
-                <div id="occupation">
-                    <select id="occupationselect" name="occupation" class="form-control">
-                        <option value="NonSelect">Select Occupation</option>
-                        <?php include "../php/displayOccupations.php" ?>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div id="DOB">
-                    <input type="Date" name="DoB" class="form-control" id="DOB" placeholder="Enter Date of Birth">
-                </div>
-            </div>
-        </div>
-
-
-        <button class="btn btn-llg bg-headings" id="nextbtn" onclick="nextform()"> Next </button>
-
-
-    </div><!--/.container-->
-</section><!--/#contact-page-->
-</div>
-
 <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
     <div class="container footer-1-3">
         <div class="col-md-4 pull-left">

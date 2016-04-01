@@ -148,7 +148,8 @@
 			<!-- /.container -->
 		</section>
         <!--/#footer-->
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>   <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>   
+        <script type="text/javascript" src="js/plugins.js"></script>
 		<script type="text/javascript" src="js/bskit-scripts.js"></script>
 	</body>
 </html>

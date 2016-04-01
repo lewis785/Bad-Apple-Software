@@ -29,12 +29,7 @@
         <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
         <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
         <script src="../js/registervalidate.js"></script>
-<<<<<<< HEAD
-		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->         
-        <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <![endif]-->
+
   </head>
   <!--/head-->
   <body data-spy="scroll" data-target="nav">
@@ -53,13 +48,30 @@
                         <img src="../images/carel.png" class="brand-img img-responsive">
                     </a>
                 </div>
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a href="index.html" class="littlestuff-hover">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="login.php" class="littlestuff-hover">Login</a>
+                        </li>
+                        <li class="active nav-item">
+                            <a href="#" class="littlestuff-hover">Register</a>
+                        </li>                             
+                    </ul>
+                    <!--//nav-->
+                </div>
+                <!--// End Navigation -->
+            </div>
                 <!--// End Container -->
-            </nav>
+        </nav>
             <!--// End Navbar -->
-        </header>
-        <div class="middle-bit">
-        <div class="mask">
-        	<img href="../images/current.png" />
+    </header>
+    <div class="middle-bit">
+	    <div class="mask">
+	    	<img href="../images/current.png" />
 		</div>
 		<div class="col-sm-10 col-sm-offset-1">
 			<div class="underlined-title">
@@ -67,21 +79,6 @@
 				<hr class="headings">
 			</div>
 		</div>
-		<!-- Register Form start -->
-		<form role="form" id="register-form" class="register-form text-center lead" name="login" method="post" action="../php/createUser.php">
-			<div class="form-group">
-				<input type="text" name="username" class="form-control" required="required" placeholder="Enter Username">
-			</div>
-			
-			<div class="form-group">
-				<input type="Email" name="email1" class="form-control" required="required" placeholder="Enter Email">
-			</div>
-			<div class="col-sm-10 col-sm-offset-1">
-				<div class="underlined-title">
-					<h1>Please Register an Account Below</h1>
-					<hr class="headings">
-				</div>
-			</div>
 			<!-- Register Form start -->
 			<form role="form" id="register-form" class="register-form text-center lead" name="login" method="post" action="../php/createUser.php">
 				<div class="form-group">
@@ -103,7 +100,7 @@
 					<button type="submit" name="register" class="btn btn-llg bg-headings" required="required"> Register </button>
 				</div>  
 			</form>
-		</div>
+	</div>
 		<!-- register end -->
 		<!--// footer -->
 		<section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
@@ -142,7 +139,8 @@
 			<!-- /.container -->
 		</section>
 		<!--/#footer-->            
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>    <script type="text/javascript" src="js/plugins.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>    
+		<script type="text/javascript" src="js/plugins.js"></script>
 		<script type="text/javascript" src="js/bskit-scripts.js"></script>
 	</body>
 </html>
