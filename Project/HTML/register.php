@@ -101,7 +101,7 @@
 <div class="form-group">
     <input type="checkbox" value="true" name="checkCookie" required="required">
    <label>
-       <label>This website uses Cookies by ticking you agree to there use</lable>
+       <label>This website uses Cookies by ticking you agree to their use</lable>
    </label>
 </div>  
 

@@ -2,6 +2,7 @@
 
 <?php 
 include "../PHP/Core/verify.php";
+include "../PHP/Wizard/validWizard.php"
 ?>
 
 <html lang="en">
@@ -37,7 +38,7 @@ include "../PHP/Core/verify.php";
     <script src="../js/Bootstrap/wow.min.js"></script>
     
     <!-- Code for loading user information -->
-    <script src="../js/accountwizard2.js"></script>
+    <script src="../js/accountwizard.js"></script>
     <script src="../js/storeGrade.js"></script>
     <script src="../js/career.js"></script>
 
@@ -131,7 +132,7 @@ include "../PHP/Core/verify.php";
     </div>
 </footer><!--/#footer-->
 
-<?php include"../php/Wizard/validWizard.php" ?>
+<?php include"../php/Wizard/correctPage.php" ?>
 
 </body>
 </html>

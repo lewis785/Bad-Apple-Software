@@ -15,38 +15,48 @@ function submitJobs(redirect){
 	if(isemptyform())
 	{
 
-		var numOfJobs = (employmentarray.length / 7);
-		
-		for(var i=0; i < numOfJobs; i++){
-			var arrayindex = 7 * i;
-			employer = employmentarray[arrayindex+0];
-			title = employmentarray[arrayindex+1];
-			startmonth = employmentarray[arrayindex+2];
-			startyear = employmentarray[arrayindex+3];
-			endmonth = employmentarray[arrayindex+4];
-			endyear = employmentarray[arrayindex+5];
-			descript = employmentarray[arrayindex+6];
+		if(employmentarray.length != 0)
+		{
+			var numOfJobs = (employmentarray.length / 7);
 
-			$.ajax
-			({  
-				type: 'POST',
-				url: "../PHP/insertJob.php",
-				data: { employer: employer, title: title, startmonth: startmonth, startyear: startyear, endmonth: endmonth, endyear: endyear, description:descript},
-				cache: false,
-				success: function(result){
-					if(redirect)
-						window.location.href="../html/employmenthistory.php";
+			for(var i=0; i < numOfJobs; i++){
+				var arrayindex = 7 * i;
+				employer = employmentarray[arrayindex+0];
+				title = employmentarray[arrayindex+1];
+				startmonth = employmentarray[arrayindex+2];
+				startyear = employmentarray[arrayindex+3];
+				endmonth = employmentarray[arrayindex+4];
+				endyear = employmentarray[arrayindex+5];
+				descript = employmentarray[arrayindex+6];
 
-				},
-				error: function(error){
-					alert("Error Occured While Inserting Career");
-					alert(error);
-				}
-			});
+				$.ajax
+				({  
+					type: 'POST',
+					url: "../PHP/insertJob.php",
+					data: { employer: employer, title: title, startmonth: startmonth, startyear: startyear, endmonth: endmonth, endyear: endyear, description:descript},
+					cache: false,
+					success: function(result){
+						if(redirect)
+							window.location.href="../html/employmenthistory.php";
+						return true;
+
+					},
+					error: function(error){
+						alert("Error Occured While Inserting Career");
+						alert(error);
+						return false;
+					}
+				});
+			}
 		}
+		else
+			return true;
 	}
 	else
-		addJobArray();
+	{
+		addJobArray(true);
+		return isemptyform();
+	}
 }
 
 
@@ -135,7 +145,7 @@ function getInput(){
 }
 
 
-function addJobArray(){
+function addJobArray(submit){
 
 	if(checkjobinput()){
 
@@ -176,6 +186,8 @@ function addJobArray(){
 
 		index += 1;
 		clearinput();
+		if(submit)
+			submitJobs();
 	}
 }
 

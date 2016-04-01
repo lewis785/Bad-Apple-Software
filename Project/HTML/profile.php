@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php 
 include "../PHP/Core/verify.php";
+include "../PHP/Wizard/wizardCheck.php"
 ?>
 <html lang="en">
 <head> 
@@ -11,6 +12,7 @@ include "../PHP/Core/verify.php";
     <meta name="description" content="BAS" />
     <link rel="shortcut icon" href="ico/favicon.png"> 
     <!-- Core CSS -->         
+    <link href="../css/responsive.css" rel="stylesheet">
     <link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700" rel="stylesheet">

@@ -80,15 +80,48 @@ function nextform()
 		$("select#monthend").load("../../php/core/monthOptions.php");
 		getYear();
 		page+=1;
+		$.ajax
+		({  
+			type: 'POST',
+			url: "../PHP/Wizard/incrementWizard.php",
+			data: {},
+			cache: false,
+			success: function(result){
+			},
+			error: function(error){
+				alert("Error Occured While Inserting Details");
+				alert(error);
+			}
+		});
 		break;
 
 
 		case 4:
-		submitJobs(false);
+		var succesful = "lock"
+		successful = submitJobs(false);
+		while(successful==="lock")
+		{}
 
-		window.location.href="../html/profile.php";
-		break;
+
+	if(successful){
+		$.ajax
+		({  
+			type: 'POST',
+			url: "../PHP/Wizard/incrementWizard.php",
+			data: {},
+			cache: false,
+			success: function(result){
+				window.location.href="../html/profile.php";
+			},
+			error: function(error){
+				alert("Error Occured While Inserting Details");
+				alert(error);
+			}
+		});
 	}
+	break;
+}
+	// alert(page);
 
 }
 
@@ -102,6 +135,8 @@ function pageskip()
 		swapclass("detailcircle","current","completed");
 		swapclass("addresscircle","incomplete","current");
 		skippage +=1;
+		page +=1;
+		break;
 
 		case 2:
 		$("div#formarea").html(qualificationHTML);
@@ -110,6 +145,8 @@ function pageskip()
 		$("select#levelselect").load("../../php/Qualifications/getLevels.php");
 		$("select#courseselect").load("../../php/Qualifications/getCourses.php");
 		skippage+=1;
+		page+=1;
+		break;
 
 		case 3:
 		$("div#formarea").html(employmentHTML);
@@ -118,8 +155,9 @@ function pageskip()
 		$("select#monthstart").load("../../php/core/monthOptions.php");
 		$("select#monthend").load("../../php/core/monthOptions.php");
 		getYear();
+		page+=1;
+		break;
 	}
-
 }
 
 function empty(divValue, divID)
@@ -190,7 +228,7 @@ var employmentHTML = '<div class="form-group" id="employer"><label> Employer </l
 '<div class="onerow form-group" id="enddate"><label class="col-md-12"> End Date </label><select id="monthend" name="endmonth" class="form-control leftdrop"><option value="NonSelect">Select Month</option></select>'+
 '<select id="yearend" name="endyear" class="form-control rightdrop"><option value="NonSelect">Select Year</option></select></div>'+ 
 '<div class="form-group" id="description"><label> Description </label><textarea id="descript" class="form-control" rows="3" name="description" placeholder="Job Description"></textarea></div>'+
-'<div class="form-group"><button class="btn btn-primary" onclick="addJobArray()"> Add Another Job </button></div><div><button class="btn btn-primary" onclick="clearinput()"> Clear Job Form </button></div>'+
+'<div class="form-group"><button class="btn btn-primary" onclick="addJobArray(false)"> Add Another Job </button></div><div><button class="btn btn-primary" onclick="clearinput()"> Clear Job Form </button></div>'+
 '<div id="joblist"></div>'; 
 
 
