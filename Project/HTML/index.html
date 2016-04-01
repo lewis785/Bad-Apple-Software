@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <meta charset="utf-8">
+        <script src="../js/pathmaker/pathfilter.js"></script>
 <style>
 
 .node {
@@ -26,11 +27,17 @@
 </style>
 <!-- <body onload="drawqualificationpath()"> -->
   <body>
+<button type="button" onclick="showInstituteChecklist();">show checklist</button>
     
- <button type="button" onclick="drawinstitutespath();">show pathway</button>
-    <button type="button" onclick="showInstituteChecklist();">show checklist</button>
-    
-    <div id='checklist'></div>
+    <div id='checkInst'>
+      
+
+  <input type="checkbox" name="field" id="courseBox"value="Engineering">Engineering<br>
+  <input type="checkbox" name="field" id="courseBox" value="Accountancy" >Accountancy<br>
+        <button value="Update Tree" onclick="getChoices()"> update </button>
+
+      
+    </div>
     
    <!-- <script type="text/javascript">
       drawinstitutespath();
@@ -43,7 +50,7 @@
     <script src="../js/Pathmaker/employmentConverter.js"></script>
   <script src="../js/Pathmaker/qualificationConverter.js"></script>
     <script src="../js/Pathmaker/instituteConverter.js"></script>
-    <script src="../js/Pathmaker/choiceConverter.js"></script>
+   
 
     
 </body>

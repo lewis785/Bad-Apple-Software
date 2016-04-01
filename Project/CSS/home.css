@@ -442,3 +442,25 @@ textarea {
 
 
 /*End of Make Account CSS*/
+#updateTree{
+    background-color: green;
+    
+    width = 300px;
+    height = 300px !important;
+
+}
+
+/*Path Options*/
+#checkInst{
+    background-color: green;
+    width = 600px;
+
+}
+
+.visable{
+    display: block;
+}
+
+.invisible{
+    display: none;
+}

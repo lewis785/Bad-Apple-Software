@@ -285,45 +285,5 @@ wrap(d3.selectAll('text'),150);
 		}
 	});
 
+}
 
-
-
- function showInstituteChecklist(){
-
-$.ajax({ 
-  type : 'GET', 
-  url : "../PHP/Pathmaker/getUserInstitutes.php", 
-  dataType : 'json', 
-  success : function(result){
-    
-    var lastInst = "";
-    var ID = 0;
-    
-    $.each(result, function () {
-      
-      var curInst = this.institute;
-      if(curInst === lastInst){
-				}
-				else
-				{
-        
-        $("#checkInst").append($("<label>").text(this.institute).prepend(
-            $("<input>").attr('type', 'checkbox').attr('id', 'instChoice').val(this.institute)));
-      $("#checkInst").append("<br>");
-      
-      ID =+ 1;
-      lastInst = curInst;
-                }
-      
-    });
-
-
-    $("#checkInst").on('change', '[type=checkbox]', function () {
-       console.log($(this).val());
-    });
-  },
-		error: function(){
-			alert("Error Occured While Forming List");
-		}
-	});
-}}

@@ -33,6 +33,7 @@ include "../PHP/Core/verify.php";
   <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
   <script src="../js/Bootstrap/main.js"></script>
   <script src="../js/Bootstrap/wow.min.js"></script>
+  <script src="../js/pathmaker/pathfilter.js"></script>
 
   <!-- Code for loading user information -->
   <script src="../js/loadUser.js"></script>
@@ -126,8 +127,47 @@ body {
 
         
             
-        <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove(); setTimeout(drawinstitutepath,10)">Reload Choices Tree</button>
+        <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove(); setTimeout(drawinstitutespath,10)">Reload Choices Tree</button>
         <button class = "btn btn-warning" onclick="d3.select('#choicessvg').remove();$('svg:nth-of-type(2)').remove();">Delete Choices Tree</button>
+        <button class = "btn btn-warning" onclick="toggleDiv(); showInstituteChecklist();">Refine your search</button>
+            
+            
+    <div class="invisible" id='updateTree'>
+    <div   text="color:#FFFFFF" style="float:left" id='checkInst'>
+        
+        </div>
+      
+      <lable>
+        <input type="checkbox" name="field" id="courseBox"value="Engineering">Engineering<br>
+    </lable>
+        <input type="checkbox" name="field" id="courseBox" value="Accountancy" >Accountancy<br>
+        <input type="checkbox" name="field" id="courseBox" value="Chemistry" >Chemistry<br>
+        <input type="checkbox" name="field" id="courseBox" value="Mathematics" >Mathematics<br>
+        <input type="checkbox" name="field" id="courseBox" value="Sport" >Sport<br>
+        <input type="checkbox" name="field" id="courseBox" value="Psychology" >Psychology<br>
+        <input type="checkbox" name="field" id="courseBox" value="Sciences" >Sciences<br>
+        <input type="checkbox" name="field" id="courseBox" value="English" >English<br>
+        <input type="checkbox" name="field" id="courseBox" value="History" >History<br>
+        <input type="checkbox" name="field" id="courseBox" value="Economics" >Economics<br>
+        <input type="checkbox" name="field" id="courseBox" value="Law" >Law<br>
+        <input type="checkbox" name="field" id="courseBox" value="Philosophy" >Philosophy<br>
+        <div><button class = "btn btn-warning" value="Update Tree" onclick="getChoices()"> Update tree </button>
+     </div>
+</div>
+      
+    
+    
+   <!-- <script type="text/javascript">
+      drawinstitutespath();
+    showInstituteChecklist();
+</script> -->
+    
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="../js/Pathmaker/employmentConverter.js"></script>
+  <script src="../js/Pathmaker/qualificationConverter.js"></script>
+    <script src="../js/Pathmaker/instituteConverter.js"></script>
 
 
 
