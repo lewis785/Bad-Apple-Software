@@ -236,9 +236,9 @@ $.ajax({
 				else
 				{
         
-        $("#checklist").append($("<label>").text(this.institute).prepend(
+        $("#checkInst").append($("<label>").text(this.institute).prepend(
             $("<input>").attr('type', 'checkbox').attr('id', 'instChoice').val(this.institute)));
-      $("#checklist").append("<br>");
+      $("#checkInst").append("<br>");
       
       ID =+ 1;
       lastInst = curInst;
@@ -247,7 +247,7 @@ $.ajax({
     });
 
 
-    $("#checklist").on('change', '[type=checkbox]', function () {
+    $("#checkInst").on('change', '[type=checkbox]', function () {
        console.log($(this).val());
     });
   },

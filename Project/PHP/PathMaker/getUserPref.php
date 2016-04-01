@@ -5,11 +5,24 @@ include(dirname(__FILE__)."/../Core/validCookie.php");
 
 $getInstitutes = mysqli_stmt_init($link);
 
-$checkedInsts = array();
+$testInsts = ["University Of Abertay Dundee", "Edinburgh Napier University", "University Of The Highlands And Islands", "Scotland's Rural College", "University Of The West Of Scotland"];
 
-foreach($_GET['checklist'] as $checklist){
-    $checkedInsts[] = $checklist;
+$testPrefs = ["Engineering","Accountancy","Sport"];
+
+$checkedInsts = array();
+$checkedPrefs = array();
+//$_GET['checkInst']
+foreach($testInsts as $checkInst){
+    $checkedInsts[] = $checkInst;
 }
+
+$checkedPref = array();
+//$_GET['checkPref']
+foreach($testPrefs as $checkPref){
+    $checkedPrefs[] = $checkPref;
+}
+
+//print_r($checkedPrefs)
 
 mysqli_stmt_prepare($getInstitutes, "SELECT Title, unistatsinstitutes.Name, userlogin.UserName, userdetails.UCASPoints FROM unistatscourses
                                   INNER JOIN unistatsinstitutes ON unistatscourses.PUBUKPRN = unistatsinstitutes.PUBUKPRN
@@ -41,10 +54,30 @@ if($count === 0) {
 }else{
 
 while($row = mysqli_fetch_assoc($result)){
-	$institutearray[] = array("institute" => $row["Name"]);
+  
+  if (in_array($row["Name"], $checkedInsts)){ 
+    
+    $institutearray[] = array("institute" => $row["Name"], "coursetitle" => $row['Title']);
+    } else{}
+  }
 }
-  echo json_encode($institutearray);
+
+$prefCourses = array();
+$longcourselist = array();
+
+foreach($checkedPrefs as $pref){
+  
+  foreach($institutearray as $course){ 
+
+      if (strpos($course['coursetitle'], $pref) !== false && !(in_array($course['coursetitle'], $longcourselist))) {
+        
+        $longcourselist[] = $course['coursetitle'];
+        $prefCourses[] = array("institute" => $course["institute"], "preference" => $pref, "coursetitle" => $course["coursetitle"]);
+      }
+  }
 }
+
+echo json_encode($prefCourses);
 
 mysqli_close($link);
 
