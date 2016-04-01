@@ -38,7 +38,7 @@
     <!--/head-->
     <body onload="checkKey()" data-spy="scroll" data-target="nav">
         <header id="header-1" class="soft-scroll header-1">
-            <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-deco">
+            <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
                 <div class="container-fluid">
                     <!-- Brand and toggle -->
                     <div class="navbar-header">
@@ -56,14 +56,16 @@
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="nav-item">
-                                <a href="home.html" class="aqua-hover deepocean">Home</a>
+                                <a href="index.html" class="littlestuff-hover">Home</a>
                             </li>
                             <li class="active nav-item">
+
                                 <a href="login.php" class="littlestuff-hover">Login</a>
                             </li>
                             <li class="nav-item">
                                 <a href="register.php" class="littlestuff-hover">Register</a>
                             </li>
+
                         </ul>
                         <!--//nav-->
                     </div>
@@ -111,7 +113,6 @@
         <!--// End of Login-->         
         <!--// footer -->
         <section class="content-block-nopad footer-1-3 bg-navfoot">
-=======
         <div class="mask">
         <img href="../Images/current.png" />
 		</div>
@@ -148,31 +149,16 @@
         <!--// End of Login-->  
         <!--// footer -->
         <section class="content-block-nopad footer-wrap-1-3 bg-deco">
->>>>>>> origin/Jack
+
             <div class="container footer-1-3">
                 <div class="col-md-4 pull-left">
                     <img src="../images/carell.png" class="brand-img img-responsive">
                     <ul class="social social-dark">
                         <li>
-<<<<<<< HEAD
-                            <a href="#"><i class="fa fa-2x fa-html5 white"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-2x fa-css3 white"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-2x fa-git white"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-2x fa-linux white"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-2x fa-fonticons white"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-2x fa-chrome white"></i></a>
-=======
+
+
                             <a href="#"><i class="fa fa-2x fa-html5 deepocean"></i></a>
+
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-2x fa-css3 deepocean"></i></a>
@@ -187,18 +173,17 @@
                             <a href="#"><i class="fa fa-2x fa-fonticons deepocean"></i></a>
                         </li>
                         <li>
+
                             <a href="#"><i class="fa fa-2x fa-chrome deepocean"></i></a>
->>>>>>> origin/Jack
+
                         </li>
                     </ul>
                     <!-- /.social -->
                 </div>
                 <div class="col-md-3 pull-right">
-<<<<<<< HEAD
-                    <p class="address-bold-line">We <i class="fa fa-2x fa-heart littlestuff"></i> our career paths.</p>
-=======
+
                     <p class="address-bold-line deepocean">We <i class="fa fa-2x fa-heart pomegranate"></i> our career paths.</p>
->>>>>>> origin/Jack
+
                 </div>
                 <div class="col-xs-12 footer-text">
                     <p>&copy; 2016 <a target="_blank" href="#" title="badapplesoftware"> Bad Apple Software</a>. All Rights Reserved.</p>
@@ -206,14 +191,6 @@
             </div>
             <!-- /.container -->
         </section>
-<<<<<<< HEAD
-        <!--/#footer-->         
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>    
-        <script type="text/javascript" src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/bskit-scripts.js"></script>
-    </body>
-</html>
-=======
         <!--/#footer-->
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>         
         <script type="text/javascript" src="js/bootstrap.min.js"></script>         
@@ -223,3 +200,4 @@
     </body>
 </html>
 >>>>>>> origin/Jack
+>>>>>>> refs/remotes/origin/Hussy

@@ -331,7 +331,6 @@ input.form-control{
     margin-left: auto;
     margin-right: auto;
     width: 45%
-
 }
 
 div #name, #joined, #occupation, #dob, #email, #address{
@@ -413,5 +412,10 @@ div.feature-box h5{
 
 #qualificationPanel{
     margin-bottom: 50px;
+}
+
+#currentQualifications ul{
+	margin-bottom: 25px;
+	border: solid 2px black;
 }
 

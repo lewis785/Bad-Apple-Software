@@ -9,10 +9,7 @@ mysqli_stmt_execute($months);
 
 
 $result = mysqli_stmt_get_result($months);
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/Jack
 while($row = mysqli_fetch_assoc($result)){
 	echo "<option value='".$row["MonthID"]."'>".$row["MonthName"]."</option>";
 

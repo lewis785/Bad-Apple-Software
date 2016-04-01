@@ -23,6 +23,14 @@ html,body{
 	color: white;
 }
 
+#pathnav{
+    
+     	background-color: #1D2A59;  
+    height: 25px;
+;
+
+}
+
 .navbar{
 	border: 0px solid transparent;
 	background-color: #1D2A59;  

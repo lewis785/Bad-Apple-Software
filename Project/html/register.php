@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" style="height:100%;">
 	<head>
-       
+
         <meta charset="utf-8"> 
         <title>Register</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -29,52 +29,52 @@
         <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
         <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
         <script src="../js/registervalidate.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->   
-		      
-	</head>
-  	<!--/head-->
-	<body data-spy="scroll" data-target="nav">
-		<header id="header-1" class="soft-scroll header-1">
-        	<nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
-				<div class="container-fluid">
-					<!-- Brand and toggle -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="#">
-							<img src="../images/carel.png" class="brand-img img-responsive">
-						</a>
-					</div>
-					 <!-- Navigation -->
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item">
-								<a href="home.html" class="littlestuff-hover">Home</a>
-							</li>
-							<li class="nav-item">
-								<a href="login.php" class="littlestuff-hover">Login</a>
-							</li>
-							<li class="active nav-item">
-								<a href="#" class="littlestuff-hover">Register</a>
-							</li>                             
-						</ul>
-						<!--//nav-->
-					</div>
-					<!--// End Navigation -->
-				</div>
-				<!--// End Container -->
-			</nav>
-			<!--// End Navbar -->
-		</header>
-		<!--// End header -->
-		<div class="middle-bit">
-			<div class="mask">
-				<img href="../images/current.png" />
+<<<<<<< HEAD
+		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->         
+        <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <![endif]-->
+  </head>
+  <!--/head-->
+  <body data-spy="scroll" data-target="nav">
+    <header id="header-1" class="soft-scroll header-1">
+        <nav class="main-nav navbar-fixed-top headroom headroom--pinned bg-navfoot">
+            <div class="container-fluid">
+                <!-- Brand and toggle -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#">
+                        <img src="../images/carel.png" class="brand-img img-responsive">
+                    </a>
+                </div>
+                <!--// End Container -->
+            </nav>
+            <!--// End Navbar -->
+        </header>
+        <div class="middle-bit">
+        <div class="mask">
+        	<img href="../images/current.png" />
+		</div>
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="underlined-title">
+				<h1>Please Register an Account Below</h1>
+				<hr class="headings">
+			</div>
+		</div>
+		<!-- Register Form start -->
+		<form role="form" id="register-form" class="register-form text-center lead" name="login" method="post" action="../php/createUser.php">
+			<div class="form-group">
+				<input type="text" name="username" class="form-control" required="required" placeholder="Enter Username">
+			</div>
+			
+			<div class="form-group">
+				<input type="Email" name="email1" class="form-control" required="required" placeholder="Enter Email">
 			</div>
 			<div class="col-sm-10 col-sm-offset-1">
 				<div class="underlined-title">
