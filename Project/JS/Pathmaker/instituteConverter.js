@@ -237,7 +237,7 @@ $.ajax({
 				{
         
         $("#checklist").append($("<label>").text(this.institute).prepend(
-            $("<input>").attr('type', 'checkbox').val(ID)));
+            $("<input>").attr('type', 'checkbox').attr('id', 'instChoice').val(this.institute)));
       $("#checklist").append("<br>");
       
       ID =+ 1;
