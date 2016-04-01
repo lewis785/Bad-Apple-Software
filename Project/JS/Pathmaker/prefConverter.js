@@ -13,6 +13,7 @@ function drawprefpath(){
 		var lastinstitute = "";
           var lastpref = "";
           var data = [];
+          var choiceInstList = [];
             var id = 0;
 
             data.push('{"id":"'+id+'","name":"Choices","parent":"null"}');
@@ -30,7 +31,8 @@ function drawprefpath(){
                 if(curpref === lastpref){
                 data.push('{"id":"'+id+'","name":"'+course+'","parent":"'+curpref+':'+curinstitute+'"}');
                   id += 1;
-                  
+                  lastpref = curpref;
+					lastinstitute = curinstitute;
                 }else{
                   data.push('{"id":"'+id+'","name":"'+curpref+':'+curinstitute+'","parent":"'+curinstitute+'"}');
                   id += 1;
@@ -38,12 +40,24 @@ function drawprefpath(){
                   id += 1;
                   
                   lastpref = curpref;
+					lastinstitute = curinstitute;
                 }
 				}
 				else
 				{
+                  if (!($.inArray(curinstitute, choiceInstList) > -1)){
+                      
 					data.push('{"id":"'+id+'","name":"'+curinstitute+'","parent":"Choices"}');
                   id += 1;
+                    data.push('{"id":"'+id+'","name":"'+curpref+':'+curinstitute+'","parent":"'+curinstitute+'"}');
+                  id += 1;
+                  data.push('{"id":"'+id+'","name":"'+course+'","parent":"'+curpref+':'+curinstitute+'"}');
+                  id += 1;
+                  
+                  choiceInstList.push(curinstitute);
+                    lastpref = curpref;
+					lastinstitute = curinstitute;
+                } else{ 
                   data.push('{"id":"'+id+'","name":"'+curpref+':'+curinstitute+'","parent":"'+curinstitute+'"}');
                   id += 1;
                   data.push('{"id":"'+id+'","name":"'+course+'","parent":"'+curpref+':'+curinstitute+'"}');
@@ -51,6 +65,7 @@ function drawprefpath(){
                   
                     lastpref = curpref;
 					lastinstitute = curinstitute;
+                }
 				}
 			}
           
@@ -230,8 +245,11 @@ function click(d) {
 
 		},
 		error: function(){
-			alert("Error Occured While Forming The Pathway");
+			alert("No available courses at chosen institutions");
 		}
 	});
 
+}
+function isInArray(value, array) {
+  return array.indexOf(value) > -1;
 }
