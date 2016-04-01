@@ -6,7 +6,10 @@ function getUcasTariffs(){
   include "../PHP/Core/connection.php";
 
 //  $filepath = 'C:/wamp/www/badapple/Database/UCASTARIFF.csv';
-$filepath = 'C:/Users/PbZeppelin/Desktop/BAS/Bad-Apple-Software/Project/Database/UCASTARIFF.csv';
+  // $filepath = 'C:/Users/Lewis/Documents/GitHub/Bad-Apple-Software/Project/Database/UCASTARIFF.csv';
+$filepath = (dirname(__FILE__).'/../Database/UCASTARIFF.csv');
+
+echo "<script> alert(".$filepath."); </script>";
 
   
 $truncateucastariffs = "TRUNCATE TABLE `ucastariffs`";

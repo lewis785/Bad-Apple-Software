@@ -59,7 +59,7 @@
 								include "../php/admin/adminButton.php";
 							?>
 							<li class="nav-item">
-								<a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
+								<a href="pathway.php" class="littlestuff-hover">Path</a>
 							</li>
 							<li class="nav-item">
 								<a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
@@ -85,12 +85,12 @@
 									<li>
 										<a href="#"> Starred Paths </a>
 									</li>                                     
-									<!-- still to be made -->
+									
 									<li role="separator" class="divider"></li>
 									<li>
 										<a href="../php/Core/signout.php"> Log out </a>
 									</li>                                     
-									<!-- still to be made -->
+									
 								</ul>
 							</li> 
 							<!--//dropdown-->

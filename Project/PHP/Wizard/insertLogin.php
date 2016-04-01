@@ -47,7 +47,7 @@ if(!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2'
 
 
 				if($successful)
-					header('Location: ../../HTML/login.php');
+					header('Location: ../../HTML/profile.php');
 				else
 					echo "Error occured while inserting";
 

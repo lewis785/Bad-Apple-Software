@@ -102,7 +102,7 @@ function genusers(){
    cache: false,
    success: function(data){
     $('#usergen').toggleClass("btn-warning").toggleClass("btn-success");
-    $('#usergen').prop('disabled', true)
+    $('#usergen').prop('disabled', true);
     $('#usergen').html("Insert Successful");
     
     var total = data.total;
@@ -128,7 +128,7 @@ function updatecourses(){
    cache: false,
    success: function(data){
     $('#courseupdate').toggleClass("btn-warning").toggleClass("btn-success");
-    $('#courseupdate').prop('disabled', true)
+    $('#courseupdate').prop('disabled', true);
     $('#courseupdate').html("Insert Successful");
 
   },
@@ -154,7 +154,7 @@ function updatefromfile(){
    success: function(data){
 
     $('#fileupdate').toggleClass("btn-warning").toggleClass("btn-success");
-    $('#fileupdate').prop('disabled', true)
+    $('#fileupdate').prop('disabled', true);
     $('#fileupdate').html("Insert Successful");
 
   },
@@ -178,6 +178,33 @@ $(document).ready(function(){
   });
 
 });
+
+
+
+function getUniversity(){
+
+ $('#unistat').toggleClass("btn-primary").toggleClass("btn-warning");
+ $('#unistat').html("Loading...");
+ $('#unistat').prop('disabled', true);
+
+ $.ajax({
+   type: 'POST',
+   url: "../../database/getdbs.php",
+   data: "",
+   cache: false,
+   success: function(data){
+
+     $('#unistat').toggleClass("btn-warning").toggleClass("btn-success");
+
+     $('#unistat').html("Insert Successful");
+
+   },
+   error: function (error) {
+    alert("Problem has occuredUpdate Failed");
+  }
+});
+
+}
 
 
 

@@ -56,14 +56,12 @@ include "../PHP/Core/verify.php";
 				<!-- Navigation -->
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="nav-item">
-							<a href="home.html" class="littlestuff-hover">Home</a>
-						</li>
+
 						<?php 
 						include "../php/admin/adminButton.php";
 						?>
 						<li class="nav-item">
-							<a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
+							<a href="pathway.php" class="littlestuff-hover">Path</a>
 						</li>
 						<li class="nav-item">
 							<a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
@@ -86,15 +84,18 @@ include "../PHP/Core/verify.php";
 								<li>
 									<a href="#"> Starred Paths </a>
 								</li>                                     
-								<!-- still to be made -->
+								
 								<li role="separator" class="divider"></li>
 								<li>
 									<a href="../php/Core/signout.php"> Log out </a>
 								</li>                                     
-								<!-- still to be made -->
+								
 							</ul>
 						</li> 
 						<!--//dropdown-->
+						<li class="nav-item">
+							<a href="home.html" class="littlestuff-hover">Home</a>
+						</li>
 					</ul>
 					<!--//nav-->
 				</div>
@@ -153,12 +154,12 @@ include "../PHP/Core/verify.php";
 				<textarea id="descript" class="form-control" rows="3" name="description" placeholder="Job Description"></textarea>
 				
 				
-				<button id="storeGrade" class="btn btn-llg bg-headings" onclick="addJobArray()"> Add Another Job </button>  <!-- still to be made -->
+				<button id="storeGrade" class="btn btn-llg bg-headings" onclick="addJobArray()"> Add Another Job </button>  
 
 
 				<button class="btn btn-llg bg-headings" onclick="clearinput()"> Clear Job Form </button>
 
-				<button id="submitGrades" class="btn btn-llg bg-headings" onclick="submitJobs(true)"> Submit Employment </button>  <!-- still to be made -->
+				<button id="submitGrades" class="btn btn-llg bg-headings" onclick="submitJobs(true)"> Submit Employment </button>  
 			</div>
 		</div>
 
