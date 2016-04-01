@@ -60,12 +60,12 @@ data.forEach(function(node) {
 		treeData.push(node);
 	}
 });
-         
+                  
+          
+            
     
 
-
-            
-var margin = {top: 20, right: 100, bottom: 20, left: 100},
+   var margin = {top: 20, right: 100, bottom: 20, left: 100},
     w = 600- margin.right - margin.left,
     h = 1000 - margin.top - margin.bottom,
       i = 0,
@@ -84,14 +84,13 @@ var margin = {top: 20, right: 100, bottom: 20, left: 100},
       .attr("width", w + margin.right + margin.left)
       .attr("height", h + margin.top + margin.bottom)
       .append("g")
-      .attr("id", "choicessvg")
       .attr("transform", "translate(" + margin.left  + "," + margin.top + ")");
       
 
     root = treeData[0];
     root.x0 = h;
     root.y0 = w;
-         
+            
 function collapse(d) {
     if (d.children) {
       d._children = d.children;
@@ -122,9 +121,6 @@ function collapse(d) {
         .attr("transform", function(d) {
           return "translate(" + source.y0 + "," + source.x0  + ")";
         });
-
-//    nodes.forEach(function(d) { d.y = w + (d.depth) * 180 });
-//    
       // Enter any new nodes at the parent's previous position.
 
       nodeEnter.append("svg:rect")

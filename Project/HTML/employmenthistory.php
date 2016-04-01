@@ -28,6 +28,7 @@ include "../PHP/Core/verify.php";
 	<!-- Code for loading user information -->
 	<script src="../js/loadUser.js"></script>
 	<script src="../js/popup.js"></script>
+	<link href="../css/responsive.css" rel="stylesheet">
 	
 	<!-- Extra javascript to make things crispier -->
 	<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
@@ -56,50 +57,59 @@ include "../PHP/Core/verify.php";
 				<!-- Navigation -->
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="nav-item">
-							<a href="home.html" class="littlestuff-hover">Home</a>
-						</li>
+
 						<?php 
 						include "../php/admin/adminButton.php";
 						?>
 						<li class="nav-item">
-							<a href="workingbuilderTemp.php" class="littlestuff-hover">Path</a>
+							<a href="pathway.php" class="littlestuff-hover">Path</a>
 						</li>
-						<li class="active nav-item">
+						<li class="nav-item">
 							<a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
 						</li>
 						<li class="nav-item">
 							<a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
 						</li>                             
-						<li class="nav-item dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true" href="profile.php">Profile<i class="fa fa-angle-down"></i></a>
-							<ul class="dropdown-menu">
+
+						<li class="dropdown">
+							<a href="profile.php" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+							<ul id="nav-drop" class="dropdown-menu">
+
 								<li>
-									<a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
+									<a href="profiledetail.php"> Edit Info </a>
 								</li>
 								<li>
-									<a href="addgrades.php" class="littlestuff-hover">Add Grades</a>
+									<a href="addgrades.php"> Add Grades </a>
 								</li>                                     
 								<li>
-									<a href="addjob.php" class="littlestuff-hover">Add Employment</a>
+									<a href="addjob.php"> Add Employment </a>
 								</li>                                     
 								<li>
-									<a href="#" class="littlestuff-hover">Starred Paths</a>
+									<a href="#"> Starred Paths </a>
 								</li>                                     
-								<!-- still to be made -->
+
 								<li role="separator" class="divider"></li>
 								<li>
-									<a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
-								</li>
-							</ul>                                 
+									<a href="../php/Core/signout.php"> Log out </a>
+								</li>                                     
+
+
+							</ul>
+						</li> 
+						<!--//dropdown-->
+						<li class="nav-item">
+							<a href="profile.php" class="littlestuff-hover">Home</a>
 						</li>
 					</ul>
+					<!--//nav-->
 				</div>
-				<!--// End collapse navbar -->
 			</div>
-			<!--// End fluid container  -->
+			<!--// End Container -->
 		</nav>
-		<!--// End nav -->
+		<!--// End Navbar -->
+
+
+
 	</header>
 	<!--// End header -->
 	<div class="middle-bit">
@@ -114,7 +124,7 @@ include "../PHP/Core/verify.php";
 		</div>
 		<div class="row contact-wrap"> 
 			<div class="col-md-8 col-md-offset-2">
-				<div class="panel panel-default" id="currentQualifications">
+				<div id="currentJobs">
 
 					<?php 
 					include "../php/displayJobs.php";

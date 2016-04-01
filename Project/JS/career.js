@@ -12,7 +12,7 @@ var descript;
 
 function submitJobs(redirect){
 
-	if(!isemptyform())
+	if(isemptyform())
 	{
 
 		if(employmentarray.length != 0)
@@ -50,7 +50,12 @@ function submitJobs(redirect){
 			}
 		}
 		else
-			return true;
+		{
+			if(redirect)
+				window.location.href="../html/employmenthistory.php";
+			else
+				return true;
+		}
 	}
 	else
 	{
