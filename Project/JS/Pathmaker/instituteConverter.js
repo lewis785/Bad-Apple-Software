@@ -59,13 +59,9 @@ data.forEach(function(node) {
 		// parent is null or missing
 		treeData.push(node);
 	}
-});
-                  
-          
-            
-    
-
-   var margin = {top: 20, right: 100, bottom: 20, left: 100},
+});            
+var margin = {top: 20, right: 100, bottom: 20, left: 100},
+>>>>>>> origin/Jack
     w = 600- margin.right - margin.left,
     h = 1000 - margin.top - margin.bottom,
       i = 0,
@@ -90,7 +86,6 @@ data.forEach(function(node) {
     root = treeData[0];
     root.x0 = h;
     root.y0 = w;
-            
 function collapse(d) {
     if (d.children) {
       d._children = d.children;
@@ -121,6 +116,7 @@ function collapse(d) {
         .attr("transform", function(d) {
           return "translate(" + source.y0 + "," + source.x0  + ")";
         });
+
       // Enter any new nodes at the parent's previous position.
 
       nodeEnter.append("svg:rect")
