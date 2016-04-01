@@ -1,19 +1,17 @@
 src="http://d3js.org/d3.v3.min.js";
 
-function drawqualificationpath(){
+function pathway(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Pathmaker/pathqualifications.php",
+		url: "../PHP/pathmaker/pathqualifications.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
 		success: function(result){
-          
 			var lastlevel = "not a grade";
 			var parentid = 100;
 			var data = [];
-          
             data.push('{"name":"Qualifications","parent":"null"}');
 
 			for (var i=0; i<result.length; i++){
@@ -30,18 +28,17 @@ function drawqualificationpath(){
 				{
 					data.push('{"name":"'+curlevel+'","parent":"Qualifications"}');
 					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
-
-                  
-        
 					var lastlevel = curlevel;
 				}
 			}
             
             
-
+            
+            
+         
           data = '[' +data+ ']';
           data = JSON.parse(data);
-         
+            
     
 var dataMap = data.reduce(function(map, node) {
 	map[node.name] = node;
@@ -57,7 +54,6 @@ data.forEach(function(node) {
 		// create child array if it doesn't exist
 		(parent.children || (parent.children = []))
 			// add node to child array
-
               .push(node);
 	} else {
 		// parent is null or missing
@@ -70,9 +66,9 @@ data.forEach(function(node) {
 
             
 var margin = {top: 20, right: 100, bottom: 20, left: 100},
-    w = 600- margin.right - margin.left,
+    w = 960 - margin.right - margin.left,
     h = 800 - margin.top - margin.bottom,
-      i = 0,
+      i = 2,
       duration = 600,
       root;
 
@@ -88,22 +84,22 @@ var margin = {top: 20, right: 100, bottom: 20, left: 100},
       .attr("width", w + margin.right + margin.left)
       .attr("height", h + margin.top + margin.bottom)
       .append("g")
-      .attr("transform", "translate(" + margin.left  + "," + margin.top + ")");
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
       
 
     root = treeData[0];
-    root.x0 = h/2;
+    root.x0 = h / 2;
     root.y0 = w;
             
 function collapse(d) {
     if (d.children) {
       d._children = d.children;
+      d._children.forEach(collapse);
       d.children = null;
     }
   }
 
     root.children.forEach(collapse);
-        
              
     update(root);
             
@@ -123,19 +119,18 @@ function collapse(d) {
       var nodeEnter = node.enter().append("svg:g")
         .attr("class", "node")
         .attr("transform", function(d) {
-          return "translate(" + source.y0 + "," + source.x0  + ")";
+          return "translate(" + source.y0 + "," + source.x0 + ")";
         });
 
-    nodes.forEach(function(d) { d.y = w - (d.depth) * 190 });
-    
+   nodes.forEach(function(d) { d.y = d.depth * 180; });
       // Enter any new nodes at the parent's previous position.
 
       nodeEnter.append("svg:rect")
-        .attr("width", 160)
+        .attr("width", 150)
         .attr("height", function(d) {
           return 19;
         })
-      .attr("x", -80)
+        .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
         .attr("y", -12)
         .attr("rx", 5)
         .attr("ry", 2)
@@ -151,7 +146,6 @@ function collapse(d) {
         })
         .attr("y", 3)
         .attr("dy", "0em")
-        .attr("text-anchor", "middle")
         .text(function(d) {
           return d.name;
         })
@@ -169,8 +163,6 @@ function collapse(d) {
         .style("opacity", 1)
         .select("rect")
         .style("fill", "lightsteelblue");
-        
-    
 
       node.transition()
         .duration(duration)

@@ -57,7 +57,7 @@
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item">
-								<a href="profile.php" class="littlestuff-hover">Home</a>
+								<a href="home.html" class="littlestuff-hover">Home</a>
 							</li>
 							<?php 
 							include "../php/admin/adminButton.php";
@@ -75,7 +75,7 @@
 								<a href="index.html" class="littlestuff-hover">Contact</a>
 							</li>
 							<li class="active nav-item dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true" href="#">Profile<i class="fa fa-angle-down"></i></a>
+								<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true" href="profile.php">Profile<i class="fa fa-angle-down"></i></a>
 								<ul class="dropdown-menu">
 								   <li>
 										<a href="profiledetail.php"> Edit Info </a>

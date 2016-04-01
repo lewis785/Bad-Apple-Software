@@ -59,17 +59,14 @@
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item">
-								<a href="index.html" class="littlestuff-hover">Home</a>
+								<a href="home.html" class="littlestuff-hover">Home</a>
 							</li>
 							<li class="nav-item disable">
 								<a href="login.php" class="littlestuff-hover">Login</a>
 							</li>
 							<li class="active nav-item">
 								<a href="#" class="littlestuff-hover">Register</a>
-							</li>                 
-							<li class="nav-item">
-								<a href="index.html" class="littlestuff-hover">Contact</a>
-							</li>            
+							</li>      
 						</ul>
 						<!--//nav-->
 					</div>

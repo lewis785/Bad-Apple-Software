@@ -56,7 +56,7 @@
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item">
-								<a href="profile.php" class="littlestuff-hover">Home</a>
+								<a href="home.html" class="littlestuff-hover">Home</a>
 							</li>
 							<?php 
 							include "../php/admin/adminButton.php";
@@ -69,9 +69,6 @@
 							</li>
 							<li class="active nav-item">
 								<a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
-							</li>                             
-							<li class="nav-item">
-								<a href="index.html" class="littlestuff-hover">Contact</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true" href="#">Profile<i class="fa fa-angle-down"></i></a>
@@ -112,9 +109,11 @@
 				<div class="underlined-title">
 					<h1>Your Qualification History</h1>
 					<hr class="headings">
+
 					<?php 
 						include"../php/Qualifications/getPoints.php"; 
 					?>
+
 				</div>
 			</div>
 			<div class="row contact-wrap"> 

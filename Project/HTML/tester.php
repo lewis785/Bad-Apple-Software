@@ -83,6 +83,7 @@ include "../php/readFile.php";
 ?>
 
 
+<<<<<<< HEAD
 <form method="post" action="../PHP/wizard/insertLogin.php">
 
 	<input type="text" name="username" id="inputarea">
@@ -90,6 +91,13 @@ include "../php/readFile.php";
 	<input type="text" name="pass1" id="inputarea">
 	<input type="text" name="pass2" id="inputarea">
 	<input type="checkbox" value="true" name="checkCookie" required="required">
+=======
+<form method="post" action="../PHP/qualifications/deletequalification.php">
+
+	<input type="text" name="QID" id="inputarea">
+	<!-- <input type="text" name="level" id="inputarea"> -->
+	<!-- <input type="text" name="grade" id="inputarea"> -->
+>>>>>>> origin/Jack
 
 	<button type="submit" > Search </button>
 </form>
