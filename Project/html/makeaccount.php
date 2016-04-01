@@ -5,7 +5,7 @@ include "../PHP/Core/verify.php";
 <html lang="en">
 <head>
     <meta charset="utf-8"> 
-	<title>Register</title>
+	<title>Make Account</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<meta name="keywords" content="bootstrap" />
 	<meta name="description" content="BAS" />
@@ -54,10 +54,10 @@ include "../PHP/Core/verify.php";
                             <li class="nav-item">
                                 <a href="index.html" class="littlestuff-hover">Home</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item disable">
                                 <a href="login.php" class="littlestuff-hover">Login</a>
                             </li>
-                            <li class="active nav-item">
+                            <li class="active nav-item disable">
                                 <a href="#" class="littlestuff-hover">Register</a>
                             </li>                             
                         </ul>
@@ -70,7 +70,7 @@ include "../PHP/Core/verify.php";
             <!--// End Navbar -->
         </header>
         
-        
+   <div class="middle-bit">
         <div class="mask">
         	<img href="../images/current.png" />
 		</div>
@@ -82,8 +82,7 @@ include "../PHP/Core/verify.php";
 			</div>
 		</div>
     <section id="page-center" class=" col-md-6 col-md-offset-3">
-     <div id="center" class="main-section container-fluid">
-         <h2> Account Creation Wizard </h2>    
+     <div id="center" class="main-section container-fluid">  
 
          <ul id="progress-bar" class="col-md-12">
             <li class="col-md-3 "><div id="detailcircle"class="current">Detail</div></li>
@@ -95,20 +94,17 @@ include "../PHP/Core/verify.php";
         <div id="formarea" class="col-md-12">
 
             <div class="form-group">
-                <label> First Name * </label>
                 <div id="firstname">
-                    <input type="text" name="firstname" class="form-control glow" id="firstname" placeholder="Enter Firstname">
+                    <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Enter Firstname">
                 </div>
             </div>
             <div class="form-group">
-                <label> Last Name * </label>
                 <div id="surname">
-                    <input type="text" name="surname" class="form-control glow" id="surname" placeholder="Enter Lastname">
+                    <input type="text" name="surname" class="form-control" id="surname" placeholder="Enter Lastname">
                 </div>
             </div>    
 
             <div class="form-group">
-                <label> Occupation * </label>
                 <div id="occupation">
                     <select id="occupationselect" name="occupation" class="form-control">
                         <option value="NonSelect">Select Occupation</option>
@@ -118,19 +114,19 @@ include "../PHP/Core/verify.php";
             </div>
 
             <div class="form-group">
-                <label> Date Of Birth * </label>
                 <div id="DOB">
-                    <input type="Date" name="DoB" class="form-control glow" id="DOB" placeholder="Enter Date of Birth">
+                    <input type="Date" name="DoB" class="form-control" id="DOB" placeholder="Enter Date of Birth">
                 </div>
             </div>
         </div>
 
 
-        <button class="btn btn-primary" id="nextbtn" onclick="nextform()"> Next </button>
+        <button class="btn btn-llg bg-headings" id="nextbtn" onclick="nextform()"> Next </button>
 
 
     </div><!--/.container-->
 </section><!--/#contact-page-->
+</div>
 
 <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
                 <div class="container footer-1-3">

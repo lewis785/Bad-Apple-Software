@@ -63,14 +63,14 @@ include "../PHP/Core/verify.php";
                     <li class="nav-item">
                         <a href="employmenthistory.php" class="littlestuff-hover">Employment</a>
                     </li>
-                    <li class="active nav-item">
+                    <li class="nav-item">
                         <a href="qualifications.php" class="littlestuff-hover">Qualifications</a>
                     </li>                             
                     <li class="nav-item">
                         <a href="index.html" class="littlestuff-hover">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Profile<i class="fa fa-angle-down"></i></a>
+                    <li class="active nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="true" href="#">Profile<i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
@@ -95,7 +95,6 @@ include "../PHP/Core/verify.php";
                 </ul>
                 <!--//nav-->
                 </div>
-            <!--// End Navigation -->
         </div>
         <!--// End Container -->
     </nav>

@@ -103,6 +103,7 @@ include "../PHP/Core/verify.php";
        <div class="mask">
         <img href="../images/current.png" />
     </div>
+<<<<<<< HEAD
     <div class="col-sm-10 col-sm-offset-1">
         <div class="underlined-title">
            <h1 class="deepocean">Your Careers Employment History</h1>
@@ -113,6 +114,17 @@ include "../PHP/Core/verify.php";
     <div class="row">
          <!-- Feature Box 1 -->
 
+=======
+    
+    <div class="underlined-title">
+        <h1 class="deepocean">Your Careers Employment History</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+         <!-- Feature Box 1 -->
+
+>>>>>>> origin/Lewis
          <?php include "../php/displayJobs.php" ?>
 
      </div>

@@ -37,9 +37,6 @@ include "../PHP/Core/verify.php";
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
                     </button>
                     <a href="#">
                         <img src="../images/carel.png" class="brand-img img-responsive">
@@ -67,7 +64,7 @@ include "../PHP/Core/verify.php";
                         <a href="index.html" class="littlestuff-hover">Contact</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Profile<i class="fa fa-angle-down"></i></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others= href="#">Profile<i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="profiledetail.php" class="littlestuff-hover">Edit Info</a>
@@ -133,10 +130,7 @@ include "../PHP/Core/verify.php";
 		</div>
 	 </div>
 	</div>
-
-</thead>
-</div>
-
+	</div>
 <section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
     <div class="container footer-1-3">
         <div class="col-md-4 pull-left">

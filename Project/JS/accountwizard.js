@@ -144,28 +144,28 @@ function getYear(){
 
 
 
-var addressHTML = '<div class="form-group" id="housenumber"><label> House Number * </label><input type="text" name="number" class="form-control glow" placeholder="Enter House Number"></div>'+
-'<div class="form-group" id="street"><label> Street Name * </label><input type="text" name="street" class="form-control glow" placeholder="Enter Street Name"></div>'+
-'<div class="form-group" id="postcode"><label> Postcode * </label><input type="text" name="postcode" class="form-control glow" placeholder="Enter PostCode"></div>'+
-'<div class="form-group" id="city"><label> City * </label><input type="text" name="city" class="form-control glow" placeholder="Enter City"></div>';
+var addressHTML = '<div class="form-group" id="housenumber"><input type="text" name="number" class="form-control" placeholder="Enter House Number"></div>'+
+'<div class="form-group" id="street"><input type="text" name="street" class="form-control" placeholder="Enter Street Name"></div>'+
+'<div class="form-group" id="postcode"><input type="text" name="postcode" class="form-control" placeholder="Enter PostCode"></div>'+
+'<div class="form-group" id="city"><input type="text" name="city" class="form-control" placeholder="Enter City"></div>';
 
-var qualificationHTML = '<div id="coursediv" class="form-group"><label> Course Name * </label><select id="courseselect" name="course" class="form-control"><option value="NoneSelect" selected>Select Course</option>'+
+var qualificationHTML = '<div id="coursediv" class="form-group"><select id="courseselect" name="course" class="form-control"><option value="NoneSelect" selected>Select Course</option>'+
 '</select></div>'+
-'<div id="leveldiv" class="form-group"><label> Course Level * </label><select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">'+
+'<div id="leveldiv" class="form-group"><select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">'+
 '<option value="NoneSelect" selected>Select Level</option></select></div>'+
-'<div id="gradediv" class="form-group"><label> Course Grade * </label><select id="gradeselect" name="grade" class="form-control"><option value="NoneSelect">Select Grade</option>'+
+'<div id="gradediv" class="form-group"><select id="gradeselect" name="grade" class="form-control"><option value="NoneSelect">Select Grade</option>'+
 '</select></div>'+
-'<div class="form-group"><button onclick="addGrade()" id="storeGrade" class="btn btn-primary"> Add Grade </button>'+
+'<div class="form-group"><button onclick="addGrade()" id="storeGrade" class="btn btn-llg bg-headings"> Add Grade </button>'+
 '<div id="qualificationslist"></div>';
 
-var employmentHTML = '<div class="form-group" id="employer"><label> Employer </label><input type="text" name="employer" class="form-control glow" placeholder="Employer"></div>'+
-'<div class="form-group" id="jobtitle"><label> Job Title </label><input type="text" name="title" class="form-control glow" placeholder="Job Title"></div>'+
-'<div class="form-group onerow" id="startdate"><label class="col-md-12"> Start Date </label><select id="monthstart" name="startmonth" class="form-control leftdrop"><option value="NonSelect">Select Month</option></select>'+
+var employmentHTML = '<div class="form-group" id="employer"><input type="text" name="employer" class="form-control" placeholder="Employer"></div>'+
+'<div class="form-group" id="jobtitle"><input type="text" name="title" class="form-control" placeholder="Job Title"></div>'+
+'<div class="form-group onerow" id="startdate"><select id="monthstart" name="startmonth" class="form-control leftdrop"><option value="NonSelect">Select Month</option></select>'+
 '<select id="yearstart" name="startyear" class="form-control rightdrop"><option value="NonSelect">Select Year</option></select></div>'+ 
-'<div class="onerow form-group" id="enddate"><label class="col-md-12"> End Date </label><select id="monthend" name="endmonth" class="form-control leftdrop"><option value="NonSelect">Select Month</option></select>'+
+'<div class="onerow form-group" id="enddate"><select id="monthend" name="endmonth" class="form-control leftdrop"><option value="NonSelect">Select Month</option></select>'+
 '<select id="yearend" name="endyear" class="form-control rightdrop"><option value="NonSelect">Select Year</option></select></div>'+ 
-'<div class="form-group" id="description"><label> Description </label><textarea id="descript" class="form-control" rows="3" name="description" placeholder="Job Description"></textarea></div>'+
-'<div class="form-group"><button class="btn btn-primary" onclick="addJobArray()"> Add Another Job </button></div><div><button class="btn btn-primary" onclick="clearinput()"> Clear Job Form </button></div>'+
+'<div class="form-group" id="description"><textarea id="descript" class="form-control" rows="3" name="description" placeholder="Job Description"></textarea></div>'+
+'<div class="form-group"><button class="btn btn-llg bg-headings" onclick="addJobArray()"> Add Another Job </button></div><div><button class="btn btn-llg bg-headings" onclick="clearinput()"> Clear Job Form </button></div>'+
 '<div id="joblist"></div>'; 
 
 
