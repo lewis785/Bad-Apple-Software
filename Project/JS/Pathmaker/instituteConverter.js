@@ -1,45 +1,43 @@
 src="http://d3js.org/d3.v3.min.js";
 
-function drawpath(){
+function drawinstitutespath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/pathmaker/pathqualifications.php",
+		url: "../PHP/Pathmaker/getUserInstitutes.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
 		success: function(result){
-			var lastlevel = "not a grade";
-			var parentid = 100;
-			var data = [];
-            data.push('{"name":"qualifications","parent":"null"}');
+          
+		var lastinstitute = "";	
+          var data = [];
+            var id = 0;
+
+            data.push('{"id":"'+id+'","name":"Choices","parent":"null"}');
+            id += 1;
 
 			for (var i=0; i<result.length; i++){
 				
-				var curlevel= result[i].level;
-				var course= result[i].course;
-				var grade= result[i].grade;
-
+				var curinstitute  = result[i].institute;
+                
 				// alert(curlevel + lastlevel);
-				if(curlevel === lastlevel){
-					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
+              
+              if(curinstitute === lastinstitute){
 				}
 				else
 				{
-					data.push('{"name":"'+curlevel+'","parent":"qualifications"}');
-					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
-					var lastlevel = curlevel;
+					data.push('{"id":"'+id+'","name":"'+curinstitute+'","parent":"Choices"}');
+                  id += 1;
+        
+					lastinstitute = curinstitute;
 				}
 			}
-            
-            
-            
-            
-         
+          
+          
           data = '[' +data+ ']';
           data = JSON.parse(data);
-            
-    
+         
 var dataMap = data.reduce(function(map, node) {
 	map[node.name] = node;
 	return map;
@@ -54,17 +52,19 @@ data.forEach(function(node) {
 		// create child array if it doesn't exist
 		(parent.children || (parent.children = []))
 			// add node to child array
+
               .push(node);
 	} else {
 		// parent is null or missing
 		treeData.push(node);
 	}
 });
-         
+                  
+          d3.select('body').append('pre')
+    .text(JSON.stringify(treeData, null, '  '));
+            
     
 
-
-            
     var margin = {top: 20, right: 120, bottom: 20, left: 120},
     width = 960 - margin.right - margin.left,
     height = 800 - margin.top - margin.bottom;
@@ -124,15 +124,14 @@ function update(source) {
       .attr("class", "node")
       .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
       .on("click", click);
-    
 
   nodeEnter.append("circle")
       .attr("r", 1e-6)
-      .style("fill", function(d) { return d._children ? "red" : "#fff"; });
+      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
   nodeEnter.append("text")
-      .attr("x", function(d) { return d.children || d._children ? -75 : -75; })
-      .attr("dy", ".5em")
+      .attr("x", function(d) { return d.children || d._children ? -10 : 10; })
+      .attr("dy", ".35em")
       .attr("text-anchor", function(d) { return d.children || d._children ? "start" : "end"; })
       .text(function(d) { return d.name; })
       .style("fill-opacity", 1e-6);
@@ -143,7 +142,7 @@ function update(source) {
       .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
 
   nodeUpdate.select("circle")
-      .attr("r", 10)
+      .attr("r", 4.5)
       .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });
 
   nodeUpdate.select("text")
@@ -211,8 +210,49 @@ function click(d) {
 
 		},
 		error: function(){
-			alert("Error Occured While Deleting");
+			alert("Error Occured While Forming The Pathway");
 		}
 	});
 
+}
+
+
+ function showInstituteChecklist(){
+
+$.ajax({ 
+  type : 'GET', 
+  url : "../PHP/Pathmaker/getUserInstitutes.php", 
+  dataType : 'json', 
+  success : function(result){
+    
+    var lastInst = "";
+    var ID = 0;
+    
+    $.each(result, function () {
+      
+      var curInst = this.institute;
+      if(curInst === lastInst){
+				}
+				else
+				{
+        
+        $("#checkInst").append($("<label>").text(this.institute).prepend(
+            $("<input>").attr('type', 'checkbox').attr('id', 'instChoice').val(this.institute)));
+      $("#checkInst").append("<br>");
+      
+      ID =+ 1;
+      lastInst = curInst;
+                }
+      
+    });
+
+
+    $("#checkInst").on('change', '[type=checkbox]', function () {
+       console.log($(this).val());
+    });
+  },
+		error: function(){
+			alert("Error Occured While Forming List");
+		}
+	});
 }

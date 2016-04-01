@@ -1,44 +1,49 @@
 src="http://d3js.org/d3.v3.min.js";
 
-function drawpath(){
+function drawchoicespath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/pathmaker/pathqualifications.php",
+		url: "../PHP/Pathmaker/getUserChoices.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
 		success: function(result){
-			var lastlevel = "not a grade";
-			var parentid = 100;
+          
+			var lastinstitute = "";
 			var data = [];
-            data.push('{"name":"Qualifications","parent":"null"}');
+            var id = 0;
+
+            data.push('{"id":"'+id+'","name":"Choices","parent":"null"}');
+            id += 1;
 
 			for (var i=0; i<result.length; i++){
 				
-				var curlevel= result[i].level;
-				var course= result[i].course;
-				var grade= result[i].grade;
-
+				var curinstitute  = result[i].institute;
+                var coursetitle   = result[i].coursetitle;
+                
 				// alert(curlevel + lastlevel);
-				if(curlevel === lastlevel){
-					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
+              
+              if(curinstitute === lastinstitute){
+					data.push('{"id":"'+id+'","name":"'+coursetitle+'","parent":"'+curinstitute+'"}');
+                  id += 1;
 				}
 				else
 				{
-					data.push('{"name":"'+curlevel+'","parent":"Qualifications"}');
-					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
-					var lastlevel = curlevel;
+					data.push('{"id":"'+id+'","name":"'+curinstitute+'","parent":"Choices"}');
+                  id += 1;
+					data.push('{"id":"'+id+'","name":"'+coursetitle+'","parent":"'+curinstitute+'"}');
+                  id += 1;
+        
+					lastinstitute = curinstitute;
 				}
 			}
             
             
-            
-            
-         
+
           data = '[' +data+ ']';
           data = JSON.parse(data);
-            
+         
     
 var dataMap = data.reduce(function(map, node) {
 	map[node.name] = node;
@@ -54,6 +59,7 @@ data.forEach(function(node) {
 		// create child array if it doesn't exist
 		(parent.children || (parent.children = []))
 			// add node to child array
+
               .push(node);
 	} else {
 		// parent is null or missing
@@ -66,10 +72,10 @@ data.forEach(function(node) {
 
             
 var margin = {top: 20, right: 100, bottom: 20, left: 100},
-    w = 960 - margin.right - margin.left,
-    h = 800 - margin.top - margin.bottom,
+    w = 600- margin.right - margin.left,
+    h = 1000 - margin.top - margin.bottom,
       i = 0,
-      duration = 750,
+      duration = 600,
       root;
 
     var tree = d3.layout.tree()
@@ -84,21 +90,23 @@ var margin = {top: 20, right: 100, bottom: 20, left: 100},
       .attr("width", w + margin.right + margin.left)
       .attr("height", h + margin.top + margin.bottom)
       .append("g")
-      .attr("transform", "translate(" + margin.left - 10 + "," + margin.top + ")");
+      .attr("id", "choicessvg")
+      .attr("transform", "translate(" + margin.left  + "," + margin.top + ")");
+      
 
     root = treeData[0];
-    root.x0 = h / 2;
+    root.x0 = h;
     root.y0 = w;
-            
+         
 function collapse(d) {
     if (d.children) {
       d._children = d.children;
-      d._children.forEach(collapse);
       d.children = null;
     }
   }
 
     root.children.forEach(collapse);
+        
              
     update(root);
             
@@ -118,17 +126,19 @@ function collapse(d) {
       var nodeEnter = node.enter().append("svg:g")
         .attr("class", "node")
         .attr("transform", function(d) {
-          return "translate(" + source.y0 + "," + source.x0 + ")";
+          return "translate(" + source.y0 + "," + source.x0  + ")";
         });
 
-    nodes.forEach(function(d) { d.y = w - (d.depth) * 180 });
+//    nodes.forEach(function(d) { d.y = w + (d.depth) * 180 });
+//    
       // Enter any new nodes at the parent's previous position.
 
       nodeEnter.append("svg:rect")
-        .attr("width", 150)
+        .attr("width", 160)
         .attr("height", function(d) {
           return 19;
         })
+      .attr("x", -80)
         .attr("y", -12)
         .attr("rx", 5)
         .attr("ry", 2)
@@ -144,10 +154,11 @@ function collapse(d) {
         })
         .attr("y", 3)
         .attr("dy", "0em")
+        .attr("text-anchor", "middle")
         .text(function(d) {
           return d.name;
         })
-        .call(wrap, 150);
+        
         
         
       wrap(d3.selectAll('text'),150);
@@ -161,6 +172,8 @@ function collapse(d) {
         .style("opacity", 1)
         .select("rect")
         .style("fill", "lightsteelblue");
+        
+    
 
       node.transition()
         .duration(duration)
@@ -230,13 +243,14 @@ function collapse(d) {
     
      // Toggle children on click.
     function click(d) {
-        
+      
       if (d.children) {
         d._children = d.children;
         d.children = null;
+        
       } else {
         d.children = d._children;
-        d._children = null;
+        
       }
       update(d);
     }
@@ -244,7 +258,7 @@ function collapse(d) {
     function wrap(text, width) {
       text.each(function() {
         var text = d3.select(this),
-          words = text.text().split(/\s+/).reverse(),
+         words = d3.select(this).data()[0].name.split(/\s+/).reverse(),
           word,
           line = [],
           lineNumber = 0,
@@ -262,7 +276,7 @@ function collapse(d) {
             tspan = text.append("tspan").attr("x", 5).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
           }
         }
-        d3.select(this.parentNode.children[0]).attr('height', 19 * (lineNumber+1));
+        d3.select(this.parentNode.children[0]).attr("height", 19 * (lineNumber+1));
           
         
       });

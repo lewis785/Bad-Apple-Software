@@ -16,7 +16,7 @@ $result = mysqli_stmt_get_result($checkAdmin);
 $access = mysqli_fetch_assoc($result);
 
 if($access['AccessLevel'] > 0 )
-	echo '<li class="nav-item"><a href="admin/admin.php" class="aqua-hover deepocean"> Admin Section </a></li>';
+	echo '<li class="nav-item"><a href="admin/admin.php" class="littlestuff-hover"> Admin Section </a></li>';
 
 
 

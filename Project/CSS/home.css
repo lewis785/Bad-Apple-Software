@@ -23,6 +23,14 @@ html,body{
 	color: white;
 }
 
+#pathnav{
+    
+     	background-color: #1D2A59;  
+    height: 25px;
+;
+
+}
+
 .navbar{
 	border: 0px solid transparent;
 	background-color: #1D2A59;  
@@ -331,19 +339,19 @@ textarea {
 
 
 .numberCircle {
-    border-radius: 50%;
-    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
-    min-width: 36px;
-    height: 36px;
-    width : auto;
-    height: auto;
-    padding: 8px;
-    background: #fff;
-    border: 2px solid black;
-    color: black;
-    text-align: center;
-    font: 32px Arial, sans-serif;
-    display: inline-block;
+	border-radius: 50%;
+	behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+	min-width: 36px;
+	height: 36px;
+	width : auto;
+	height: auto;
+	padding: 8px;
+	background: #fff;
+	border: 2px solid black;
+	color: black;
+	text-align: center;
+	font: 32px Arial, sans-serif;
+	display: inline-block;
 }
 
 .onerow{
@@ -389,6 +397,27 @@ textarea {
 	font-weight: bolder;
 }
 
+
+
+
+/*Make Account CSS*/
+
+.current{
+	background-color: 	#71A6D2;
+}
+.completed{
+	background-color: #009966;
+}
+.incomplete{
+	background-color: #FFBF00;
+}
+
+#nextbtn{
+	position: relative;
+	bottom: 15px;
+	left: 90%;
+}
+
 #progress-bar{
 	list-style-type: none;
 	width: 100%;
@@ -398,19 +427,9 @@ textarea {
 }
 
 #progrss-bar li{
-		display: inline-block;
-		width: auto;
-		float: left;
-}
-
-.current{
-	background-color: blue;
-}
-.completed{
-	background-color: green;
-}
-.incomplete{
-	background-color: yellow;
+	display: inline-block;
+	width: auto;
+	float: left;
 }
 
 #progress-bar li div{
@@ -419,15 +438,6 @@ textarea {
 	text-align: center;
 	padding: 10px 0px;
 	border-radius: 25px;
-}
-
-
-/*Make Account CSS*/
-
-#nextbtn{
-	position: relative;
-	bottom: 15px;
-	left: 90%;
 }
 
 

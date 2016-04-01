@@ -1,7 +1,284 @@
-/* Put your custom styles here */
+/* Popup CSS */
+
+#popup {
+	display:none;
+	position:fixed;
+	margin:0 auto;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0px 0px 50px 2px #000;
+	opacity: 1;
+	width: 25%;
+	height: 20%;
+}
+
+#popin{
+	cursor: pointer; 
+	cursor: hand; 
+}
+
+.close-btn {
+	position: fixed;
+	right: 1.5;
+	top: 1.5;
+	width: 25px;
+	border-radius: 100%;
+}
+
+.close-btn:hover{
+	background: #A9A9A9;
+	cursor: hand; 
+}
+/*End of Popup CSS*/
+
+label.error {
+
+	color: red !important;
+
+}
+
+div #center{
+	opacity: 0.8 !important;
+}
+
+h3,h4,h5{
+	color:white;
+}
+
+
+#center > a{
+	position: relative;
+	left: 30px;
+}
+
+#center > h1,h2{
+	color: white;
+	position: relative;
+	left: 30px;
+	margin-top: 0px;
+	padding-top: 20px;
+	word-wrap: break-word;
+}
+
+
+#profile-page .profile-form .form-group label{
+	color: white;
+}
+
+.checkbox{
+	color: white;
+}
+
+#bottom{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+
+}
+
+.text{
+	color:white;
+}
+
+
+#createuser {
+	color: blue;
+}
+
+#createuser form input{
+	color: red;
+}
+
+#invalid{
+	color: red;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+textarea {
+	width: 100%; 
+	min-width:100%; 
+	max-width:100%;
+
+	min-height: 60px;
+	max-height: 250px;
+}
+
+.overlay {
+	background: #e9e9e9;  <- I left your 'gray' background
+	display: none;        <- Not displayed by default
+	position: absolute;   <- This and the following properties will
+	top: 0;                  make the overlay, the element will expand
+	right: 0;                so as to cover the whole body of the page
+	bottom: 0;
+	left: 0;
+	opacity: 0.5;
+}
+
+.jobblock {
+	cursor: pointer; 
+	cursor: hand;
+	color: black;
+}
+
+.jobblock ul li:hover{
+	background-color: red;
+}
+
+
+.options {
+	width: 25%;
+	min-width: 420px;
+	min-height: 250px;
+	min-height: auto;
+	position: absolute;
+	top: 35%;
+	left: 37.5%;
+	background-color: #DBE9F4;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	text-align: center;
+	border-radius: 5px;
+	padding: 20px 10px 20px 10px;
+	overflow: hidden;
+}
+
+.choice {
+	width: 100%;
+	height: 50px;
+	margin-top: 30px;
+}
+
+.choice button {
+	width: 50%;
+}
+
+#info{
+	margin-top: 5px;
+	font-size: 1.5em;
+	color: black;
+	font-weight: bold;
+}
+
+#currentQualifications tbody tr:hover{
+	background-color: white;
+	cursor: pointer; 
+	cursor: hand;;
+}
+
+
+.numberCircle {
+	border-radius: 50%;
+	behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+	min-width: 36px;
+	height: 36px;
+	width : auto;
+	height: auto;
+	padding: 8px;
+	background: #fff;
+	border: 2px solid black;
+	color: black;
+	text-align: center;
+	font: 32px Arial, sans-serif;
+	display: inline-block;
+}
+
+.onerow{
+	display: inline-block;
+	width: 100%;
+	float:left;
+}
+
+.onerow select{
+	display: inline-block;
+	width: 25%;
+	margin: 0;
+}
+
+#editdiv div{
+	margin-bottom: 10px;
+}
+#editdiv textarea{
+	margin: 10px 0px;
+}
+
+.leftdrop{
+	margin-right: 10px !important;
+	width: 40% !important;
+}
+.rightdrop{
+	margin-left: 10px !important;
+	width:40% !important;
+}
+
+#pointwrapper{
+	display: inline-block;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	/*width: 300px;*/
+	font-size: 1.8em;
+	font-weight: bold;
+
+}
+
+#points{
+	display: inline-block;
+	text-decoration: underline;
+	font-weight: bolder;
+}
+/*Make Account CSS*/
+
+.current{
+	background-color: #71A6D2;
+}
+.completed{
+	background-color: #009966;
+}
+.incomplete{
+	background-color: #FFBF00;
+}
+
+#nextbtn{
+	position: relative;
+	bottom: 15px;
+	left: 90%;
+}
+
+#progress-bar{
+	list-style-type: none;
+	width: 100%;
+	float: left;
+	margin: 20px 0px;
+
+}
+
+#progrss-bar li{
+	display: inline-block;
+	width: auto;
+	float: left;
+}
+
+#progress-bar li div{
+	width: auto;
+	border: 2px solid white;
+	text-align: center;
+	padding: 10px 0px;
+	border-radius: 25px;
+	font-weight: bold;
+	font-size: 1.2em;
+	color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 body { 
 	margin-bottom: 80px
 	height: 100%;
+}
+
+section{
+    min-height: 100%;
+    height: 100%;
 }
 
 .header-1{
@@ -16,6 +293,21 @@ div.mask.img{
     width: auto;
 }
 
+a{
+
+	color:white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+	
+div.middle-bit{
+		flex:1;
+	}	
+	
 .mask{
 	background-image: url("../Images/current.png");
     position: absolute;
@@ -25,6 +317,7 @@ div.mask.img{
     bottom: 0;
     background-color: black;
     opacity: 0.5;
+	padding-bottom: 200px
 
     filter: blur(10px);
     -webkit-filter: blur(10px);
@@ -38,5 +331,91 @@ input.form-control{
     margin-left: auto;
     margin-right: auto;
     width: 45%
-    
 }
+
+div #name, #joined, #occupation, #dob, #email, #address{
+	color: white !important;
+}
+
+.underlined-title h1{
+	color: #165f32 !important;
+}
+
+div.feature-box h5{
+	color: white !important;
+}
+
+.littlestuff-hover:hover
+{
+    color: #165f32 !important;
+}
+
+.headings{
+	color: #431857 !important;
+}
+
+.navfoot{
+    color: #1d2a59 !important;
+    position: absolute;
+    bottom: 0px;
+}
+
+.littlestuff
+{
+    color: #165f32 !important;
+}
+
+.bg-littlestuff
+{
+    background-color: #165f32 !important;
+}
+
+.bg-headings{
+	background-color: #431857 !important;	
+}
+
+.bg-navfoot{
+    background-color: #1d2a59 !important;
+}
+
+.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+
+.options {
+    width: 25%;
+    min-width: 420px;
+    min-height: 250px;
+    min-height: auto;
+    position: fixed;
+    top: 20%;
+    left: 37.5%;
+    background-color: #DBE9F4;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px 10px 20px 10px;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.glow {
+	border: 2px solid #dadada;
+}
+
+.glow:focus{
+	outline: none;
+	border-color: #9ecaed;
+	box-shadow: 0 0 10px #9ecaed;
+}
+
+#qualificationPanel{
+    margin-bottom: 50px;
+}
+
+#currentQualifications ul{
+	margin-bottom: 25px;
+	border: solid 2px black;
+}
+
