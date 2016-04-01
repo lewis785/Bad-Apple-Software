@@ -1,12 +1,10 @@
 var page = 1;
+var skippage = 1;
 var validform = true;
 
 function nextform()
 {
 	$("div.errormessage").remove();
-
-
-
 
 	switch(page) {
 		case 1:
@@ -87,15 +85,42 @@ function nextform()
 
 		case 4:
 		submitJobs(false);
-		page += 1;
-		$("div#formarea").html(addressHTML);
-		swapclass("addresscircle","current","completed");
+
+		window.location.href="../html/profile.php";
 		break;
 	}
 
 }
 
 
+function pageskip()
+{
+	switch(skippage)
+	{
+		case 1:
+		$("div#formarea").html(addressHTML);
+		swapclass("detailcircle","current","completed");
+		swapclass("addresscircle","incomplete","current");
+		skippage +=1;
+
+		case 2:
+		$("div#formarea").html(qualificationHTML);
+		swapclass("addresscircle","current","completed");
+		swapclass("qualificationcircle","incomplete","current");
+		$("select#levelselect").load("../../php/Qualifications/getLevels.php");
+		$("select#courseselect").load("../../php/Qualifications/getCourses.php");
+		skippage+=1;
+
+		case 3:
+		$("div#formarea").html(employmentHTML);
+		swapclass("qualificationcircle","current","completed");
+		swapclass("employmentcircle","incomplete","current");
+		$("select#monthstart").load("../../php/core/monthOptions.php");
+		$("select#monthend").load("../../php/core/monthOptions.php");
+		getYear();
+	}
+
+}
 
 function empty(divValue, divID)
 {

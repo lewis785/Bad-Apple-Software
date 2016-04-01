@@ -264,8 +264,8 @@ function employmentdelete(employmentnumber)
      data: {jobid:employmentnumber},
      cache: false,
      success: function(result){
-        $("ul#"+employmentnumber).remove()
-        $(".joboptions").hide();
+        $("ul#"+employmentnumber).remove();
+        $(".options").remove();
     },
     error: function(){
      alert("Error Occured When Logging In");

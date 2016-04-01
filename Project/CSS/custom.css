@@ -356,6 +356,8 @@ div.feature-box h5{
 
 .navfoot{
     color: #1d2a59 !important;
+    position: absolute;
+    bottom: 0px;
 }
 
 .littlestuff
@@ -399,7 +401,12 @@ div.feature-box h5{
     z-index: 100;
 }
 
+<<<<<<< HEAD
 #currentQualifications{
+=======
+
+#qualificationPanel{
+>>>>>>> origin/Lewis
     margin-bottom: 50px;
 }
 
