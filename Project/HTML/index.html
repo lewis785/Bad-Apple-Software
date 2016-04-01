@@ -25,12 +25,25 @@
 
 </style>
 <!-- <body onload="drawqualificationpath()"> -->
-  <body onload="drawemploymentpath()">
+  <body>
+    
+ <button type="button" onclick="drawinstitutespath();">show pathway</button>
+    <button type="button" onclick="showInstituteChecklist();">show checklist</button>
+    
+    <div id='checklist'></div>
+    
+   <!-- <script type="text/javascript">
+      drawinstitutespath();
+    showInstituteChecklist();
+</script> -->
+    
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
     <script src="../js/Pathmaker/employmentConverter.js"></script>
   <script src="../js/Pathmaker/qualificationConverter.js"></script>
+    <script src="../js/Pathmaker/instituteConverter.js"></script>
+    <script src="../js/Pathmaker/choiceConverter.js"></script>
 
     
 </body>
