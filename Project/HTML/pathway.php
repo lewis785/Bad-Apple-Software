@@ -137,9 +137,8 @@ body {
         
         </div>
       
-      <lable>
+      
         <input type="checkbox" name="field" id="courseBox"value="Engineering">Engineering<br>
-    </lable>
         <input type="checkbox" name="field" id="courseBox" value="Accountancy" >Accountancy<br>
         <input type="checkbox" name="field" id="courseBox" value="Chemistry" >Chemistry<br>
         <input type="checkbox" name="field" id="courseBox" value="Mathematics" >Mathematics<br>
