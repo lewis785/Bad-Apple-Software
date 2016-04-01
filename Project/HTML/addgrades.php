@@ -64,7 +64,7 @@ include "../PHP/Core/verify.php";
 
             <ul class="nav navbar-nav navbar-right">
                 <?php include "../PHP/admin/adminButton.php" ?>
-                <li><a href="workingbuilderTemp.php"> Path </a></li>
+                <li><a href="pathway.php"> Path </a></li>
                 <li><a href="employmenthistory.php"> Employment </a></li>
                 <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
@@ -131,7 +131,7 @@ include "../PHP/Core/verify.php";
         </div> 
 
         <div class="form-group">
-            <button onclick="submitForm(true)" id="submitGrades" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
+            <button onclick="submitForm()" id="submitGrades" class="btn btn-primary"> Submit Grades </button>  <!-- still to be made -->
         </div> 
 
 

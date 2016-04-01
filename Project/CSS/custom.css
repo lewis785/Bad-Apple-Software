@@ -309,7 +309,7 @@ div.middle-bit{
 	}	
 	
 .mask{
-	background-image: url("../images/current.png");
+	background-image: url("../Images/current.png");
     position: absolute;
     left: 0;
     top: 0;
@@ -331,6 +331,7 @@ input.form-control{
     margin-left: auto;
     margin-right: auto;
     width: 45%
+<<<<<<< HEAD
 }
 
 div #name, #joined, #occupation, #dob, #email, #address{
@@ -377,6 +378,9 @@ div.feature-box h5{
 .bg-navfoot
 {
     background-color: #1d2a59 !important;
+=======
+    
+>>>>>>> refs/remotes/origin/Donnald
 }
 
 .disabled {

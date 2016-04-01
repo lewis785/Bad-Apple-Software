@@ -2,6 +2,7 @@
 
   function getInstInfo() {
 
+    ini_set('max_execution_time', 300);
     include "../PHP/Core/connection.php";
     include "getAPICourses.php";
     header('Authorization: Basic MTIzNDU2Nzg5MDEyMzQ1Njc4OTA6');

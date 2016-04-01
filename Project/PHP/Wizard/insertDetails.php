@@ -4,19 +4,17 @@ include(dirname(__FILE__)."/../Core/connection.php");
 include(dirname(__FILE__)."/../Core/validCookie.php");
 
 
-if(!empty($_POST['first']) && !empty($_POST['surname']) && !empty($_POST['dob']) && !empty($_POST['occupation'])){
+if(isset($_POST['first']) && isset($_POST['surname']) && isset($_POST['dob']) && isset($_POST['occupation'])){
 
 	$firstname =$_POST['first'];
 	$surname = $_POST['surname'];
 	$dob = $_POST['dob'];
 	$occupation = $_POST['occupation']; 
 
-	$checkDetails = mysqli_stmt_init($link);
-	mysqli_stmt_prepare($checkDetails, 'SELECT count(*) from userdetails WHERE User = ?');
-	mysqli_stmt_bind_param($checkDetails, 'i', $user[1]);   
-	mysqli_stmt_execute($checkDetails);
-	$result = mysqli_stmt_get_result($checkDetails);
-	$check = $result -> fetch_row();
+	$insertDetails = mysqli_stmt_init($link);
+	mysqli_stmt_prepare($insertDetails, 'INSERT INTO userdetails (User, FirstName, Surname, DateOfBirth, Occupation) VALUES (?, ?, ?, ?, ?)');
+	mysqli_stmt_bind_param($insertDetails, 'issss', $user[1], $firstname, $surname, $dob, $occupation);   
+	mysqli_stmt_execute($insertDetails);
 
 	$occupationID = mysqli_stmt_init($link);
 	mysqli_stmt_prepare($occupationID, 'SELECT OccupationID from occupations WHERE OccupationName = ?');
@@ -46,10 +44,5 @@ if(!empty($_POST['first']) && !empty($_POST['surname']) && !empty($_POST['dob'])
 
 	include"incrementWizard.php";
 }
-else
-{
-	echo "Not all Set";
-}
-
 
 ?>

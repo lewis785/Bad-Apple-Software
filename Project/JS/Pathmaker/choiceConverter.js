@@ -1,39 +1,41 @@
 src="http://d3js.org/d3.v3.min.js";
 
-function drawqualificationpath(){
+function drawchoicespath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Pathmaker/pathqualifications.php",
+		url: "../PHP/Pathmaker/getUserChoices.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
 		success: function(result){
           
-			var lastlevel = "not a grade";
-			var parentid = 100;
+			var lastinstitute = "";
 			var data = [];
-          
-            data.push('{"name":"Qualifications","parent":"null"}');
+            var id = 0;
+
+            data.push('{"id":"'+id+'","name":"Choices","parent":"null"}');
+            id += 1;
 
 			for (var i=0; i<result.length; i++){
 				
-				var curlevel= result[i].level;
-				var course= result[i].course;
-				var grade= result[i].grade;
-
+				var curinstitute  = result[i].institute;
+                var coursetitle   = result[i].coursetitle;
+                
 				// alert(curlevel + lastlevel);
-				if(curlevel === lastlevel){
-					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
+              
+              if(curinstitute === lastinstitute){
+					data.push('{"id":"'+id+'","name":"'+coursetitle+'","parent":"'+curinstitute+'"}');
+                  id += 1;
 				}
 				else
 				{
-					data.push('{"name":"'+curlevel+'","parent":"Qualifications"}');
-					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
-
-                  
+					data.push('{"id":"'+id+'","name":"'+curinstitute+'","parent":"Choices"}');
+                  id += 1;
+					data.push('{"id":"'+id+'","name":"'+coursetitle+'","parent":"'+curinstitute+'"}');
+                  id += 1;
         
-					var lastlevel = curlevel;
+					lastinstitute = curinstitute;
 				}
 			}
             
@@ -88,13 +90,14 @@ var margin = {top: 20, right: 100, bottom: 20, left: 100},
       .attr("width", w + margin.right + margin.left)
       .attr("height", h + margin.top + margin.bottom)
       .append("g")
+      .attr("id", "choicessvg")
       .attr("transform", "translate(" + margin.left  + "," + margin.top + ")");
       
 
     root = treeData[0];
-    root.x0 = 400;
+    root.x0 = h;
     root.y0 = w;
-            
+         
 function collapse(d) {
     if (d.children) {
       d._children = d.children;
@@ -126,8 +129,8 @@ function collapse(d) {
           return "translate(" + source.y0 + "," + source.x0  + ")";
         });
 
-    nodes.forEach(function(d) { d.y = w - (d.depth) * 190 });
-    
+//    nodes.forEach(function(d) { d.y = w + (d.depth) * 180 });
+//    
       // Enter any new nodes at the parent's previous position.
 
       nodeEnter.append("svg:rect")

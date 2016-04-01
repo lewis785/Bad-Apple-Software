@@ -5,7 +5,7 @@ include(dirname(__FILE__)."/../Core/validCookie.php");
 
 $getQualifications = mysqli_stmt_init($link);
 
-mysqli_stmt_prepare($getQualifications, "SELECT grades.Grade, courses.Course,levels.Level FROM userqualifications 
+mysqli_stmt_prepare($getQualifications, "SELECT grades.Grade, courses.Course, levels.Level FROM userqualifications 
 	INNER JOIN userlogin ON userqualifications.User = userlogin.UserID
 	INNER JOIN courses ON userqualifications.Course = courses.CourseID
 	INNER JOIN levels ON userqualifications.Level = levels.LevelID
