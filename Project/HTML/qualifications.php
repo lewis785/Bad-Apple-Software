@@ -45,7 +45,7 @@ include "../PHP/Core/verify.php";
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                     <li class="nav-item">
+                       <li class="nav-item">
                         <a href="profile.php" class="littlestuff-hover">Home</a>
                     </li>
                     <?php 
@@ -95,83 +95,53 @@ include "../PHP/Core/verify.php";
     </nav>
     <!--// End Navbar -->
 </header>
-<<<<<<< HEAD
-=======
+
 <div class="mask">
- <img href="../images/current.png" />
+   <img href="../images/current.png" />
 </div>
 
 <div class="row contact-wrap"> 
- <div class="col-md-8 col-md-offset-2">
->>>>>>> origin/Lewis
-
-<div class="middle-bit">
-	<div class="mask">
-	 <img href="../images/current.png" />
-	</div>
-
-<<<<<<< HEAD
-	<div class="row contact-wrap"> 
-	 <div class="col-md-8 col-md-offset-2">
-		<div class="col-sm-10 col-sm-offset-1">
-			<div class="underlined-title">
-				<h1>Your Qualification History</h1>
-				<hr class="headings">
-				<?php 
-				include"../php/Qualifications/getPoints.php"; 
-				?>
-			</div>
-		</div>  
-		<div class="panel panel-default" id="currentQualifications">
-		   <table class="table">
-			  <thead>
-				 <tr>
-					<th>Subject</th>
-					<th>Qualification</th>
-					<th>Grade</th>
-				</tr>
-			  </thead>
-				<tbody>
-
-			 		<?php include "../php/Qualifications/displayGrades.php" ?>
-
-		 		</tbody>
-	 		</table>
-		</div>
-	 </div>
-	</div>
-	</div>
-=======
-    <div class="underlined-title">
-        <h1>Your Qualification History</h1>
-        <hr class="headings">
-        <?php 
-        include"../php/Qualifications/getPoints.php"; 
-        ?>
-    </div>
+   <div class="col-md-8 col-md-offset-2">
 
 
+    <div class="middle-bit">
+       <div class="mask">
+          <img href="../images/current.png" />
+      </div>
 
-    <div class="panel panel-default" id="qualificationPanel" >
-        <table class="table" id="currentQualifications">
-          <thead>
-             <tr>
-                <th>Subject</th>
-                <th>Qualification</th>
-                <th>Grade</th>
-            </tr>
-        </thead>
-        <tbody>
+      <div class="row contact-wrap"> 
+          <div class="col-md-8 col-md-offset-2">
+              <div class="col-sm-10 col-sm-offset-1">
+                 <div class="underlined-title">
+                    <h1>Your Qualification History</h1>
+                    <?php 
+                    include"../php/Qualifications/getPoints.php"; 
+                    ?>
+                </div>
+            </div>  
+            <div class="panel panel-default" id="currentQualifications">
+               <table class="table">
+                   <thead>
+                       <tr>
+                           <th>Subject</th>
+                           <th>Qualification</th>
+                           <th>Grade</th>
+                       </tr>
+                   </thead>
+                   <tbody>
 
-         <?php include "../php/Qualifications/displayGrades.php" ?>
+                      <?php include "../php/Qualifications/displayGrades.php" ?>
 
-     </tbody>
- </table>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
 </div>
 </div>
 </div>
->>>>>>> origin/Lewis
-<section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
+
+<footer class="content-block-nopad footer-wrap-1-3 bg-navfoot">
     <div class="container footer-1-3">
         <div class="col-md-4 pull-left">
             <img src="../images/carell.png" class="brand-img img-responsive">
@@ -205,11 +175,7 @@ include "../PHP/Core/verify.php";
         </div>
     </div>
     <!-- /.container -->
-</section>
+</footer>
 <!--/#footer-->
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>      
-<script type="text/javascript" src="js/bootstrap.min.js"></script>         
-<script type="text/javascript" src="js/plugins.js"></script>
-<script type="text/javascript" src="js/bskit-scripts.js"></script>
 </body>
 </html>
