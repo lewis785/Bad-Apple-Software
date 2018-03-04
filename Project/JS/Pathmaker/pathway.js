@@ -4,7 +4,7 @@ function pathway(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/pathmaker/pathqualifications.php",
+		url: "../php/pathmaker/pathqualifications.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
@@ -12,7 +12,7 @@ function pathway(){
 			var lastlevel = "not a grade";
 			var parentid = 100;
 			var data = [];
-            data.push('{"name":"Qualifications","parent":"null"}');
+            data.push('{"name":"qualifications","parent":"null"}');
 
 			for (var i=0; i<result.length; i++){
 				
@@ -26,7 +26,7 @@ function pathway(){
 				}
 				else
 				{
-					data.push('{"name":"'+curlevel+'","parent":"Qualifications"}');
+					data.push('{"name":"'+curlevel+'","parent":"qualifications"}');
 					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
 					var lastlevel = curlevel;
 				}

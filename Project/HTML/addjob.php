@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-include "../PHP/Core/verify.php";
+include "../php/core/verify.php";
 ?>
 <html lang="en" style="height:100%;">
 <head>
@@ -89,7 +89,7 @@ include "../PHP/Core/verify.php";
 								<!-- still to be made -->
 								<li role="separator" class="divider"></li>
 								<li>
-									<a href="../php/Core/signout.php"> Log out </a>
+									<a href="../php/core/signout.php"> Log out </a>
 								</li>                                     
 								<!-- still to be made -->
 							</ul>
@@ -129,7 +129,7 @@ include "../PHP/Core/verify.php";
 					<select id="monthstart" name="startmonth" class="form-control leftdrop">
 						<option value="NonSelect">Select Month</option>
 						<?php 
-						include"../php/core/monthOptions.php"; 
+						include "../php/core/monthOptions.php";
 						?>
 					</select>
 					<select id="yearstart" name="startyear" class="form-control rightdrop">
@@ -141,7 +141,7 @@ include "../PHP/Core/verify.php";
 					<select id="monthend" name="endmonth" class="form-control leftdrop">
 						<option value="NonSelect">Select Month</option>
 						<?php 
-						include"../php/core/monthOptions.php"; 
+						include "../php/core/monthOptions.php";
 						?>
 					</select>
 					<select id="yearend" name="endyear" class="form-control rightdrop">

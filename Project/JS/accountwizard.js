@@ -16,11 +16,11 @@ function nextform()
 
 		if (!empty(firstname,'firstname') && !empty(surname,'surname') && !empty(occupation,'occupation') && !empty(DOB,'DOB'))
 		{
-
+			alert("hellp");
 			$.ajax
 			({  
 				type: 'POST',
-				url: "../PHP/Wizard/insertDetails.php",
+				url: "../php/wizard/insertDetails.php",
 				data: { first: firstname, surname: surname, occupation: occupation, dob: DOB},
 				cache: false,
 				success: function(result){
@@ -50,15 +50,15 @@ function nextform()
 			$.ajax
 			({  
 				type: 'POST',
-				url: "../PHP/Wizard/insertAddress.php",
+				url: "../php/wizard/insertAddress.php",
 				data: { number: number, street: street, postcode: postcode, city: city},
 				cache: false,
 				success: function(result){
 					$("div#formarea").html(qualificationHTML);
 					swapclass("addresscircle","current","completed");
 					swapclass("qualificationcircle","incomplete","current");
-					$("select#levelselect").load("../../php/Qualifications/getLevels.php");
-					$("select#courseselect").load("../../php/Qualifications/getCourses.php");
+					$("select#levelselect").load("../../php/qualifications/getLevels.php");
+					$("select#courseselect").load("../../php/qualifications/getCourses.php");
 					page+=1;
 					validform = true;
 				},
@@ -83,7 +83,7 @@ function nextform()
 		$.ajax
 		({  
 			type: 'POST',
-			url: "../PHP/Wizard/incrementWizard.php",
+			url: "../php/wizard/incrementWizard.php",
 			data: {},
 			cache: false,
 			success: function(result){
@@ -108,7 +108,7 @@ function nextform()
 		$.ajax
 		({  
 			type: 'POST',
-			url: "../PHP/Wizard/incrementWizard.php",
+			url: "../php/wizard/incrementWizard.php",
 			data: {},
 			cache: false,
 			success: function(result){
@@ -143,8 +143,8 @@ function pageskip()
 		$("div#formarea").html(qualificationHTML);
 		swapclass("addresscircle","current","completed");
 		swapclass("qualificationcircle","incomplete","current");
-		$("select#levelselect").load("../../php/Qualifications/getLevels.php");
-		$("select#courseselect").load("../../php/Qualifications/getCourses.php");
+		$("select#levelselect").load("../../php/qualifications/getLevels.php");
+		$("select#courseselect").load("../../php/qualifications/getCourses.php");
 		skippage+=1;
 		page+=1;
 		break;

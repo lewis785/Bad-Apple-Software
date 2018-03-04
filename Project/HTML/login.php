@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-	include "../php/Core/alreadyLoggedIn.php"; 
+	include "../php/core/alreadyLoggedIn.php";
 ?>
 <html lang="en"  style="height:100%;">
     <head> 
@@ -110,43 +110,7 @@
 				</div>                 
 			</form>
         </div>
-        <!--// End of Login-->         
-        <!--// footer -->
-        <section class="content-block-nopad footer-1-3 bg-navfoot">
-        <div class="mask">
-        <img href="../Images/current.png" />
-		</div>
-            <div class="col-sm-10 col-sm-offset-1">
-                <div class="underlined-title">
-                    <h1>Careers Pathfinder Login</h1>
-                    <hr class="deco">
-                    <h2>If you don't have an account please Register below</h2>
-                </div>
-            </div>
-            <form role="form" id="login-form" class="login-form text-center lead" name="login" method="post" action="profile.php">
-                <div id="userdiv" class="form-group">
-                    <input type="text" id="userinput" name="username" class="form-control deepocean" required="required" placeholder="Enter Username">
-                </div>
-                <div id="passdiv" class="form-group">
-                    <input type="Password" id="passinput" name="password" class="form-control deepocean" required="required" placeholder="Enter Password">
-                </div>                 
-                <div class="form-group">
-                    <label>
-                        <u class="deepocean"><i class="fa-bolt fa">Remember me</i></u>
-                    </label>
-                    <input type="checkbox" value="remember-me">
-                </div>                 
-                <div class="form-group">
-                    <button onclick="Login()" class="btn btn-llg bg-deco deepocean">Sign in</button>
-                    <a href="register.php" class="btn btn-llg bg-deco deepocean">Register</a> 
-                    <br>
-                    <label>
-                        <i><a href="#" class="deepocean">Forgotten Password?</a></i>
-                    </label>
-                </div>  
-            </form>             
-        
-        <!--// End of Login-->  
+        <!--// End of Login-->
         <!--// footer -->
         <section class="content-block-nopad footer-wrap-1-3 bg-deco">
 

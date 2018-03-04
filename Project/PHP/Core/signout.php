@@ -6,6 +6,6 @@ if (isset($_COOKIE['confirmation'])) {
     setcookie('confirmation', '', time() - 3600, '/'); // Sets confirmation cookie with a negitave time to make sure it removed
 }
 
-header("Location:http://badapple/HTML/login.php"); //Send user to login screen
+header("Location:http://badapple/html/login.php"); //Send user to login screen
 
 ?>

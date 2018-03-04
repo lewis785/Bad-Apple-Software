@@ -18,14 +18,14 @@
         <link href="../css/boostrap-theme.min.css" rel="stylesheet">
         <!-- core JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="../js/Bootstrap/npm.js"></script>
-        <script src="../js/Bootstrap/bootstrap.js"></script>         
-        <script src="../js/Bootstrap/jquery.js"></script>
-        <script src="../js/Bootstrap/bootstrap.min.js"></script>
-        <script src="../js/Bootstrap/jquery.prettyPhoto.js"></script>
-        <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
-        <script src="../js/Bootstrap/main.js"></script>
-        <script src="../js/Bootstrap/wow.min.js"></script>
+        <script src="../js/bootstrap/npm.js"></script>
+        <script src="../js/bootstrap/bootstrap.js"></script>         
+        <script src="../js/bootstrap/jquery.js"></script>
+        <script src="../js/bootstrap/bootstrap.min.js"></script>
+        <script src="../js/bootstrap/jquery.prettyPhoto.js"></script>
+        <script src="../js/bootstrap/jquery.isotope.min.js"></script>
+        <script src="../js/bootstrap/main.js"></script>
+        <script src="../js/bootstrap/wow.min.js"></script>
     </head>
     <!--/head-->
     <body>

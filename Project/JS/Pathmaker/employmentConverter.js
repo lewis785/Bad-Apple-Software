@@ -4,7 +4,7 @@ function drawemploymentpath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Pathmaker/pathemployment.php",
+		url: "../php/pathmaker/pathemployment.php",
 		dataType: 'json',
 		data: {},
 		cache: false,

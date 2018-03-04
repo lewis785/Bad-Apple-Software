@@ -1,6 +1,6 @@
 <?php
 
-include(dirname(__FILE__)."/../Core/connection.php");
+include(dirname(__FILE__) . "/../core/connection.php");
 
 if(isset($_POST['level'])){
 

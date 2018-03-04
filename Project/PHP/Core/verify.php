@@ -54,10 +54,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 //Checks if user if verified if not then if statement runs
 if (!$verified) {
 	mysqli_close($link);
-	$redirect = "../../HTML/login.php";
+	$redirect = "../../html/login.php";
 	header("Location: ".$redirect);
 	exit();
 }
 
 mysqli_close($link);
-?>

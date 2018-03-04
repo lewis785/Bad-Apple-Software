@@ -12,7 +12,7 @@ function addGrade(){
 	if(checkinput()){
 		$.ajax({  
 			type: 'POST',
-			url: "../PHP/Qualifications/validateGrade.php",
+			url: "../php/qualifications/validateGrade.php",
 			dataType: 'json',
 			data: {grade: selectedGrade, level: selectedLevel, course: selectedCourse},
 			cache: false,
@@ -113,7 +113,7 @@ function gradeselected(){
 
 	$.ajax({
 		type: 'POST',
-		url: "../PHP/Qualifications/getGrades.php",
+		url: "../php/qualifications/getGrades.php",
 		dataType: 'json',
 		data: {level:selectedlvl},
 		cache: false,
@@ -239,7 +239,7 @@ function insertGrades(){
 
 			$.ajax({  
 				type: 'POST',
-				url: "../PHP/Qualifications/insertGrade.php",
+				url: "../php/qualifications/insertGrade.php",
 				dataType: 'json',
 				data: {grade: selectedGrade, level: selectedLevel, course: selectedCourse},
 				cache: false,
@@ -255,7 +255,7 @@ function insertGrades(){
 					{
 						$.ajax({  
 							type: 'POST',
-							url: "../PHP/Qualifications/updatePoints.php",
+							url: "../php/qualifications/updatePoints.php",
 							data: {points: UCASScore},
 							cache: false,
 							success: function(result){
@@ -280,7 +280,7 @@ function deleteGrade(inputnum){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Qualifications/deleteQualification.php",
+		url: "../php/qualifications/deleteQualification.php",
 		dataType: 'json',
 		data: {QID: deleteGrade},
 		cache: false,
@@ -336,7 +336,7 @@ function editqualification(QID)
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Qualifications/specificGrade.php",
+		url: "../php/qualifications/specificGrade.php",
 		dataType: 'json',
 		data: {QID: QID},
 		cache: false,
@@ -367,7 +367,7 @@ function updatequalification(QID)
 	{
 		$.ajax({  
 			type: 'POST',
-			url: "../PHP/Qualifications/updategrade.php",
+			url: "../php/qualifications/updategrade.php",
 			data: {QID: inQID, level: inlevel, grade: ingrade},
 			cache: false,
 			success: function(result){

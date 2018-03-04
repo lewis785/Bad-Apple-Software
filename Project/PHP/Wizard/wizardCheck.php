@@ -1,8 +1,8 @@
 <?php
 
 
-include(dirname(__FILE__)."/../Core/connection.php");
-include(dirname(__FILE__)."/../Core/validCookie.php");
+include(dirname(__FILE__) . "/../core/connection.php");
+include(dirname(__FILE__) . "/../core/validCookie.php");
 
 
 $checkWizard = mysqli_stmt_init($link);
@@ -14,7 +14,7 @@ $wizard = $result -> fetch_row();
 $wizardPage = $wizard[0];
 
 if($wizard[0] < 4){
-	header('Location: ../../HTML/makeaccount.php');
+	header('Location: ../../html/makeaccount.php');
 }
 
 

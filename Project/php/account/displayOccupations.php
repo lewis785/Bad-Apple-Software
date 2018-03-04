@@ -1,6 +1,6 @@
 <?php
 
-include "Core/connection.php";
+include "../core/connection.php";
 
 
 $occupations = mysqli_stmt_init($link);

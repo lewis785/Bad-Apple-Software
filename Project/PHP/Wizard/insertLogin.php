@@ -1,7 +1,8 @@
 <?php
-include(dirname(__FILE__)."/../Core/connection.php");
+include(dirname(__FILE__) . "/../core/connection.php");
 
-if(!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2']) && !empty($_POST['email']) &&  isset($_POST['checkCookie']))
+echo("connection");
+if(!empty($_POST['username']) && !empty($_POST['pass1']) && !empty($_POST['pass2']) && !empty($_POST['email']))
 {
 	
 	$user = $_POST['username'];
@@ -9,6 +10,7 @@ if(!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2'
 	$pass2 =  $_POST['pass2'];
 	$email =  $_POST['email'];
 	$accessname = "user";
+
 
 
 	$checkusername = mysqli_stmt_init($link);
@@ -19,7 +21,9 @@ if(!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2'
 	$result = mysqli_stmt_get_result($checkusername);
 	$count = $result -> fetch_row();
 
-	if ($count[0] == 0) {
+    echo("test");
+
+	if ($count[0] === 0) {
 
 
 		if (strcmp($pass, $pass2) == 0){
@@ -38,16 +42,16 @@ if(!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2'
 
 				$date = date('Y-m-d');
 				$cryptpass = crypt($pass,"Ba24JDAkfjerio892pp309lE");
-
+                echo("<br>".$user.$pass.$pass2.$email.$cryptpass.$access."<br>");
 				$newlogin = mysqli_stmt_init($link);
-				mysqli_stmt_prepare($newlogin, 'INSERT INTO userlogin (Username, Password, DateJoined, EmailAddress, AccessLevel ) VALUES (?, ?, ?, ?, ?)');
+				mysqli_stmt_prepare($newlogin, 'INSERT INTO userlogin (Username, Password, DateJoined, EmailAddress, AccessLevel, Wizard) VALUES (?, ?, ?, ?, ?, 0)');
 				mysqli_stmt_bind_param($newlogin, 'ssssi', $user, $cryptpass, $date, $email, $access);   
 				$successful = mysqli_stmt_execute($newlogin);
 
 
 
 				if($successful)
-					header('Location: ../../HTML/login.php');
+					header('Location: ../../html/login.php');
 				else
 					echo "Error occured while inserting";
 
@@ -57,6 +61,6 @@ if(!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2'
 }
 
 
-// header('Location: ../../HTML/register.php');
+// header('Location: ../../html/register.php');
 
 ?>

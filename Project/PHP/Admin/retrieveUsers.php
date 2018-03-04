@@ -2,7 +2,7 @@
 
 
 include "validAdmin.php";
-include(dirname(__FILE__)."/../Core/connection.php");
+include(dirname(__FILE__) . "/../core/connection.php");
 
 $getAllUsers = mysqli_stmt_init($link);
 

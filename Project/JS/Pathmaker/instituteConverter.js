@@ -4,7 +4,7 @@ function drawinstitutespath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Pathmaker/getUserInstitutes.php",
+		url: "../php/pathmaker/getUserInstitutes.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
@@ -221,7 +221,7 @@ function click(d) {
 
 $.ajax({ 
   type : 'GET', 
-  url : "../PHP/Pathmaker/getUserInstitutes.php", 
+  url : "../php/pathmaker/getUserInstitutes.php",
   dataType : 'json', 
   success : function(result){
     

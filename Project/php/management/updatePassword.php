@@ -1,6 +1,6 @@
 <?php
 
-include "Core/connection.php";
+include "../core/connection.php";
 
 if (isset($_COOKIE['confirmation'])) {
 	if ( !empty($_POST['oldpassword']) && !empty($_POST['newpassword']) && !empty($_POST['confpassword']) ) {
@@ -49,7 +49,7 @@ if (isset($_COOKIE['confirmation'])) {
 
 	}
 }
-	header('Location: ../HTML/profile.php');
+	header('Location: ../html/profile.php');
 
 mysqli_close($link);
 ?>

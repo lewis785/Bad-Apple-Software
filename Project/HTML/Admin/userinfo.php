@@ -2,7 +2,7 @@
 
 
 <?php
-include "../../PHP/Admin/validAdmin.php";
+include "../../php/admin/validAdmin.php";
 ?>
 <html lang="en">
 <head>

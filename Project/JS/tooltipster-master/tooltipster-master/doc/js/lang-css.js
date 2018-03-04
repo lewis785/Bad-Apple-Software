@@ -19,8 +19,8 @@
  * Registers a language handler for CSS.
  *
  *
- * To use, include prettify.js and this file in your HTML page.
- * Then put your code in an HTML tag like
+ * To use, include prettify.js and this file in your html page.
+ * Then put your code in an html tag like
  *      <pre class="prettyprint lang-css"></pre>
  *
  *

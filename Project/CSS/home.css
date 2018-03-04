@@ -4,7 +4,7 @@ html{
 }
 
 body { 
-	background: url(../Images/current.png) no-repeat center center fixed;
+	background: url(../images/current.png) no-repeat center center fixed;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -62,10 +62,10 @@ a{
 
 
 
-/* Added CSS */
+/* Added css */
 
 
-/* Popup CSS */
+/* Popup css */
 
 #popup {
 	display:none;
@@ -97,7 +97,7 @@ a{
 	background: #A9A9A9;
 	cursor: hand; 
 }
-/*End of Popup CSS*/
+/*End of Popup css*/
 
 label.error {
 
@@ -106,7 +106,7 @@ label.error {
 }
 
 
-/*Main-Section CSS*/
+/*Main-Section css*/
 
 .main-section{
 	background-color: rgba(94,156,178,0.9);
@@ -400,7 +400,7 @@ textarea {
 
 
 
-/*Make Account CSS*/
+/*Make Account css*/
 
 .current{
 	background-color: 	#71A6D2;
@@ -441,4 +441,4 @@ textarea {
 }
 
 
-/*End of Make Account CSS*/
+/*End of Make Account css*/

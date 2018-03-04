@@ -88,7 +88,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		this.Status = 'hidden';
 		this.timerHide = null;
 		this.timerShow = null;
-		// this will be the tooltip element (jQuery wrapped HTML element)
+		// this will be the tooltip element (jQuery wrapped html element)
 		this.$tooltip;
 		
 		// for backward compatibility
@@ -1161,7 +1161,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		// for using in closures
 		var args = arguments;
 		
-		// if we are not in the context of jQuery wrapped HTML element(s) :
+		// if we are not in the context of jQuery wrapped html element(s) :
 		// this happens when calling static methods in the form $.fn.tooltipster('methodName'), or when calling $(sel).tooltipster('methodName or options') where $(sel) does not match anything
 		if (this.length === 0) {
 			
@@ -1206,7 +1206,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 					
 					// retrieve the namepaces of the tooltip(s) that exist on that element. We will interact with the first tooltip only.
 					var ns = $(this).data('tooltipster-ns'),
-						// self represents the instance of the first tooltipster plugin associated to the current HTML object of the loop
+						// self represents the instance of the first tooltipster plugin associated to the current html object of the loop
 						self = ns ? $(this).data(ns[0]) : null;
 					
 					// if the current element holds a tooltipster instance

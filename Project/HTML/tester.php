@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
 
 <?php 
-//include "../PHP/verify.php";
+//include "../php/verify.php";
 ?>
 
 <html>
@@ -14,7 +14,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type='text/javascript'></script>
 
-	<script src="../JS/delete.js"></script>
+	<script src="../js/delete.js"></script>
 	
 	<script src="../js/loadUser.js"></script>
 	<script src="../js/storeGrade.js"></script>
@@ -32,7 +32,7 @@
 
 
 	<div id="login">
-		<form name="getName" method="POST" action="../PHP/getInfo.php">
+		<form name="getName" method="POST" action="../php/account/getInfo.php">
 			<input type="text" name="username" id="text-box"/><br>
 			<input type="Submit" name="Submit" id="Submit"/><br><br>
 		</form>
@@ -45,7 +45,7 @@
 
 	<div id="createuser"> 
 
-		<form name="getName" method="POST" action="../PHP/jobdelete.php">
+		<form name="getName" method="POST" action="../php/job/jobdelete.php">
 			<input type="text" name="jobid" placeholder="Job id" id="text-box"/><br>
 <!-- 			<input type="text" name="pass1" placeholder="password" id="text-box"/><br>
 			<input type="text" name="pass2" placeholder="confirm password" id="text-box"/><br>
@@ -70,20 +70,20 @@
 <?php 
 	// include "../php/getInfo.php";
 	// include "../php/schoolGrades.php" ;
-	// // include "../php/Qualifications/getCourses.php" ;
+	// // include "../php/qualifications/getCourses.php" ;
 include "../php/readFile.php"; 
 	// include "../php/displayOccupations.php" ;
-	// include "../php/Qualifications/getUserGrade.php"; 
-	// include "../php/Qualifications/validateGrade.php";
-	// include "../php/Qualifications/deleteQualification.php";
+	// include "../php/qualifications/getUserGrade.php"; 
+	// include "../php/qualifications/validateGrade.php";
+	// include "../php/qualifications/deleteQualification.php";
 	// include "../php/jobdelete.php";
 	// include "../database/deleteallusers.php";
 		// include "../database/usergenerator.php";
-	// include "../PHP/pathmaker/pathqualifications.php";
+	// include "../php/pathmaker/pathqualifications.php";
 ?>
 
 
-<form method="post" action="../PHP/wizard/insertAddress.php">
+<form method="post" action="../php/wizard/insertAddress.php">
 
 	<input type="text" name="number" id="inputarea">
 	<input type="text" name="street" id="inputarea">

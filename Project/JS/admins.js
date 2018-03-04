@@ -8,7 +8,7 @@ function searchUsers(){
 
   $.ajax({
    type: 'POST',
-   url: "../../PHP/Admin/searchUsers.php",
+   url: "../../php/admin/searchUsers.php",
    dataType: 'json',
    data: {namesearch:user},
    cache: false,
@@ -59,7 +59,7 @@ function checkKey(){
 function userselected(id){
 
   if (name != undefined && name != null) {
-    window.location = '/HTML/admin/userinfo.php?userid=' + id;
+    window.location = '/html/admin/userinfo.php?userid=' + id;
   }
 
 
@@ -75,7 +75,7 @@ function deleteUser(){
   alert(userid+name);
   $.ajax({
    type: 'POST',
-   url: "../../PHP/Admin/admindeleteuser.php",
+   url: "../../php/admin/admindeleteuser.php",
    data: {userid:userid, username:name},
    cache: false,
    success: function(data){
@@ -97,7 +97,7 @@ function genusers(){
 
  $.ajax({
    type: 'POST',
-   url: "../../Database/usergenerator.php",
+   url: "../../database/usergenerator.php",
    data: {},
    cache: false,
    success: function(data){

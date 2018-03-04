@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include "../../PHP/Admin/validAdmin.php";
+include "../../php/admin/validAdmin.php";
 ?>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">

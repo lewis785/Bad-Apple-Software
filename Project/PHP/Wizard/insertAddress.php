@@ -1,6 +1,6 @@
 <?php
-include(dirname(__FILE__)."/../Core/connection.php");
-include(dirname(__FILE__)."/../Core/validCookie.php");
+include(dirname(__FILE__) . "/../core/connection.php");
+include(dirname(__FILE__) . "/../core/validCookie.php");
 
 if(isset($_POST['number']) && isset($_POST['street']) && isset($_POST['postcode']) && isset($_POST['city'])){
 

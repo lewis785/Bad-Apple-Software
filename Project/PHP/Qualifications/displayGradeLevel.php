@@ -1,7 +1,7 @@
 <?php
 
-include(dirname(__FILE__)."/../Core/connection.php");
-include(dirname(__FILE__)."/../Core/validCookie.php");
+include(dirname(__FILE__) . "/../core/connection.php");
+include(dirname(__FILE__) . "/../core/validCookie.php");
 
 $getQualifications = mysqli_stmt_init($link);
 

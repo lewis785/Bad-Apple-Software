@@ -4,7 +4,7 @@ function loadInfo(){
 
     $.ajax({
         type: "POST",
-        url: "../PHP/getInfo.php",
+        url: "../php/getInfo.php",
         data: "",
         cache: false,
         dataType: 'json', 
@@ -54,7 +54,7 @@ function loadEditInfo(){
 
     $.ajax({
         type: "POST",
-        url: "../PHP/getInfo.php",
+        url: "../php/getInfo.php",
         data: "",
         cache: false,
         dataType: 'json', 
@@ -93,7 +93,7 @@ function occupationfill(){
 
     $.ajax({
         type: 'POST',
-        url: "../PHP/.php",
+        url: "../php/.php",
         data: "",
         cache: false,
         dataType: 'json', 
@@ -127,7 +127,7 @@ function validatePassword(){
 
     $.ajax({
         type: 'POST',
-        url: "../PHP/validatePassword.php",
+        url: "../php/validatePassword.php",
         dataType: 'json', 
         data: {password: input},
         cache: false,
@@ -166,7 +166,7 @@ function Login(){
     if(!(user === "")  && !(pass === "") ){
         $.ajax({  
          type: 'POST',
-         url: "../PHP/validateLogin.php",
+         url: "../php/validateLogin.php",
          dataType: 'json',
          data: {username:user, password:pass},
          cache: false,
@@ -259,7 +259,7 @@ function employmentdelete(employmentnumber)
 
     $.ajax({  
      type: 'POST',
-     url: "../PHP/jobdelete.php",
+     url: "../php/jobdelete.php",
      dataType: 'json',
      data: {jobid:employmentnumber},
      cache: false,
@@ -291,7 +291,7 @@ function editjob(EID)
 {
     $.ajax({  
         type: 'POST',
-        url: "../PHP/specificJob.php",
+        url: "../php/specificJob.php",
         dataType: 'json',
         data: {EID: EID},
         cache: false,
@@ -362,7 +362,7 @@ function updatejob(EID)
     {
         $.ajax({  
             type: 'POST',
-            url: "../PHP/updatejob.php",
+            url: "../php/updatejob.php",
             data: {EID: EID, title: title, description: description, startmonth:startmonthnum, startyear:startyear, endmonth:endmonthnum, endyear:endyear},
             cache: false,
             success: function(result){

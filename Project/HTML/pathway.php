@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-include "../PHP/Core/verify.php";
+include "../php/core/verify.php";
 ?>
 <html lang="en">
 <head>
@@ -25,14 +25,14 @@ include "../PHP/Core/verify.php";
 
   <!-- core JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="../js/Bootstrap/npm.js"></script>
-  <script src="../js/Bootstrap/bootstrap.js"></script>  
-  <script src="../js/Bootstrap/jquery.js"></script>
-  <script src="../js/Bootstrap/bootstrap.min.js"></script>
-  <script src="../js/Bootstrap/jquery.prettyPhoto.js"></script>
-  <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
-  <script src="../js/Bootstrap/main.js"></script>
-  <script src="../js/Bootstrap/wow.min.js"></script>
+  <script src="../js/bootstrap/npm.js"></script>
+  <script src="../js/bootstrap/bootstrap.js"></script>
+  <script src="../js/bootstrap/jquery.js"></script>
+  <script src="../js/bootstrap/bootstrap.min.js"></script>
+  <script src="../js/bootstrap/jquery.prettyPhoto.js"></script>
+  <script src="../js/bootstrap/jquery.isotope.min.js"></script>
+  <script src="../js/bootstrap/main.js"></script>
+  <script src="../js/bootstrap/wow.min.js"></script>
 
   <!-- Code for loading user information -->
   <script src="../js/loadUser.js"></script>
@@ -44,8 +44,8 @@ include "../PHP/Core/verify.php";
     
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//d3js.org/d3.v3.min.js"></script>
-<script src="../js/Pathmaker/qualificationConverter.js"></script>
-<script src="../js/Pathmaker/choiceConverter.js"></script>
+<script src="../js/pathmaker/qualificationConverter.js"></script>
+<script src="../js/pathmaker/choiceConverter.js"></script>
 
 
 
@@ -80,7 +80,7 @@ body {
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
 
             <ul class="nav navbar-nav navbar-right">
-                <?php include "../PHP/admin/adminButton.php" ?>
+                <?php include "../php/admin/adminButton.php" ?>
                 <li><a href="pathway.php"> Path </a></li>
                 <li><a href="qualifications.php"> Qualifications </a></li> <!-- still to be made -->
                 <li class="dropdown">
@@ -91,7 +91,7 @@ body {
                     <li><a href="addjob.php"> Add Employment </a></li> 
                     <li><a href="#"> Starred Paths </a></li> <!-- still to be made -->
                     <li role="separator" class="divider"></li>
-                    <li><a href="../php/Core/signout.php"> Log out </a></li> <!-- still to be made -->
+                    <li><a href="../php/core/signout.php"> Log out </a></li> <!-- still to be made -->
                       
 
                 </ul>

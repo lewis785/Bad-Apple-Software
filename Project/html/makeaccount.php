@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
-include "../PHP/Core/verify.php";
-include"../php/wizard/validWizard.php";
+include "../php/core/verify.php";
+include "../php/wizard/validWizard.php";
 ?>
 <html lang="en">
 <head>
@@ -164,6 +164,6 @@ include"../php/wizard/validWizard.php";
     <!-- /.container -->
 </section>
 <!--/#footer-->
-<?php include"../php/wizard/correctPage.php"; ?>
+<?php include "../php/wizard/correctPage.php"; ?>
 </body>
 </html>

@@ -29,7 +29,7 @@
         <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
         <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
         <script src="../js/registervalidate.js"></script>
-<<<<<<< HEAD
+
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->         
         <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -67,29 +67,14 @@
 				<hr class="headings">
 			</div>
 		</div>
-		<!-- Register Form start -->
-		<form role="form" id="register-form" class="register-form text-center lead" name="login" method="post" action="../php/createUser.php">
-			<div class="form-group">
-				<input type="text" name="username" class="form-control" required="required" placeholder="Enter Username">
-			</div>
-			
-			<div class="form-group">
-				<input type="Email" name="email1" class="form-control" required="required" placeholder="Enter Email">
-			</div>
-			<div class="col-sm-10 col-sm-offset-1">
-				<div class="underlined-title">
-					<h1>Please Register an Account Below</h1>
-					<hr class="headings">
-				</div>
-			</div>
 			<!-- Register Form start -->
-			<form role="form" id="register-form" class="register-form text-center lead" name="login" method="post" action="../php/createUser.php">
+			<form role="form" id="register-form" class="register-form text-center lead" name="login" method="post" action="../php/wizard/insertLogin.php">
 				<div class="form-group">
 					<input type="text" name="username" class="form-control" required="required" placeholder="Enter Username">
 				</div>
 
 				<div class="form-group">
-					<input type="Email" name="email1" class="form-control" required="required" placeholder="Enter Email">
+					<input type="Email" name="email" class="form-control" required="required" placeholder="Enter Email">
 				</div>
 
 				<div id="passdiv" class="form-group">
@@ -105,6 +90,7 @@
 			</form>
 		</div>
 		<!-- register end -->
+
 		<!--// footer -->
 		<section class="content-block-nopad footer-wrap-1-3 bg-navfoot">
 			<div class="container footer-1-3">

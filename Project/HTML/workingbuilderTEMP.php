@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-include "../PHP/Core/verify.php";
+//include "../php/core/verify.php";
 ?>
 <html lang="en">
     <head>
@@ -22,14 +22,14 @@ include "../PHP/Core/verify.php";
         <link href="../css/home.css" rel="stylesheet">
         <!-- core JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="../js/Bootstrap/npm.js"></script>
-        <script src="../js/Bootstrap/bootstrap.js"></script>         
-        <script src="../js/Bootstrap/jquery.js"></script>
-        <script src="../js/Bootstrap/bootstrap.min.js"></script>
-        <script src="../js/Bootstrap/jquery.prettyPhoto.js"></script>
-        <script src="../js/Bootstrap/jquery.isotope.min.js"></script>
-        <script src="../js/Bootstrap/main.js"></script>
-        <script src="../js/Bootstrap/wow.min.js"></script>
+        <script src="../js/bootstrap/npm.js"></script>
+        <script src="../js/bootstrap/bootstrap.js"></script>
+        <script src="../js/bootstrap/jquery.js"></script>
+        <script src="../js/bootstrap/bootstrap.min.js"></script>
+        <script src="../js/bootstrap/jquery.prettyPhoto.js"></script>
+        <script src="../js/bootstrap/jquery.isotope.min.js"></script>
+        <script src="../js/bootstrap/main.js"></script>
+        <script src="../js/bootstrap/wow.min.js"></script>
         <!-- Code for loading user information -->
         <script src="../js/loadUser.js"></script>
         <script src="../js/popup.js"></script>
@@ -52,7 +52,7 @@ include "../PHP/Core/verify.php";
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <?php include "../PHP/admin/adminButton.php" ?>
+                            <?php include "../php/admin/adminButton.php" ?>
                             <li>
                                 <a href="workingbuilderTemp.php"> Path </a>
                             </li>
@@ -79,7 +79,7 @@ include "../PHP/Core/verify.php";
                                     <!-- still to be made -->
                                     <li role="separator" class="divider"></li>
                                     <li>
-                                        <a href="../php/Core/signout.php"> Log out </a>
+                                        <a href="../php/core/signout.php"> Log out </a>
                                     </li>                                     
                                     <!-- still to be made -->
                                 </ul>

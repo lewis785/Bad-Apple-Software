@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-	include "../PHP/Core/verify.php";
+	include "../php/core/verify.php";
 ?>
 <html lang="en" style="height:100%;">
 	<head>
@@ -88,7 +88,7 @@
 									<!-- still to be made -->
 									<li role="separator" class="divider"></li>
 									<li>
-										<a href="../php/Core/signout.php"> Log out </a>
+										<a href="../php/core/signout.php"> Log out </a>
 									</li>                                     
 									<!-- still to be made -->
 								</ul>
@@ -117,13 +117,13 @@
 				 <div class="row contact-wrap"> 
 					<div class="col-md-6 col-md-offset-3">
 					
-						<form id="register-form" class="grade-form" name="grade-form" method="post" action="../PHP/insertGrade.php">  
+						<form id="register-form" class="grade-form" name="grade-form" method="post" action="../php/insertGrade.php">
 
 							<div id="coursediv" class="form-group">
 								<select id="courseselect" name="course" class="form-control">
 									<option value="NoneSelect" selected>Select Course</option>
 									<?php 
-									include"../php/Qualifications/getCourses.php";
+									include "../php/qualifications/getCourses.php";
 									?>
 
 								</select>
@@ -133,7 +133,7 @@
 								<select id="levelselect" name="level" class="form-control" onchange="javascript: gradeselected();">
 									<option value="NoneSelect" selected>Select Level</option>
 									<?php 
-									include "../php/Qualifications/getLevels.php"; 
+									include "../php/qualifications/getLevels.php";
 									?>
 								</select>
 							</div>

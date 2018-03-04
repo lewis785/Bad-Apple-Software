@@ -4,7 +4,7 @@ function drawqualificationpath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Pathmaker/pathqualifications.php",
+		url: "../php/pathmaker/pathqualifications.php",
 		dataType: 'json',
 		data: {},
 		cache: false,
@@ -14,7 +14,7 @@ function drawqualificationpath(){
 			var parentid = 100;
 			var data = [];
           
-            data.push('{"name":"Qualifications","parent":"null"}');
+            data.push('{"name":"qualifications","parent":"null"}');
 
 			for (var i=0; i<result.length; i++){
 				
@@ -28,7 +28,7 @@ function drawqualificationpath(){
 				}
 				else
 				{
-					data.push('{"name":"'+curlevel+'","parent":"Qualifications"}');
+					data.push('{"name":"'+curlevel+'","parent":"qualifications"}');
 					data.push('{"name":"'+course+':'+grade+'","parent":"'+curlevel+'"}');
 
                   

@@ -58,8 +58,8 @@ function nextform()
 					$("div#formarea").html(qualificationHTML);
 					swapclass("addresscircle","current","completed");
 					swapclass("qualificationcircle","incomplete","current");
-					$("select#levelselect").load("../../php/Qualifications/getLevels.php");
-					$("select#courseselect").load("../../php/Qualifications/getCourses.php");
+					$("select#levelselect").load("../../php/qualifications/getLevels.php");
+					$("select#courseselect").load("../../php/qualifications/getCourses.php");
 					page+=1;
 					validform = true;
 			// 	},

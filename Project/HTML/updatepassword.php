@@ -88,7 +88,7 @@
 									<!-- still to be made -->
 									<li role="separator" class="divider"></li>
 									<li>
-										<a href="../php/Core/signout.php"> Log out </a>
+										<a href="../php/core/signout.php"> Log out </a>
 									</li>                                     
 									<!-- still to be made -->
 								</ul>
@@ -114,7 +114,7 @@
 			</div>
             <div class="container-fluid m">
                 <div class="row contact-wrap"> 
-                    <form id="register-form" class="contact-form" name="contact-form" method="post" action="../php/updatePassword.php"> 
+                    <form id="register-form" class="contact-form" name="contact-form" method="post" action="../php/management/updatePassword.php">
                         <div class="col-md-6 col-md-offset-3">
                            
                             <div class="form-group">

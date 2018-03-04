@@ -1,7 +1,7 @@
 <?php
 
-include"Core/connection.php";
-include"Core/validCookie.php";
+include "../core/connection.php";
+include "../core/validCookie.php";
 
 if($verified){
 

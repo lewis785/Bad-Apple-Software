@@ -1,7 +1,7 @@
 <?php
 
-include(dirname(__FILE__)."/../Core/connection.php");
-include(dirname(__FILE__)."/../Core/validCookie.php");
+include(dirname(__FILE__) . "/../core/connection.php");
+include(dirname(__FILE__) . "/../core/validCookie.php");
 $valid = false;
 
 
@@ -26,7 +26,7 @@ if ($verified) {
 
 if (!$valid){
 	mysqli_close($link);
-	header("Location:http://badapple/HTML/profile.php");
+	header("Location:http://badapple/html/profile.php");
 	exit();
 }
 

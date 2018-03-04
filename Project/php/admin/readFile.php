@@ -4,7 +4,7 @@ $section = 0;
 $newsection = "*";
 $handle = @fopen("../Database/levelgrade.txt", "r"); //read line one by one
 
-include "Core/connection.php";
+include "core/connection.php";
 
 while (!feof($handle)) // Loop til end of file.
 {

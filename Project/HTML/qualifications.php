@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-include "../PHP/Core/verify.php";
+include "../php/core/verify.php";
 ?>
 <html lang="en">
 <head> 
@@ -78,7 +78,7 @@ include "../PHP/Core/verify.php";
                                 <!-- still to be made -->
                                 <li role="separator" class="divider"></li>
                                 <li>
-                                    <a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
+                                    <a href="../php/core/signout.php" class="littlestuff-hover">Log out</a>
                                 </li>
                             </ul>                                 
                         </li>
@@ -109,7 +109,7 @@ include "../PHP/Core/verify.php";
                  <div class="underlined-title">
                     <h1>Your Qualification History</h1>
                     <?php 
-                    include"../php/Qualifications/getPoints.php"; 
+                    include "../php/qualifications/getPoints.php";
                     ?>
                 </div>
             <div class="panel panel-default" id="qualificationPanel">
@@ -123,7 +123,7 @@ include "../PHP/Core/verify.php";
                    </thead>
                    <tbody>
 
-                      <?php include "../php/Qualifications/displayGrades.php" ?>
+                      <?php include "../php/qualifications/displayGrades.php" ?>
 
                   </tbody>
               </table>

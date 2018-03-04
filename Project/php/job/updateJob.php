@@ -1,7 +1,7 @@
 <?php 
 
-include"Core/connection.php";
-include"Core/validCookie.php";
+include "../core/connection.php";
+include "../core/validCookie.php";
 
 if ($verified){
 	if (isset($_POST['EID']) && isset($_POST['title']) && isset($_POST['startmonth']) && isset($_POST['startyear']) && isset($_POST['endyear']) && isset($_POST['endyear']) && isset($_POST['description'])){

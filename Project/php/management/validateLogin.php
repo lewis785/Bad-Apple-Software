@@ -1,6 +1,6 @@
 <?php
 
-include "Core/connection.php";
+include "../core/connection.php";
 
 if(isset($_POST['username']) && isset($_POST['password']) ){
 
@@ -27,6 +27,4 @@ if(isset($_POST['username']) && isset($_POST['password']) ){
 
 }
 
-
 mysqli_close($link);
-?>

@@ -1,5 +1,5 @@
 <?php
-include "../../PHP/Admin/validAdmin.php";
+include "../../php/admin/validAdmin.php";
 ?>
 <html lang="en">
 <head>
@@ -66,7 +66,7 @@ include "../../PHP/Admin/validAdmin.php";
         <h1 class="page-header">Webpage Dashboard</h1>
 
         <div class="col-lg-12">
-          <?php include"../../php/admin/adminstats.php"; ?>
+          <?php include "../../php/admin/adminstats.php"; ?>
 
 
         </div>

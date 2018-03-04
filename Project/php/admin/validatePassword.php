@@ -1,6 +1,6 @@
 <?php
 
-include "Core/connection.php";
+include "core/connection.php";
 
 if(isset($_POST['password'])){
 

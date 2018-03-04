@@ -14,9 +14,9 @@ curl_close($ch);
 # Create a DOM parser object
 $dom = new DOMDocument();
 
-# Parse the HTML from Google.
+# Parse the html from Google.
 # The @ before the method call suppresses any warnings that
-# loadHTML might throw because of invalid HTML in the page.
+# loadHTML might throw because of invalid html in the page.
 @$dom->loadHTML($html);
 
 # Iterate over all the <option> tags
@@ -40,7 +40,7 @@ foreach($dom->getElementsByTagName('option') as $link) {
 }
 
 
-include(dirname(__FILE__)."/../Core/connection.php");
+include(dirname(__FILE__) . "/../core/connection.php");
 
 for ($i = 0; $i < count($subjects); ++$i) {
 	

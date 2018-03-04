@@ -32,7 +32,7 @@ function submitJobs(redirect){
 				$.ajax
 				({  
 					type: 'POST',
-					url: "../PHP/insertJob.php",
+					url: "../php/insertJob.php",
 					data: { employer: employer, title: title, startmonth: startmonth, startyear: startyear, endmonth: endmonth, endyear: endyear, description:descript},
 					cache: false,
 					success: function(result){

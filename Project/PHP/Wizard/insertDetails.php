@@ -1,7 +1,7 @@
 <?php
 
-include(dirname(__FILE__)."/../Core/connection.php");
-include(dirname(__FILE__)."/../Core/validCookie.php");
+include(dirname(__FILE__) . "/../core/connection.php");
+include(dirname(__FILE__) . "/../core/validCookie.php");
 
 
 if(isset($_POST['first']) && isset($_POST['surname']) && isset($_POST['dob']) && isset($_POST['occupation'])){
@@ -13,7 +13,7 @@ if(isset($_POST['first']) && isset($_POST['surname']) && isset($_POST['dob']) &&
 
 	$insertDetails = mysqli_stmt_init($link);
 	mysqli_stmt_prepare($insertDetails, 'INSERT INTO userdetails (User, FirstName, Surname, DateOfBirth, Occupation) VALUES (?, ?, ?, ?, ?)');
-	mysqli_stmt_bind_param($insertDetails, 'issss', $user[1], $firstname, $surname, $dob, $occupation);   
+	mysqli_stmt_bind_param($insertDetails, 'issss', $user[1], $firstname, $surname, $dob, $occupation);
 	mysqli_stmt_execute($insertDetails);
 
 	$occupationID = mysqli_stmt_init($link);

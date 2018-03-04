@@ -1,7 +1,7 @@
 <?php
 
 include "validAdmin.php";
-include(dirname(__FILE__)."/../Core/connection.php");
+include(dirname(__FILE__) . "/../core/connection.php");
 
 if($verified){
 
@@ -40,7 +40,7 @@ if($verified){
 		if($userlevel < 10)
 		{
 			$levelset = "<div class='col-sm-".$width." col-sm-offset-".$offset."'> 
-			<button class='btn-warning btn-lg' onclick='accesschange('admin')'>Make Admin</button>
+			<button class='btn-warning btn-lg' onclick='accesschange('admin')'>Make admin</button>
 			</div>";
 		}
 		else

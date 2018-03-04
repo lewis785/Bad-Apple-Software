@@ -1,7 +1,7 @@
 <?php
 
-include(dirname(__FILE__)."/../Core/connection.php");
-include(dirname(__FILE__)."/../Core/validCookie.php");
+include(dirname(__FILE__) . "/../core/connection.php");
+include(dirname(__FILE__) . "/../core/validCookie.php");
 
 $checkAdmin = mysqli_stmt_init($link);
 
@@ -16,7 +16,7 @@ $result = mysqli_stmt_get_result($checkAdmin);
 $access = mysqli_fetch_assoc($result);
 
 if($access['AccessLevel'] > 0 )
-	echo '<li class="nav-item"><a href="admin/admin.php" class="littlestuff-hover"> Admin Section </a></li>';
+	echo '<li class="nav-item"><a href="admin/admin.php" class="littlestuff-hover"> admin Section </a></li>';
 
 
 

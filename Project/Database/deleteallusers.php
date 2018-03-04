@@ -1,5 +1,5 @@
 <?php
-include "../php/Core/connection.php";
+include "../php/core/connection.php";
 
 $search = 26;
 

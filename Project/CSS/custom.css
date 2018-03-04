@@ -30,7 +30,7 @@
 	background: #A9A9A9;
 	cursor: hand; 
 }
-/*End of Popup CSS*/
+/*End of Popup css*/
 
 label.error {
 
@@ -227,7 +227,7 @@ textarea {
 	text-decoration: underline;
 	font-weight: bolder;
 }
-/*Make Account CSS*/
+/*Make Account css*/
 
 .current{
 	background-color: #71A6D2;
@@ -309,7 +309,7 @@ div.middle-bit{
 	}	
 	
 .mask{
-	background-image: url("../Images/current.png");
+	background-image: url("../images/current.png");
     position: absolute;
     left: 0;
     top: 0;

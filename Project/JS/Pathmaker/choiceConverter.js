@@ -4,7 +4,7 @@ function drawchoicespath(){
 
 	$.ajax({  
 		type: 'POST',
-		url: "../PHP/Pathmaker/getUserChoices.php",
+		url: "../php/pathmaker/getUserChoices.php",
 		dataType: 'json',
 		data: {},
 		cache: false,

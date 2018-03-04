@@ -1,7 +1,7 @@
 <?php 
 
-include "Core/connection.php";
-include 'Core/validCookie.php';
+include "core/connection.php";
+include 'core/validCookie.php';
 
 $getUserJob = mysqli_stmt_init($link);
 mysqli_stmt_prepare($getUserJob, "SELECT useremployment.EmploymentID, useremployment.Employer, useremployment.JobTitle, useremployment.JobDescription, S1.MonthName as SMonth,

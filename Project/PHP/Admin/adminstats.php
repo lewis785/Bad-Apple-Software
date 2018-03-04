@@ -1,7 +1,7 @@
 <?php
 
 include "validAdmin.php";
-include(dirname(__FILE__)."/../Core/connection.php");
+include(dirname(__FILE__) . "/../core/connection.php");
 
 $numusers = mysqli_stmt_init($link);
 mysqli_stmt_prepare($numusers, "select count(*) from userlogin");

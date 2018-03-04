@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
-include "../PHP/Core/verify.php";
-include "../PHP/Wizard/wizardCheck.php"
+include "../php/core/verify.php";
+include "../php/wizard/wizardCheck.php"
 ?>
 <html lang="en">
 <head> 
@@ -91,7 +91,7 @@ include "../PHP/Wizard/wizardCheck.php"
                             <!-- still to be made -->
                             <li role="separator" class="divider"></li>
                             <li>
-                                <a href="../php/Core/signout.php"> Log out </a>
+                                <a href="../php/core/signout.php"> Log out </a>
                             </li>                                     
                             <!-- still to be made -->
                         </ul>

@@ -1,6 +1,6 @@
 <?php
 
-include "../php/Core/connection.php";
+include "../php/core/connection.php";
 
 $handle = @fopen("../Database/nameslist.txt", "r");
 

@@ -1,7 +1,7 @@
 <?php
 
-include "Core/connection.php";
-include 'Core/validCookie.php';
+include "../core/connection.php";
+include '../core/validCookie.php';
 
 if ($verified)
 {
@@ -11,7 +11,7 @@ if ($verified)
 	mysqli_stmt_bind_param($delete, 'ss', $temp['user'], $temp['pass']);
 	mysqli_stmt_execute($delete);
 	echo "User Deleted";
-	header("Location: ../../HTML/login.php");
+	header("Location: ../../html/login.php");
 	
 }
 else

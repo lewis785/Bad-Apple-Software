@@ -1,6 +1,6 @@
 <?php
 
-include "Core/connection.php";
+include "../core/connection.php";
 
 $url = "//Project/html/tester.php";
 
@@ -40,9 +40,6 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 			if($uppercase || $lowercase || $numbercheck || strlen($password) >= 8) {
 
 				if(strcmp($email, $confemail) == 0){
-
-
-
 
 					$getOccupationId = mysqli_stmt_init($link);
 					mysqli_stmt_prepare($getOccupationId, 'Select OccupationID from occupations where OccupationName= ? ');
@@ -94,7 +91,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 							$successful = mysqli_stmt_execute($newaddress);
 
 							if($successful)
-								header('Location: ../../HTML/login.php');
+								header('Location: ../../html/login.php');
 							else
 								echo "Failed to insert address";
 						}
@@ -112,12 +109,12 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 				}
 				else
 				{
-					header('Location: ../../HTML/register.php');
+					header('Location: ../../html/register.php');
 				}
 			}
 			else
 			{
-				header('Location: ../../HTML/register.php');
+				header('Location: ../../html/register.php');
 			}
 		}
 	}
@@ -128,7 +125,7 @@ if (!empty($_POST['username']) && !empty($_POST['pass1']) && isset($_POST['pass2
 }
 else
 {
-	header('Location: ../../HTML/register.php');
+	header('Location: ../../html/register.php');
 }
 
 
@@ -140,9 +137,7 @@ function deleteuser($link, $deleteid){
 	mysqli_stmt_execute($delete);
 	mysqli_close($link);
 
-	header('Location: ../../HTML/register.php');
-
+	header('Location: ../../html/register.php');
 }
 
 mysqli_close($link);
-?>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php 
-	include "../PHP/Core/verify.php";
+	include "../php/core/verify.php";
 ?>
 <html lang="en" style="height:100%;">
 	<head>
@@ -89,7 +89,7 @@
 									<!-- still to be made -->
 									<li role="separator" class="divider"></li>
 									<li>
-										<a href="../php/Core/signout.php" class="littlestuff-hover">Log out</a>
+										<a href="../php/core/signout.php" class="littlestuff-hover">Log out</a>
 									</li>
 								</ul>                                 
 							</li>
@@ -112,7 +112,7 @@
 					<hr class="headings">
 				</div>
 			</div>
-			<form id="register-form" class="contact-form" name="contact-form" method="post" action="../php/updateUser.php"> 
+			<form id="register-form" class="contact-form" name="contact-form" method="post" action="../php/management/updateUser.php">
 				<div>
 					<div class="form-group">
 						<input id="firstn" type="text" name="firstname" class="form-control" required="required" placeholder="Enter Firstname">
