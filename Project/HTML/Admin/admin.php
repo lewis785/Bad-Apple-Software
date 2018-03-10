@@ -12,14 +12,14 @@ include "../../php/admin/validAdmin.php";
   <meta name="author" content="">
   <title>Admin Page</title>
   <!-- Bootstrap core CSS -->
-  <link href="../../admincss/bootstrap.css" rel="stylesheet">
+  <link href="../../admin_css/bootstrap.css" rel="stylesheet">
   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="../../admincss/ie10-viewport-bug-workaround.css" rel="stylesheet">
+  <link href="../../admin_css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <link href="../../css/admin.css" rel="stylesheet">
 
 
   <!-- Custom styles for this template -->
-  <link href="../../admincss/dashboard.css" rel="stylesheet">
+  <link href="../../admin_css/dashboard.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="../../js/admins.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

@@ -31,5 +31,3 @@ if (!$valid){
 }
 
 mysqli_close($link);
-
-?>

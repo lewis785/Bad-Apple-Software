@@ -5,7 +5,6 @@ $verified = false;
 if (isset($_COOKIE['confirmation'])) {
 
 	$temp = unserialize($_COOKIE['confirmation']);
-    echo($temp['user']. $temp['pass']);
 
     $verify = mysqli_stmt_init($link);
 	mysqli_stmt_prepare($verify, "SELECT count(*), UserID FROM userlogin WHERE UserName= ? AND Password = ? GROUP BY UserID");
